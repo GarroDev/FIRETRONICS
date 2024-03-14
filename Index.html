@@ -4,7 +4,8 @@
         <title>Bienvenido Firetronics</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/assets/css/Style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link href="Style.css" rel="stylesheet">
     </head>
 
     <body>
@@ -13,7 +14,7 @@
 
         <header>
             <div class="Esplogo">
-                <img src="assets/imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo">
+                <img src="imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo">
             </div>
 
             <div class="Contenedor-mitades">
@@ -69,6 +70,41 @@
     <!-- Cuerpo del sitio web -->
         <main>
 
+            <div class="container mt-5">
+                <ul class="nav nav-tabs visually-hidden" id="myTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="tab1" data-toggle="tab" href="#content1">Contenido 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab2" data-toggle="tab" href="#content2">Contenido 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab3" data-toggle="tab" href="#content3">Contenido 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab4" data-toggle="tab" href="#content4">Contenido 4</a>
+                    </li>
+                    <!-- Agrega más pestañas según sea necesario -->
+                </ul>
+        
+                <div class="tab-content mt-3">
+                    <div class="tab-pane fade show active" id="content1">
+                        <h2>Contenido 1</h2>
+                        <p>Este es el contenido 1 que cambia cada cierto tiempo.</p>
+                    </div>
+                    <div class="tab-pane fade" id="content2">
+                        <h2>Contenido 2</h2>
+                    </div>
+                    <div class="tab-pane fade" id="content3">
+                        <h2>Contenido 3</h2>
+                    </div>
+                    <div class="tab-pane fade" id="content4">
+                        <h2>Contenido 4</h2>
+                    </div>
+                    
+                    <!-- Agrega más paneles de contenido según sea necesario -->
+                </div>
+            </div>
 
         </main>
 
@@ -81,6 +117,13 @@
             <p id="titleFooter4">2024</p>
 
         </footer>
-    
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+        
+
+<script src="script.js"></script> 
     </body>
 </html>
