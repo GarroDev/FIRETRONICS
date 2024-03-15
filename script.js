@@ -6,4 +6,4 @@ setInterval(function() {
     $('#' + tabs[currentIndex]).removeClass('active');
     $('#' + tabs[currentIndex]).tab('show');
     currentIndex = (currentIndex + 1) % tabs.length;
-}, 1000); // Cambia cada 5 segundos 
+}, 5000); // Cambia cada 5 segundos 
