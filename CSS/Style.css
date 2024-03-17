@@ -127,7 +127,6 @@ button {
 /*---Menú----*/
 .Menu {
     flex: 1;
-    background-color: #83b5ee;
     display: flex; /* Agregado: establece el contenedor "Menu" como un contenedor flex */
     flex-direction: column; /* Coloca los elementos en una columna */
     justify-content: flex-start; /* Alinea los elementos en la parte superior del contenedor */
