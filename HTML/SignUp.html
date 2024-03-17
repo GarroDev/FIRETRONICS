@@ -32,8 +32,14 @@
                     </div>
 
                     <div class="botones"> 
-                        <button class="custom-btn btn-1">Iniciar Sesión</button>
-                        <button class="custom-btn btn-1" href="" >Registrarse</button>
+                        <<a href="../HTML/SignIn.html">
+                          <button class="custom-btn btn-1">Sign In</button>
+                      </a>
+                      
+                      
+                      <a href="../HTML/SignUp.html">
+                          <button class="custom-btn btn-1">Sign Up</button> 
+                      </a>
                     </div> 
 
                 </div>  
@@ -85,11 +91,11 @@
                                 <h1>Sign Up</h1>            
                               </div>
                               <h2 class="fs-6 fw-normal text-center text-secondary mb-4">Enter your details to register</h2>
-                              <form action="http://localhost:3000/registro" method="POST">
+                              <form action="http://localhost:3002/registro" method="POST">
                                 <div class="row gy-2 overflow-hidden">
                                   <div class="col-12">
                                     <div class="form-floating mb-3">
-                                      <input type="text" class="form-control" name="Name" id="Name" placeholder="Name" required>
+                                      <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
                                       <label for="Name" class="form-label">Your name</label>
                                     </div>
                                   </div>
