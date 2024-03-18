@@ -7,7 +7,7 @@ body {
     background-color: #EEEEEE; /* Color de fondo (puedes cambiarlo) */
   }
 
-/* ::::ENCABEZADO:::: */
+/* ::::HEADER:::: */
 
 header {
     display: flex;
@@ -35,9 +35,9 @@ header {
     max-height: 100%;
 }
 
-/*---Busqueda y menú----*/
+/*---Search and menu----*/
 
-/*---estructura----*/
+/*---estructure----*/
 .Contenedor-mitades {
     display: flex;
     flex: 1;
@@ -62,9 +62,9 @@ header {
     align-items: center; /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
-/*---Contenido----*/
+/*---Content----*/
 
-/*barra de busqueda*/
+/*search bar*/
 #barrabusqueda{
 width: 70%;
 height: 40px;
@@ -78,7 +78,7 @@ letter-spacing: 0px;
 font-weight: bold;
 }
 
-/*---Botones----*/
+/*---Buttons----*/
 .botones {
     flex: 1;
     background-color: #222831;
@@ -212,7 +212,7 @@ ul, ol {
 }
 
 
-/* ::::SEPARADOR:::: */
+/* ::::SEPARATOR:::: */
 
 #Separator {
     display: flex;
@@ -222,17 +222,16 @@ ul, ol {
     overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
 }
 
-/* ::::CUERPO MAIN:::: */
+/* ::::BODY MAIN:::: */
 
-.Promossize{
+.Promossize{/* Adjustable size (original based on Marvel)(delete () if this is changed) */
     width: 1169px;
     height: 322px;
 }
   
 
-.categories {
-    display: flex;
-    justify-content: space-around;
+.categories {/* Categories Buttons */
+    justify-content: space-around;/* This make them responsive */
     padding: 10px;
     background-color: #ffffff;
     width: 80%;
@@ -253,7 +252,7 @@ ul, ol {
   }
 
 
-.Info1{
+.Info1{/* Info section */
     font-family: 'Lato', sans-serif;
     background-color: #9A9C9F;
     display: flex;
@@ -275,7 +274,7 @@ ul, ol {
     height: 445.48px;
 }
 
-.Info2{
+.Info2{/* Info section 2*/
     font-family: 'Lato', sans-serif;
     background-color: #32E0C4;
     display: flex;
