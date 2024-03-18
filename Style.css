@@ -224,16 +224,35 @@ ul, ol {
 
 /* ::::CUERPO MAIN:::: */
 
-.Promos{
-    
-
-}
-
 .Promossize{
     width: 1169px;
     height: 322px;
 }
   
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #ffffff;
+    width: 80%;
+  }
+  .category-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .category-button img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+
+
 .Info1{
     font-family: 'Lato', sans-serif;
     background-color: #9A9C9F;
