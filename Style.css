@@ -214,7 +214,7 @@ ul, ol {
 
 /* ::::SEPARADOR:::: */
 
-#Separador {
+#Separator {
     display: flex;
     background-color: #32E0C4;
     width: 100%;
