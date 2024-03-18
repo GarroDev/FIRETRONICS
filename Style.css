@@ -225,7 +225,7 @@ ul, ol {
 /* ::::CUERPO MAIN:::: */
 
 .Promos{
-    background-color: #222831;
+    
 
 }
 
@@ -254,6 +254,28 @@ ul, ol {
 .ImgInfo1{
     width: 908px;
     height: 445.48px;
+}
+
+.Info2{
+    font-family: 'Lato', sans-serif;
+    background-color: #32E0C4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Div1Info2{
+    margin-right: 10%;
+    
+}
+
+.Div2Info2{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.ImgInfo2{
+    width: 706.45px;
+    height: 438px;
 }
 
 
