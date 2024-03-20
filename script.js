@@ -1,9 +1,35 @@
-// Cambia de pestaña cada 5 segundos
-var tabs = ['tab1', 'tab2', 'tab3', 'tab4']; // Agregar más identificadores de pestañas si es necesario
-var currentIndex = 0;
-
-setInterval(function() {
-    $('#' + tabs[currentIndex]).removeClass('active');
-    $('#' + tabs[currentIndex]).tab('show');
-    currentIndex = (currentIndex + 1) % tabs.length;
-}, 5000); // Cambia cada 5 segundos 
+document.addEventListener('DOMContentLoaded', function() {
+    var helpButton = document.getElementById('helpButton');
+    var helpPopup = document.getElementById('helpPopup');
+    var closePopup = document.querySelector('.close');
+    var submitHelp = document.getElementById('submitHelp');
+    var helpList = document.getElementById('helpList');
+  
+    helpButton.addEventListener('click', function() {
+      helpPopup.style.display = 'block';
+    });
+  
+    closePopup.addEventListener('click', function() {
+      helpPopup.style.display = 'none';
+    });
+  
+    submitHelp.addEventListener('click', function() {
+      var selectedOption = helpList.querySelector('.active').textContent;
+      console.log("Opción seleccionada: " + selectedOption);
+      helpPopup.style.display = 'none';
+    });
+  
+    helpList.addEventListener('click', function(e) {
+      var target = e.target;
+      if (target.tagName === 'BUTTON') {
+        var helpButtons = document.querySelectorAll('.help-button');
+        for (var i = 0; i < helpButtons.length; i++) {
+          helpButtons[i].style.display = 'none';
+        }
+        target.style.display = 'block';
+        target.classList.add('active');
+        // Aquí se agregar el código para mostrar otras preguntas en consecuencia
+      }
+    });
+  });
+  
