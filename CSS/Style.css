@@ -344,13 +344,15 @@ footer {
 .contenedor-izquierdo {
     flex: 1; /* La columna izquierda ocupa el 60% del espacio */
     background-color: rgb(70, 221, 201);
-    
+    max-height: 1000px;
+    padding-bottom: 20px;
 }
 
 .contenedor-derecho {
     flex: 0.5; /* La columna derecha ocupa el 40% del espacio */
     background-color: rgb(70, 221, 201);
     margin-left: 20px;
+    max-height: 200px;
 }
 .containerProd{
     background-color: rgb(255, 255, 255);
