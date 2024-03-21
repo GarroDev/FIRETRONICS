@@ -337,6 +337,20 @@ footer {
     top: -40px; /* Ajusta la posición verticalmente según tus necesidades */
     left: -25px;   
 }
+.contenedor-padre {
+    display: flex;
+}
 
+.contenedor-izquierdo {
+    flex: 1; /* La columna izquierda ocupa el 60% del espacio */
+    background-color: rgb(75, 35, 80);
+    
+}
+
+.contenedor-derecho {
+    flex: 0.55; /* La columna derecha ocupa el 40% del espacio */
+    background-color: rgb(199, 197, 78);
+
+}
 
 
