@@ -348,9 +348,7 @@ footer {
 }
 
 .contenedor-derecho {
-    flex: 0.55; /* La columna derecha ocupa el 40% del espacio */
+    flex: 0.5; /* La columna derecha ocupa el 40% del espacio */
     background-color: rgb(70, 221, 201);
-    margin-left: 30px;
+    margin-left: 20px;
 }
-
-
