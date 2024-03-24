@@ -160,18 +160,25 @@ ul, ol {
 .nav li ul {
     opacity: 0;
     color: #EEEEEE;
-    background-color:#434343;    
+    background-color:#434343;
+    font-family: 'Lato', sans-serif;   
     visibility: hidden;
-    position: fixed; /* Cambiado: posición fija con respecto al documento */
-    width:900px;
-    height: 400px;
-    /*column-count: 3; /* Agregado: dividir en 3 columnas */
-    /*column-gap: 20px; /* Agregado: espacio entre columnas */
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Agregado: velocidad de transición */
-    z-index: 1; /* Agregado: establece una posición superior para que el menú aparezca sobre otros elementos */
-    top: 130px; /* Ajusta según sea necesario */
-    left: 409px; /* Ajusta según sea necesario */
+    position: fixed;
+    width: auto; /* Cambiado: ancho automático para adaptarse al contenido */
+    height: 500px; /* Cambiado: altura automática para adaptarse al contenido */
+    column-count: 3; /* Agregado: dividir en 3 columnas */
+    column-gap: 40px; /* Agregado: espacio entre columnas */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1;
+    top: 130px;
+    left: 409px;
 }
+
+.nav li ul li {
+    border-right: 1px solid #CCCCCC; /* Añade una línea vertical a la derecha de cada elemento del submenú */
+    position: relative;
+}
+
 
 .nav li:hover > ul {
     
