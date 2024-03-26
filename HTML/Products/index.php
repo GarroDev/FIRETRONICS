@@ -5,14 +5,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/x-icon" href="assets/images/icon.png">
+	<link rel="icon" type="image/x-icon" href="assets/imagenes/icon.png">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 	<link rel="stylesheet" type="text/css" href="assets/styles/bootstrap4/bootstrap.min.css">
 
 	<link rel="stylesheet" type="text/css" href="assets/styles/prueba/main_styles.css">  <!--IMPORTANTE-->
 	<link rel="stylesheet" type="text/css" href="assets/styles/responsive.css">
 	<link rel="stylesheet" href="assets/styles/loader.css">
-	<link href="css/Style.css" rel="stylesheet">
+	<link href="css/ProductsIndex.css" rel="stylesheet">
 	<title>Productos</title>
 </head>
 
@@ -20,7 +20,7 @@
 
 <header>
 				<div class="Esplogo">
-					<a href="Index.html"><img src="imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo"></a>
+					<a href="http://127.0.0.1:5500/HTML/Index.html"><img src="imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo"></a>
 				</div>
 
 				<div class="Contenedor-mitades">
@@ -52,12 +52,12 @@
 					<div class="Menu"></div>
 
 					<ul class="nav">
-						<li><a href="Index.html">Inicio</a></li>
+						<li><a href="http://127.0.0.1:5500/HTML/Index.html">Inicio</a></li>
 						<li><a href="">Quienes Somos</a></li>
-						<li><a href="Products.html">Productos</a>
+						<li><a href="http://localhost/Products/">Productos</a>
 							<ul>
 								<br><li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-								<li><a href="http://localhost/CarritoCompra/">Phone</a></li>
+								<li><a href="">Phone</a></li>
 								<li><a href="">Accessories</a></li>
 								<li><a href="">protection</a></li>
 								<li><a href="">SmartWash</a></li>
@@ -66,8 +66,8 @@
 								<li><a href="">recommended</a></li>  
 								<!-- Siguiente columna -->                
 								<br><li id="Titulo1SubMenu"><b>Computing</b></li><br>
-								<li><a href="Computing.html">desktop computer</a></li>
-								<li><a href="">Accessories</a></li>
+								<li><a href="http://localhost/Products/">desktop computer</a></li>
+								<li><a href="http://127.0.0.1:5500/HTML/working.html">Accessories</a></li>
 								<li><a href="">protection</a></li>
 								<li><a href="">Laptop</a></li>
 								<li><a href="">printer</a></li>
@@ -102,6 +102,12 @@
 
 <main>
 
+<?php
+	include('funciones/funciones_tienda.php');	
+	?>
+
+	<img src="imagenes/Computing.jpg" id="ImgComputing" alt="">
+
 	<div class="page-loading active">
 		<div class="page-loading-inner">
 			<div class="page-spinner"></div>
@@ -109,9 +115,35 @@
 		</div>
 	</div>
 
-	<?php
-	include('funciones/funciones_tienda.php');	
-	?>
+
+	<!--<div class="ImgCategorias">
+		<img src="imagenes/imagen1.png" alt="Imagen 1">
+		<img src="imagenes/imagen2.png" alt="Imagen 2">
+		<img src="imagenes/imagen3.png" alt="Imagen 3">
+		<img src="imagenes/imagen4.png" alt="Imagen 4">
+		<img src="imagenes/imagen5.png" alt="Imagen 5">
+	</div> -->
+
+	<div class="Imgcontainer">
+    <div class="images">
+        <img src="imagenes/imagen1.png" alt="Imagen 1">
+        <img src="imagenes/imagen2.png" alt="Imagen 2">
+        <img src="imagenes/imagen3.png" alt="Imagen 3">
+        <img src="imagenes/imagen4.png" alt="Imagen 4">
+        <img src="imagenes/imagen5.png" alt="Imagen 5">
+    </div>
+    <div class="titles">
+        <p>Laptops</p>
+        <p>desktop computer</p>
+        <p>printers</p>
+        <p>Monitors</p>
+        <p>Tablets</p>
+    </div>
+</div>
+
+<div id="Separator"></div>
+
+	
 
 	<div class="super_container">
 		<div class="container mt-5 pt-5">			

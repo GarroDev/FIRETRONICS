@@ -23,7 +23,7 @@
 
 		<header>
 				<div class="Esplogo">
-					<a href="Index.html"><img src="imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo"></a>
+					<a href="http://127.0.0.1:5500/HTML/Index.html"><img src="imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo"></a>
 				</div>
 
 				<div class="Contenedor-mitades">
@@ -55,12 +55,12 @@
 					<div class="Menu"></div>
 
 					<ul class="nav">
-						<li><a href="Index.html">Inicio</a></li>
+						<li><a href="http://127.0.0.1:5500/HTML/Index.html">Inicio</a></li>
 						<li><a href="">Quienes Somos</a></li>
-						<li><a href="Products.html">Productos</a>
+						<li><a href="http://localhost/Products/">Productos</a>
 							<ul>
 								<br><li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-								<li><a href="http://localhost/CarritoCompra/">Phone</a></li>
+								<li><a href="">Phone</a></li>
 								<li><a href="">Accessories</a></li>
 								<li><a href="">protection</a></li>
 								<li><a href="">SmartWash</a></li>
@@ -69,8 +69,8 @@
 								<li><a href="">recommended</a></li>  
 								<!-- Siguiente columna -->                
 								<br><li id="Titulo1SubMenu"><b>Computing</b></li><br>
-								<li><a href="Computing.html">desktop computer</a></li>
-								<li><a href="">Accessories</a></li>
+								<li><a href="http://localhost/Products/">desktop computer</a></li>
+								<li><a href="http://127.0.0.1:5500/HTML/working.html">Accessories</a></li>
 								<li><a href="">protection</a></li>
 								<li><a href="">Laptop</a></li>
 								<li><a href="">printer</a></li>

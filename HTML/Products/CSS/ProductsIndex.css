@@ -217,7 +217,7 @@ ul, ol {
 }
 
 
-/* ::::SEPARATOR:::: */
+/* ::::SEPARATOR1:::: */
 
 #Separator {
     display: flex;
@@ -237,72 +237,87 @@ ul, ol {
 
 /* ::::SEPARATOR:::: */
 
-.categories {/* Categories Buttons */
-    justify-content: space-around;/* This make them responsive */
-    padding: 10px;
-    background-color: #ffffff;
-    width: 80%;
-  }
-  .category-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    font-size: 16px;
-    cursor: pointer;
-  }
-  .category-button img {
-    width: 80px;
-    height: 80px;
-    margin-right: 10px;
-  }
 
-
-.Info1{/* Info section */
-    font-family: 'Lato', sans-serif;
-    background-color: #9A9C9F;
-    display: flex;
-    justify-content: space-between;
+#ImgComputing {
+    
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+    max-height: 50vh; /* Limita la altura de la imagen a la mitad de la altura de la ventana */
+    display: block; /* Para asegurar que los márgenes automáticos funcionen correctamente */
+    margin-top:20px; /* Centra la imagen horizontalmente */
 }
 
-.Div1Info1{
-    margin-left: 10%;
+
+/*.ImgCategorias {
+    display: flex;
+    justify-content: space-between; 
+    max-width: 80%; 
+    margin: auto;
+    margin-top: 50px; 
+}
+
+.ImgCategorias img {
+    width: auto;
+    height: 180px;
+}*/
+
+
+/*---------------------*/
+
+
+.Imgcontainer {
+    display: flex;
+    flex-direction: column; /* Apila los dos divs uno encima del otro */
+    align-items: center; /* Centra horizontalmente los divs */
     
 }
 
-.Div2Info1{
-    margin-top: 10%;
-    margin-right: 10%;
+.images, .titles {
+    display: flex; /* Organiza los elementos horizontalmente */
+    justify-content: space-between; /* Espacia uniformemente los elementos */
+    width: 80%; /* Limita el ancho de los divs para evitar que se extiendan demasiado */
+    margin-top: 20px; /* Espacio entre los divs */
 }
 
-.ImgInfo1{
-    width: 908px;
-    height: 445.48px;
+.images img {
+    width: 15%; /* Tamaño de las imágenes */
+    height: 10%;
 }
 
-.Info2{/* Info section 2*/
+.titles {
+    
+    display: flex;
+    justify-content: space-between;
+    width: 83%;
+    margin-top: -10px;
+    align-items: flex-start; /* Alinea los elementos al principio del eje transversal (vertical) */
+}
+
+.titles p {
+    width: 18%; /* Ancho de los títulos para que coincida con las imágenes */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: auto; /* Centra el texto hacia arriba */
     font-family: 'Lato', sans-serif;
+    color: #222831;
+    font-size: 23px;
+    font-weight: bold; /* Pone el texto en negrita */
+}
+
+/* ::::SEPARATOR2:::: */
+
+#Separator {
+    display: flex;
     background-color: #32E0C4;
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    height: 30px; /* Ajusta la altura según tus necesidades */
+    overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
 }
 
-.Div1Info2{
-    margin-right: 10%;
+.super_container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: -100px;
     
-}
-
-.Div2Info2{
-    margin-top: 10%;
-    margin-left: 10%;
-}
-
-.ImgInfo2{
-    width: 706.45px;
-    height: 438px;
-}
-
+  }
 
 /* ::::PIE DE PAGINA FOOTER:::: */
 
