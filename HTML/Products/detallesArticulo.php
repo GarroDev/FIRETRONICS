@@ -70,7 +70,7 @@
 								<!-- Siguiente columna -->                
 								<br><li id="Titulo1SubMenu"><b>Computing</b></li><br>
 								<li><a href="http://localhost/Products/">desktop computer</a></li>
-								<li><a href="http://localhost/Products/?opcion_submenu=tienda">Accessories</a></li>
+								<li><a href="http://127.0.0.1:5500/HTML/working.html">Accessories</a></li>
 								<li><a href="">protection</a></li>
 								<li><a href="">Laptop</a></li>
 								<li><a href="">printer</a></li>
@@ -125,7 +125,7 @@
 
 <?php
 // Definir el archivo a incluir por defecto
-$archivoIncluir = 'funciones/funciones_Computing.php';
+$archivoIncluir = 'funciones/funciones_tienda.php';
 
 // Verificar si se ha enviado una opción_submenu en la URL
 if(isset($_GET['opcion_submenu'])) {
@@ -134,16 +134,22 @@ if(isset($_GET['opcion_submenu'])) {
 
     // Determinar qué archivo incluir dependiendo de la opción_submenu
     switch($opcion_submenu) {
-        case 'tienda':
-            $archivoIncluir = 'funciones/funciones_tienda.php';
+        case 'DesktopComputer':
+            $archivoIncluir = 'funciones/funciones_DesktopComputer.php';
             break;
+		case 'Accessories':
+            $archivoIncluir = 'funciones/funciones_Accessories.php';
+            break;
+
+
+			
         // Agregar más casos según sea necesario para otras opciones
         // case 'OtraOpcion':
         //     $archivoIncluir = 'funciones/funciones_OtraOpcion.php';
         //     break;
         default:
             // Si la opción_submenu no coincide con ningún caso, incluir el archivo por defecto
-            $archivoIncluir = 'funciones/funciones_Computing.php';
+            $archivoIncluir = 'funciones/funciones_tienda.php';
             break;
     }
 }
