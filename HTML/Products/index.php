@@ -66,8 +66,10 @@
 								<li><a href="">recommended</a></li>  
 								<!-- Siguiente columna -->                
 								<br><li id="Titulo1SubMenu"><b>Computing</b></li><br>
-								<li><a href="http://localhost/Products/">desktop computer</a></li>
-								<li><a href="http://127.0.0.1:5500/HTML/working.html">Accessories</a></li>
+							<!--<li><a href="http://localhost/Products/">desktop computer</a></li>-->
+								<li><a href="http://localhost/Products/?opcion_submenu=computing">desktop computer</a></li>
+    
+								<li><a href="http://localhost/Products/?opcion_submenu=tienda">Accessories</a></li>
 								<li><a href="">protection</a></li>
 								<li><a href="">Laptop</a></li>
 								<li><a href="">printer</a></li>
@@ -103,8 +105,43 @@
 <main>
 
 <?php
-	include('funciones/funciones_tienda.php');	
-	?>
+/*
+include('funciones/funciones_tienda.php');	
+*/
+?>
+
+
+
+<?php
+// Variable para almacenar el nombre del archivo a incluir por defecto
+$archivoIncluir = 'funciones/funciones_tienda.php';
+
+// Verificar si se ha enviado un valor de opción desde el submenu
+if(isset($_GET['opcion_submenu'])) {
+    // Obtener la opción seleccionada del submenu
+    $opcion_submenu = $_GET['opcion_submenu'];
+
+    // Cambiar el nombre del archivo a incluir según la opción seleccionada
+    switch($opcion_submenu) {
+        case 'computing':
+            $archivoIncluir = 'funciones/funciones_Computing.php';
+            break;
+        case 'Accessories':
+            $archivoIncluir = 'funciones/funciones_tienda.php';
+            break;
+        // Agregar más casos según sea necesario para otras opciones
+        default:
+            $archivoIncluir = 'funciones/funciones_tienda.php';
+            break;
+    }
+}
+
+// Incluir el archivo correspondiente
+include($archivoIncluir);
+?>
+
+
+
 
 	<img src="imagenes/Computing.jpg" id="ImgComputing" alt="">
 

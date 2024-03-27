@@ -10,6 +10,7 @@ div {
 ul {
   list-style: none;
   margin-bottom: 0px;
+  
 }
 p {
   font-family: "Poppins", sans-serif;
@@ -350,9 +351,14 @@ section {
   padding-bottom: 80px;
   border-bottom: solid 1px #ebebeb;
 }
-.single_product_thumbnails {
+/*.single_product_thumbnails {
   height: 527px;
+}*/
+
+.single_product_thumbnails {
+  width: 200px; /* ajusta este valor según tus necesidades */
 }
+
 .single_product_thumbnails ul li {
   position: relative;
   /*height: 136px;*/
@@ -381,10 +387,17 @@ section {
 .image_col {
   padding-right: 30px;
 }
-.single_product_image {
+/*.single_product_image {
   width: 100%;
   height: 527px;
+}*/
+
+.single_product_image {
+  width: 100%;
+  max-width: 800px; /* ajusta este valor según tus necesidades */
+  height: auto; /* para mantener la proporción */
 }
+
 .single_product_image_background {
   position: absolute;
   top: 0;
@@ -400,13 +413,23 @@ section {
 6. Product Details
 *********************************/
 
-.product_details {
+/*.product_details {
   width: 100%;
 }
 .product_details_title {
   font-weight: 500px;
   line-height: 30px;
+}*/
+
+.product_details {
+  margin-top: 20px; /* ajusta este valor según tus necesidades */
 }
+
+.product_details_title {
+  margin-bottom: 20px; /* ajusta este valor según tus necesidades */
+}
+
+
 .product_details_title p {
   margin-top: 12px;
 }
