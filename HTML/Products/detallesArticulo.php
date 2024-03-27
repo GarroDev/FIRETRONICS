@@ -70,7 +70,7 @@
 								<!-- Siguiente columna -->                
 								<br><li id="Titulo1SubMenu"><b>Computing</b></li><br>
 								<li><a href="http://localhost/Products/">desktop computer</a></li>
-								<li><a href="http://127.0.0.1:5500/HTML/working.html">Accessories</a></li>
+								<li><a href="http://localhost/Products/?opcion_submenu=tienda">Accessories</a></li>
 								<li><a href="">protection</a></li>
 								<li><a href="">Laptop</a></li>
 								<li><a href="">printer</a></li>
@@ -112,12 +112,57 @@
 			</div>
 
 				<div class="super_container">
+					
 					<?php
 
-					include('funciones/funciones_tienda.php');
-					$idProd = isset($_POST['idProd']) ? $_POST['idProd'] : $_GET['idProd'];
-					$resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
+					//include('funciones/funciones_Computing.php');
+					//$idProd = isset($_POST['idProd']) ? $_POST['idProd'] : $_GET['idProd'];
+					//$resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
 					?>
+
+
+
+
+<?php
+// Definir el archivo a incluir por defecto
+$archivoIncluir = 'funciones/funciones_Computing.php';
+
+// Verificar si se ha enviado una opción_submenu en la URL
+if(isset($_GET['opcion_submenu'])) {
+    // Obtener la opción_submenu de la URL
+    $opcion_submenu = $_GET['opcion_submenu'];
+
+    // Determinar qué archivo incluir dependiendo de la opción_submenu
+    switch($opcion_submenu) {
+        case 'tienda':
+            $archivoIncluir = 'funciones/funciones_tienda.php';
+            break;
+        // Agregar más casos según sea necesario para otras opciones
+        // case 'OtraOpcion':
+        //     $archivoIncluir = 'funciones/funciones_OtraOpcion.php';
+        //     break;
+        default:
+            // Si la opción_submenu no coincide con ningún caso, incluir el archivo por defecto
+            $archivoIncluir = 'funciones/funciones_Computing.php';
+            break;
+    }
+}
+
+// Imprimir el valor actual de la variable
+echo "El valor actual de \$archivoIncluir es: $archivoIncluir";
+
+// Incluir el archivo determinado
+include($archivoIncluir);
+
+// Resto del código de detallesArticulo.php
+$idProd = isset($_POST['idProd']) ? $_POST['idProd'] : $_GET['idProd'];
+$resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
+?>
+
+
+
+
+
 
 					<div class="container single_product_container">
 						<div class="row">

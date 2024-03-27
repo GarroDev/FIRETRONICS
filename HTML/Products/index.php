@@ -136,12 +136,12 @@ if(isset($_GET['opcion_submenu'])) {
     }
 }
 
+// Imprimir el valor actual de la variable
+echo "El valor actual de \$archivoIncluir es: $archivoIncluir";
+
 // Incluir el archivo correspondiente
 include($archivoIncluir);
 ?>
-
-
-
 
 	<img src="imagenes/Computing.jpg" id="ImgComputing" alt="">
 
@@ -212,9 +212,13 @@ include($archivoIncluir);
 									$ <?php echo number_format($dataProduct['precio'], 0, '', '.'); ?>
 								</p>
 							</div>
-							<a href="detallesArticulo.php?idProd=<?php echo $dataProduct["prodId"]; ?>" class="red_button btn_puntos" title="Ver <?php echo $dataProduct['nameProd']; ?>">
+							<a href="detallesArticulo.php?idProd=<?php echo $dataProduct["prodId"]; ?>&opcion_submenu=<?php echo isset($_GET['opcion_submenu']) ? $_GET['opcion_submenu'] : 'tienda'; ?>" class="red_button btn_puntos" title="Ver <?php echo $dataProduct['nameProd']; ?>">
 								Ver Producto
 								<i class="bi bi-arrow-right-circle"></i>
+							</a>
+
+
+								
 							</a>
 						</div>
 					</div>
