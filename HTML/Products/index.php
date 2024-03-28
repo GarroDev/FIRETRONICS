@@ -64,48 +64,48 @@
 					
 					<div class="Menu"></div>
 
-					<ul class="nav">
-						<li><a href="http://127.0.0.1:5500/HTML/Index.html">Inicio</a></li>
-						<li><a href="">Quienes Somos</a></li>
-						<li><a href="http://localhost/Products/">Productos</a>
-							<ul>
-								<br><li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-								<li><a href="">Phone</a></li>
-								<li><a href="">Accessories</a></li>
-								<li><a href="">protection</a></li>
-								<li><a href="">SmartWash</a></li>
-								<li><a href="">Wireless headphones</a></li>
-								<li><a href="">Tablets</a></li>
-								<li><a href="">recommended</a></li>  
-								<!-- Siguiente columna -->                
-								<br><li id="Titulo1SubMenu"><b>Computing</b></li><br>
-							<!--<li><a href="http://localhost/Products/">desktop computer</a></li>-->
-								<li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer">desktop computer</a></li>
-								<li><a href="http://localhost/Products/?opcion_submenu=Accessories">Accessories</a></li>
-								<li><a href="">protection</a></li>
-								<li><a href="">Laptop</a></li>
-								<li><a href="">printer</a></li>
-								<li><a href="">network elements</a></li>
-								<li><a href="">repowering</a></li>
-								<!-- Siguiente columna -->
-								<br><li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
-								<li><a href="">Smart TV</a></li>
-								<li><a href="">Sound equipment</a></li>
-								<li><a href="">Projectors</a></li>
-								<li><a href="">Microphones</a></li>
-								<li><a href="">Cabling</a></li>
-								<li><a href="">Converters</a></li>
-								<li><a href="">Consoles</a></li>
-							</ul>                       
-						</li>
-						<li><a href="">Convenios</a></li>
-						<li><a href="">Ofertas</a></li>
-						<li><a href="">Rastreos</a></li>
-						<li><a href="">Pedidos</a></li>
-						<li><a href="">Ayuda</a></li>
-					</ul>
+						<ul class="nav">
+							<li><a class="menu-link" href="http://127.0.0.1:5500/HTML/Index.html">Inicio</a></li>
+							<li><a class="menu-link" href="">Quienes Somos</a></li>
+							<li><a class="menu-link" href="">Productos</a>
+								<ul>
+									<br><li id="Titulo1SubMenu"><h1 class="h1Titulos">Phone & Smart Wash</h1></li><br>
+									<li><a href="">Phone</a></li>
+									<li><a href="">Accessories</a></li>
+									<li><a href="">protection</a></li>
+									<li><a href="">SmartWash</a></li>
+									<li><a href="">Wireless headphones</a></li>
+									<li><a href="">Tablets</a></li>
+									<li><a href="">recommended</a></li>  
+									<!-- Siguiente columna -->                
+									<br><li id="Titulo1SubMenu"><a href="http://localhost/Products/?opcion_submenu=DesktopComputer"><h1 class="h1Titulos">Computer</h1></li><br></a>
+								<!--<li><a href="http://localhost/Products/">desktop computer</a></li>-->
+									<li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a></li>
+									<li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Accessories</a></li>
+									<li><a href="">protection</a></li>
+									<li><a href="">Laptop</a></li>
+									<li><a href="">printer</a></li>
+									<li><a href="">network elements</a></li>
+									<li><a href="">repowering</a></li>
+									<!-- Siguiente columna -->
+									<br><li id="Titulo1SubMenu"><h1 class="h1Titulos">TV, Audio/Video</h1></li><br>
+									<li><a href="">Smart TV</a></li>
+									<li><a href="">Sound equipment</a></li>
+									<li><a href="">Projectors</a></li>
+									<li><a href="">Microphones</a></li>
+									<li><a href="">Cabling</a></li>
+									<li><a href="">Converters</a></li>
+									<li><a href="">Consoles</a></li>
+								</ul>                       
+							</li>
+							<li><a class="menu-link" href="">Convenios</a></li>
+							<li><a class="menu-link" href="">Ofertas</a></li>
+							<li><a class="menu-link" href="">Rastreos</a></li>
+							<li><a class="menu-link" href="">Pedidos</a></li>
+							<li><a class="menu-link" href="">Ayuda</a></li>
+						</ul>
 
-				</div>    
+					</div>    
 
 						
 			</header>
