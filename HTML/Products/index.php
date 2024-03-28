@@ -12,8 +12,21 @@
 	<link rel="stylesheet" type="text/css" href="assets/styles/prueba/main_styles.css">  <!--IMPORTANTE-->
 	<link rel="stylesheet" type="text/css" href="assets/styles/responsive.css">
 	<link rel="stylesheet" href="assets/styles/loader.css">
-	<link href="css/ProductsIndex.css" rel="stylesheet">
+	<link href="css/ProductsIndex.css" rel="stylesheet">	
 	<title>Productos</title>
+
+	<script>function redireccionar1() {
+    window.location.href = ''; }</script>
+	<script>function redireccionar2() {
+    window.location.href = 'http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino'; }</script> 
+	<script>function redireccionar3() {
+    window.location.href = ''; }</script> 
+	<script>function redireccionar4() {
+    window.location.href = ''; }</script> 
+	<script>function redireccionar5() {
+    window.location.href = 'http://localhost/Products/?opcion_submenu=Accessories#SectionDestino'; }</script> 
+
+
 </head>
 
 <body>
@@ -163,13 +176,15 @@ include($archivoIncluir);
 	</div> -->
 
 	<div class="Imgcontainer">
-    <div class="images">
-        <img src="imagenes/imagen1.png" alt="Imagen 1">
-        <img src="imagenes/imagen2.png" alt="Imagen 2">
-        <img src="imagenes/imagen3.png" alt="Imagen 3">
-        <img src="imagenes/imagen4.png" alt="Imagen 4">
-        <img src="imagenes/imagen5.png" alt="Imagen 5">
-    </div>
+		
+		<div class="images">
+			<img src="imagenes/imagen1.png" alt="Imagen 1" alt="Laptops " class="cambiar-cursor" onclick="redireccionar1()">
+			<img src="imagenes/imagen2.png" alt="Imagen 2" alt="Image Computer Desktop " class="cambiar-cursor" onclick="redireccionar2()">
+			<img src="imagenes/imagen3.png" alt="Imagen 3" alt="Printers " class="cambiar-cursor" onclick="redireccionar3()">
+			<img src="imagenes/imagen4.png" alt="Imagen 4" alt="Monitors " class="cambiar-cursor" onclick="redireccionar4()">
+			<img src="imagenes/imagen5.png" alt="Imagen 5" alt="Tablets " class="cambiar-cursor" onclick="redireccionar5()">
+		</div>
+
     <div class="titles">
         <p>Laptops</p>
         <p>desktop computer</p>
@@ -183,7 +198,7 @@ include($archivoIncluir);
 
 	
 
-	<div class="super_container">
+	<div class="super_container" id="SectionDestino">
 		<div class="container mt-5 pt-5">			
 
 		
@@ -243,7 +258,7 @@ include($archivoIncluir);
             <p id="titleFooter4">2024</p>
 
 		</footer>
-		<script src="script.js"></script> 
+		<script src="../../JavaScript/script.js"></script> 
 
 </body>
 

@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include('config/config.php');
 
 /**
@@ -17,7 +17,7 @@ function getProductData($con)
         FROM 
             products AS p
         INNER JOIN
-            Accessories AS f
+        accessories AS f
         ON 
             p.id = f.products_id;
     ");

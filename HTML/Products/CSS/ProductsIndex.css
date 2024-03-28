@@ -234,10 +234,6 @@ ul, ol {
     height: 322px;
 }
   
-
-/* ::::SEPARATOR:::: */
-
-
 #ImgComputing {
     
     max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
@@ -245,7 +241,6 @@ ul, ol {
     display: block; /* Para asegurar que los márgenes automáticos funcionen correctamente */
     margin-top:20px; /* Centra la imagen horizontalmente */
 }
-
 
 /*.ImgCategorias {
     display: flex;
@@ -260,9 +255,7 @@ ul, ol {
     height: 180px;
 }*/
 
-
 /*---------------------*/
-
 
 .Imgcontainer {
     display: flex;
@@ -281,6 +274,11 @@ ul, ol {
 .images img {
     width: 15%; /* Tamaño de las imágenes */
     height: 10%;
+}
+
+  /* Estilo para el cursor cuando pasa sobre la imagen con la clase "cambiar-cursor" */
+  .cambiar-cursor:hover {
+    cursor: pointer; /* Cambia el cursor a la mano */
 }
 
 .titles {
