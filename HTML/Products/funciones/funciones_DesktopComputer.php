@@ -8,26 +8,26 @@ include('config/config.php');
  */
 function getProductData($con)
 {
-    $sqlProducts = ("
+    $sqltextproductsdesktop = ("
         SELECT 
             p.id AS prodId,
             p.nameProd,
             p.precio,
             f.foto1
         FROM 
-            products AS p
+        textproductsdesktop AS p
         INNER JOIN
             DesktopComputer AS f
         ON 
             p.id = f.products_id;
     ");
-    $queryProducts = mysqli_query($con, $sqlProducts);
+    $querytextproductsdesktop = mysqli_query($con, $sqltextproductsdesktop);
 
-    if (!$queryProducts) {
+    if (!$querytextproductsdesktop) {
         return false;
     }
     // Si todo está bien, devuelves el resultado del query
-    return $queryProducts;
+    return $querytextproductsdesktop;
 }
 
 /**
@@ -46,7 +46,7 @@ function detalles_producto_seleccionado($con, $idProd)
             f.foto2,
             f.foto3
         FROM 
-            products AS p
+        textproductsdesktop AS p
         INNER JOIN
             desktopcomputer AS f
         ON 
@@ -104,7 +104,7 @@ function mi_carrito_de_compra($con)
                     pt.cantidad,
                     pt.tokenCliente
                 FROM 
-                    products AS p
+                textproductsdesktop AS p
                 INNER JOIN
                     desktopcomputer AS f ON p.id = f.products_id
                 INNER JOIN
@@ -148,7 +148,7 @@ function totalAcumuladoDeuda($con)
     if (isset($_SESSION['tokenStoragel']) != "") {
         $SqlDeudaTotal = "
         SELECT SUM(p.precio * pt.cantidad) AS totalPagar 
-        FROM products AS p
+        FROM textproductsdesktop AS p
         INNER JOIN pedidostemporales AS pt
         ON p.id = pt.producto_id
         WHERE pt.tokenCliente = '" . $_SESSION["tokenStoragel"] . "'
