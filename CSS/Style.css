@@ -7,7 +7,7 @@ body {
     background-color: #EEEEEE; /* Color de fondo (puedes cambiarlo) */
   }
 
-/* ::::ENCABEZADO:::: */
+/* ::::HEADER:::: */
 
 header {
     display: flex;
@@ -35,9 +35,9 @@ header {
     max-height: 100%;
 }
 
-/*---Busqueda y menú----*/
+/*---Search and menu----*/
 
-/*---estructura----*/
+/*---estructure----*/
 .Contenedor-mitades {
     display: flex;
     flex: 1;
@@ -62,9 +62,9 @@ header {
     align-items: center; /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
-/*---Contenido----*/
+/*---Content----*/
 
-/*barra de busqueda*/
+/*search bar*/
 #barrabusqueda{
 width: 70%;
 height: 40px;
@@ -78,7 +78,7 @@ letter-spacing: 0px;
 font-weight: bold;
 }
 
-/*---Botones----*/
+/*---Buttons----*/
 .botones {
     flex: 1;
     background-color: #222831;
@@ -94,8 +94,6 @@ button {
     margin: 10px;
   }
   .custom-btn {
-    width: 140px;
-    height: 40px;
     color: #222831;
     border-radius: 5px;
     font-family: 'Lato', sans-serif;
@@ -118,6 +116,14 @@ button {
 .btn-1 {
     background-color: #32E0C4;
     border: none;
+    width: 140px;
+    height: 40px;
+}
+.btn-2 {
+    background-color: #6cd5c4;
+    border: none;
+    width: 50px;
+    height: 50px;
 }
 
 .btn-1:hover {
@@ -160,18 +166,25 @@ ul, ol {
 .nav li ul {
     opacity: 0;
     color: #EEEEEE;
-    background-color:#434343;    
+    background-color:#434343;
+    font-family: 'Lato', sans-serif;   
     visibility: hidden;
-    position: fixed; /* Cambiado: posición fija con respecto al documento */
-    width:900px;
-    height: 400px;
-    /*column-count: 3; /* Agregado: dividir en 3 columnas */
-    /*column-gap: 20px; /* Agregado: espacio entre columnas */
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Agregado: velocidad de transición */
-    z-index: 1; /* Agregado: establece una posición superior para que el menú aparezca sobre otros elementos */
-    top: 130px; /* Ajusta según sea necesario */
-    left: 409px; /* Ajusta según sea necesario */
+    position: fixed;
+    width: auto; /* Cambiado: ancho automático para adaptarse al contenido */
+    height: 500px; /* Cambiado: altura automática para adaptarse al contenido */
+    column-count: 3; /* Agregado: dividir en 3 columnas */
+    column-gap: 40px; /* Agregado: espacio entre columnas */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1;
+    top: 130px;
+    left: 409px;
 }
+
+.nav li ul li {
+    border-right: 1px solid #CCCCCC; /* Añade una línea vertical a la derecha de cada elemento del submenú */
+    position: relative;
+}
+
 
 .nav li:hover > ul {
     
@@ -211,7 +224,7 @@ ul, ol {
 }
 
 
-/* ::::SEPARADOR:::: */
+/* ::::SEPARATOR:::: */
 
 #Separador {
     display: flex;
@@ -221,9 +234,79 @@ ul, ol {
     overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
 }
 
-/* ::::CUERPO MAIN:::: */
+/* ::::BODY MAIN:::: */
+
+.Promossize{/* Adjustable size (original based on Marvel)(delete () if this is changed) */
+    width: 1169px;
+    height: 322px;
+}
+  
+
+.categories {/* Categories Buttons */
+    justify-content: space-around;/* This make them responsive */
+    padding: 10px;
+    background-color: #ffffff;
+    width: 80%;
+  }
+  .category-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .category-button img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
 
 
+.Info1{/* Info section */
+    font-family: 'Lato', sans-serif;
+    background-color: #9A9C9F;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Div1Info1{
+    margin-left: 10%;
+    
+}
+
+.Div2Info1{
+    margin-top: 10%;
+    margin-right: 10%;
+}
+
+.ImgInfo1{
+    width: 908px;
+    height: 445.48px;
+}
+
+.Info2{/* Info section 2*/
+    font-family: 'Lato', sans-serif;
+    background-color: #32E0C4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Div1Info2{
+    margin-right: 10%;
+    
+}
+
+.Div2Info2{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.ImgInfo2{
+    width: 706.45px;
+    height: 438px;
+}
 
 
 /* ::::PIE DE PAGINA FOOTER:::: */
@@ -233,7 +316,7 @@ footer {
     background-color: #222831;
     color: #EEE;    
     padding: 20px;
-    position: fixed; /* Fija el footer en la parte inferior de la ventana */
+    /*position: fixed;  Fija el footer en la parte inferior de la ventana */
     width: 100%; /* Ocupa el 100% del ancho de la ventana */
     bottom: 0; /* Coloca el footer en la parte inferior */
     overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
@@ -267,14 +350,27 @@ footer {
     top: -40px; /* Ajusta la posición verticalmente según tus necesidades */
     left: -25px;   
 }
-
-.Promos{
-    background-color: #222831;
-
+.contenedor-padre {
+    display: flex;
 }
 
-.Promossize{
-    width: 1500px;
-    height: 400px;
+.contenedor-izquierdo {
+    flex: 1; /* La columna izquierda ocupa el 60% del espacio */
+    background-color: rgb(70, 221, 201);
+    max-height: 1000px;
+    padding-bottom: 20px;
 }
-  
+
+.contenedor-derecho {
+    flex: 0.5; /* La columna derecha ocupa el 40% del espacio */
+    background-color: rgb(70, 221, 201);
+    margin-left: 20px;
+    max-height: 200px;
+}
+.containerProd{
+    background-color: rgb(255, 255, 255);
+     
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
