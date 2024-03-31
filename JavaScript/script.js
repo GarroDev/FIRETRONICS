@@ -8,12 +8,4 @@ setInterval(function() {
     currentIndex = (currentIndex + 1) % tabs.length;
 }, 5000); // Cambia cada 5 segundos 
 
-// Verificar si existe la variable "cartnumb" en sessionStorage
-if(sessionStorage.getItem("cartnumb")) {
-    var itemCount = parseInt(sessionStorage.getItem("cartnumb"));
-    if(itemCount > 0) {
-        var cartItemCountSpan = document.getElementById("cartItemCount");
-        cartItemCountSpan.innerText = itemCount;
-        cartItemCountSpan.style.visibility = "visible";
-    }
-}
+
