@@ -49,12 +49,12 @@ app.post('/registro', async (req, res) => {
 });
 
 
-app.get('/usuario', async (req, res) => {
+app.post('/usuario', async (req, res) => {
   try {
     const { email, password } = req.body;  
     console.log("Inicio")
     await sql.connect(config);
-    const query = `SELECT * FROM CUSTOMERS WHERE Email = '${email}' and Password = '${password}' `;
+    const query = `SELECT Email, Password FROM CUSTOMERS WHERE Email = '${email}' and Password = '${password}'`;
     console.log(query)
     const result = await sql.query(query);
     // Verificar si se encontraron resultados
