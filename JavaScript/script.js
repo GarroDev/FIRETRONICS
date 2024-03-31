@@ -8,3 +8,4 @@ setInterval(function() {
     currentIndex = (currentIndex + 1) % tabs.length;
 }, 5000); // Cambia cada 5 segundos 
 
+

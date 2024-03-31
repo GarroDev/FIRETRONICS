@@ -41,13 +41,15 @@
                         <a href="../HTML/SignUp.html">
                             <button class="custom-btn btn-1">Sign Up</button> 
                         </a>
-                        
+
                         <a href="../HTML/ShoppingCart.html">
-                          <button id="carritoBtn" class="custom-btn btn-2">
-                              <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
-                              <span id="cartItemCount"></span>
-                          </button>
-                      </a>
+                            <button id="carritoBtn" class="custom-btn btn-2">
+                                <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
+                                <span id="cartItemCount"></span>
+                            </button>
+                        </a>
+                        
+                        
                     </div> 
 
                 </div>  
@@ -86,50 +88,63 @@
 
 
     <!-- Crupo, formulario de registro -->
-        <main >
+        <main  style="text-align: center; padding: 20px;" >
    
-            
-                <section class="bg-light py-3 py-md-5">
-                    <div class="container">
-                      <div class="row justify-content-center">
-                        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
-                          <div class="card border border-light-subtle rounded-3 shadow-sm">
-                            <div class="card-body p-3 p-md-4 p-xl-5">
-                              <div class="text-center mb-3">            
-                                <h1>Sign In</h1>            
-                              </div>
-                              <h2 class="fs-6 fw-normal text-center text-secondary mb-4">Enter your details to register</h2>
-                              <form action="http://localhost:3002/usuario" method="GET">
-                                <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                      <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-                                      <label for="email" class="form-label">Email</label>
-                                    </div>
-                                  </div>                            
-                                  <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                      <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
-                                      <label for="password" class="form-label">Password</label>
-                                    </div>
-                                  </div>
-                                  <div class="col-12">                                    
-                                  </div>
-                                  <div class="col-12">
-                                    <div class="d-grid my-3">
-                                      <button class="btn btn-primary btn-lg" type="submit">Sign In</button>
-                                    </div>
-                                  </div>              
-                                  <p class="m-0 text-secondary text-center"><a href="../HTML/Working.html" class="link-primary text-decoration-none">¿Forget your password?</a></p>                                                  
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
+            <h2 class="mt-4 mb-4 text-center">Shipping Information</h2>
 
-
+<form style=" max-width: 700px;margin: auto;">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
+    
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea class="form-control" id="address" name="address" rows="4"></textarea>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city" name="city">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="zip">ZIP Code:</label>
+            <input type="text" class="form-control" id="zip" name="zip">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" class="form-control" id="country" name="country">
+    </div>
+    
+    <div class="form-group">
+        <label for="total">Total:</label>
+        <input type="text" class="form-control" id="total" name="total" value="$100.00" disabled>
+    </div>
+    
+    <div class="form-group">
+        <label for="payment">Payment Method:</label>
+        <select class="form-control" id="payment" name="payment">
+            <option value="credit">Credit Card</option>
+            <option value="debit">Debit Card</option>
+            <option value="paypal">PayPal</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="installments">Installments:</label>
+        <select class="form-control" id="installments" name="installments">
+            <option value="1">1 installment</option>
+            <option value="2">2 installments</option>
+            <option value="3">3 installments</option>
+            <option value="4">4 installments</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
             
         </main>
@@ -150,6 +165,6 @@
 
         
 
-        <script src="../JavaScript/script.js"></script> 
+        <script src="../JavaScript/script.js"></script>  
     </body>
 </html>
