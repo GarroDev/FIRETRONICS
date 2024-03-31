@@ -69,10 +69,10 @@
 								<li><a href="">recommended</a></li>  
 								<!-- Siguiente columna -->                
 								<br><li id="Titulo1SubMenu"><b>Computing</b></li><br>
-								<li><a href="http://localhost/Products/">desktop computer</a></li>
-								<li><a href="http://127.0.0.1:5500/HTML/working.html">Accessories</a></li>
+								<li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a></li>
+								<li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Accessories</a></li>
 								<li><a href="">protection</a></li>
-								<li><a href="">Laptop</a></li>
+								<li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
 								<li><a href="">printer</a></li>
 								<li><a href="">network elements</a></li>
 								<li><a href="">repowering</a></li>
@@ -137,6 +137,11 @@ if(isset($_GET['opcion_submenu'])) {
         case 'DesktopComputer':
             $archivoIncluir = 'funciones/funciones_DesktopComputer.php';
             break;
+		case 'Laptops':
+			$archivoIncluir = 'funciones/funciones_Laptops.php';
+		break;
+
+
 		case 'Accessories':
             $archivoIncluir = 'funciones/funciones_Accessories.php';
             break;
@@ -154,8 +159,6 @@ if(isset($_GET['opcion_submenu'])) {
     }
 }
 
-// Imprimir el valor actual de la variable
-echo "El valor actual de \$archivoIncluir es: $archivoIncluir";
 
 // Incluir el archivo determinado
 include($archivoIncluir);

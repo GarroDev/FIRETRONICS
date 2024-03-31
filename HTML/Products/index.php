@@ -16,7 +16,7 @@
 	<title>Productos</title>
 
 	<script>function redireccionar1() {
-    window.location.href = ''; }</script>
+    window.location.href = 'http://localhost/Products/?opcion_submenu=Laptops#SectionDestino'; }</script>
 	<script>function redireccionar2() {
     window.location.href = 'http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino'; }</script> 
 	<script>function redireccionar3() {
@@ -78,12 +78,12 @@
 									<li><a href="">Tablets</a></li>
 									<li><a href="">recommended</a></li>  
 									<!-- Siguiente columna -->                
-									<br><li id="Titulo1SubMenu"><a href="http://localhost/Products/?opcion_submenu=DesktopComputer"><h1 class="h1Titulos">Computer</h1></li><br></a>
+									<br><li id="Titulo1SubMenu"><a href=""><h1 class="h1Titulos">Computer</h1></li><br></a>
 								<!--<li><a href="http://localhost/Products/">desktop computer</a></li>-->
 									<li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a></li>
 									<li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Accessories</a></li>
 									<li><a href="">protection</a></li>
-									<li><a href="">Laptop</a></li>
+									<li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
 									<li><a href="">printer</a></li>
 									<li><a href="">network elements</a></li>
 									<li><a href="">repowering</a></li>
@@ -140,6 +140,10 @@ if(isset($_GET['opcion_submenu'])) {
         case 'Accessories':
             $archivoIncluir = 'funciones/funciones_Accessories.php';
             break;
+		case 'Laptops':
+			$archivoIncluir = 'funciones/funciones_Laptops.php';
+			break;
+
 		case 'tienda':
             $archivoIncluir = 'funciones/funciones_tienda.php';
             break;
@@ -149,9 +153,6 @@ if(isset($_GET['opcion_submenu'])) {
             break;
     }
 }
-
-// Imprimir el valor actual de la variable
-echo "El valor actual de \$archivoIncluir es: $archivoIncluir";
 
 // Incluir el archivo correspondiente
 include($archivoIncluir);
@@ -190,7 +191,7 @@ include($archivoIncluir);
         <p>desktop computer</p>
         <p>printers</p>
         <p>Monitors</p>
-        <p>Tablets</p>
+        <p>Networks</p>
     </div>
 </div>
 
