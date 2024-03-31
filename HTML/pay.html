@@ -88,9 +88,63 @@
 
 
     <!-- Crupo, formulario de registro -->
-        <main  style="text-align: center;">
+        <main  style="text-align: center; padding: 20px;" >
    
-            <H1>SORRY!!! <br> WE ARE WORKING IN THIS PAGE</H1>
+            <h2 class="mt-4 mb-4 text-center">Shipping Information</h2>
+
+<form style=" max-width: 700px;margin: auto;">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
+    
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea class="form-control" id="address" name="address" rows="4"></textarea>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city" name="city">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="zip">ZIP Code:</label>
+            <input type="text" class="form-control" id="zip" name="zip">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" class="form-control" id="country" name="country">
+    </div>
+    
+    <div class="form-group">
+        <label for="total">Total:</label>
+        <input type="text" class="form-control" id="total" name="total" value="$100.00" disabled>
+    </div>
+    
+    <div class="form-group">
+        <label for="payment">Payment Method:</label>
+        <select class="form-control" id="payment" name="payment">
+            <option value="credit">Credit Card</option>
+            <option value="debit">Debit Card</option>
+            <option value="paypal">PayPal</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="installments">Installments:</label>
+        <select class="form-control" id="installments" name="installments">
+            <option value="1">1 installment</option>
+            <option value="2">2 installments</option>
+            <option value="3">3 installments</option>
+            <option value="4">4 installments</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
             
         </main>
