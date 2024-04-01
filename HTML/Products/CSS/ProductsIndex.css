@@ -1,0 +1,373 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Hace que el contenido ocupe al menos el 100% de la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    background-color: #EEEEEE; /* Color de fondo (puedes cambiarlo) */
+  }
+
+/* ::::HEADER:::: */
+
+header {
+    display: flex;
+    width: 100%;
+    height: 140px; /* Ajusta la altura según tus necesidades */
+    overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
+}
+
+/*---LOGO----*/
+
+.Esplogo {
+    flex: 0 0 auto;
+    background-color: #EEEEEE; /* Color de fondo (puedes cambiarlo) */
+   
+    height: auto;
+    overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
+}
+
+.Esplogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*---Search and menu----*/
+
+/*---estructure----*/
+.Contenedor-mitades {
+    display: flex;
+    flex: 1;
+    flex-direction: column; /* Coloca las mitades en una columna */
+}
+
+.Login {
+    flex: 1;
+    background-color: #222831;
+    height: 90%;
+    display: flex; /* Agregado: establece el contenedor "Login" como un contenedor flex */
+    flex-direction: row; /* Coloca los elementos en una columna */
+    align-items: center; /* Alinea los elementos al final del contenedor (a la derecha) */
+}
+
+.buscador {
+    flex: 2;
+    height: 85px;
+    display: flex; /* Agregado: establece el contenedor "Login" como un contenedor flex */
+    flex-direction: row; /* Coloca los elementos en una columna */
+    justify-content: center; /* Alinea los elementos al final del contenedor (a la derecha) */
+    align-items: center; /* Alinea los elementos al final del contenedor (a la derecha) */
+}
+
+/*---Content----*/
+
+/*search bar*/
+#barrabusqueda{
+width: 70%;
+height: 40px;
+border-radius: 10px;
+font-family: 'Lato', sans-serif;
+color: #9fa1a3;
+text-align: left; /* Alinea el texto a la izquierda */
+vertical-align: middle; /* Centra verticalmente el contenido */
+font-size: 17px;
+letter-spacing: 0px;
+font-weight: bold;
+}
+
+/*---Buttons----*/
+.botones {
+    flex: 1;
+    background-color: #222831;
+    width: 10px;
+    height: 70%;
+    display: flex; /* Agregado: establece el contenedor "Login" como un contenedor flex */
+    flex-direction: row; /* Coloca los elementos en una columna */
+    justify-content: flex-end; /* Alinea los elementos al final del contenedor (a la derecha) */
+    align-items: center; /* Alinea los elementos al final del contenedor (a la derecha) */
+}
+
+button {
+    margin: 10px;
+  }
+  .custom-btn {
+    width: 140px;
+    height: 40px;
+    color: #222831;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0px;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    box-sizing: border-box;
+    padding: 10px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+      7px 7px 20px 0px rgba(0, 0, 0, .1),
+      4px 4px 5px 0px rgba(0, 0, 0, .1);
+}
+
+.btn-1 {
+    background-color: #32E0C4;
+    border: none;
+}
+
+.btn-1:hover {
+    background-color: #EEEEEE;
+}
+
+/*---Menú----*/
+.Menu {
+    flex: 1;
+    display: flex; /* Agregado: establece el contenedor "Menu" como un contenedor flex */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    justify-content: flex-start; /* Alinea los elementos en la parte superior del contenedor */
+    margin-top: -10px; /* Ajusta según sea necesario */
+}
+
+ul, ol {
+    list-style:none;
+}
+
+.nav > li {
+    float:left;
+    position: relative;
+}
+
+.nav .menu-link {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0px;
+    color:#222831;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+}
+
+.nav li a:hover {
+    color:#EEEEEE;
+    background-color:#434343;
+}
+
+.nav li ul {
+    color: #EEEEEE;
+    font-size: 20px;
+    background-color: rgba(67, 67, 67, 0.95);
+    font-family: 'Lato', sans-serif;   
+    visibility: hidden;
+    position: fixed;
+    padding-left: 20px;
+    width: auto; /* Cambiado: ancho automático para adaptarse al contenido */
+    height: 400px; /* Cambiado: altura automática para adaptarse al contenido */
+    column-count: 3; /* Agregado: dividir en 3 columnas */
+    column-gap: 40px; /* Agregado: espacio entre columnas */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1;
+    top: 130px;
+    left: 409px;
+}
+
+.nav li ul li {
+    border-right: 1px solid #CCCCCC; /* Añade una línea vertical a la derecha de cada elemento del submenú */
+    position: relative;
+    margin-bottom: 15px;
+}
+
+
+.nav li:hover > ul {
+    
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav li ul li {
+    
+    position:relative;
+}
+
+.nav li ul li ul {
+    
+    right:-140px;
+    top:0px;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Agregado: velocidad de transición */
+    z-index: 2; /* Agregado: establece una posición superior para que el menú aparezca sobre otros elementos */
+}
+
+.nav li ul:hover > li ul {
+    
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav li:hover > ul li a {
+    color: #c4c4c4;
+}
+
+.nav li:hover > ul li:hover > a {
+    color: #969696;
+}
+
+#Titulo1SubMenu{
+    font-size: 24px;
+    
+}
+
+.h1Titulos{
+    color: #EEE;
+    font-size: 28px;
+}
+
+
+/* ::::SEPARATOR1:::: */
+
+#Separator {
+    display: flex;
+    background-color: #32E0C4;
+    width: 100%;
+    height: 30px; /* Ajusta la altura según tus necesidades */
+    overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
+}
+
+/* ::::BODY MAIN:::: */
+
+.Promossize{/* Adjustable size (original based on Marvel)(delete () if this is changed) */
+    width: 1169px;
+    height: 322px;
+}
+  
+#ImgComputing {
+    
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+    max-height: 50vh; /* Limita la altura de la imagen a la mitad de la altura de la ventana */
+    display: block; /* Para asegurar que los márgenes automáticos funcionen correctamente */
+    margin-top:20px; /* Centra la imagen horizontalmente */
+}
+
+/*.ImgCategorias {
+    display: flex;
+    justify-content: space-between; 
+    max-width: 80%; 
+    margin: auto;
+    margin-top: 50px; 
+}
+
+.ImgCategorias img {
+    width: auto;
+    height: 180px;
+}*/
+
+/*---------------------*/
+
+.Imgcontainer {
+    display: flex;
+    flex-direction: column; /* Apila los dos divs uno encima del otro */
+    align-items: center; /* Centra horizontalmente los divs */
+    
+}
+
+.images, .titles {
+    display: flex; /* Organiza los elementos horizontalmente */
+    justify-content: space-between; /* Espacia uniformemente los elementos */
+    width: 80%; /* Limita el ancho de los divs para evitar que se extiendan demasiado */
+    margin-top: 20px; /* Espacio entre los divs */
+}
+
+.images img {
+    width: 15%; /* Tamaño de las imágenes */
+    height: 10%;
+}
+
+  /* Estilo para el cursor cuando pasa sobre la imagen con la clase "cambiar-cursor" */
+  .cambiar-cursor:hover {
+    cursor: pointer; /* Cambia el cursor a la mano */
+}
+
+.titles {
+    
+    display: flex;
+    justify-content: space-between;
+    width: 83%;
+    margin-top: -10px;
+    align-items: flex-start; /* Alinea los elementos al principio del eje transversal (vertical) */
+}
+
+.titles p {
+    width: 18%; /* Ancho de los títulos para que coincida con las imágenes */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: auto; /* Centra el texto hacia arriba */
+    font-family: 'Lato', sans-serif;
+    color: #222831;
+    font-size: 23px;
+    font-weight: bold; /* Pone el texto en negrita */
+}
+
+/* ::::SEPARATOR2:::: */
+
+#Separator {
+    display: flex;
+    background-color: #32E0C4;
+    width: 100%;
+    height: 30px; /* Ajusta la altura según tus necesidades */
+    overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
+}
+
+.super_container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: -100px;
+    
+  }
+
+/* ::::PIE DE PAGINA FOOTER:::: */
+
+footer {
+    
+    background-color: #222831;
+    color: #ffffff;    
+    padding: 20px;
+    /*position: fixed;  Fija el footer en la parte inferior de la ventana */
+    width: 100%; /* Ocupa el 100% del ancho de la ventana */
+    bottom: 0; /* Coloca el footer en la parte inferior */
+    overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+  #titleFooter1{
+    font-size: 30px;
+    color: #ffffff;  
+    position: relative; /* Permite ajustar la posición relativa al contenedor */
+    top: -25px; /* Ajusta la posición verticalmente según tus necesidades */
+    left: -25px;   
+}
+
+#titleFooter2{
+    font-size: 20px;
+    color: #ffffff;  
+    position: relative; /* Permite ajustar la posición relativa al contenedor */
+    top: -25px; /* Ajusta la posición verticalmente según tus necesidades */
+    left: -25px;   
+}
+
+#titleFooter3{
+    font-size: 20px;
+    color: #ffffff; 
+    position: relative; /* Permite ajustar la posición relativa al contenedor */
+    top: -35px; /* Ajusta la posición verticalmente según tus necesidades */
+    left: -25px;   
+}
+
+#titleFooter4{
+    font-size: 20px;
+    color: #ffffff; 
+    position: relative; /* Permite ajustar la posición relativa al contenedor */
+    top: -40px; /* Ajusta la posición verticalmente según tus necesidades */
+    left: -25px;   
+}
+
