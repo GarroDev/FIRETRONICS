@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sql = require('mssql');
 const app = express();
-const bcrypt = require('bcrypt');
 const port = 3002;
 
 // Configuración para la conexión a la base de datos
@@ -25,73 +24,57 @@ app.post('/registro', async (req, res) => {
   try {
     // Extraer los datos del formulario
     const { name, email, password } = req.body;  
-    const hashedPassword = await bcrypt.hash(password, 10);
     console.log(req.body);
     // Establecer una conexión con la base de datos
     await sql.connect(config);
     // Definir la consulta SQL para insertar los datos del usuario
-    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
+    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${password}')`;
     console.log(query)
     // Ejecutar la consulta SQL
     await sql.query(query, {
       name,
       email,
-      hashedPassword
+      password
     });
 
     // Cerrar la conexión con la base de datos
     await sql.close();
     // Responder con un mensaje de éxito
-    res.send('¡Successful registration!');
+    res.send('¡Registro exitoso!');
   } catch (error) {
     // Manejar errores
-    console.error('Error insterting values:', error.message);
-    res.status(500).send('Internal server error');
+    console.error('Error al insertar en la base de datos:', error.message);
+    res.status(500).send('Error interno del servidor');
   }
 });
 
 
-
-app.post('/usuario', async (req, res) => {
+app.get('/usuario', async (req, res) => {
   try {
     const { email, password } = req.body;  
-
-    // Establecer una conexión con la base de datos
+    console.log("Inicio")
     await sql.connect(config);
-
-    // Consultar la contraseña almacenada en la base de datos para el usuario dado
-    const query = `SELECT Email, Password FROM CUSTOMERS WHERE Email = '${email}'`;
+    const query = `SELECT * FROM CUSTOMERS WHERE Email = '${email}' and Password = '${password}' `;
+    console.log(query)
     const result = await sql.query(query);
-
     // Verificar si se encontraron resultados
     if (result.recordset.length === 0) {
       // Si no se encontraron resultados, responder con un mensaje indicando que el usuario no existe
-      res.status(404).send('User no found');
-      return;
-    }
-
-    // Obtener la contraseña almacenada en la base de datos
-    const storedPassword = result.recordset[0].Password;
-
-    // Comparar la contraseña proporcionada por el usuario con la contraseña almacenada en la base de datos
-    const passwordMatch = await bcrypt.compare(password, storedPassword);
-
-    if (passwordMatch) {
-      // Si las contraseñas coinciden, responder con un mensaje indicando que el usuario fue encontrado
-      res.send("User found");
+      res.status(404).send('Usuario no encontrado');
     } else {
-      // Si las contraseñas no coinciden, responder con un mensaje indicando que la contraseña es incorrecta
-      res.status(401).send('Incorrect password');
+      // Si se encontraron resultados, responder con los datos del usuario
+      res.send("Usuario encontrado");
     }
-
-    // Cerrar la conexión con la base de datos
+    // Cerrar la conexión con la base de sdatos
     await sql.close();
   } catch (error) {
     // Manejar errores
-    console.error('Error geting user information:', error.message);
-    res.status(500).send('Internal server error');
+    console.error('Error al obtener datos del usuario:', error.message);
+    res.status(500).send('Error interno del servidor');
   }
 });
+
+
 
 
 // Iniciar el servidor
