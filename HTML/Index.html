@@ -1,162 +1,262 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Bienvenido Firetronics</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-        <link href="../CSS/Style.css" rel="stylesheet">
-    </head>
 
-    <body>
+<head>
+    <title>Welcome to FireTronics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="../CSS/Style.css" rel="stylesheet">
+</head>
+
+<body>
 
     <!-- ::::ENCABEZADO:::: del sitio web y menu de opciones  -->
 
-        <header>
-            <div class="Esplogo">
-                <a href="Index.html"><img src="../imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo"></a>
+    <header>
+        <div class="Esplogo">
+            <a href="Index.html"><img src="../imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo"></a>
+        </div>
+
+        <div class="Contenedor-mitades">
+
+            <div class="Login">
+
+                <div class="buscador">
+                    <!-- <textarea id="barrabusqueda" name="miTexto" rows="4" cols="50">                            
+                        </textarea> -->
+                    <input type="text" id="barrabusqueda" name="miTexto" value="Buscar de Productos">
+                </div>
+
+                <div class="botones">
+
+                    <a href="../HTML/SignIn.html">
+                        <button class="custom-btn btn-1">Sign In</button>
+                    </a>
+
+
+                    <a href="../HTML/SignUp.html">
+                        <button class="custom-btn btn-1">Sign Up</button>
+                    </a>
+
+                    <a href="../HTML/ShoppingCart.html">
+                        <button id="carritoBtn" class="custom-btn btn-2">
+                            <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
+                            <span id="cartItemCount"></span>
+                        </button>
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="Contenedor-mitades">
+            <div class="Menu"></div>
 
-                <div class="Login">
+            <ul class="nav">
+                <li><a href="../HTML/Index.html">Home</a></li>
+                <li><a href="../HTML/WhoWeAre.html">Who are we</a></li>
+                <li><a href="">Products</a>
+                    <ul>
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
+                        <li><a href="">Phone</a></li>
+                        <li><a href="">Accessories</a></li>
+                        <li><a href="">Protection</a></li>
+                        <li><a href="">SmartWash</a></li>
+                        <li><a href="">Wireless headphones</a></li>
+                        <li><a href="">Tablets</a></li>
+                        <li><a href="">Recomended</a></li>
+                        <!-- Siguiente columna -->
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Computing</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
+                                computer</a></li>
+                        <li><a
+                                href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Accessories</a>
+                        </li>
+                        <li><a href="">protection</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
+                        <li><a href="">printer</a></li>
+                        <li><a href="">network elements</a></li>
+                        <li><a href="">repowering</a></li>
+                        <!-- Siguiente columna -->
+                        <br>
+                        <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
+                        <li><a href="">Smart TV</a></li>
+                        <li><a href="">Sound equipment</a></li>
+                        <li><a href="">Projectors</a></li>
+                        <li><a href="">Microphones</a></li>
+                        <li><a href="">Cabling</a></li>
+                        <li><a href="">Converters</a></li>
+                        <li><a href="">Consoles</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Agreements</a></li>
+                <li><a href="">Offers</a></li>
+                <li><a href="">Trackings</a></li>
+                <li><a href="">Orders</a></li>
+                <li><a href="">Help</a></li>
+            </ul>
 
-                    <div class="buscador">
-                       <!-- <textarea id="barrabusqueda" name="miTexto" rows="4" cols="50">                            
-                        </textarea> --> 
-                        <input type="text" id="barrabusqueda" name="miTexto" value="Buscar de Productos">
-                    </div>
+        </div>
 
-                    <div class="botones"> 
-                       
-                        <a href="../HTML/SignIn.html">
-                            <button class="custom-btn btn-1">Sign In</button>
-                        </a>
-                        
-                        
-                        <a href="../HTML/SignUp.html">
-                            <button class="custom-btn btn-1">Sign Up</button> 
-                        </a>
-                        
-                        <a href="../HTML/ShoppingCart.html">
-                            <button id="carritoBtn" class="custom-btn btn-2">
-                                <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
-                                <span id="cartItemCount"></span>
-                            </button>
-                        </a>
-                        
-                    </div> 
 
-                </div>  
-                
-                <div class="Menu"></div>
+    </header>
 
-                <ul class="nav">
-                    <li><a href="../HTML/Index.html">Inicio</a></li>
-                    <li><a href="../HTML/WhoWeAre.html">Quienes Somos</a></li>
-                    <li><a href="">Productos</a>
-                        <ul>
-                            <br><li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-                            <li><a href="">Phone</a></li>
-                            <li><a href="">Accessories</a></li>
-                            <li><a href="">protection</a></li>
-                            <li><a href="">SmartWash</a></li>
-                            <li><a href="">Wireless headphones</a></li>
-                            <li><a href="">Tablets</a></li>
-                            <li><a href="">recommended</a></li>  
-                            <!-- Siguiente columna -->                
-                            <br><li id="Titulo1SubMenu"><b>Computing</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a></li>
-							<li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Accessories</a></li>
-                            <li><a href="">protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
-                            <li><a href="">printer</a></li>
-                            <li><a href="">network elements</a></li>
-                            <li><a href="">repowering</a></li>
-                            <!-- Siguiente columna -->
-                            <br><li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
-                            <li><a href="">Smart TV</a></li>
-                            <li><a href="">Sound equipment</a></li>
-                            <li><a href="">Projectors</a></li>
-                            <li><a href="">Microphones</a></li>
-                            <li><a href="">Cabling</a></li>
-                            <li><a href="">Converters</a></li>
-                            <li><a href="">Consoles</a></li>
-                        </ul>                       
-                    </li>
-                    <li><a href="">Convenios</a></li>
-                    <li><a href="">Ofertas</a></li>
-                    <li><a href="">Rastreos</a></li>
-                    <li><a href="">Pedidos</a></li>
-                    <li><a href="">Ayuda</a></li>
-                </ul>
-
-            </div>    
-
-                    
-        </header>
-
-        <div id="Separador"></div>
+    <div id="Separador"></div>
 
 
     <!-- Cuerpo del sitio web -->
-        <main>
-                                   
-            <div class="container-fluid mt-5 Promos">
-                <ul class="nav nav-tabs visually-hidden" id="myTabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="tab1" data-toggle="tab" href="#content1">Contenido 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="tab2" data-toggle="tab" href="#content2">Contenido 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="tab3" data-toggle="tab" href="#content3">Contenido 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="tab4" data-toggle="tab" href="#content4">Contenido 4</a>
-                    </li>
-                    <!-- Agrega más pestañas según sea necesario -->
-                </ul>
-        
-                <div class="tab-content mt-3 col d-flex justify-content-center align-items-center ">
-                    <div class="tab-pane fade show active Promos" id="content1">
-                        <img src="../Promos/Black-Friday-phone-deals-2023-recap.jpg" alt="" class="Promossize">
+    <main>
+
+        <div class="container-fluid mt-5 Promos">
+            <ul class="nav nav-tabs visually-hidden" id="myTabs">
+                <li class="nav-item">
+                    <a class="nav-link active" id="tab1" data-toggle="tab" href="#content1">Con1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab2" data-toggle="tab" href="#content2">Con2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab3" data-toggle="tab" href="#content3">Con3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab4" data-toggle="tab" href="#content4">Con4</a>
+                </li>
+                <!-- Add more tabs here -->
+            </ul>
+
+            <div class="tab-content mt-3 col d-flex justify-content-center align-items-center ">
+                <div class="tab-pane fade show active Promos" id="content1">
+                    <img src="../imagenes/Promos/Black-Friday-phone-deals-2023-recap.jpg" alt="" class="Promossize">
+                </div>
+                <div class="tab-pane fade" id="content2">
+                    <img src="../imagenes/Promos/Best-Samsung-Galaxy-Z-Fold-3-Prime-Day-deals.jpg" alt=""
+                        class="Promossize">
+                </div>
+                <div class="tab-pane fade" id="content3">
+                    <img src="../imagenes/Promos/Phone_Daddy_14.webp" alt="" class="Promossize">
+                </div>
+                <div class="tab-pane fade" id="content4">
+                    <img src="../imagenes/Promos/Promo1.jpg" alt="" class="Promossize">
+                </div>
+
+                <!-- Add more panels here -->
+            </div>
+        </div>
+        <br><br>
+        <div class="categories container-fluid">
+
+            <button class="category-button">
+                <img src="../imagenes/Categories/Cel.png" alt="Celulares">
+                <b>Cellphones</b>
+            </button>
+
+            <button class="category-button">
+                <img src="../imagenes/Categories/Ten.png" alt="Tenis">
+                <b>Tennis</b>
+            </button>
+
+            <button class="category-button">
+                <img src="../imagenes/Categories/Elec.png" alt="Electrodomésticos">
+                <b>Apliance</b>
+            </button>
+
+            <button class="category-button">
+                <img src="../imagenes/Categories/Home.png" alt="Hogar">
+                <b>Home</b>
+            </button>
+
+            <button class="category-button">
+                <img src="../imagenes/Categories/TV.png" alt="TV y Audio">
+                <b>TV & Audio</b>
+            </button>
+
+            <button class="category-button">
+                <img src="../imagenes/Categories/Beauty.png" alt="Belleza">
+                <b>Beauty</b>
+            </button>
+        </div>
+
+        <div class="container-fluid mt-5 Info1 ">
+            <div class="Div1Info1">
+                <img src="../imagenes/Index2.png" alt="" class="ImgInfo1">
+            </div>
+            <div class="Div2Info1 justify-content-center align-items-center ">
+                <h2><b>Power and Elegance Fused</b></h2>
+                <p><br>Discover the technological revolution with Apple's <br>
+                    unparalleled innovation! Immerse yourself in a world of limitless <br>
+                    possibilities with our cutting-edge devices: Mac, iPad, and iPhone</p>
+                <button type="button" class="btn btn-secondary">See more</button>
+                </button>
+            </div>
+        </div>
+
+        <div class="container-fluid mt-5 Info2 ">
+            <div class="Div2Info2 justify-content-center align-items-center ">
+                <h2><b>Power and Elegance Fused</b></h2>
+                <p><br>Discover the technological revolution with Apple's <br>
+                    unparalleled innovation! Immerse yourself in a world of limitless <br>
+                    possibilities with our cutting-edge devices: Mac, iPad, and iPhone</p>
+                <button type="button" class="btn btn-secondary">See more</button>
+                </button>
+            </div>
+            <div class="Div1Info2">
+                <img src="../imagenes/Index3.png" alt="" class="ImgInfo2">
+            </div>
+        </div>
+
+        <br>
+        <br>
+        </div>
+
+        <div class="container-fluid">
+            <!-- Botón de ayuda -->
+            <button id="helpButton" class="circular-button btn btn-primary">?</button>
+
+            <!-- Popup de ayuda -->
+            <div id="helpPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close">×</span>
+                    <div class="chat">
+                        <div id="chatArea" class="chat-area">
+                            <p class="Sys">¿En qué te puedo ayudar?<br></p>
+                        </div>
+                        <div id="helpList" class="list-group"><br>
+                            <button class="help-button list-group-item list-group-item-action chatsub"
+                                value="problema">Tengo un problema</button>
+                            <button class="help-button list-group-item list-group-item-action chatsub"
+                                value="consulta">Tengo una consulta</button>
+                            <button class="help-button list-group-item list-group-item-action chatsub"
+                                value="sugerencia">Quiero hacer una sugerencia</button>
+                            <br>
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="content2">
-                        <img src="../Promos/Best-Samsung-Galaxy-Z-Fold-3-Prime-Day-deals.jpg" alt="" class="Promossize">
-                    </div>
-                    <div class="tab-pane fade" id="content3">
-                        <img src="../Promos/Phone_Daddy_14.webp" alt="" class="Promossize">
-                    </div>
-                    <div class="tab-pane fade" id="content4">
-                        <img src="../Promos/Promo1.jpg" alt="" class="Promossize">
-                    </div>
-                    
-                    <!-- Agrega más paneles de contenido según sea necesario -->
                 </div>
             </div>
-
-        </main>
-
-
-    <!-- Pie de pagina del sitio web -->        
-        <footer>
-            <p id="titleFooter1">FireTronics</p>
-            <p id="titleFooter2">Todos los derechos reservados</p>
-            <p id="titleFooter3">Politécnico Colombiano Jaime Isaza Cadavid</p>
-            <p id="titleFooter4">2024</p>
-
-        </footer>
-
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+        </div>
         
+    </main>
 
-        <script src="../JavaScript/script.js"></script> 
-    </body>
+
+    <!-- Pie de pagina del sitio web -->
+    <footer>
+        <p id="titleFooter1">FireTronics</p>
+        <p id="titleFooter2">All Rights Reserved</p>
+        <p id="titleFooter3">Politécnico Colombiano Jaime Isaza Cadavid</p>
+        <p id="titleFooter4">2024</p>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+
+    <script src="../JavaScript/script.js"></script>
+</body>
+
 </html>
