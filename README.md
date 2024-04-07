@@ -1,5 +1,9 @@
 ## Welcome to FIRETRONICS E-Commerce!
 
+## What motivated us to do this project?
+
+Help people, develop new skill, and explore our creativity, are some things that motivated us to create this project.
+
 ## What is this project about?
 
 This is a technology E-commerce web application. This web application was created with JavaScript, HTML, Bootstrap and JavaScript, storing products, customers information, and purchase records in SQL Server datatabase (RDBMS).
@@ -7,6 +11,10 @@ This is a technology E-commerce web application. This web application was create
 ## Why use this project?
 
 This is a good base to create your own E-commerce project about wathever you want, it's awesome, enjoy it! :shipit:
+
+## What we learned?
+
+New ways to create projects, and use different softwares to achieve a great goal.
 
 ## How can you start using this project?
 |Order|Detail|
