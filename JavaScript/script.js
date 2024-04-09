@@ -34,45 +34,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Agregar un mensaje del sistema
             var sysMessage = document.createElement('p');
-            sysMessage.textContent = "El sistema está procesando tu solicitud...";
+            sysMessage.textContent = "Select the best option for you";
             sysMessage.classList.add('Sys');
             chatArea.appendChild(sysMessage);
 
             // Definir las nuevas opciones basadas en la selección
             var newOptions = [];
             var newOptions2 = [];
-            if (target.value === 'problema' || target.value === 'consulta' || target.value === 'sugerencia') {
+            if (target.value === 'Problema') {
                 newOptions = [
-                    { text: "Tengo un problema con un pedido", value: "subopcion1" },
-                    { text: "Tengo un problema con un pago", value: "subopcion2" }
+                    { text: "I have an issue with an order", value: "Subopcion1" },
+                    { text: "I have an issue with a payment", value: "Subopcion2" }
                 ];
-            } else if (target.value === 'subopcion1') {
+            } else if (target.value === 'Subopcion1') {
                 newOptions = [
-                    { text: "Deseo rastrear su pedido", value: "subopcion" },
-                    { text: "Deseo cancelar un pedido", value: "subopcion" }
+                    { text: "I want to track an order", value: "Subopcion" },
+                    { text: "I want to cancel an order", value: "Subopcion" }
                 ];
-            } else if (target.value === 'subopcion2') {
+            } else if (target.value === 'Subopcion2') {
                 newOptions = [
-                    { text: "Quiero pagar pero no se procesa", value: "subopcion" },
-                    { text: "Quiero cancelar un pago", value: "subopcion" }
+                    { text: "I did a payment but I havent got a confirmation", value: "Subopcion" },
+                    { text: "I want to cancel a payment", value: "Subopcion" }
                 ];
-            } else if (target.value === 'consulta') {
+            } else if (target.value === 'Consulta') {
                 newOptions = [
-                    { text: "Quiero buscar un producto que no encuentro", value: "subopcion" },
-                    { text: "Estoy buscando x producto", value: "subopcion" }
+                    { text: "I want to search a product I am not able to find ", value: "Subopcion" },
+                    { text: "I am seraching for this x project", value: "Subopcion" }
                 ];
-            } else if (target.value === 'sugerencia') {
+            } else if (target.value === 'Sugerencia') {
                 newOptions = [
-                    { text: "Quiero hacer una sugerencia sobre los pagos", value: "subopcion3" },
-                    { text: "Quiero quejarme con alguien", value: "subopcion" }
+                    { text: "I want to do a sugestion for the payments", value: "Subopcion3" },
+                    { text: "I want to file a complaint with someone", value: "Subopcion" }
                 ];
-            } else if (target.value === 'subopcion3') {
+            } else if (target.value === 'Subopcion3') {
                 newOptions = [
-                    { text: "Los pagos son muy lentos", value: "subopcion" },
-                    { text: "Los pagos son faciles de hacer", value: "subopcion" },
-                    { text: "los pagos se me complpicaron un poco", value: "subopcion" }
+                    { text: "The payments are slow", value: "Subopcion" },
+                    { text: "The payments are easy to do", value: "Subopcion" },
+                    { text: "The payments are a bit hard to uderstand", value: "Subopcion" }
                 ];
-            } else if (target.value === 'subopcion') {
+            } else if (target.value === 'Subopcion') {
                 createTextInput();
                 createSendButton();
             }
