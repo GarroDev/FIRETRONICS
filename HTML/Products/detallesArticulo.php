@@ -60,12 +60,12 @@
 						<li><a href="http://localhost/Products/">Productos</a>
 							<ul>
 								<br><li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-								<li><a href="">Phone</a></li>
-								<li><a href="">Accessories</a></li>
+								<li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
+								<li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a></li>
 								<li><a href="">protection</a></li>
-								<li><a href="">SmartWash</a></li>
-								<li><a href="">Wireless headphones</a></li>
-								<li><a href="">Tablets</a></li>
+								<li><a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">SmartWash</a></li> 
+								<li><a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">Wireless headphones</a></li>
+								<li><a href="http://localhost/Products/?opcion_submenu=Tablets#SectionDestino">Tablets</a></li>
 								<li><a href="">recommended</a></li>  
 								<!-- Siguiente columna -->                
 								<br><li id="Titulo1SubMenu"><b>Computing</b></li><br>
@@ -73,8 +73,8 @@
 								<li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Accessories</a></li>
 								<li><a href="">protection</a></li>
 								<li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
-								<li><a href="">printer</a></li>
-								<li><a href="">network elements</a></li>
+								<li><a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">Printers</a></li>
+								<li><a href="http://localhost/Products/?opcion_submenu=Network#SectionDestino">network elements</a></li>
 								<li><a href="">repowering</a></li>
 								<!-- Siguiente columna -->
 								<br><li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
@@ -140,6 +140,29 @@ if(isset($_GET['opcion_submenu'])) {
 		case 'Laptops':
 			$archivoIncluir = 'funciones/funciones_Laptops.php';
 		break;
+		case 'Printers':
+			$archivoIncluir = 'funciones/funciones_Printers.php';
+		break;
+		case 'SmartWash':
+			$archivoIncluir = 'funciones/funciones_SmartWash.php';
+		break;
+		case 'WirelessHeadphones':
+			$archivoIncluir = 'funciones/funciones_WirelessHeadphones.php';
+		break;
+		case 'Tablets':
+			$archivoIncluir = 'funciones/funciones_Tablets.php';
+		break;
+		case 'AccesoriesPhone':
+			$archivoIncluir = 'funciones/funciones_AccesoriesPhone.php';
+		break;
+		case 'cellPhone':
+			$archivoIncluir = 'funciones/funciones_cellPhone.php';
+		break;
+		case 'Network':
+			$archivoIncluir = 'funciones/funciones_Network.php';
+		break;
+		
+
 
 
 		case 'Accessories':
@@ -236,7 +259,7 @@ $resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
 											&nbsp;&nbsp;
 
 											<p>
-												<button class="button cart-button btn block" onclick="agregarCarrito(this, '<?php echo $dataProduct['prodId']; ?>', '<?php echo $dataProduct['precio']; ?>')">
+												<button class="button cart-button btn block" onclick="addToCart('<?php echo $dataProduct['prodId']; ?>')">
 													<span>Agregar a Carrito</span>
 													<div class="cart">
 														<svg viewBox="0 0 36 26">
@@ -273,6 +296,32 @@ $resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 		<script src="script.js"></script> 
+		<script>
+    function addToCart(productId) {
+        // Obtener la lista actual de IDs de productos del carrito desde el localStorage
+        let productIds = JSON.parse(localStorage.getItem('ids')) || [];
+
+        // Convertir el productId a un número entero
+        const parsedProductId = parseInt(productId);
+
+        // Verificar si el producto ya está en el carrito
+        if (!productIds.includes(parsedProductId)) {
+            // Agregar el nuevo ID del producto a la lista
+            productIds.push(parsedProductId);
+
+            // Actualizar la lista de IDs de productos en el almacenamiento local
+            localStorage.setItem('ids', JSON.stringify(productIds));
+
+            // Mostrar un mensaje de confirmación
+            console.log('Producto agregado al carrito:', parsedProductId);
+
+            // Actualizar el contador de ítems en el carrito en la interfaz de usuario, si es necesario
+        } else {
+            // Mostrar un mensaje de que el producto ya está en el carrito
+            console.log('El producto ya está en el carrito:', parsedProductId);
+        }
+    }
+</script>
 
 	</body>
 </html>
