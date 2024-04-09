@@ -93,14 +93,14 @@ document.addEventListener('DOMContentLoaded', function () {
 function createTextInput() {
     var input = document.createElement('input');
     input.setAttribute('type', 'text');
-    input.setAttribute('placeholder', 'Escribe tu mensaje aquí');
+    input.setAttribute('placeholder', 'Write here your message');
     input.classList.add('input-text', 'list-group-item', 'list-group-item-action','HelpMesage');
     chatArea.appendChild(input);
 }
 
 function createSendButton() {
     var sendButton = document.createElement('button');
-    sendButton.textContent = 'Enviar';
+    sendButton.textContent = 'Send';
     sendButton.classList.add('HelpButton', 'help-button' ,'list-group-item', 'list-group-item-action', 'chatsub');
     sendButton.addEventListener('click', function () {
         location.reload(); // Recarga
