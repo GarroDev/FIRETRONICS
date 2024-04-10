@@ -12,7 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="assets/styles/prueba/main_styles.css">  <!--IMPORTANTE-->
 	<link rel="stylesheet" type="text/css" href="assets/styles/responsive.css">
 	<link rel="stylesheet" href="assets/styles/loader.css">
-	<link href="css/ProductsIndex.css" rel="stylesheet">	
+	<link href="css/ProductsIndex.css" rel="stylesheet">
+	<link href="css/Style2.css" rel="stylesheet">	
 	<title>Productos</title>
 
 	<script>function redireccionar1() {
@@ -56,6 +57,13 @@
 							<a href="../HTML/SignUp.html">
 								<button class="custom-btn btn-1">Sign Up</button> 
 							</a>
+
+							<a href="http://127.0.0.1:5500/HTML/ShoppingCart.html">
+                        <button id="carritoBtn" class="custom-btn btn-2">
+                            <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
+                            <span id="cartItemCount"></span>
+                        </button>
+                    </a>
 							
 							
 						</div> 

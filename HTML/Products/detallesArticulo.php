@@ -47,6 +47,13 @@
 								<button class="custom-btn btn-1">Sign Up</button> 
 							</a>
 							
+
+							<a href="http://127.0.0.1:5500/HTML/ShoppingCart.html">
+                        <button id="carritoBtn" class="custom-btn btn-2">
+                            <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
+                            <span id="cartItemCount"></span>
+                        </button>
+                    </a>
 							
 						</div> 
 
@@ -258,6 +265,7 @@ $resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
 											</div>
 											&nbsp;&nbsp;
 
+											<!--
 											<p>
 												<button class="button cart-button btn block" onclick="addToCart('<?php echo $dataProduct['prodId']; ?>')">
 													<span>Agregar a Carrito</span>
@@ -269,6 +277,30 @@ $resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
 													</div>
 												</button>
 											</p>
+											-->											
+
+											<p>
+											<button class="button cart-button btn block" onclick="addToCart('<?php echo $dataProduct['prodId']; ?>'); redirectToWebsite()">
+												<span>Agregar a Carrito</span>
+												<div class="cart">
+													<svg viewBox="0 0 36 26">
+														<polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+														<polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+													</svg>
+												</div>
+											</button>
+										</p>
+										
+
+										<script>
+											function redirectToWebsite() {
+												// Redirige al usuario a un sitio web después de agregar el producto al carrito
+												window.location.href = 'http://127.0.0.1:5500/HTML/ShoppingCart.html';
+											}
+										</script>
+
+
+
 
 										</div>
 
