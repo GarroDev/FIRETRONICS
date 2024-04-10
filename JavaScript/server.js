@@ -93,6 +93,68 @@ app.post('/usuario', async (req, res) => {
   }
 });
 
+app.post('/cartitems', async (req, res) => {
+  try {
+    const { id } = req.body;  
+
+    // Establecer una conexión con la base de datos
+    await sql.connect(config);
+
+    // Consultar la contraseña almacenada en la base de datos para el usuario dado
+    const query = `SELECT ID_Product, Name, Price, Stock, Description, IMG FROM PRODUCTS WHERE ID_Product = '${id}'`;
+    const result = await sql.query(query);
+    const Name = result.recordset[0];
+    // Verificar si se encontraron resultados
+    if (result.recordset.length === 0) {
+      // Si no se encontraron resultados, responder con un mensaje indicando que el usuario no existe
+      res.status(404).send('product no found');
+      return;
+    } else{
+      res.send(Name);
+    }
+
+    // Cerrar la conexión con la base de datos
+    await sql.close();
+  } catch (error) {
+    // Manejar errores
+    console.error('Error geting user information:', error.message);
+    res.status(500).send('Internal server error');
+  }
+});
+
+app.post('/getitems', async (req, res) => {
+  try {
+    // Establecer una conexión con la base de datos
+    await sql.connect(config);
+
+    // Consultar todas las filas de la tabla PRODUCTS
+    const query = `SELECT * FROM PRODUCTS`;
+    const result = await sql.query(query);
+
+    // Verificar si se encontraron resultados
+    if (result.recordset.length === 0) {
+      // Si no se encontraron resultados, responder con un mensaje indicando que no se encontraron productos
+      res.status(404).send('No products found');
+      return;
+    } else {
+      // Enviar los resultados como respuesta
+      res.send(result.recordset);
+
+      // Imprimir los resultados en la consola
+      console.log("Products:");
+      result.recordset.forEach(row => {
+        console.log(row);
+      });
+    }
+
+    // Cerrar la conexión con la base de datos
+    await sql.close();
+  } catch (error) {
+    // Manejar errores
+    console.error('Error getting product information:', error.message);
+    res.status(500).send('Internal server error');
+  }
+});
 
 // Iniciar el servidor
 app.listen(port, () => {
