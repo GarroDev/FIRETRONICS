@@ -44,10 +44,10 @@ a:link {
 }
 p a:active {
   position: relative;
-  color: #ff6347;
+  color: #282828;
 }
 p a:hover {
-  color: #ff6347;
+  color: #282828;
   background: #fde0db;
 }
 p a:hover::after {
@@ -55,7 +55,7 @@ p a:hover::after {
 }
 ::selection {
   background: #fde0db;
-  color: #ff6347;
+  color: #282828;
 }
 p::selection {
   background: #fde0db;
@@ -117,7 +117,7 @@ h6 {
   color: #777777 !important;
 }
 .form-control {
-  color: #db5246;
+  color: #282828;
 }
 section {
   display: block;
@@ -306,7 +306,7 @@ section {
   text-transform: uppercase;
 }
 .logo_container a span {
-  color: #fe4c50;
+  color: #282828;
 }
 
 .shop_now_button {
@@ -366,7 +366,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  border: solid 2px #fe4c50;
+  border: solid 2px #282828;
   content: "";
   visibility: hidden;
 }
@@ -443,8 +443,8 @@ section {
 .product_price {
   display: inline-block;
   font-size: 24px;
-  color: #fe4c50;
-  font-weight: 500;
+  color: #282828;
+  font-weight: 501;
   line-height: 30px;
   margin-top: 2px;
 }
@@ -506,7 +506,7 @@ section {
   cursor: pointer;
 }
 .product_favorite:hover::after {
-  color: #fe4c50;
+  color: #282828;
 }
 .product_favorite::after {
   font-family: "FontAwesome";
@@ -515,7 +515,7 @@ section {
 }
 .product_favorite.active::after {
   content: "\f004";
-  color: #fe4c50;
+  color: #282828;
 }
 
 /*********************************
@@ -551,8 +551,8 @@ section {
   color: #b5aec4;
 }
 .tab.active span {
-  color: #fe4c50;
-  border-bottom: solid 1px #fe4c50;
+  color: #282828;
+  border-bottom: solid 1px #282828;
 }
 .tab_container {
   width: 100%;
@@ -573,8 +573,8 @@ section {
 }
 .tab_title h4 {
   display: inline-block;
-  color: #fe4c50;
-  border-bottom: solid 1px #fe4c50;
+  color: #282828;
+  border-bottom: solid 1px #282828;
 }
 .tab_text_block {
   margin-bottom: 133px;
@@ -639,7 +639,7 @@ section {
   padding-left: 30px;
 }
 .review_date {
-  color: #fe4c50;
+  color: #282828;
   margin-top: -4px;
 }
 .user_name {
@@ -742,7 +742,7 @@ section {
 }
 .benefit_icon i {
   font-size: 30px;
-  color: #fe4c50;
+  color: #282828;
 }
 .benefit_content {
   padding-left: 22px;
@@ -792,7 +792,7 @@ section {
   width: 160px;
   height: 46px;
   border: none;
-  background: #fe4c50;
+  background: #282828;
   color: #ffffff;
   font-size: 14px;
   font-weight: 500;
@@ -800,5 +800,5 @@ section {
   cursor: pointer;
 }
 .newsletter_submit_btn:hover {
-  background: #fe7c7f;
+  background: #282828;
 }

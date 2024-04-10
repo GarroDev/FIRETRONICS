@@ -15,7 +15,8 @@
 		<link rel="stylesheet" href="assets/styles/prueba/button_cart.css">
 		<link rel="stylesheet" href="assets/styles/loader.css">
 		<link href="css/DescriptionProduct.css" rel="stylesheet">
-		<title>Productos</title>
+		<link href="css/Style2.css" rel="stylesheet">	
+		<title>Products</title>
 
 	</head>
 
@@ -33,7 +34,7 @@
 						<div class="buscador">
 						<!-- <textarea id="barrabusqueda" name="miTexto" rows="4" cols="50">                            
 							</textarea> --> 
-							<input type="text" id="barrabusqueda" name="miTexto" value="Buscar de Productos">
+							<input type="text" id="barrabusqueda" name="miTexto" value="search products">
 						</div>
 
 						<div class="botones"> 
@@ -61,45 +62,51 @@
 					
 					<div class="Menu"></div>
 
-					<ul class="nav">
-						<li><a href="http://127.0.0.1:5500/HTML/Index.html">Inicio</a></li>
-						<li><a href="">Quienes Somos</a></li>
-						<li><a href="http://localhost/Products/">Productos</a>
-							<ul>
-								<br><li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-								<li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
-								<li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a></li>
-								<li><a href="">protection</a></li>
-								<li><a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">SmartWash</a></li> 
-								<li><a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">Wireless headphones</a></li>
-								<li><a href="http://localhost/Products/?opcion_submenu=Tablets#SectionDestino">Tablets</a></li>
-								<li><a href="">recommended</a></li>  
-								<!-- Siguiente columna -->                
-								<br><li id="Titulo1SubMenu"><b>Computing</b></li><br>
-								<li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a></li>
-								<li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Accessories</a></li>
-								<li><a href="">protection</a></li>
-								<li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
-								<li><a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">Printers</a></li>
-								<li><a href="http://localhost/Products/?opcion_submenu=Network#SectionDestino">network elements</a></li>
-								<li><a href="">repowering</a></li>
-								<!-- Siguiente columna -->
-								<br><li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
-								<li><a href="">Smart TV</a></li>
-								<li><a href="">Sound equipment</a></li>
-								<li><a href="">Projectors</a></li>
-								<li><a href="">Microphones</a></li>
-								<li><a href="">Cabling</a></li>
-								<li><a href="">Converters</a></li>
-								<li><a href="">Consoles</a></li>
-							</ul>                       
-						</li>
-						<li><a href="">Convenios</a></li>
-						<li><a href="">Ofertas</a></li>
-						<li><a href="">Rastreos</a></li>
-						<li><a href="">Pedidos</a></li>
-						<li><a href="">Ayuda</a></li>
-					</ul>
+                <ul class="nav">
+					<li><a href="http://127.0.0.1:5500/HTML/Index.html">Home</a></li>
+                    <li><a href="http://127.0.0.1:5500/HTML/WhoWeAre.html">Who We Are</a></li>
+                    <li><a href="">Products</a>
+                        <ul>
+                            <br>
+                            <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
+                            <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a></li>
+                            <li><a href="">Protection</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">SmartWash</a></li> 
+                            <li><a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">Wireless headphones</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=Tablets#SectionDestino">Tablets</a></li>
+                            <li><a href="">Recomended</a></li>
+                            <!-- Siguiente columna -->
+                            <br>
+                            <li id="Titulo1SubMenu"><b>Computing</b></li><br>
+                            <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
+                                    computer</a></li>
+                            <li><a
+                                    href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a>
+                            </li>
+                            <li><a href="">protection</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">Printers</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=Network#SectionDestino">network elements</a></li>
+                            <li><a href="">repowering</a></li>
+                            <!-- Siguiente columna -->
+                            <br>
+                            <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
+                            <li><a href="">Smart TV</a></li>
+                            <li><a href="">Sound equipment</a></li>
+                            <li><a href="">Projectors</a></li>
+                            <li><a href="">Microphones</a></li>
+                            <li><a href="">Cabling</a></li>
+                            <li><a href="">Converters</a></li>
+                            <li><a href="">Consoles</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Agreements</a></li>
+                    <li><a href="">Offers</a></li>
+                    <li><a href="">Trackings</a></li>
+                    <li><a href="">Orders</a></li>
+                    <li><a href="">Help</a></li>
+                </ul>
 
 				</div>    
 
@@ -251,7 +258,7 @@ $resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
 										<div class="product_price">$<?php echo number_format($dataProduct['precio'], 0, '', '.'); ?> </div>
 
 										<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-											<span style="font-size: 18px;">Cantidad:</span>
+											<span style="font-size: 18px;">amount:</span>
 											<div class="quantity_selector">
 												<span class="minus">
 												</span>
@@ -281,7 +288,7 @@ $resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
 
 											<p>
 											<button class="button cart-button btn block" onclick="addToCart('<?php echo $dataProduct['prodId']; ?>'); redirectToWebsite()">
-												<span>Agregar a Carrito</span>
+												<span>Add to Cart</span>
 												<div class="cart">
 													<svg viewBox="0 0 36 26">
 														<polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
@@ -318,7 +325,7 @@ $resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
 		<!-- Pie de pagina del sitio web -->        
         <footer>
             <p id="titleFooter1">FireTronics</p>
-            <p id="titleFooter2">Todos los derechos reservados</p>
+            <p id="titleFooter2">All Rights Reserved</p>
             <p id="titleFooter3">Politécnico Colombiano Jaime Isaza Cadavid</p>
             <p id="titleFooter4">2024</p>
 
