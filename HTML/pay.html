@@ -57,32 +57,55 @@
                 <div class="Menu"></div>
 
                 <ul class="nav">
-                    <li><a href="../HTML/Index.html">Inicio</a></li>
-                    <li><a href="../HTML/WhoWeAre.html">Quienes Somos</a>                        
-                    </li>
-                    <li><a href="">Productos</a>
-                        <ul>
-                            <br><li id="Titulo1SubMenu">Phone & Smart Wash</li><br>
-                            <li><a href="">Celulares</a></li>
-                            <li><a href="">Accesorios</a></li>
-                            <li><a href="">Protección</a></li>
-                            <li><a href="">SmartWash</a></li>
-                            <li><a href="">Audifonos inalambricos</a></li>
-                            <li><a href="">Tablets</a></li>
-                            <li><a href="">Recomendados</a></li>
-                        </ul>                        
-                    </li>
-                    <li><a href="">Convenios</a></li>
-                    <li><a href="">Ofertas</a></li>
-                    <li><a href="">Rastreos</a></li>
-                    <li><a href="">Pedidos</a></li>
-                    <li><a href="">Ayuda</a></li>
-                </ul>
+                     <li><a href="../HTML/Index.html">Home</a></li>
+                <li><a href="../HTML/WhoWeAre.html">Who We Are</a></li>
+                <li><a href="../HTML/list.html">Products</a>
+                    <ul>
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
+                        <li><a href="">Phone</a></li>
+                        <li><a href="">Accessories</a></li>
+                        <li><a href="">Protection</a></li>
+                        <li><a href="">SmartWash</a></li>
+                        <li><a href="">Wireless headphones</a></li>
+                        <li><a href="">Tablets</a></li>
+                        <li><a href="">Recomended</a></li>
+                        <!-- Siguiente columna -->
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Computing</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
+                                computer</a></li>
+                        <li><a
+                                href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Accessories</a>
+                        </li>
+                        <li><a href="">protection</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
+                        <li><a href="">printer</a></li>
+                        <li><a href="">network elements</a></li>
+                        <li><a href="">repowering</a></li>
+                        <!-- Siguiente columna -->
+                        <br>
+                        <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
+                        <li><a href="">Smart TV</a></li>
+                        <li><a href="">Sound equipment</a></li>
+                        <li><a href="">Projectors</a></li>
+                        <li><a href="">Microphones</a></li>
+                        <li><a href="">Cabling</a></li>
+                        <li><a href="">Converters</a></li>
+                        <li><a href="">Consoles</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Agreements</a></li>
+                <li><a href="">Offers</a></li>
+                <li><a href="">Trackings</a></li>
+                <li><a href="">Orders</a></li>
+                <li><a href="">Help</a></li>
+            </ul>
 
-            </div>    
+        </div>
 
-                    
-        </header>
+
+    </header>
 
         <div id="Separador"></div>
 
@@ -92,7 +115,7 @@
    
             <h2 class="mt-4 mb-4 text-center">Shipping Information</h2>
 
-<form style=" max-width: 700px;margin: auto;">
+<form id="bill" style=" max-width: 700px;margin: auto;">
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" id="name" name="name">
@@ -109,7 +132,7 @@
             <input type="text" class="form-control" id="city" name="city">
         </div>
         <div class="form-group col-md-6">
-            <label for="zip">ZIP Code:</label>
+            <label for="zip">Card Number:</label>
             <input type="text" class="form-control" id="zip" name="zip">
         </div>
     </div>
@@ -138,8 +161,8 @@
         <select class="form-control" id="installments" name="installments">
             <option value="1">1 installment</option>
             <option value="2">2 installments</option>
-            <option value="3">3 installments</option>
-            <option value="4">4 installments</option>
+            <option value="3">18 installments</option>
+            <option value="4">36 installments</option>
         </select>
     </div>
     
@@ -153,7 +176,7 @@
     <!-- Pie de pagina del sitio web -->        
         <footer>
             <p id="titleFooter1">FireTronics</p>
-            <p id="titleFooter2">Todos los derechos reservados</p>
+            <p id="titleFooter2">All Rights Reserved</p>
             <p id="titleFooter3">Politécnico Colombiano Jaime Isaza Cadavid</p>
             <p id="titleFooter4">2024</p>
 
@@ -166,5 +189,89 @@
         
 
         <script src="../JavaScript/script.js"></script>  
+        <script>
+            window.addEventListener('load', function() {
+                // Obtener la variable total del localStorage
+                const total = parseFloat(localStorage.getItem('total'));
+                
+                // Verificar si la variable total es un número válido
+                if (!isNaN(total)) {
+                    // Obtener el campo de entrada total
+                    const totalInput = document.getElementById('total');
+                    
+                    // Asignar el valor numérico de total al campo de entrada
+                    totalInput.value = parseFloat(total.toFixed(2))+10; // Redondear a dos decimales y asignar como valor
+                    
+                    // Si necesitas mostrar el símbolo de dólar, puedes agregarlo al inicio del valor
+                    // totalInput.value = '$' + total.toFixed(2);
+                } else {
+                    console.error('Invalid total value in localStorage');
+                }
+            });
+            
+            document.addEventListener('DOMContentLoaded', function() {
+              const form = document.getElementById('bill');
+          
+              form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Evitar que se envíe el formulario
+          
+                // Obtener los valores de los campos del formulario
+                const name = document.getElementById('name').value;
+                const address = document.getElementById('address').value;
+                const city = document.getElementById('city').value;
+                const zip = document.getElementById('zip').value;
+                const country = document.getElementById('country').value;
+                const total = document.getElementById('total').value;
+                const payment = document.getElementById('payment').value;
+                const installments = document.getElementById('installments').value;
+          
+                // Construir la factura con los valores recogidos
+                const facturaHTML =`
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <h2 style="text-align: center; color: #333;">Bill - Firetronics®</h2>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 8px;"><strong>Name:</strong></td>
+              <td style="padding: 8px;">${name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><strong>Address:</strong></td>
+              <td style="padding: 8px;">${address}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><strong>City:</strong></td>
+              <td style="padding: 8px;">${city}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><strong>Card Number:</strong></td>
+              <td style="padding: 8px;">${zip}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><strong>Country:</strong></td>
+              <td style="padding: 8px;">${country}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><strong>Total:</strong></td>
+              <td style="padding: 8px;">${total}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><strong>Payment Method:</strong></td>
+              <td style="padding: 8px;">${payment}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><strong>Installments:</strong></td>
+              <td style="padding: 8px;">${installments}</td>
+            </tr>
+          </table>
+        </div>
+      `;
+          
+                // Mostrar la factura en una nueva ventana
+                const facturaWindow = window.open('', '_blank');
+                facturaWindow.document.body.innerHTML = facturaHTML;
+              });
+            });
+        </script>
+        
     </body>
 </html>

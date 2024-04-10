@@ -107,3 +107,18 @@ function createSendButton() {
     });
     chatArea.appendChild(sendButton);
 }
+window.addEventListener('load', function() {
+    // Obtener la lista de IDs de productos desde el localStorage
+    const ids = JSON.parse(localStorage.getItem('ids'));
+    
+    // Verificar si la lista de IDs es válida y tiene elementos
+    if (Array.isArray(ids) && ids.length > 0) {
+        // Obtener el elemento <span> que muestra el número de productos en el carrito
+        const itemCountSpan = document.getElementById('cartItemCount');
+        
+        // Actualizar el contenido del elemento <span> con el número de elementos en la lista de IDs
+        itemCountSpan.textContent = ids.length;
+    } else {
+        console.error('Invalid or empty IDs list in localStorage');
+    }
+});  

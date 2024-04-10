@@ -20,11 +20,11 @@
 	<script>function redireccionar2() {
     window.location.href = 'http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino'; }</script> 
 	<script>function redireccionar3() {
-    window.location.href = ''; }</script> 
+    window.location.href = 'http://localhost/Products/?opcion_submenu=Printers#SectionDestino'; }</script> 
 	<script>function redireccionar4() {
-    window.location.href = ''; }</script> 
+    window.location.href = 'http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino'; }</script> 
 	<script>function redireccionar5() {
-    window.location.href = 'http://localhost/Products/?opcion_submenu=Accessories#SectionDestino'; }</script> 
+    window.location.href = 'http://localhost/Products/?opcion_submenu=Network#SectionDestino'; }</script> 
 
 
 </head>
@@ -70,12 +70,12 @@
 							<li><a class="menu-link" href="">Productos</a>
 								<ul>
 									<br><li id="Titulo1SubMenu"><h1 class="h1Titulos">Phone & Smart Wash</h1></li><br>
-									<li><a href="">Phone</a></li>
-									<li><a href="">Accessories</a></li>
+									<li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
+									<li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a></li>
 									<li><a href="">protection</a></li>
-									<li><a href="">SmartWash</a></li>
-									<li><a href="">Wireless headphones</a></li>
-									<li><a href="">Tablets</a></li>
+									<li><a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">SmartWash</a></li>  
+									<li><a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">Wireless headphones</a></li>
+									<li><a href="http://localhost/Products/?opcion_submenu=Tablets#SectionDestino">Tablets</a></li>
 									<li><a href="">recommended</a></li>  
 									<!-- Siguiente columna -->                
 									<br><li id="Titulo1SubMenu"><a href=""><h1 class="h1Titulos">Computer</h1></li><br></a>
@@ -84,8 +84,8 @@
 									<li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Accessories</a></li>
 									<li><a href="">protection</a></li>
 									<li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
-									<li><a href="">printer</a></li>
-									<li><a href="">network elements</a></li>
+									<li><a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">Printers</a></li>
+									<li><a href="http://localhost/Products/?opcion_submenu=Network#SectionDestino">network elements</a></li>
 									<li><a href="">repowering</a></li>
 									<!-- Siguiente columna -->
 									<br><li id="Titulo1SubMenu"><h1 class="h1Titulos">TV, Audio/Video</h1></li><br>
@@ -137,16 +137,37 @@ if(isset($_GET['opcion_submenu'])) {
         case 'DesktopComputer':
             $archivoIncluir = 'funciones/funciones_DesktopComputer.php';
             break;
-        case 'Accessories':
-            $archivoIncluir = 'funciones/funciones_Accessories.php';
+        case 'Printers':
+            $archivoIncluir = 'funciones/funciones_Printers.php';
             break;
 		case 'Laptops':
 			$archivoIncluir = 'funciones/funciones_Laptops.php';
 			break;
+		case 'SmartWash':
+			$archivoIncluir = 'funciones/funciones_SmartWash.php';
+			break;
+		case 'Tablets':
+			$archivoIncluir = 'funciones/funciones_Tablets.php';
+			break;
+		case 'WirelessHeadphones':
+				$archivoIncluir = 'funciones/funciones_WirelessHeadphones.php';
+			break;
+		case 'AccesoriesPhone':
+				$archivoIncluir = 'funciones/funciones_AccesoriesPhone.php';
+			break;
+		case 'cellPhone':
+				$archivoIncluir = 'funciones/funciones_cellPhone.php';
+			break;
+			case 'Network':
+				$archivoIncluir = 'funciones/funciones_Network.php';
+			break;
 
-		case 'tienda':
-            $archivoIncluir = 'funciones/funciones_tienda.php';
-            break;
+
+		case 'Accessories':
+			$archivoIncluir = 'funciones/funciones_Accessories.php';
+			break;			
+
+		
         // Agregar más casos según sea necesario para otras opciones
         default:
             $archivoIncluir = 'funciones/funciones_tienda.php';
@@ -183,13 +204,13 @@ include($archivoIncluir);
 			<img src="imagenes/imagen2.png" alt="Imagen 2" alt="Image Computer Desktop " class="cambiar-cursor" onclick="redireccionar2()">
 			<img src="imagenes/imagen3.png" alt="Imagen 3" alt="Printers " class="cambiar-cursor" onclick="redireccionar3()">
 			<img src="imagenes/imagen4.png" alt="Imagen 4" alt="Monitors " class="cambiar-cursor" onclick="redireccionar4()">
-			<img src="imagenes/imagen5.png" alt="Imagen 5" alt="Tablets " class="cambiar-cursor" onclick="redireccionar5()">
+			<img src="imagenes/imagen5.png" alt="Imagen 5" alt="Network " class="cambiar-cursor" onclick="redireccionar5()">
 		</div>
 
     <div class="titles">
         <p>Laptops</p>
         <p>desktop computer</p>
-        <p>printers</p>
+        <p>Printers</p>
         <p>Monitors</p>
         <p>Networks</p>
     </div>
