@@ -16,6 +16,8 @@ const config = {
   }
 };
 
+
+
 // Middleware para analizar los datos del formulario
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
@@ -160,3 +162,5 @@ app.post('/getitems', async (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
 });
+
+
