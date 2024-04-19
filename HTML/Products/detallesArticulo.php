@@ -337,6 +337,7 @@ $resultadoDetalleProduct = detalles_producto_seleccionado($con, $idProd);
 		<script src="script.js"></script> 
 		<script>
     function addToCart(productId) {
+		console.log("boton agregar carrrito clickeado")
         // Obtener la lista actual de IDs de productos del carrito desde el localStorage
         let productIds = JSON.parse(localStorage.getItem('ids')) || [];
 

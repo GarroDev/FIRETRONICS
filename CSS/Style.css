@@ -153,6 +153,27 @@ button {
     background-color: #EEEEEE;
 }
 
+
+/*---CAMBIO DESPUES DEL INICIO DE SESIÓN----*/
+
+#login-header {
+    text-align: center;
+    font-size: 30px;
+    color: #EEE;
+}
+
+#login-header img {
+    width: 100px; /* Tamaño de la imagen */
+    height: auto;
+    margin-right: 10px;
+}
+
+
+/*---CAMBIO DESPUES DEL INICIO DE SESIÓN----*/
+
+
+
+
 /*---Menú----*/
 .Menu {
     flex: 1;

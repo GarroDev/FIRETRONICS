@@ -4,6 +4,7 @@ const sql = require('mssql');
 const app = express();
 const bcrypt = require('bcrypt');
 const port = 3002;
+const cors = require('cors');
 
 // Configuración para la conexión a la base de datos
 const config = {
@@ -17,6 +18,17 @@ const config = {
 };
 
 
+
+
+// Configurar CORS
+app.use(cors({
+  // Permitir todos los orígenes
+  origin: '*',
+  // Permitir los métodos de solicitud que deseas permitir
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  // Permitir los encabezados personalizados que deseas permitir
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // Middleware para analizar los datos del formulario
 app.use(bodyParser.json());
@@ -78,13 +90,40 @@ app.post('/usuario', async (req, res) => {
     // Comparar la contraseña proporcionada por el usuario con la contraseña almacenada en la base de datos
     const passwordMatch = await bcrypt.compare(password, storedPassword);
 
+
+
+
+
+
+
+    let Perfil = 0;
+
+/*
     if (passwordMatch) {
-      // Si las contraseñas coinciden, responder con un mensaje indicando que el usuario fue encontrado
-      res.send("User found");
+      Perfil = 1;
+            // Si las contraseñas coinciden, redirigir al usuario a la página indicada
+      res.redirect('http://127.0.0.1:5500/HTML/Index.html');
     } else {
       // Si las contraseñas no coinciden, responder con un mensaje indicando que la contraseña es incorrecta
       res.status(401).send('Incorrect password');
-    }
+    }  
+*/
+
+if (passwordMatch) {
+  // Redirigir al usuario a la página indicada con el valor de Perfil como parámetro
+  res.redirect('http://127.0.0.1:5500/HTML/Index.html?Perfil=1');
+} else {
+  // Si las contraseñas no coinciden, responder con un mensaje indicando que la contraseña es incorrecta
+  res.status(401).send('Incorrect password');
+}
+
+
+
+
+
+
+
+    
 
     // Cerrar la conexión con la base de datos
     await sql.close();
@@ -158,6 +197,20 @@ app.post('/getitems', async (req, res) => {
   }
 });
 
+app.post('/receive-data', (req, res) => {
+  // Recibir datos JSON del cuerpo de la solicitud
+  const data = req.body;
+
+  // Guardar los IDs recibidos en la variable local
+    if (data && data.productIds) {
+        ids = data.productIds;
+        console.log('IDs guardados en la variable local:', ids);
+        res.json({ message: 'Datos recibidos y guardados correctamente' });
+        localStorage.setItem('ids', ids)
+    } else {
+        res.status(400).json({ error: 'Datos incorrectos o faltantes' });
+    }
+});
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
