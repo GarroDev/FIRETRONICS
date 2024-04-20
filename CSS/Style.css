@@ -6,7 +6,6 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #EEEEEE;
-    /* Color de fondo (puedes cambiarlo) */
 }
 
 /* ::::HEADER:::: */
@@ -101,7 +100,6 @@ header {
     font-family: 'Roboto Slab', serif;
     font-style: italic;
     font-size: 20px;
-    /* Cambia el tamaño según lo desees */
     color: #eee;
     /* Color que prefieras */
     /* Otros estilos que desees agregar */
@@ -136,9 +134,7 @@ header {
     flex-direction: row;
     /* Coloca los elementos en una columna */
     justify-content: flex-end;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
     align-items: center;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
 button {

@@ -6,7 +6,6 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #EEEEEE;
-    /* Color de fondo (puedes cambiarlo) */
 }
 
 /* ::::ENCABEZADO:::: */
@@ -26,8 +25,6 @@ header {
 .Esplogo {
     flex: 0 0 auto;
     background-color: #EEEEEE;
-    /* Color de fondo (puedes cambiarlo) */
-
     height: auto;
     overflow: hidden;
     /* Para asegurar que la imagen no sobresalga del contenedor */
@@ -68,18 +65,16 @@ header {
     flex: 2;
     height: 85px;
     display: flex;
-    /* Agregado: establece el contenedor "Login" como un contenedor flex */
     flex-direction: row;
     /* Coloca los elementos en una columna */
     justify-content: center;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
+    /* Alinea los elementos al final del contenedor*/
     align-items: center;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
 /*---Contenido----*/
 
-/*barra de busqueda*/
+/* barra de busqueda */
 #barrabusqueda {
     width: 70%;
     height: 40px;
@@ -92,8 +87,7 @@ header {
     /* Centra verticalmente el contenido */
     font-size: 17px;
     letter-spacing: 0px;
-    font-weight: bold;
-}
+    font-weight: bold;}
 
 /*---Botones----*/
 .botones {
@@ -102,13 +96,9 @@ header {
     width: 10px;
     height: 70%;
     display: flex;
-    /* Agregado: establece el contenedor "Login" como un contenedor flex */
     flex-direction: row;
-    /* Coloca los elementos en una columna */
     justify-content: flex-end;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
     align-items: center;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
 button {
@@ -160,7 +150,6 @@ button {
     display: flex;
     /* Agregado: establece el contenedor "Menu" como un contenedor flex */
     flex-direction: column;
-    /* Coloca los elementos en una columna */
     justify-content: flex-start;
     /* Alinea los elementos en la parte superior del contenedor */
     margin-top: -10px;
