@@ -259,31 +259,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-    <script>
-        // Función para obtener los parámetros de la URL
-        function getParameterByName(name) {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(window.location.href);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
-
-        // Obtener el valor del parámetro 'Perfil' de la URL
-        var Perfil = getParameterByName('Perfil');
-
-        // Verificar si Perfil es igual a 1
-        if (Perfil === '2') {
-            // Realizar acciones si Perfil es igual a 1
-            //alert('El valor de Perfil es: ' + Perfil);
-            // Puedes realizar más acciones aquí según sea necesario
-        } else {
-            // alert('El valor de Perfil es: sin datos');
-        }
-    </script>
-
+    <script src="../JavaScript/script.js"></script>
 
 </body>
 

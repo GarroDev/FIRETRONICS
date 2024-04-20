@@ -122,3 +122,26 @@ window.addEventListener('load', function () {
         console.error('Invalid or empty IDs list in localStorage');
     }
 });  
+
+
+// Función para obtener los parámetros de la URL
+function getParameterByName(name) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(window.location.href);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+// Obtener el valor del parámetro 'Perfil' de la URL
+var Perfil = getParameterByName('Perfil');
+
+// Verificar si Perfil es igual a 1
+if (Perfil === '2') {
+    // Realizar acciones si Perfil es igual a 1
+    //alert('El valor de Perfil es: ' + Perfil);
+    // Puedes realizar más acciones aquí según sea necesario
+} else {
+    // alert('El valor de Perfil es: sin datos');
+}
