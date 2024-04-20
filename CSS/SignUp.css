@@ -1,36 +1,43 @@
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Hace que el contenido ocupe al menos el 100% de la altura de la ventana */
+    min-height: 100vh;
+    /* Hace que el contenido ocupe al menos el 100% de la altura de la ventana */
     display: flex;
     flex-direction: column;
-    background-color: #EEEEEE; /* Color de fondo (puedes cambiarlo) */
-  }
+    background-color: #EEEEEE;
+    /* Color de fondo (puedes cambiarlo) */
+}
 
 /* ::::ENCABEZADO:::: */
 
 header {
     display: flex;
     width: 100%;
-    height: 140px; /* Ajusta la altura según tus necesidades */
-    
-    overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
+    height: 140px;
+    /* Ajusta la altura según tus necesidades */
+
+    overflow: hidden;
+    /* Para asegurar que la imagen no sobresalga del contenedor */
 }
 
 /*---LOGO----*/
 
 .Esplogo {
     flex: 0 0 auto;
-    background-color: #EEEEEE; /* Color de fondo (puedes cambiarlo) */
-   
+    background-color: #EEEEEE;
+    /* Color de fondo (puedes cambiarlo) */
+
     height: auto;
-    overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
+    overflow: hidden;
+    /* Para asegurar que la imagen no sobresalga del contenedor */
 }
 
 .Esplogo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+    object-fit: cover;
+    /* Ajusta la imagen para cubrir completamente el contenedor */
     max-width: 100%;
     max-height: 100%;
 }
@@ -41,41 +48,51 @@ header {
 .Contenedor-mitades {
     display: flex;
     flex: 1;
-    flex-direction: column; /* Coloca las mitades en una columna */
+    flex-direction: column;
+    /* Coloca las mitades en una columna */
 }
 
 .Login {
     flex: 1;
     background-color: #222831;
     height: 90%;
-    display: flex; /* Agregado: establece el contenedor "Login" como un contenedor flex */
-    flex-direction: row; /* Coloca los elementos en una columna */
-    align-items: center; /* Alinea los elementos al final del contenedor (a la derecha) */
+    display: flex;
+    /* Agregado: establece el contenedor "Login" como un contenedor flex */
+    flex-direction: row;
+    /* Coloca los elementos en una columna */
+    align-items: center;
+    /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
 .buscador {
     flex: 2;
     height: 85px;
-    display: flex; /* Agregado: establece el contenedor "Login" como un contenedor flex */
-    flex-direction: row; /* Coloca los elementos en una columna */
-    justify-content: center; /* Alinea los elementos al final del contenedor (a la derecha) */
-    align-items: center; /* Alinea los elementos al final del contenedor (a la derecha) */
+    display: flex;
+    /* Agregado: establece el contenedor "Login" como un contenedor flex */
+    flex-direction: row;
+    /* Coloca los elementos en una columna */
+    justify-content: center;
+    /* Alinea los elementos al final del contenedor (a la derecha) */
+    align-items: center;
+    /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
 /*---Contenido----*/
 
 /*barra de busqueda*/
-#barrabusqueda{
-width: 70%;
-height: 40px;
-border-radius: 10px;
-font-family: 'Lato', sans-serif;
-color: #9fa1a3;
-text-align: left; /* Alinea el texto a la izquierda */
-vertical-align: middle; /* Centra verticalmente el contenido */
-font-size: 17px;
-letter-spacing: 0px;
-font-weight: bold;
+#barrabusqueda {
+    width: 70%;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    color: #9fa1a3;
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+    vertical-align: middle;
+    /* Centra verticalmente el contenido */
+    font-size: 17px;
+    letter-spacing: 0px;
+    font-weight: bold;
 }
 
 /*---Botones----*/
@@ -84,17 +101,22 @@ font-weight: bold;
     background-color: #222831;
     width: 10px;
     height: 70%;
-    display: flex; /* Agregado: establece el contenedor "Login" como un contenedor flex */
-    flex-direction: row; /* Coloca los elementos en una columna */
-    justify-content: flex-end; /* Alinea los elementos al final del contenedor (a la derecha) */
-    align-items: center; /* Alinea los elementos al final del contenedor (a la derecha) */
+    display: flex;
+    /* Agregado: establece el contenedor "Login" como un contenedor flex */
+    flex-direction: row;
+    /* Coloca los elementos en una columna */
+    justify-content: flex-end;
+    /* Alinea los elementos al final del contenedor (a la derecha) */
+    align-items: center;
+    /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
 button {
     margin: 10px;
-  }
-  .custom-btn {
-    
+}
+
+.custom-btn {
+
     color: #222831;
     border-radius: 5px;
     font-family: 'Lato', sans-serif;
@@ -110,8 +132,8 @@ button {
     box-sizing: border-box;
     padding: 10px;
     box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-      7px 7px 20px 0px rgba(0, 0, 0, .1),
-      4px 4px 5px 0px rgba(0, 0, 0, .1);
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
 }
 
 .btn-1 {
@@ -120,6 +142,7 @@ button {
     width: 140px;
     height: 40px;
 }
+
 .btn-2 {
     background-color: #6cd5c4;
     border: none;
@@ -134,18 +157,23 @@ button {
 /*---Menú----*/
 .Menu {
     flex: 1;
-    display: flex; /* Agregado: establece el contenedor "Menu" como un contenedor flex */
-    flex-direction: column; /* Coloca los elementos en una columna */
-    justify-content: flex-start; /* Alinea los elementos en la parte superior del contenedor */
-    margin-top: -10px; /* Ajusta según sea necesario */
+    display: flex;
+    /* Agregado: establece el contenedor "Menu" como un contenedor flex */
+    flex-direction: column;
+    /* Coloca los elementos en una columna */
+    justify-content: flex-start;
+    /* Alinea los elementos en la parte superior del contenedor */
+    margin-top: -10px;
+    /* Ajusta según sea necesario */
 }
 
-ul, ol {
-    list-style:none;
+ul,
+ol {
+    list-style: none;
 }
 
-.nav > li {
-    float:left;
+.nav>li {
+    float: left;
     position: relative;
 }
 
@@ -153,67 +181,74 @@ ul, ol {
     font-family: 'Lato', sans-serif;
     font-size: 20px;
     letter-spacing: 0px;
-    color:#222831;
-    text-decoration:none;
-    padding:10px 12px;
-    display:block;
+    color: #222831;
+    text-decoration: none;
+    padding: 10px 12px;
+    display: block;
 }
 
 .nav li a:hover {
-    color:#EEEEEE;
-    background-color:#434343;
+    color: #EEEEEE;
+    background-color: #434343;
 }
 
 .nav li ul {
     opacity: 0;
     color: #EEEEEE;
-    background-color:#434343;    
+    background-color: #434343;
     visibility: hidden;
-    position: fixed; /* Cambiado: posición fija con respecto al documento */
-    width:900px;
+    position: fixed;
+    /* Cambiado: posición fija con respecto al documento */
+    width: 900px;
     height: 400px;
     /*column-count: 3; /* Agregado: dividir en 3 columnas */
     /*column-gap: 20px; /* Agregado: espacio entre columnas */
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Agregado: velocidad de transición */
-    z-index: 1; /* Agregado: establece una posición superior para que el menú aparezca sobre otros elementos */
-    top: 130px; /* Ajusta según sea necesario */
-    left: 409px; /* Ajusta según sea necesario */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    /* Agregado: velocidad de transición */
+    z-index: 1;
+    /* Agregado: establece una posición superior para que el menú aparezca sobre otros elementos */
+    top: 130px;
+    /* Ajusta según sea necesario */
+    left: 409px;
+    /* Ajusta según sea necesario */
 }
 
-.nav li:hover > ul {
-    
+.nav li:hover>ul {
+
     opacity: 1;
     visibility: visible;
 }
 
 .nav li ul li {
-    
-    position:relative;
+
+    position: relative;
 }
 
 .nav li ul li ul {
-    
-    right:-140px;
-    top:0px;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Agregado: velocidad de transición */
-    z-index: 2; /* Agregado: establece una posición superior para que el menú aparezca sobre otros elementos */
+
+    right: -140px;
+    top: 0px;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    /* Agregado: velocidad de transición */
+    z-index: 2;
+    /* Agregado: establece una posición superior para que el menú aparezca sobre otros elementos */
 }
 
-.nav li ul:hover > li ul {
-    
+.nav li ul:hover>li ul {
+
     opacity: 1;
     visibility: visible;
 }
 
-.nav li:hover > ul li a {
+.nav li:hover>ul li a {
     color: #EEEEEE;
 }
 
-.nav li:hover > ul li:hover > a {
+.nav li:hover>ul li:hover>a {
     color: #969696;
 }
 
-#Titulo1SubMenu{
+#Titulo1SubMenu {
     font-size: 28px;
 }
 
@@ -224,13 +259,15 @@ ul, ol {
     display: flex;
     background-color: #32E0C4;
     width: 100%;
-    height: 30px; /* Ajusta la altura según tus necesidades */
-    overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
+    height: 30px;
+    /* Ajusta la altura según tus necesidades */
+    overflow: hidden;
+    /* Para asegurar que la imagen no sobresalga del contenedor */
 }
 
 /* ::::CUERPO MAIN:::: */
 
-  
+
 /* Estilo utilizado para el main antes de usar bootstrap.SignUp{
 
     padding-top: 180px;
@@ -278,51 +315,63 @@ ul, ol {
 /* ::::PIE DE PAGINA FOOTER:::: */
 
 footer {
-    
+
     background-color: #222831;
-    color: #EEE;    
+    color: #EEE;
     padding: 20px;
     /**position: fixed; /* Fija el footer en la parte inferior de la ventana */
-    width: 100%; /* Ocupa el 100% del ancho de la ventana */
-    bottom: 0; /* Coloca el footer en la parte inferior */
-    overflow: hidden; /* Para asegurar que la imagen no sobresalga del contenedor */
-    text-align: center; /* Centra el texto horizontalmente */
+    width: 100%;
+    /* Ocupa el 100% del ancho de la ventana */
+    bottom: 0;
+    /* Coloca el footer en la parte inferior */
+    overflow: hidden;
+    /* Para asegurar que la imagen no sobresalga del contenedor */
+    text-align: center;
+    /* Centra el texto horizontalmente */
 }
 
-  #titleFooter1{
+#titleFooter1 {
     font-size: 30px;
-    position: relative; /* Permite ajustar la posición relativa al contenedor */
-    top: -25px; /* Ajusta la posición verticalmente según tus necesidades */
-    left: -25px;   
+    position: relative;
+    /* Permite ajustar la posición relativa al contenedor */
+    top: -25px;
+    /* Ajusta la posición verticalmente según tus necesidades */
+    left: -25px;
 }
 
-#titleFooter2{
+#titleFooter2 {
     font-size: 20px;
-    position: relative; /* Permite ajustar la posición relativa al contenedor */
-    top: -25px; /* Ajusta la posición verticalmente según tus necesidades */
-    left: -25px;   
+    position: relative;
+    /* Permite ajustar la posición relativa al contenedor */
+    top: -25px;
+    /* Ajusta la posición verticalmente según tus necesidades */
+    left: -25px;
 }
 
-#titleFooter3{
+#titleFooter3 {
     font-size: 20px;
-    position: relative; /* Permite ajustar la posición relativa al contenedor */
-    top: -35px; /* Ajusta la posición verticalmente según tus necesidades */
-    left: -25px;   
+    position: relative;
+    /* Permite ajustar la posición relativa al contenedor */
+    top: -35px;
+    /* Ajusta la posición verticalmente según tus necesidades */
+    left: -25px;
 }
 
-#titleFooter4{
+#titleFooter4 {
     font-size: 20px;
-    position: relative; /* Permite ajustar la posición relativa al contenedor */
-    top: -40px; /* Ajusta la posición verticalmente según tus necesidades */
-    left: -25px;   
+    position: relative;
+    /* Permite ajustar la posición relativa al contenedor */
+    top: -40px;
+    /* Ajusta la posición verticalmente según tus necesidades */
+    left: -25px;
 }
 
-.Promos{
+.Promos {
     background-color: #222831;
 
 }
 
-.Promossize{
+.Promossize {
     width: 1500px;
     height: 400px;
 }

@@ -76,26 +76,34 @@ header {
 
 .buscador {
     /* Estilos para el contenedor */
-    display: flex; /* Utiliza flexbox para controlar el diseño */
-    flex-direction: column; /* Coloca los elementos en una columna */
+    display: flex;
+    /* Utiliza flexbox para controlar el diseño */
+    flex-direction: column;
+    /* Coloca los elementos en una columna */
     padding-left: 35%;
-    justify-content: center; /* Alinea los elementos en el centro horizontalmente */
-    align-items: center; /* Alinea los elementos en el centro verticalmente */
+    justify-content: center;
+    /* Alinea los elementos en el centro horizontalmente */
+    align-items: center;
+    /* Alinea los elementos en el centro verticalmente */
 }
 
 .buscador .encabezado-principal {
     font-family: 'Roboto Slab', serif;
     font-style: italic;
-    font-size: 40px; /* Cambia el tamaño según lo desees */
-    color: #eee; /* Color que prefieras */
+    font-size: 40px;
+    /* Cambia el tamaño según lo desees */
+    color: #eee;
+    /* Color que prefieras */
     /* Otros estilos que desees agregar */
 }
 
 .buscador .encabezado-principal1 {
     font-family: 'Roboto Slab', serif;
     font-style: italic;
-    font-size: 20px; /* Cambia el tamaño según lo desees */
-    color: #eee; /* Color que prefieras */
+    font-size: 20px;
+    /* Cambia el tamaño según lo desees */
+    color: #eee;
+    /* Color que prefieras */
     /* Otros estilos que desees agregar */
 }
 
@@ -185,7 +193,8 @@ button {
 }
 
 #login-header img {
-    width: 100px; /* Tamaño de la imagen */
+    width: 100px;
+    /* Tamaño de la imagen */
     height: auto;
     margin-right: 10px;
 }
@@ -201,12 +210,15 @@ button {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Cambiado a 'center' para centrar verticalmente */
-    align-items: center; /* Añadido para centrar horizontalmente */
+    justify-content: center;
+    /* Cambiado a 'center' para centrar verticalmente */
+    align-items: center;
+    /* Añadido para centrar horizontalmente */
     margin-top: -10px;
-       /* text-align: center; */ /* No es necesario cuando se utiliza flexbox */
-   
-    
+    /* text-align: center; */
+    /* No es necesario cuando se utiliza flexbox */
+
+
 }
 
 ul,
@@ -214,17 +226,18 @@ ol {
     list-style: none;
 }
 
-.nav{
+.nav {
     display: flex;
- /* justify-content: center;
+    /* justify-content: center;
   align-items: center;*/
-  margin-left: 400px;
+    margin-left: 400px;
 }
 
-.Espacios{
+.Espacios {
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 5px;
 }
+
 .nav>li {
     float: left;
     position: relative;
@@ -264,7 +277,7 @@ ol {
     z-index: 1;
     top: 130px;
     left: 240px;
-    
+
 }
 
 .nav li ul li {

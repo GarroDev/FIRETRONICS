@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 app.post('/registro', async (req, res) => {
   try {
     // Extraer los datos del formulario
-    const { name, email, password } = req.body;  
+    const { name, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log(req.body);
     // Establecer una conexión con la base de datos
@@ -68,7 +68,7 @@ app.post('/registro', async (req, res) => {
 
 app.post('/usuario', async (req, res) => {
   try {
-    const { email, password } = req.body;  
+    const { email, password } = req.body;
 
     // Establecer una conexión con la base de datos
     await sql.connect(config);
@@ -91,36 +91,36 @@ app.post('/usuario', async (req, res) => {
     const passwordMatch = await bcrypt.compare(password, storedPassword);
 
 
-//--------------------------------------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------------------------------
 
 
-/*
+    /*
+        if (passwordMatch) {
+          Perfil = 1;
+                // Si las contraseñas coinciden, redirigir al usuario a la página indicada
+          res.redirect('http://127.0.0.1:5500/HTML/Index.html');
+        } else {
+          // Si las contraseñas no coinciden, responder con un mensaje indicando que la contraseña es incorrecta
+          res.status(401).send('Incorrect password');
+        }  
+    */
+
     if (passwordMatch) {
-      Perfil = 1;
-            // Si las contraseñas coinciden, redirigir al usuario a la página indicada
-      res.redirect('http://127.0.0.1:5500/HTML/Index.html');
+      // Redirigir al usuario a la página indicada con el valor de Perfil como parámetro
+      res.redirect('http://127.0.0.1:5500/HTML/Index.html?Perfil=2');
     } else {
       // Si las contraseñas no coinciden, responder con un mensaje indicando que la contraseña es incorrecta
       res.status(401).send('Incorrect password');
-    }  
-*/
-
-if (passwordMatch) {
-  // Redirigir al usuario a la página indicada con el valor de Perfil como parámetro
-  res.redirect('http://127.0.0.1:5500/HTML/Index.html?Perfil=2');
-} else {
-  // Si las contraseñas no coinciden, responder con un mensaje indicando que la contraseña es incorrecta
-  res.status(401).send('Incorrect password');
-}
+    }
 
 
 
-//--------------------------------------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 
-    
+
 
     // Cerrar la conexión con la base de datos
     await sql.close();
@@ -133,7 +133,7 @@ if (passwordMatch) {
 
 app.post('/cartitems', async (req, res) => {
   try {
-    const { id } = req.body;  
+    const { id } = req.body;
 
     // Establecer una conexión con la base de datos
     await sql.connect(config);
@@ -147,7 +147,7 @@ app.post('/cartitems', async (req, res) => {
       // Si no se encontraron resultados, responder con un mensaje indicando que el usuario no existe
       res.status(404).send('product no found');
       return;
-    } else{
+    } else {
       res.send(Name);
     }
 
@@ -199,14 +199,14 @@ app.post('/receive-data', (req, res) => {
   const data = req.body;
 
   // Guardar los IDs recibidos en la variable local
-    if (data && data.productIds) {
-        ids = data.productIds;
-        console.log('IDs guardados en la variable local:', ids);
-        res.json({ message: 'Datos recibidos y guardados correctamente' });
-        localStorage.setItem('ids', ids)
-    } else {
-        res.status(400).json({ error: 'Datos incorrectos o faltantes' });
-    }
+  if (data && data.productIds) {
+    ids = data.productIds;
+    console.log('IDs guardados en la variable local:', ids);
+    res.json({ message: 'Datos recibidos y guardados correctamente' });
+    localStorage.setItem('ids', ids)
+  } else {
+    res.status(400).json({ error: 'Datos incorrectos o faltantes' });
+  }
 });
 // Iniciar el servidor
 app.listen(port, () => {

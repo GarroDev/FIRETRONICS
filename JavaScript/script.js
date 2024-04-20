@@ -94,28 +94,28 @@ function createTextInput() {
     var input = document.createElement('input');
     input.setAttribute('type', 'text');
     input.setAttribute('placeholder', 'Write here your message');
-    input.classList.add('input-text', 'list-group-item', 'list-group-item-action','HelpMesage');
+    input.classList.add('input-text', 'list-group-item', 'list-group-item-action', 'HelpMesage');
     chatArea.appendChild(input);
 }
 
 function createSendButton() {
     var sendButton = document.createElement('button');
     sendButton.textContent = 'Send';
-    sendButton.classList.add('HelpButton', 'help-button' ,'list-group-item', 'list-group-item-action', 'chatsub');
+    sendButton.classList.add('HelpButton', 'help-button', 'list-group-item', 'list-group-item-action', 'chatsub');
     sendButton.addEventListener('click', function () {
         location.reload(); // Recarga
     });
     chatArea.appendChild(sendButton);
 }
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     // Obtener la lista de IDs de productos desde el localStorage
     const ids = JSON.parse(localStorage.getItem('ids'));
-    
+
     // Verificar si la lista de IDs es válida y tiene elementos
     if (Array.isArray(ids) && ids.length > 0) {
         // Obtener el elemento <span> que muestra el número de productos en el carrito
         const itemCountSpan = document.getElementById('cartItemCount');
-        
+
         // Actualizar el contenido del elemento <span> con el número de elementos en la lista de IDs
         itemCountSpan.textContent = ids.length;
     } else {
