@@ -12,7 +12,7 @@
 
   </head>
 
-<body>
+<body>  
 
     <!-- ::::ENCABEZADO:::: del sitio web y menu de opciones  -->
 
@@ -27,8 +27,10 @@
 
                 <div class="buscador">
                     <!-- <textarea id="barrabusqueda" name="miTexto" rows="4" cols="50">                            
-                        </textarea> -->
-                    <input type="text" id="barrabusqueda" name="miTexto" value="search products">
+                        </textarea> 
+                    <input type="text" id="barrabusqueda" name="miTexto" value="search products">-->
+                    <h1 class="encabezado-principal">FIRETRONICS</h1>
+                    <h6 class="encabezado-principal1">your best ally in technology</h6>
                 </div>
 
                 <div class="botones">
@@ -55,51 +57,34 @@
 
             <div class="Menu"></div>
 
-                <ul class="nav">
-                    <li><a href="../HTML/Index.html">Home</a></li>
-                    <li><a href="../HTML/WhoWeAre.html">Who We Are</a></li>
-                    <li><a href="">Products</a>
-                        <ul>
-                            <br>
-                            <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a></li>
-                            <li><a href="">Protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">SmartWash</a></li> 
-                            <li><a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">Wireless headphones</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Tablets#SectionDestino">Tablets</a></li>
-                            <li><a href="">Recomended</a></li>
-                            <!-- Siguiente columna -->
-                            <br>
-                            <li id="Titulo1SubMenu"><b>Computing</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
-                                    computer</a></li>
-                            <li><a
-                                    href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a>
-                            </li>
-                            <li><a href="">protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">Printers</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Network#SectionDestino">network elements</a></li>
-                            <li><a href="">repowering</a></li>
-                            <!-- Siguiente columna -->
-                            <br>
-                            <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
-                            <li><a href="">Smart TV</a></li>
-                            <li><a href="">Sound equipment</a></li>
-                            <li><a href="">Projectors</a></li>
-                            <li><a href="">Microphones</a></li>
-                            <li><a href="">Cabling</a></li>
-                            <li><a href="">Converters</a></li>
-                            <li><a href="">Consoles</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">Agreements</a></li>
-                    <li><a href="">Offers</a></li>
-                    <li><a href="">Trackings</a></li>
-                    <li><a href="">Orders</a></li>
-                    <li><a href="">Help</a></li>
-                </ul>
+            <ul class="nav">
+                <li><a href="../HTML/Index.html" class="Espacios">Home</a></li>
+                
+                <li><a href="" class="Espacios">Products</a>
+                    <ul>
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart Wash</a></li>
+                        
+                        <!-- Siguiente columna -->
+
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Computing</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Laptops</a></li>
+                        
+                        <!-- Siguiente columna -->
+
+                        <br>
+                        <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
+                        <li><a href="">Smart TV</a></li>
+                        <li><a href="">Sound equipment</a></li>
+                        
+                    </ul>
+                </li>
+                <li><a href="../HTML/WhoWeAre.html" class="Espacios">Who We Are</a></li>
+            </ul>
             </div>
 
 
@@ -208,8 +193,7 @@
                 <p><br>Discover the technological revolution with Apple's <br>
                     unparalleled innovation! Immerse yourself in a world of limitless <br>
                     possibilities with our cutting-edge devices: Mac, iPad, and iPhone</p>
-                <button type="button" class="btn btn-secondary">See more</button>
-                </button>
+             
             </div>
         </div>
 
@@ -219,8 +203,7 @@
                 <p><br>Discover the technological revolution with Apple's <br>
                     unparalleled innovation! Immerse yourself in a world of limitless <br>
                     possibilities with our cutting-edge devices: Mac, iPad, and iPhone</p>
-                <button type="button" class="btn btn-secondary">See more</button>
-                </button>
+               
             </div>
             <div class="Div1Info2">
                 <img src="../imagenes/Index3.png" alt="" class="ImgInfo2">
@@ -288,12 +271,12 @@
         var Perfil = getParameterByName('Perfil');
 
         // Verificar si Perfil es igual a 1
-        if (Perfil == '1') {
+        if (Perfil === '2') {
             // Realizar acciones si Perfil es igual a 1
-            alert('El valor de Perfil es: ' + Perfil);
+            //alert('El valor de Perfil es: ' + Perfil);
             // Puedes realizar más acciones aquí según sea necesario
         } else {
-            alert('El valor de Perfil es: sin datos');
+           // alert('El valor de Perfil es: sin datos');
         }
     </script>
     

@@ -15,94 +15,79 @@
 
     <!-- ::::ENCABEZADO:::: del sitio web y menu de opciones  -->
 
-        <header>
-            <div class="Esplogo">
-                <a href="Index.html"><img src="../imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo"></a>
+    <header>
+        <div class="Esplogo">
+            <a href="Index.html"><img src="../imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo"></a>
+        </div>
+
+        <div class="Contenedor-mitades">
+
+            <div class="Login">
+
+                <div class="buscador">
+                    <!-- <textarea id="barrabusqueda" name="miTexto" rows="4" cols="50">                            
+                        </textarea> 
+                    <input type="text" id="barrabusqueda" name="miTexto" value="search products">-->
+                    <h1 class="encabezado-principal">FIRETRONICS</h1>
+                    <h6 class="encabezado-principal1">your best ally in technology</h6>
+                </div>
+
+                <div class="botones">
+
+                    <a href="../HTML/SignIn.html">
+                        <button class="custom-btn btn-1">Sign In</button>
+                    </a>
+
+
+                    <a href="../HTML/SignUp.html">
+                        <button class="custom-btn btn-1">Sign Up</button>
+                    </a>
+
+                    <a href="../HTML/ShoppingCart.html">
+                        <button id="carritoBtn" class="custom-btn btn-2">
+                            <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
+                            <span id="cartItemCount"></span>
+                        </button>
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="Contenedor-mitades">
+            <div class="Menu"></div>
 
-                <div class="Login">
-
-                    <div class="buscador">
-                       <!-- <textarea id="barrabusqueda" name="miTexto" rows="4" cols="50">                            
-                        </textarea> --> 
-                        <input type="text" id="barrabusqueda" name="miTexto" value="search products">
-                    </div>
-
-                    <div class="botones"> 
-                       
-                        <a href="../HTML/SignIn.html">
-                            <button class="custom-btn btn-1">Sign In</button>
-                        </a>
-                        
-                        
-                        <a href="../HTML/SignUp.html">
-                            <button class="custom-btn btn-1">Sign Up</button> 
-                        </a>
-                        
-                        <a href="../HTML/ShoppingCart.html">
-                            <button id="carritoBtn" class="custom-btn btn-2">
-                                <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
-                                <span id="cartItemCount"></span>
-                            </button>
-                        </a>
-                        
-                    </div> 
-
-                </div>  
+            <ul class="nav">
+                <li><a href="../HTML/Index.html" class="Espacios">Home</a></li>
                 
-                <div class="Menu"></div>
+                <li><a href="" class="Espacios">Products</a>
+                    <ul>
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart Wash</a></li>
+                        
+                        <!-- Siguiente columna -->
 
-                <ul class="nav">
-                    <li><a href="../HTML/Index.html">Home</a></li>
-                    <li><a href="../HTML/WhoWeAre.html">Who We Are</a></li>
-                    <li><a href="">Products</a>
-                        <ul>
-                            <br>
-                            <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a></li>
-                            <li><a href="">Protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">SmartWash</a></li> 
-                            <li><a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">Wireless headphones</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Tablets#SectionDestino">Tablets</a></li>
-                            <li><a href="">Recomended</a></li>
-                            <!-- Siguiente columna -->
-                            <br>
-                            <li id="Titulo1SubMenu"><b>Computing</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
-                                    computer</a></li>
-                            <li><a
-                                    href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a>
-                            </li>
-                            <li><a href="">protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">Printers</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Network#SectionDestino">network elements</a></li>
-                            <li><a href="">repowering</a></li>
-                            <!-- Siguiente columna -->
-                            <br>
-                            <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
-                            <li><a href="">Smart TV</a></li>
-                            <li><a href="">Sound equipment</a></li>
-                            <li><a href="">Projectors</a></li>
-                            <li><a href="">Microphones</a></li>
-                            <li><a href="">Cabling</a></li>
-                            <li><a href="">Converters</a></li>
-                            <li><a href="">Consoles</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">Agreements</a></li>
-                    <li><a href="">Offers</a></li>
-                    <li><a href="">Trackings</a></li>
-                    <li><a href="">Orders</a></li>
-                    <li><a href="">Help</a></li>
-                </ul>
-            </div>    
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Computing</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Laptops</a></li>
+                        
+                        <!-- Siguiente columna -->
 
-                    
-        </header>
+                        <br>
+                        <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
+                        <li><a href="">Smart TV</a></li>
+                        <li><a href="">Sound equipment</a></li>
+                        
+                    </ul>
+                </li>
+                <li><a href="../HTML/WhoWeAre.html" class="Espacios">Who We Are</a></li>
+            </ul>
+            </div>
+
+
+    </header>
 
         <div id="Separador"></div>
 
@@ -149,7 +134,7 @@
                     <div class="about-us-box">
                         <img class="img" src="../imagenes/WhoWeAre/JuanPablo.jpeg" alt="people">                      
                         <h1>Juan Pablo Jimenez Rodriguez</h1>
-                        <h2>Full stack developer, frontend carrer and UIX expert </h2>
+                        <h2>Full stack developer. </h2>
                         <p>Hello, I am Juan Pablo and as a full stack developer with a focus on design, I have managed to provide the highest standards of quality,
                              creativity and efficiency to the projects developed together with the work team. 
                              I am a network and computer security technician, and a current professional in computer engineering training,
@@ -159,7 +144,7 @@
                     <div class="about-us-box">
                         <img class="img" src="../imagenes/WhoWeAre/Mateo.jpeg" alt="people">                      
                         <h1>Mateo Londoño Echeverri</h1>
-                        <h2>Full stack developer, frontend carrer and UIX expert</h2>
+                        <h2>Full stack developer.</h2>
                         <p>Drawing upon my experience in software development, cybersecurity, and technology infrastructure management, 
                             I am here to ensure the implementation of efficient and secure digital solutions. 
                             My focus on problem-solving and optimizing system performance will aid us in effectively achieving our goals. 
@@ -168,7 +153,7 @@
                     <div class="about-us-box">
                         <img class="img" src="../imagenes/WhoWeAre/DavidVallejo.jpeg" alt="people">                      
                         <h1>David Vallejo Grisales</h1>
-                        <h2>Full stack developer, backend carrer and JS expert</h2>
+                        <h2>Full stack developer.</h2>
                         <p>I'm David Vallejo Grisales, a dedicated individual deeply passionate about programming. 
                             Currently, I'm a student pursuing a degree in Computer Engineering, where I delve into the 
                             intricate world of technology. While I'm proficient in Full Stack Development, my heart truly 
