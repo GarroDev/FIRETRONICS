@@ -141,6 +141,14 @@ button {
     margin: 10px;
 }
 
+.Log-Btn1{
+    display: block;
+}
+
+.Log-Btn2{
+    display: none;
+}
+  
 .custom-btn {
     color: #222831;
     border-radius: 5px;
