@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Bienvenido Firetronics</title>
+        <title>Pay</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -12,7 +12,6 @@
 
     <body>
 
-    <!-- ::::ENCABEZADO:::: del sitio web y menu de opciones  -->
 
         <header>
             <div class="Esplogo">
@@ -27,8 +26,7 @@
                 <div class="Login">
 
                     <div class="buscador">
-                       <!-- <textarea id="barrabusqueda" name="miTexto" rows="4" cols="50">                            
-                        </textarea> --> 
+
                         <input type="text" id="barrabusqueda" name="miTexto" value="Buscar de Productos">
                     </div>
 
@@ -58,7 +56,7 @@
 
                 <ul class="nav">
                      <li><a href="../HTML/Index.html">Home</a></li>
-                <li><a href="../HTML/WhoWeAre.html">Who We Are</a></li>
+                <li><a href="../HTML/WhoWeAre.html">Who Are We</a></li>
                 <li><a href="../HTML/list.html">Products</a>
                     <ul>
                         <br>
@@ -70,7 +68,7 @@
                         <li><a href="">Wireless headphones</a></li>
                         <li><a href="">Tablets</a></li>
                         <li><a href="">Recomended</a></li>
-                        <!-- Siguiente columna -->
+                            <!-- Next column -->
                         <br>
                         <li id="Titulo1SubMenu"><b>Computing</b></li><br>
                         <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
@@ -83,7 +81,7 @@
                         <li><a href="">printer</a></li>
                         <li><a href="">network elements</a></li>
                         <li><a href="">repowering</a></li>
-                        <!-- Siguiente columna -->
+                            <!-- Next column -->
                         <br>
                         <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
                         <li><a href="">Smart TV</a></li>
@@ -110,7 +108,7 @@
         <div id="Separador"></div>
 
 
-    <!-- Crupo, formulario de registro -->
+    <!-- Crupo, registration form -->
         <main  style="text-align: center; padding: 20px;" >
    
             <h2 class="mt-4 mb-4 text-center">Shipping Information</h2>
@@ -173,7 +171,7 @@
         </main>
 
 
-    <!-- Pie de pagina del sitio web -->        
+    <!-- Web site footer -->        
         <footer>
             <p id="titleFooter1">FireTronics</p>
             <p id="titleFooter2">All Rights Reserved</p>
@@ -191,18 +189,18 @@
         <script src="../JavaScript/script.js"></script>  
         <script>
             window.addEventListener('load', function() {
-                // Obtener la variable total del localStorage
+                // Get the total variable of localStorage
                 const total = parseFloat(localStorage.getItem('total'));
                 
-                // Verificar si la variable total es un número válido
+                // Check if the total variable is a valid number
                 if (!isNaN(total)) {
-                    // Obtener el campo de entrada total
+                    // Get total input field
                     const totalInput = document.getElementById('total');
                     
-                    // Asignar el valor numérico de total al campo de entrada
-                    totalInput.value = parseFloat(total.toFixed(2))+10; // Redondear a dos decimales y asignar como valor
+                    // Assign the numeric value of total to the input field
+                    totalInput.value = parseFloat(total.toFixed(2))+10; // Round to two decimal places and assign as value
                     
-                    // Si necesitas mostrar el símbolo de dólar, puedes agregarlo al inicio del valor
+                    // If you need to display the dollar sign, you can add it to the beginning of the value.
                     // totalInput.value = '$' + total.toFixed(2);
                 } else {
                     console.error('Invalid total value in localStorage');
@@ -213,9 +211,9 @@
               const form = document.getElementById('bill');
           
               form.addEventListener('submit', function(event) {
-                event.preventDefault(); // Evitar que se envíe el formulario
+                event.preventDefault(); // Prevent the form from being sent
           
-                // Obtener los valores de los campos del formulario
+                // Get the values of the form fields
                 const name = document.getElementById('name').value;
                 const address = document.getElementById('address').value;
                 const city = document.getElementById('city').value;
@@ -225,7 +223,7 @@
                 const payment = document.getElementById('payment').value;
                 const installments = document.getElementById('installments').value;
           
-                // Construir la factura con los valores recogidos
+             // Build the invoice with the collected values
                 const facturaHTML =`
         <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
           <h2 style="text-align: center; color: #333;">Bill - Firetronics®</h2>
@@ -266,7 +264,7 @@
         </div>
       `;
           
-                // Mostrar la factura en una nueva ventana
+                // Display the invoice in a new window
                 const facturaWindow = window.open('', '_blank');
                 facturaWindow.document.body.innerHTML = facturaHTML;
               });
