@@ -146,7 +146,7 @@ Using a secondary database engine, it was implemented for mysql for proper integ
 ![image](https://github.com/GarroDev/FIRETRONICS/assets/163207670/1302b12b-4d0d-4d22-8489-7e93fad304e4)
 
 
-**1.	Configure the database**
+**2.	Configure the database**
 
 And then configure the root user with the connection details and make a test connection.
 
@@ -157,8 +157,19 @@ Basededatos: carritodb
 
 ![image](https://github.com/GarroDev/FIRETRONICS/assets/163207670/94e583bc-9b84-4a9f-a30f-fea22309fcef)
 
+## Useful resoruces
 
+- [Bootstrap](https://getbootstrap.com/).
+- [NodeJs](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs).
+- [GitHub Desktop (In case that you are working with versions)](https://desktop.github.com/).
+- [Readme emojis!](https://gist.github.com/rxaviers/7360908).
 
+## Who work in this project?
+
+- Cristian Garro Sabogal.
+- Juan Pablo Jimenez Rodriguez.
+- Mateo Londoño Echeverri.
+- David Vallejo Grisales.
 
 
 

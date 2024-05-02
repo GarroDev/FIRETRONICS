@@ -6,19 +6,20 @@ const bcrypt = require('bcrypt');
 const port = 3002;
 const cors = require('cors');
 
-// Configuración para la conexión a la base de datos
+//Database connection configuration
 const config = {
   user: 'Usr_FireTronics',
   password: 'Usr_FireTronics',
   server: 'localhost',
   database: 'ECommerce_ENU_V1',
   options: {
-    trustServerCertificate: true // Opción para confiar en el certificado autofirmado (si es necesario)
+    trustServerCertificate: true
   }
 };
 
 
 
+<<<<<<< HEAD
 
 // Configurar CORS
 app.use(cors({
@@ -31,34 +32,37 @@ app.use(cors({
 }));
 
 // Middleware para analizar los datos del formulario
+=======
+// Middleware to analyze form data
+>>>>>>> 65789231e62d47d5aea9f161c73fd5d1fee32314
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Manejador de la ruta /registro
+// Route handler/registration
 app.post('/registro', async (req, res) => {
   try {
-    // Extraer los datos del formulario
+    // Extract data from the form
     const { name, email, password } = req.body;  
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log(req.body);
-    // Establecer una conexión con la base de datos
+    // Establish a connection to the database
     await sql.connect(config);
-    // Definir la consulta SQL para insertar los datos del usuario
+    // Define SQL query to insert user data
     const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
     console.log(query)
-    // Ejecutar la consulta SQL
+    // Execute SQL query
     await sql.query(query, {
       name,
       email,
       hashedPassword
     });
 
-    // Cerrar la conexión con la base de datos
+    // Close database connection
     await sql.close();
-    // Responder con un mensaje de éxito
+    // Respond with a success message
     res.send('¡Successful registration!');
   } catch (error) {
-    // Manejar errores
+    // Handling errors
     console.error('Error insterting values:', error.message);
     res.status(500).send('Internal server error');
   }
@@ -70,24 +74,23 @@ app.post('/usuario', async (req, res) => {
   try {
     const { email, password } = req.body;  
 
-    // Establecer una conexión con la base de datos
+    // Establish a connection to the database
     await sql.connect(config);
 
-    // Consultar la contraseña almacenada en la base de datos para el usuario dado
+    // Query password stored in the database for the given user
     const query = `SELECT Email, Password FROM CUSTOMERS WHERE Email = '${email}'`;
     const result = await sql.query(query);
 
-    // Verificar si se encontraron resultados
+    // Check if results were found
     if (result.recordset.length === 0) {
-      // Si no se encontraron resultados, responder con un mensaje indicando que el usuario no existe
       res.status(404).send('User no found');
       return;
     }
 
-    // Obtener la contraseña almacenada en la base de datos
+    // Get the password stored in the database
     const storedPassword = result.recordset[0].Password;
 
-    // Comparar la contraseña proporcionada por el usuario con la contraseña almacenada en la base de datos
+    // Compare the password provided by the user with the password stored in the database
     const passwordMatch = await bcrypt.compare(password, storedPassword);
 
 
@@ -100,11 +103,16 @@ app.post('/usuario', async (req, res) => {
 
 /*
     if (passwordMatch) {
+<<<<<<< HEAD
       Perfil = 1;
             // Si las contraseñas coinciden, redirigir al usuario a la página indicada
       res.redirect('http://127.0.0.1:5500/HTML/Index.html');
+=======
+      // If the passwords match, reply with a message indicating that the user was found.
+      res.send("User found");
+>>>>>>> 65789231e62d47d5aea9f161c73fd5d1fee32314
     } else {
-      // Si las contraseñas no coinciden, responder con un mensaje indicando que la contraseña es incorrecta
+      // If the passwords do not match, reply with a message indicating that the password is incorrect.
       res.status(401).send('Incorrect password');
     }  
 */
@@ -125,10 +133,10 @@ if (passwordMatch) {
 
     
 
-    // Cerrar la conexión con la base de datos
+    // Close database connection
     await sql.close();
   } catch (error) {
-    // Manejar errores
+    // Handling errors
     console.error('Error geting user information:', error.message);
     res.status(500).send('Internal server error');
   }
@@ -138,10 +146,9 @@ app.post('/cartitems', async (req, res) => {
   try {
     const { id } = req.body;  
 
-    // Establecer una conexión con la base de datos
+    //Establish a connection to the database
     await sql.connect(config);
 
-    // Consultar la contraseña almacenada en la base de datos para el usuario dado
     const query = `SELECT ID_Product, Name, Price, Stock, Description, IMG FROM PRODUCTS WHERE ID_Product = '${id}'`;
     const result = await sql.query(query);
     const Name = result.recordset[0];
@@ -154,10 +161,10 @@ app.post('/cartitems', async (req, res) => {
       res.send(Name);
     }
 
-    // Cerrar la conexión con la base de datos
+    // Close database connection
     await sql.close();
   } catch (error) {
-    // Manejar errores
+    // Handling errors
     console.error('Error geting user information:', error.message);
     res.status(500).send('Internal server error');
   }
@@ -165,38 +172,39 @@ app.post('/cartitems', async (req, res) => {
 
 app.post('/getitems', async (req, res) => {
   try {
-    // Establecer una conexión con la base de datos
+    //Establish a connection to the database
     await sql.connect(config);
 
-    // Consultar todas las filas de la tabla PRODUCTS
+    // Query all rows of the PRODUCTS table
     const query = `SELECT * FROM PRODUCTS`;
     const result = await sql.query(query);
 
-    // Verificar si se encontraron resultados
+    // Check if results were found
     if (result.recordset.length === 0) {
-      // Si no se encontraron resultados, responder con un mensaje indicando que no se encontraron productos
+      // If no results were found, reply with a message indicating that no products were found.
       res.status(404).send('No products found');
       return;
     } else {
-      // Enviar los resultados como respuesta
+      // Send the results as a response
       res.send(result.recordset);
 
-      // Imprimir los resultados en la consola
+      // Print the results on the console
       console.log("Products:");
       result.recordset.forEach(row => {
         console.log(row);
       });
     }
 
-    // Cerrar la conexión con la base de datos
+    // Close database connection
     await sql.close();
   } catch (error) {
-    // Manejar errores
+    // Handling errors
     console.error('Error getting product information:', error.message);
     res.status(500).send('Internal server error');
   }
 });
 
+<<<<<<< HEAD
 app.post('/receive-data', (req, res) => {
   // Recibir datos JSON del cuerpo de la solicitud
   const data = req.body;
@@ -212,6 +220,9 @@ app.post('/receive-data', (req, res) => {
     }
 });
 // Iniciar el servidor
+=======
+// Start server
+>>>>>>> 65789231e62d47d5aea9f161c73fd5d1fee32314
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
 });

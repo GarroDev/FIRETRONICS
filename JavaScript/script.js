@@ -1,19 +1,19 @@
-// Cambia de pestaña cada 5 segundos
-var tabs = ['tab1', 'tab2', 'tab3', 'tab4']; // Agregar más identificadores de pestañas si es necesario
+// Switches tabs every 5 seconds
+var tabs = ['tab1', 'tab2', 'tab3', 'tab4']; // Add more tab identifiers if needed
 var currentIndex = 0;
 
 setInterval(function () {
     $('#' + tabs[currentIndex]).removeClass('active');
     $('#' + tabs[currentIndex]).tab('show');
     currentIndex = (currentIndex + 1) % tabs.length;
-}, 5000); // Cambia cada 5 segundos 
+}, 5000); // Changes every 5 seconds 
 
 document.addEventListener('DOMContentLoaded', function () {
     var helpButton = document.getElementById('helpButton');
     var helpPopup = document.getElementById('helpPopup');
     var closePopup = document.querySelector('.close');
     var helpList = document.getElementById('helpList');
-    var chatArea = document.getElementById('chatArea'); // Asegúrate de tener un elemento con id 'chatArea' en tu HTML
+    var chatArea = document.getElementById('chatArea'); // Make sure you have an element with id 'chatArea' in your HTML
 
     helpButton.addEventListener('click', function () {
         helpPopup.style.display = 'block';
@@ -26,19 +26,19 @@ document.addEventListener('DOMContentLoaded', function () {
     helpList.addEventListener('click', function (e) {
         var target = e.target;
         if (target.tagName === 'BUTTON') {
-            // Agregar el texto del botón al área de chat
+            // Add button text to the chat area
             var userMessage = document.createElement('p');
             userMessage.textContent = target.textContent;
             userMessage.classList.add('Usr')
             chatArea.appendChild(userMessage);
 
-            // Agregar un mensaje del sistema
+            // Add a system message
             var sysMessage = document.createElement('p');
             sysMessage.textContent = "Select the best option for you";
             sysMessage.classList.add('Sys');
             chatArea.appendChild(sysMessage);
 
-            // Definir las nuevas opciones basadas en la selección
+            // Define new options based on the selection
             var newOptions = [];
             var newOptions2 = [];
             if (target.value === 'Problema') {
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 createSendButton();
             }
 
-            // Limpiar las opciones anteriores y agregar las nuevas al DOM
+            // Clear the previous options and add the new ones to the DOM
             helpList.innerHTML = '';
             newOptions.forEach(function (option) {
                 var newButton = document.createElement('button');
@@ -103,20 +103,20 @@ function createSendButton() {
     sendButton.textContent = 'Send';
     sendButton.classList.add('HelpButton', 'help-button' ,'list-group-item', 'list-group-item-action', 'chatsub');
     sendButton.addEventListener('click', function () {
-        location.reload(); // Recarga
+        location.reload(); // Recharge
     });
     chatArea.appendChild(sendButton);
 }
 window.addEventListener('load', function() {
-    // Obtener la lista de IDs de productos desde el localStorage
+    // Get the list of product IDs from the localStorage
     const ids = JSON.parse(localStorage.getItem('ids'));
     
-    // Verificar si la lista de IDs es válida y tiene elementos
+    // Check if the list of IDs is valid and has elements
     if (Array.isArray(ids) && ids.length > 0) {
-        // Obtener el elemento <span> que muestra el número de productos en el carrito
+        // Get the <span> element showing the number of products in the cart.
         const itemCountSpan = document.getElementById('cartItemCount');
         
-        // Actualizar el contenido del elemento <span> con el número de elementos en la lista de IDs
+        // Update the content of the <span> element with the number of elements in the ID list.
         itemCountSpan.textContent = ids.length;
     } else {
         console.error('Invalid or empty IDs list in localStorage');
