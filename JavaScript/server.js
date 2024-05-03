@@ -19,7 +19,7 @@ const config = {
 
 
 
-<<<<<<< HEAD
+// HEAD
 
 // Configurar CORS
 app.use(cors({
@@ -32,9 +32,9 @@ app.use(cors({
 }));
 
 // Middleware para analizar los datos del formulario
-=======
+
 // Middleware to analyze form data
->>>>>>> 65789231e62d47d5aea9f161c73fd5d1fee32314
+// 65789231e62d47d5aea9f161c73fd5d1fee32314
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -204,7 +204,7 @@ app.post('/getitems', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
+// HEAD
 app.post('/receive-data', (req, res) => {
   // Recibir datos JSON del cuerpo de la solicitud
   const data = req.body;
@@ -220,9 +220,9 @@ app.post('/receive-data', (req, res) => {
     }
 });
 // Iniciar el servidor
-=======
+
 // Start server
->>>>>>> 65789231e62d47d5aea9f161c73fd5d1fee32314
+// 65789231e62d47d5aea9f161c73fd5d1fee32314
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
 });
