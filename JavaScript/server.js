@@ -107,7 +107,8 @@ app.post('/usuario', async (req, res) => {
 
     if (passwordMatch) {
       // Redirigir al usuario a la página indicada con el valor de Perfil como parámetro
-      res.redirect('http://127.0.0.1:5500/HTML/Index.html?Perfil=2');
+      //res.redirect('http://127.0.0.1:5500/HTML/Index.html?Perfil=2');
+      localStorage.setItem('perfil', 2);
     } else {
       // Si las contraseñas no coinciden, responder con un mensaje indicando que la contraseña es incorrecta
       res.status(401).send('Incorrect password');
