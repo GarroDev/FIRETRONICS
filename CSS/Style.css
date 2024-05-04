@@ -6,7 +6,6 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #EEEEEE;
-    /* Color de fondo (puedes cambiarlo) */
 }
 
 /* ::::HEADER:::: */
@@ -64,17 +63,46 @@ header {
     /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
+/*
 .buscador {
     flex: 2;
     height: 85px;
+    display: flex;  
+    flex-direction: row;   
+    justify-content: center;  
+    align-items: center;   
+}*/
+
+.buscador {
+    /* Estilos para el contenedor */
     display: flex;
-    /* Agregado: establece el contenedor "Login" como un contenedor flex */
-    flex-direction: row;
+    /* Utiliza flexbox para controlar el diseño */
+    flex-direction: column;
     /* Coloca los elementos en una columna */
+    padding-left: 35%;
     justify-content: center;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
+    /* Alinea los elementos en el centro horizontalmente */
     align-items: center;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
+    /* Alinea los elementos en el centro verticalmente */
+}
+
+.buscador .encabezado-principal {
+    font-family: 'Roboto Slab', serif;
+    font-style: italic;
+    font-size: 40px;
+    /* Cambia el tamaño según lo desees */
+    color: #eee;
+    /* Color que prefieras */
+    /* Otros estilos que desees agregar */
+}
+
+.buscador .encabezado-principal1 {
+    font-family: 'Roboto Slab', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #eee;
+    /* Color que prefieras */
+    /* Otros estilos que desees agregar */
 }
 
 /*---Content----*/
@@ -106,15 +134,21 @@ header {
     flex-direction: row;
     /* Coloca los elementos en una columna */
     justify-content: flex-end;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
     align-items: center;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
 button {
     margin: 10px;
 }
 
+.Log-Btn1{
+    display: block;
+}
+
+.Log-Btn2{
+    display: none;
+}
+  
 .custom-btn {
     color: #222831;
     border-radius: 5px;
@@ -153,22 +187,59 @@ button {
     background-color: #EEEEEE;
 }
 
+
+/*---CAMBIO DESPUES DEL INICIO DE SESIÓN----*/
+
+#login-header {
+    text-align: center;
+    font-size: 30px;
+    color: #EEE;
+}
+
+#login-header img {
+    width: 100px;
+    /* Tamaño de la imagen */
+    height: auto;
+    margin-right: 10px;
+}
+
+
+/*---CAMBIO DESPUES DEL INICIO DE SESIÓN----*/
+
+
+
+
 /*---Menú----*/
 .Menu {
     flex: 1;
     display: flex;
-    /* Agregado: establece el contenedor "Menu" como un contenedor flex */
     flex-direction: column;
-    /* Coloca los elementos en una columna */
-    justify-content: flex-start;
-    /* Alinea los elementos en la parte superior del contenedor */
+    justify-content: center;
+    /* Cambiado a 'center' para centrar verticalmente */
+    align-items: center;
+    /* Añadido para centrar horizontalmente */
     margin-top: -10px;
-    /* Ajusta según sea necesario */
+    /* text-align: center; */
+    /* No es necesario cuando se utiliza flexbox */
+
+
 }
 
 ul,
 ol {
     list-style: none;
+}
+
+.nav {
+    display: flex;
+    /* justify-content: center;
+  align-items: center;*/
+    margin-left: 400px;
+}
+
+.Espacios {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .nav>li {
@@ -200,7 +271,7 @@ ol {
     position: fixed;
     width: auto;
     /* Cambiado: ancho automático para adaptarse al contenido */
-    height: 500px;
+    height: 220px;
     /* Cambiado: altura automática para adaptarse al contenido */
     column-count: 3;
     /* Agregado: dividir en 3 columnas */
@@ -209,7 +280,8 @@ ol {
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     z-index: 1;
     top: 130px;
-    left: 409px;
+    left: 240px;
+
 }
 
 .nav li ul li {

@@ -1,476 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>ShoppingCart</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-        <link href="../CSS/Style.css" rel="stylesheet">
-    </head>
 
-    <body>
+<head>
+    <title>ShoppingCart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="../CSS/Style.css" rel="stylesheet">
+</head>
+
+<body>
 
     <!-- ::::HEADER:::: of the web site and options menu -->
 
-        <header>
-            <div class="Esplogo">
-                <a href="Index.html">
-                    <img src="../imagenes/Logo.png" id="Logo" alt="FireTronics Logo" >
-                </a>
-                
-            </div>
+    <header>
+        <div class="Esplogo">
+            <a href="Index.html"><img src="../imagenes/Logo.png" id="Logo" alt="FireTronics Logo"></a>
+        </div>
 
-            <div class="Contenedor-mitades">
+        <div class="Contenedor-mitades">
 
-                <div class="Login">
+            <div class="Login">
 
                     <div class="buscador">
                         <input type="text" id="barrabusqueda" name="miTexto" value="Buscar de Productos">
                     </div>
 
-                    <div class="botones"> 
-                       
-                        <a href="../HTML/SignIn.html">
-                            <button class="custom-btn btn-1">Sign In</button>
-                        </a>
-                        
-                        
-                        <a href="../HTML/SignUp.html">
-                            <button class="custom-btn btn-1">Sign Up</button> 
-                        </a>
-                        
-                        <a href="../HTML/ShoppingCart.html">
-                            <button id="carritoBtn" class="custom-btn btn-2">
-                                <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
-                                <span id="cartItemCount"></span>
-                            </button>
-                        </a>
-                        
-                    </div> 
+                <div class="botones">
 
-                </div>  
-                
-                <div class="Menu"></div>
+                    <a href="../HTML/SignIn.html">
+                        <button class="custom-btn btn-1 Log-Btn1">Sign In</button>
+                    </a>
 
-                <ul class="nav">
-                    <li><a href="../HTML/Index.html">Home</a></li>
-                    <li><a href="../HTML/WhoWeAre.html">Who Are We </a></li>
-                    <li><a href="">Products</a>
-                        <ul>
-                            <br>
-                            <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a></li>
-                            <li><a href="">Protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">SmartWash</a></li> 
-                            <li><a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">Wireless headphones</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Tablets#SectionDestino">Tablets</a></li>
-                            <li><a href="">Recomended</a></li>
-                            <!-- Next column -->
-                            <br>
-                            <li id="Titulo1SubMenu"><b>Computing</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
-                                    computer</a></li>
-                            <li><a
-                                    href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a>
-                            </li>
-                            <li><a href="">protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">Printers</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Network#SectionDestino">network elements</a></li>
-                            <li><a href="">repowering</a></li>
-                            <!-- Next column -->
-                            <br>
-                            <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
-                            <li><a href="">Smart TV</a></li>
-                            <li><a href="">Sound equipment</a></li>
-                            <li><a href="">Projectors</a></li>
-                            <li><a href="">Microphones</a></li>
-                            <li><a href="">Cabling</a></li>
-                            <li><a href="">Converters</a></li>
-                            <li><a href="">Consoles</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">Agreements</a></li>
-                    <li><a href="">Offers</a></li>
-                    <li><a href="">Trackings</a></li>
-                    <li><a href="">Orders</a></li>
-                    <li><a href="">Help</a></li>
-                </ul>
 
+                    <a href="../HTML/SignUp.html">
+                        <button class="custom-btn btn-1 Log-Btn1">Sign Up</button>
+                    </a>
+
+                    <div id="login-header" class="Log-Btn2">
+                        <img src="../imagenes/avatar.png" alt="Inicio de sesión">
+                        <span>Welcome!</span>
+                    </div>
+
+                    <a href="../HTML/ShoppingCart.html">
+                        <button id="carritoBtn" class="custom-btn btn-2">
+                            <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
+                            <span id="cartItemCount"></span>
+                        </button>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="Menu"></div>
+
+            <ul class="nav">
+                <li><a href="../HTML/Index.html" class="Espacios">Home</a></li>
+
+                <li><a href="" class="Espacios">Products</a>
+                    <ul>
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a>
+                        </li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart
+                                Wash</a></li>
+
+                        <!-- Next column -->
+
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Computing</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
+                                computer</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Laptops</a>
+                        </li>
+
+                        <!-- Next column -->
+
+                        <br>
+                        <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
+                        <li><a href="">Smart TV</a></li>
+                        <li><a href="">Sound equipment</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="../HTML/WhoWeAre.html" class="Espacios">Who Are We </a></li>
+                           
+            </ul>
         </div>
 
 
     </header>
 
-        <div id="Separador"></div>
+    <div id="Separador"></div>
 
 
     <!-- Web site body -->
-        <main>
-            <div class="contenedor-padre">
-                <div class="contenedor-izquierdo"id="productDetailsContainer">
-                    
-                </div>
-                
-                
-                <div class="contenedor-derecho">
-                    <h2 style="text-align: center;">Summary of Cart</h2>
-                    <div class=""style="margin: 0 15%;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="flex: 1; text-align: left;">Products:</div>
-                            <div id="Price" style="flex: 1; text-align: right;">0</div>
-                        </div>
-                    
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="flex: 1; text-align: left;">Shipments:</div>
-                            <div style="flex: 1; text-align: right;">$10</div>
-                        </div>
-                    
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <h5 style="flex: 1; text-align: left;">Total:</h5>
-                            <h5 id="PriceT" style="flex: 1; text-align: right;">0</h5>
-                        </div>
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="../HTML/pay.html">
+    <main>
+        <div class="contenedor-padre">
+            <div class="contenedor-izquierdo" id="productDetailsContainer">
+
+            </div>
+
+
+            <div class="contenedor-derecho">
+                <h2 style="text-align: center;">Summary of Cart</h2>
+                <div class="" style="margin: 0 15%;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="flex: 1; text-align: left;">Products:</div>
+                        <div id="Price" style="flex: 1; text-align: right;">0</div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="flex: 1; text-align: left;">Shipments:</div>
+                        <div style="flex: 1; text-align: right;">$10</div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h5 style="flex: 1; text-align: left;">Total:</h5>
+                        <h5 id="PriceT" style="flex: 1; text-align: right;">0</h5>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="../HTML/pay.html">
                             <button class="btn btn-lg btn-secondary">Proceed to Checkout</button>
                         </a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="container-fluid">
-                <!-- Help button -->
-                <button id="helpButton" class="circular-button btn btn-primary">?</button>
-    
-                <!-- Help popup -->
-                <div id="helpPopup" class="popup">
-                    <div class="popup-content">
-                        <span class="close">×</span>
-                        <div class="chat">
-                            <div id="chatArea" class="chat-area">
-                                <p class="Sys">How can I help?<br></p>
-                            </div>
-                            <div id="helpList" class="list-group"><br>
-                                <button class="help-button list-group-item list-group-item-action chatsub"
-                                    value="Problema">I have an issue</button>
-                                <button class="help-button list-group-item list-group-item-action chatsub"
-                                    value="Consulta">I have a question</button>
-                                <button class="help-button list-group-item list-group-item-action chatsub"
-                                    value="Sugerencia">I wanna do a sugestion</button>
-                                <br>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </main>
+
+        </div>
+
+        <div class="container-fluid">
+            <!-- Help button -->
+            <button id="helpButton" class="circular-button btn btn-primary">?</button>
+
+            <!-- Help popup -->
+            <div id="helpPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close">×</span>
+                    <div class="chat">
+                        <div id="chatArea" class="chat-area">
+                            <p class="Sys">How can I help?<br></p>
+                        </div>
+                        <div id="helpList" class="list-group"><br>
+                            <button class="help-button list-group-item list-group-item-action chatsub"
+                                value="Problema">I have an issue</button>
+                            <button class="help-button list-group-item list-group-item-action chatsub"
+                                value="Consulta">I have a question</button>
+                            <button class="help-button list-group-item list-group-item-action chatsub"
+                                value="Sugerencia">I wanna do a sugestion</button>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
 
-    <!-- Web site footer -->        
-        <footer>
-            <p id="titleFooter1">FireTronics</p>
-            <p id="titleFooter2">All Rights Reserved</p>
-            <p id="titleFooter3">Politécnico Colombiano Jaime Isaza Cadavid</p>
-            <p id="titleFooter4">2024</p>
+    <!-- Web site footer -->
+    <footer>
+        <p id="titleFooter1">FireTronics</p>
+        <p id="titleFooter2">All Rights Reserved</p>
+        <p id="titleFooter3">Politécnico Colombiano Jaime Isaza Cadavid</p>
+        <p id="titleFooter4">2024</p>
 
-        </footer>
+    </footer>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-        
-
-<script src="../JavaScript/script.js"></script>
-<script>
-    let total=0;
-    async function fetchProductDetails(id) {
-      try {
-        const response = await fetch('http://localhost:3002/cartitems', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ id })
-        });
-
-        // Check if the request was successful
-        if (!response.ok) {
-          throw new Error('Failed to fetch product details');
-        }
-        
-        // Extract product details from the response body.
-        const productDetails = await response.json();
-
-        // Store product details in the localStorage
-        //localStorage.setItem('productDetails', JSON.stringify(productDetails));
-        total += parseFloat(productDetails.Price)/2;
-        localStorage.setItem('total', JSON.stringify(total))
-        // Display product details on the page
-        //localStorage.setItem('ids', 2)
-        displayProductDetails(productDetails);
-      } catch (error) {
-        console.error('Error fetching product details:', error.message);
-      }
-    }
-
-    // Function to display product details on the page
-    function displayProductDetails(productDetails) {
-        // Obtener el contenedor de los detalles del producto
-        const productDetailsContainer = document.getElementById('productDetailsContainer');
-
-        // Create the main container
-        const containerProd = document.createElement('div');
-        containerProd.className = 'containerProd';
-        containerProd.style.display = 'flex';
-        containerProd.id = 'product_' + productDetails.ID_Product;
-
-        // Create the image container
-        const imgContainer = document.createElement('div');
-        imgContainer.style.flex = '0.2';
-        imgContainer.style.marginLeft = '20px';
-
-        // Create the image
-        const img = document.createElement('img');
-        img.src = productDetails.IMG;
-        img.style.maxWidth = '170px';
-        img.style.maxHeight = '170px';
-        imgContainer.appendChild(img);
-        
-        // Create the product details container
-        const detailsContainer = document.createElement('div');
-        detailsContainer.style.flex = '1';
-        detailsContainer.style.marginLeft = '20px';
-
-        // Create the product title
-        const nameElement = document.createElement('h5');
-        nameElement.textContent = productDetails.Name;
-        nameElement.style.textAlign = 'left';
-        nameElement.style.marginTop = '10px';
-        detailsContainer.appendChild(nameElement);
-
-        // Create the price and description container
-        const priceDescriptionContainer = document.createElement('div');
-        priceDescriptionContainer.style.display = 'flex';
-
-        // Create the price container
-        const priceContainer = document.createElement('div');
-        priceContainer.style.flex = '0.5';
-
-        // Create the original price crossed out
-        const originalPrice = document.createElement('s');
-        originalPrice.textContent = '$ ' + productDetails.Price;
-        originalPrice.style.textAlign = 'left';
-        originalPrice.className='price';
-        priceContainer.appendChild(originalPrice);
-
-        // Create the current price
-        const currentPrice = document.createElement('h3');
-        currentPrice.textContent = '$ ' + (productDetails.Price * 0.5).toFixed(2); 
-        priceContainer.appendChild(currentPrice);
-
-        // Create payment information
-        const paymentInfo = document.createElement('p');
-        paymentInfo.textContent = ' en 36x '+(productDetails.Price/36).toFixed(2);
-        paymentInfo.style.textAlign = 'left';
-        priceContainer.appendChild(paymentInfo);
-
-        priceDescriptionContainer.appendChild(priceContainer);
-
-        // Create the button container and punctuation
-        const buttonRatingContainer = document.createElement('div');
-        buttonRatingContainer.style.flex = '0.5';
-        buttonRatingContainer.style.display = 'flex';
-        buttonRatingContainer.style.justifyContent = 'space-between';
-
-        // Create the container for the quantity buttons
-        const quantityButtonContainer = document.createElement('div');
-        quantityButtonContainer.className = 'container';
-        quantityButtonContainer.style.display = 'flex';
-
-        // Create quantity buttons
-        const decreaseButton = document.createElement('button');
-        decreaseButton.className = 'btn btn-secondary';
-        decreaseButton.textContent = '-';
-        const quantitySpan = document.createElement('span');
-        quantitySpan.className = 'unidad';
-        quantitySpan.textContent = '1';
-        const increaseButton = document.createElement('button');
-        increaseButton.className = 'btn btn-secondary';
-        increaseButton.textContent = '+';
-
-        const productId = productDetails.ID_Product;
-        decreaseButton.setAttribute('data-product-id', productId);
-        increaseButton.setAttribute('data-product-id', productId);
-        
-        decreaseButton.addEventListener('click', function() {
-        const productId = this.getAttribute('data-product-id');
-        // Here you can call the function to add the product ID to the cart
-        buttons(productId,-1);
-        });
-
-        increaseButton.addEventListener('click', function() {
-        const productId = this.getAttribute('data-product-id');
-        // Here you can call the function to add the product ID to the cart
-        buttons(productId,1);
-        });
-
-        // Add quantity buttons to the container
-        quantityButtonContainer.appendChild(decreaseButton);
-        quantityButtonContainer.appendChild(quantitySpan);
-        quantityButtonContainer.appendChild(increaseButton);
-
-        // Add the quantity buttons to the container // Create the score container
-        const ratingContainer = document.createElement('div');
-        ratingContainer.className = 'puntuacion';
-
-        // Create the span for the current score
-        const currentRatingSpan = document.createElement('span');
-        currentRatingSpan.className = 'puntuacion-actual';
-        currentRatingSpan.textContent = '4'; 
-        ratingContainer.appendChild(currentRatingSpan);
-
-        // Create the span for the maximum score
-        const maxRatingSpan = document.createElement('span');
-        maxRatingSpan.className = 'puntuacion-maxima';
-        maxRatingSpan.textContent = '5'; 
-        ratingContainer.appendChild(maxRatingSpan);
-
-        // Create the span for the stars
-        const starsSpan = document.createElement('span');
-        starsSpan.className = 'estrellas';
-        starsSpan.innerHTML = '&#9733;&#9733;&#9733;&#9733;&#9734;'; 
-        ratingContainer.appendChild(starsSpan);
-
-        // Create the span for the number of ratings
-        const ratingCountSpan = document.createElement('span');
-        ratingCountSpan.textContent = '(203)'; 
-        ratingContainer.appendChild(ratingCountSpan);
-
-        buttonRatingContainer.appendChild(quantityButtonContainer);
-        buttonRatingContainer.appendChild(ratingContainer);
-
-        priceDescriptionContainer.appendChild(buttonRatingContainer);
-
-        detailsContainer.appendChild(priceDescriptionContainer);
-
-        containerProd.appendChild(imgContainer);
-        containerProd.appendChild(detailsContainer);
-
-        // Add the main container to the product details container
-        productDetailsContainer.appendChild(containerProd);
-    }
-
-    function buttons(productId, n) {
-    // Get the product container
-    const parsedProductId = parseInt(productId);
-    const productContainer = document.getElementById('product_' + parsedProductId);
-    
-    // Get quantity label
-    const quantitySpan = productContainer.querySelector('.unidad');
-    const price=productContainer.querySelector('.price');
-
-    // Get current list of cart product IDs from local storage
-    let productIds = JSON.parse(localStorage.getItem('ids')) || [];
-
-    // Find the product index in the ID list
-    const index = productIds.indexOf(parsedProductId);
-    
-    if (index !== -1) {
-        
-        
-        // Get current product quantity
-        let quantity = parseInt(quantitySpan.textContent);
-        let pricep = price.textContent;
-        pricep=parseInt(pricep.replace('$', ''));
-        console.log(pricep);
-        // Increase or decrease the quantity according to the value of n
-        quantity += n;
-        
-        
-        if (quantity === 0 && n === -1) {
-            // If the quantity is 0 and n is -1, remove the product container from HTML
-            productContainer.remove();
-
-            // Remove the product ID from the array productIds
-            productIds.splice(index, 1);
-
-            // Update the local storage with the updated list of IDs
-            localStorage.setItem('ids', JSON.stringify(productIds));
-
-            //decrease the total value by subtracting the price of the product
-            total = localStorage.getItem("total")
-            total -= parseFloat(pricep)/2;
-            localStorage.setItem('total', JSON.stringify(total));
-
-            const priceElement = document.getElementById('Price');
-            priceElement.textContent = parseFloat(localStorage.getItem("total"));
-            const priceT = document.getElementById('PriceT');
-            priceT.textContent = parseFloat(localStorage.getItem("total"))+10
-        } else {
-            // Update quantity in quantitySpan tag
-            quantitySpan.textContent = quantity;
-
-            // Update the amount in local storage
-            // This is optional if you want to keep the quantity updated in local storage.
-            // You can omit this part if the amount in local storage is not needed.
-            productIds[index] = parsedProductId;
-            localStorage.setItem('ids', JSON.stringify(productIds));
-            if (n==-1){
-                total = parseFloat(localStorage.getItem("total"));
-                total -= parseFloat(pricep)/2;
-                localStorage.setItem('total', JSON.stringify(total));
-            }else{
-                total = parseFloat(localStorage.getItem("total"));
-                total += parseFloat(pricep)/2;
-                localStorage.setItem('total', JSON.stringify(total));
-            }
-
-            const priceElement = document.getElementById('Price');
-            priceElement.textContent = parseFloat(localStorage.getItem("total"));
-            const priceT = document.getElementById('PriceT');
-            priceT.textContent = parseFloat(localStorage.getItem("total"))+10
-        }
-    }
-}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
 
-    // Call the function to get the product details when the page is loaded
-    window.addEventListener('load', function() {
-    // Get the list of product IDs from the localStorage
-    const productIds = JSON.parse(localStorage.getItem('ids'));
+    <script src="../JavaScript/script.js"></script>
+    <script src="../JavaScript/ShoppingCart.js"></script>
 
-    // Check for stored product IDs
-    if (productIds && productIds.length > 0) {
-        // Scroll through the list of product IDs
-        productIds.forEach(productId => {
-            // Get the product details from the server and store them in localStorage
-            fetchProductDetails(productId);
-            
-        });
-        const priceElement = document.getElementById('Price');
-        priceElement.textContent = parseFloat(localStorage.getItem("total"));
-        const priceT = document.getElementById('PriceT');
-        priceT.textContent = parseFloat(localStorage.getItem("total"))+10
-    } else {
-        console.error('No product IDs found in localStorage');
-        const productDetailsContainer = document.getElementById('productDetailsContainer');
-        // Create a title element
-        const titleElement = document.createElement('h1');
-        titleElement.innerHTML = "&nbsp;&nbsp;&nbsp;¡You haven't added products to your cart yet!";
-        
-        // Add the title to the product details container
-        productDetailsContainer.appendChild(titleElement);
-    }
-});
+</body>
 
-</script>
-
-    </body>
 </html>

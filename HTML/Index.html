@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link href="../CSS/Style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -25,19 +26,28 @@
             <div class="Login">
 
                 <div class="buscador">
-                    <input type="text" id="barrabusqueda" name="miTexto" value="search products">
+                    <!-- <textarea id="barrabusqueda" name="miTexto" rows="4" cols="50">                            
+                        </textarea> 
+                    <input type="text" id="barrabusqueda" name="miTexto" ="search products">-->
+                    <h1 class="encabezado-principal">FIRETRONICS</h1>
+                    <h6 class="encabezado-principal1">your best ally in technology</h6>
                 </div>
 
                 <div class="botones">
 
                     <a href="../HTML/SignIn.html">
-                        <button class="custom-btn btn-1">Sign In</button>
+                        <button class="custom-btn btn-1 Log-Btn1">Sign In</button>
                     </a>
 
 
                     <a href="../HTML/SignUp.html">
-                        <button class="custom-btn btn-1">Sign Up</button>
+                        <button class="custom-btn btn-1 Log-Btn1">Sign Up</button>
                     </a>
+
+                    <div id="login-header" class="Log-Btn2">
+                        <img src="../imagenes/avatar.png" alt="Inicio de sesión">
+                        <span>Welcome!</span>
+                    </div>
 
                     <a href="../HTML/ShoppingCart.html">
                         <button id="carritoBtn" class="custom-btn btn-2">
@@ -52,52 +62,39 @@
 
             <div class="Menu"></div>
 
-                <ul class="nav">
-                    <li><a href="../HTML/Index.html">Home</a></li>
-                    <li><a href="../HTML/WhoWeAre.html">Who We Are</a></li>
-                    <li><a href="">Products</a>
-                        <ul>
-                            <br>
-                            <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a></li>
-                            <li><a href="">Protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">SmartWash</a></li> 
-                            <li><a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">Wireless headphones</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Tablets#SectionDestino">Tablets</a></li>
-                            <li><a href="">Recomended</a></li>
-                            <!-- Next column -->
-                            <br>
-                            <li id="Titulo1SubMenu"><b>Computing</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
-                                    computer</a></li>
-                            <li><a
-                                    href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a>
-                            </li>
-                            <li><a href="">protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">Printers</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Network#SectionDestino">network elements</a></li>
-                            <li><a href="">repowering</a></li>
-                            <!-- Next column -->
-                            <br>
-                            <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
-                            <li><a href="">Smart TV</a></li>
-                            <li><a href="">Sound equipment</a></li>
-                            <li><a href="">Projectors</a></li>
-                            <li><a href="">Microphones</a></li>
-                            <li><a href="">Cabling</a></li>
-                            <li><a href="">Converters</a></li>
-                            <li><a href="">Consoles</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">Agreements</a></li>
-                    <li><a href="">Offers</a></li>
-                    <li><a href="">Trackings</a></li>
-                    <li><a href="">Orders</a></li>
-                    <li><a href="">Help</a></li>
-                </ul>
-            </div>
+            <ul class="nav">
+                <li><a href="../HTML/Index.html" class="Espacios">Home</a></li>
+
+                <li><a href="" class="Espacios">Products</a>
+                    <ul>
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a>
+                        </li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart
+                                Wash</a></li>
+
+                        <!-- Next column -->
+
+                        <br>
+                        <li id="Titulo1SubMenu"><b>Computing</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
+                                computer</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Laptops</a>
+                        </li>
+
+                        <!-- Next column -->
+
+                        <br>
+                        <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
+                        <li><a href="">Smart TV</a></li>
+                        <li><a href="">Sound equipment</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="../HTML/WhoWeAre.html" class="Espacios">Who We Are</a></li>
+            </ul>
+        </div>
 
 
     </header>
@@ -152,21 +149,21 @@
                 </a>
                 <b>Cellphones</b>
             </button>
-        
+
             <button class="category-button">
                 <a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">
                     <img src="../imagenes/Categories/Lap.png" alt="Laptop">
                 </a>
                 <b>Laptop</b>
             </button>
-        
+
             <button class="category-button">
                 <a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">
                     <img src="../imagenes/Categories/Smar.png" alt="SmartWatch">
                 </a>
                 <b>SmartWatch</b>
             </button>
-        
+
             <button class="category-button">
                 <a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">
                     <img src="../imagenes/Categories/Prin.png" alt="Printers">
@@ -180,8 +177,8 @@
                 </a>
                 <b>Earbuds</b>
             </button>
-        </div> 
-        
+        </div>
+
 
         <div class="container-fluid mt-5 Info1 ">
             <div class="Div1Info1">
@@ -192,8 +189,7 @@
                 <p><br>Discover the technological revolution with Apple's <br>
                     unparalleled innovation! Immerse yourself in a world of limitless <br>
                     possibilities with our cutting-edge devices: Mac, iPad, and iPhone</p>
-                <button type="button" class="btn btn-secondary">See more</button>
-                </button>
+
             </div>
         </div>
 
@@ -203,8 +199,7 @@
                 <p><br>Discover the technological revolution with Apple's <br>
                     unparalleled innovation! Immerse yourself in a world of limitless <br>
                     possibilities with our cutting-edge devices: Mac, iPad, and iPhone</p>
-                <button type="button" class="btn btn-secondary">See more</button>
-                </button>
+
             </div>
             <div class="Div1Info2">
                 <img src="../imagenes/Index3.png" alt="" class="ImgInfo2">
@@ -240,7 +235,7 @@
                 </div>
             </div>
         </div>
-        
+
     </main>
 
 
@@ -251,15 +246,15 @@
         <p id="titleFooter3">Politécnico Colombiano Jaime Isaza Cadavid</p>
         <p id="titleFooter4">2024</p>
 
+        <button onclick="cambiarValorAlmacenamiento()">Cambiar configuración</button>
+        <button onclick="cambiarValorAlmacenamiento1()">Cambiar configuración 1</button>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-
-
     <script src="../JavaScript/script.js"></script>
+
 </body>
 
 </html>
