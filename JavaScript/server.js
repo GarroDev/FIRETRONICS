@@ -13,7 +13,7 @@ const config = {
   server: 'localhost',
   database: 'ECommerce_ENU_V1',
   options: {
-    trustServerCertificate: true // Opción para confiar en el certificado autofirmado (si es necesario)
+    trustServerCertificate: true 
   }
 };
 
@@ -30,6 +30,7 @@ app.post('/registro', async (req, res) => {
     console.log(req.body);
     // Establish a connection to the database
     await sql.connect(config);
+
     // Define SQL query to insert user data
     const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
     console.log(query)
@@ -82,7 +83,7 @@ app.post('/usuario', async (req, res) => {
 
     /*
         if (passwordMatch) {
-          Perfil = 1;
+          Profile = 1;
                 // Si las contraseñas coinciden, redirigir al usuario a la página indicada
           res.redirect('http://127.0.0.1:5500/HTML/Index.html');
         } else {
@@ -93,8 +94,8 @@ app.post('/usuario', async (req, res) => {
 
     if (passwordMatch) {
       // If the passwords match, reply with a message indicating that the user was found.
-      //res.redirect('http://127.0.0.1:5500/HTML/Index.html?Perfil=2');
-      localStorage.setItem('perfil', 2);
+      //res.redirect('http://127.0.0.1:5500/HTML/Index.html?Profile=2');
+      localStorage.setItem('profile', 2);
       res.redirect('http://127.0.0.1:5500/HTML/Index.html');
     } else {
       // If the passwords do not match, reply with a message indicating that the password is incorrect.
@@ -182,10 +183,10 @@ app.post('/getitems', async (req, res) => {
 });
 
 app.post('/receive-data', (req, res) => {
-  // Recibir datos JSON del cuerpo de la solicitud
+  // Receive JSON data from the request body
   const data = req.body;
 
-  // Guardar los IDs recibidos en la variable local
+  // Save the received IDs in the local variable
   if (data && data.productIds) {
     ids = data.productIds;
     console.log('IDs guardados en la variable local:', ids);

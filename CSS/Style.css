@@ -124,7 +124,7 @@ header {
 }
 
 /*---Buttons----*/
-.botones {
+.buttons {
     flex: 1;
     background-color: #222831;
     width: 10px;
@@ -237,7 +237,7 @@ ol {
     margin-left: 400px;
 }
 
-.Espacios {
+.Spaces {
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -326,14 +326,14 @@ ol {
     color: #969696;
 }
 
-#Titulo1SubMenu {
+#Title1SubMenu {
     font-size: 28px;
 }
 
 
 /* ::::SEPARATOR:::: */
 
-#Separador {
+#Separator {
     display: flex;
     background-color: #32E0C4;
     width: 100%;

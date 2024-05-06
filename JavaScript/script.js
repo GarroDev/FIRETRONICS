@@ -1,41 +1,41 @@
-// Función para mostrar/ocultar elementos
+// Function to show/hide elements
 function mostrarOcultarElementos() {
-  const perfilAlmacenado = localStorage.getItem('perfil');
+  const profileAlmacenado = localStorage.getItem('profile');
 
-  if (perfilAlmacenado === '2') {
-    // Ocultar los botones
+  if (profileAlmacenado === '2') {
+    // Hide buttons
     const botones = document.querySelectorAll('.Log-Btn1');
             botones.forEach(boton => boton.style.display = 'none');
 
-            // Mostrar los contenedores alternativos
+            // Show alternative containers
             const contenedorCuenta = document.querySelector('.Log-Btn2');
             contenedorCuenta.style.display = 'block';
   } else {
     const botones = document.querySelectorAll('.Log-Btn1');
             botones.forEach(boton => boton.style.display = 'block');
 
-            // Mostrar los contenedores alternativos
+            // Show alternative containers
             const contenedorCuenta = document.querySelector('.Log-Btn2');
             contenedorCuenta.style.display = 'none';
   }
 }
 
 function cambiarValorAlmacenamiento() {
-    // Recuperar el valor actual de la variable perfil
-    const perfilAlmacenado = localStorage.getItem('perfil');
+    // Retrieve the current value of the profile variable
+    const profileAlmacenado = localStorage.getItem('profile');
   
-    // Si el valor actual es "2" (botones ocultos), cambiarlo a otro valor (por ejemplo, "1")
-    if (perfilAlmacenado === '2') {
-      localStorage.setItem('perfil', '1');
+    // If the current value is "2" (hidden buttons), change it to another value (e.g. "1").
+    if (profileAlmacenado === '2') {
+      localStorage.setItem('profile', '1');
     } else {
-      localStorage.setItem('perfil', '2');
+      localStorage.setItem('profile', '2');
     }
   
-    // Recargar la página para aplicar los cambios
+    // Reload the page to apply the changes
     location.reload();
   }
   function cambiarValorAlmacenamiento1() {
-    localStorage.setItem('perfil', 2);
+    localStorage.setItem('profile', 2);
     location.reload();
   }
 
@@ -168,7 +168,7 @@ window.addEventListener('load', function () {
 });  
 
 
-// Función para obtener los parámetros de la URL
+// Function to obtain URL parameters
 function getParameterByName(name) {
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -178,14 +178,14 @@ function getParameterByName(name) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-// Obtener el valor del parámetro 'Perfil' de la URL
-var Perfil = getParameterByName('Perfil');
+// Get the value of the 'Profile' parameter from the URL
+var Profile = getParameterByName('Profile');
 
-// Verificar si Perfil es igual a 1
-if (Perfil === '2') {
-    // Realizar acciones si Perfil es igual a 1
-    //alert('El valor de Perfil es: ' + Perfil);
-    // Puedes realizar más acciones aquí según sea necesario
+// Verificar si Profile es igual a 1
+if (Profile === '2') {
+    // Perform actions if Profile is equal to 1
+    //alert('Profile value is: ' + Profile);
+    // You can perform more actions here as needed
 } else {
-    // alert('El valor de Perfil es: sin datos');
+    // alert('Profile value is: no data');
 }
