@@ -1,3 +1,47 @@
+// Función para mostrar/ocultar elementos
+function mostrarOcultarElementos() {
+  const perfilAlmacenado = localStorage.getItem('perfil');
+
+  if (perfilAlmacenado === '2') {
+    // Ocultar los botones
+    const botones = document.querySelectorAll('.Log-Btn1');
+            botones.forEach(boton => boton.style.display = 'none');
+
+            // Mostrar los contenedores alternativos
+            const contenedorCuenta = document.querySelector('.Log-Btn2');
+            contenedorCuenta.style.display = 'block';
+  } else {
+    const botones = document.querySelectorAll('.Log-Btn1');
+            botones.forEach(boton => boton.style.display = 'block');
+
+            // Mostrar los contenedores alternativos
+            const contenedorCuenta = document.querySelector('.Log-Btn2');
+            contenedorCuenta.style.display = 'none';
+  }
+}
+
+function cambiarValorAlmacenamiento() {
+    // Recuperar el valor actual de la variable perfil
+    const perfilAlmacenado = localStorage.getItem('perfil');
+  
+    // Si el valor actual es "2" (botones ocultos), cambiarlo a otro valor (por ejemplo, "1")
+    if (perfilAlmacenado === '2') {
+      localStorage.setItem('perfil', '1');
+    } else {
+      localStorage.setItem('perfil', '2');
+    }
+  
+    // Recargar la página para aplicar los cambios
+    location.reload();
+  }
+  function cambiarValorAlmacenamiento1() {
+    localStorage.setItem('perfil', 2);
+    location.reload();
+  }
+
+// Ejecutar la función al cargar la página
+window.addEventListener('load', mostrarOcultarElementos);
+
 // Switches tabs every 5 seconds
 var tabs = ['tab1', 'tab2', 'tab3', 'tab4']; // Add more tab identifiers if needed
 var currentIndex = 0;
@@ -94,31 +138,54 @@ function createTextInput() {
     var input = document.createElement('input');
     input.setAttribute('type', 'text');
     input.setAttribute('placeholder', 'Write here your message');
-    input.classList.add('input-text', 'list-group-item', 'list-group-item-action','HelpMesage');
+    input.classList.add('input-text', 'list-group-item', 'list-group-item-action', 'HelpMesage');
     chatArea.appendChild(input);
 }
 
 function createSendButton() {
     var sendButton = document.createElement('button');
     sendButton.textContent = 'Send';
-    sendButton.classList.add('HelpButton', 'help-button' ,'list-group-item', 'list-group-item-action', 'chatsub');
+    sendButton.classList.add('HelpButton', 'help-button', 'list-group-item', 'list-group-item-action', 'chatsub');
     sendButton.addEventListener('click', function () {
         location.reload(); // Recharge
     });
     chatArea.appendChild(sendButton);
 }
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     // Get the list of product IDs from the localStorage
     const ids = JSON.parse(localStorage.getItem('ids'));
-    
+
     // Check if the list of IDs is valid and has elements
     if (Array.isArray(ids) && ids.length > 0) {
         // Get the <span> element showing the number of products in the cart.
         const itemCountSpan = document.getElementById('cartItemCount');
-        
+
         // Update the content of the <span> element with the number of elements in the ID list.
         itemCountSpan.textContent = ids.length;
     } else {
         console.error('Invalid or empty IDs list in localStorage');
     }
 });  
+
+
+// Función para obtener los parámetros de la URL
+function getParameterByName(name) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(window.location.href);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+// Obtener el valor del parámetro 'Perfil' de la URL
+var Perfil = getParameterByName('Perfil');
+
+// Verificar si Perfil es igual a 1
+if (Perfil === '2') {
+    // Realizar acciones si Perfil es igual a 1
+    //alert('El valor de Perfil es: ' + Perfil);
+    // Puedes realizar más acciones aquí según sea necesario
+} else {
+    // alert('El valor de Perfil es: sin datos');
+}

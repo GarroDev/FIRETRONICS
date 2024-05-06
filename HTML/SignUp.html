@@ -1,169 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Sing Up</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-        <link href="../CSS/SignUp.css" rel="stylesheet">
-        <link href="../CSS/Style.css" rel="stylesheet">
-    </head>
+
+<head>
+  <title>Sing Up</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link href="../CSS/SignUp.css" rel="stylesheet">
+  <link href="../CSS/Style.css" rel="stylesheet">
+</head>
 
     <body>
 
-        <header>
-            <div class="Esplogo">
-                <a href="Index.html">
-                    <img src="../imagenes/Logo.png" id="Logo" alt="FireTronics Logo" >
-                </a>
-                
-            </div>
+  <header>
+    <div class="Esplogo">
+      <a href="Index.html"><img src="../imagenes/Logo.png" id="Logo" alt="FireTronics Logo"></a>
+    </div>
 
-            <div class="Contenedor-mitades">
+    <div class="Contenedor-mitades">
 
-                <div class="Login">
+      <div class="Login">
 
                     <div class="buscador">
 
                         <input type="text" id="barrabusqueda" name="miTexto" value="search products">
                     </div>
 
-                    <div class="botones"> 
-                        <a href="../HTML/SignIn.html">
-                          <button class="custom-btn btn-1">Sign In</button>
-                      </a>
-                      
-                      
-                      <a href="../HTML/SignUp.html">
-                          <button class="custom-btn btn-1">Sign Up</button> 
-                      </a>
+        <div class="botones">
 
-                      <a href="../HTML/ShoppingCart.html">
-                        <button id="carritoBtn" class="custom-btn btn-2">
-                            <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
-                            <span id="cartItemCount"></span>
-                        </button>
-                    </a>
-                    </div> 
-
-                </div>  
-                
-                <div class="Menu"></div>
-
-                <ul class="nav">
-                    <li><a href="../HTML/Index.html">Home</a></li>
-                    <li><a href="../HTML/WhoWeAre.html">Who Are We</a></li>
-                    <li><a href="">Products</a>
-                        <ul>
-                            <br>
-                            <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a></li>
-                            <li><a href="">Protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">SmartWash</a></li> 
-                            <li><a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">Wireless headphones</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Tablets#SectionDestino">Tablets</a></li>
-                            <li><a href="">Recomended</a></li>
-                            <!-- Next column -->
-                            <br>
-                            <li id="Titulo1SubMenu"><b>Computing</b></li><br>
-                            <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
-                                    computer</a></li>
-                            <li><a
-                                    href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a>
-                            </li>
-                            <li><a href="">protection</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">Printers</a></li>
-                            <li><a href="http://localhost/Products/?opcion_submenu=Network#SectionDestino">network elements</a></li>
-                            <li><a href="">repowering</a></li>
-                            <!-- Next column -->
-                            <br>
-                            <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
-                            <li><a href="">Smart TV</a></li>
-                            <li><a href="">Sound equipment</a></li>
-                            <li><a href="">Projectors</a></li>
-                            <li><a href="">Microphones</a></li>
-                            <li><a href="">Cabling</a></li>
-                            <li><a href="">Converters</a></li>
-                            <li><a href="">Consoles</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">Agreements</a></li>
-                    <li><a href="">Offers</a></li>
-                    <li><a href="">Trackings</a></li>
-                    <li><a href="">Orders</a></li>
-                    <li><a href="">Help</a></li>
-                </ul>
-
-            </div>    
-
-                    
-        </header>
-
-        <div id="Separador"></div>
+          <a href="../HTML/SignIn.html">
+              <button class="custom-btn btn-1 Log-Btn1">Sign In</button>
+          </a>
 
 
-    <!-- Body, registration form -->
-        <main >
-   
-            
-                <section class="bg-light py-3 py-md-5">
-                    <div class="container">
-                      <div class="row justify-content-center">
-                        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
-                          <div class="card border border-light-subtle rounded-3 shadow-sm">
-                            <div class="card-body p-3 p-md-4 p-xl-5">
-                              <div class="text-center mb-3">            
-                                <h1>Sign Up</h1>            
-                              </div>
-                              <h2 class="fs-6 fw-normal text-center text-secondary mb-4">Enter your details to register</h2>
-                              <form action="http://localhost:3002/registro" method="POST">
-                                <div class="row gy-2 overflow-hidden">
-                                  <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                      <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
-                                      <label for="Name" class="form-label">Your name</label>
-                                    </div>
-                                  </div>
-                                  <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                      <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-                                      <label for="email" class="form-label">Email</label>
-                                    </div>
-                                  </div>
-                                  <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                      <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
-                                      <label for="password" class="form-label">Password</label>
-                                    </div>
-                                  </div>
-                                  <div class="col-12">
-                                    <div class="d-grid my-3">
-                                      <button class="btn btn-primary btn-lg" type="submit">Sign up</button>
-                                    </div>
-                                  </div>
-                                  <div class="col-12">
-                                    <p class="m-0 text-secondary text-center">Already have an account? <a href="../HTML/SignIn.html" class="link-primary text-decoration-none">Sign in</a></p>
-                                  </div>
-                                  <div class="col-12">
-                                    <p class="m-0 text-secondary text-center"> By signing up you agree to our <br> <a href="#!" class="link-primary text-decoration-none">Terms & conditions</a></p>
-                                  </div>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
+          <a href="../HTML/SignUp.html">
+              <button class="custom-btn btn-1 Log-Btn1">Sign Up</button>
+          </a>
+
+          <div id="login-header" class="Log-Btn2">
+              <img src="../imagenes/avatar.png" alt="Inicio de sesión">
+              <span>Welcome!</span>
+          </div>
+
+          <a href="../HTML/ShoppingCart.html">
+              <button id="carritoBtn" class="custom-btn btn-2">
+                  <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
+                  <span id="cartItemCount"></span>
+              </button>
+          </a>
+
+      </div>
+
+      </div>
+
+      <div class="Menu"></div>
+
+      <ul class="nav">
+        <li><a href="../HTML/Index.html" class="Espacios">Home</a></li>
+
+        <li><a href="" class="Espacios">Products</a>
+          <ul>
+            <br>
+            <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
+            <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
+            <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart Wash</a></li>
+
+            <!-- Next column -->
+
+            <br>
+            <li id="Titulo1SubMenu"><b>Computing</b></li><br>
+            <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a>
+            </li>
+            <li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Laptops</a></li>
+
+            <!-- Next column -->
+
+            <br>
+            <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
+            <li><a href="">Smart TV</a></li>
+            <li><a href="">Sound equipment</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../HTML/WhoWeAre.html" class="Espacios">Who We Are</a></li>
+                   
+      </ul>
+    </div>
+
+
+  </header>
+
+  <div id="Separador"></div>
+
+
+  <!-- Body, registration form -->
+  <main>
+
+
+    <section class="bg-light py-3 py-md-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+            <div class="card border border-light-subtle rounded-3 shadow-sm">
+              <div class="card-body p-3 p-md-4 p-xl-5">
+                <div class="text-center mb-3">
+                  <h1>Sign Up</h1>
+                </div>
+                <h2 class="fs-6 fw-normal text-center text-secondary mb-4">Enter your details to register</h2>
+                <form action="http://localhost:3002/registro" method="POST">
+                  <div class="row gy-2 overflow-hidden">
+                    <div class="col-12">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+                        <label for="Name" class="form-label">Your name</label>
                       </div>
                     </div>
-                  </section>
+                    <div class="col-12">
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"
+                          required>
+                        <label for="email" class="form-label">Email</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating mb-3">
+                        <input type="password" class="form-control" name="password" id="password" value=""
+                          placeholder="Password" required>
+                        <label for="password" class="form-label">Password</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-grid my-3">
+                        <button class="btn btn-primary btn-lg" type="submit">Sign up</button>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <p class="m-0 text-secondary text-center">Already have an account? <a href="../HTML/SignIn.html"
+                          class="link-primary text-decoration-none">Sign in</a></p>
+                    </div>
+                    <div class="col-12">
+                      <p class="m-0 text-secondary text-center"> By signing up you agree to our <br> <a href="#!"
+                          class="link-primary text-decoration-none">Terms & conditions</a></p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 
-            
-        </main>
+
+  </main>
 
 
     <!-- Web site footer -->     
@@ -173,14 +166,16 @@
           <p id="titleFooter3">Politécnico Colombiano Jaime Isaza Cadavid</p>
           <p id="titleFooter4">2024</p>  
 
-        </footer>
+  </footer>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-        
 
-        <script src="../JavaScript/script.js"></script>  
-    </body>
+
+  <script src="../JavaScript/script.js"></script>
+  <script src="../JavaScript/script.js"></script>
+</body>
+
 </html>
