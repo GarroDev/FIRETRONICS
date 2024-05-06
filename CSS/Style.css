@@ -44,7 +44,7 @@ header {
 /*---Search and menu----*/
 
 /*---estructure----*/
-.Contenedor-mitades {
+.Container-halves {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -64,7 +64,7 @@ header {
 }
 
 /*
-.buscador {
+.searchengine {
     flex: 2;
     height: 85px;
     display: flex;  
@@ -73,7 +73,7 @@ header {
     align-items: center;   
 }*/
 
-.buscador {
+.searchengine {
     /* Estilos para el contenedor */
     display: flex;
     /* Utiliza flexbox para controlar el diseño */
@@ -86,7 +86,7 @@ header {
     /* Alinea los elementos en el centro verticalmente */
 }
 
-.buscador .encabezado-principal {
+.searchengine .encabezado-principal {
     font-family: 'Roboto Slab', serif;
     font-style: italic;
     font-size: 40px;
@@ -96,7 +96,7 @@ header {
     /* Otros estilos que desees agregar */
 }
 
-.buscador .encabezado-principal1 {
+.searchengine .encabezado-principal1 {
     font-family: 'Roboto Slab', serif;
     font-style: italic;
     font-size: 20px;

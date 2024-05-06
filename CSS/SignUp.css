@@ -42,7 +42,7 @@ header {
 /*---Busqueda y menú----*/
 
 /*---estructura----*/
-.Contenedor-mitades {
+.Container-halves {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -61,7 +61,7 @@ header {
     /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
-.buscador {
+.searchengine {
     flex: 2;
     height: 85px;
     display: flex;
