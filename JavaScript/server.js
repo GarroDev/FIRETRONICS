@@ -115,7 +115,7 @@ app.post('/usuario', async (req, res) => {
 
       // If the passwords match, reply with a message indicating that the user was found.
       //res.redirect('http://127.0.0.1:5500/HTML/Index.html?Perfil=2');
-      localStorage.setItem('perfil', 2);
+      sessionStorage.setItem('perfil', 2);
       res.redirect('http://127.0.0.1:5500/HTML/Index.html');
 
     } else {

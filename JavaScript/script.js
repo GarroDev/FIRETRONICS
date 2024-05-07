@@ -1,45 +1,38 @@
-// Función para mostrar/ocultar elementos
 function mostrarOcultarElementos() {
-  const perfilAlmacenado = localStorage.getItem('perfil');
+  const perfilAlmacenado = sessionStorage.getItem('perfil');
 
   if (perfilAlmacenado === '2') {
-    // Ocultar los botones
+    // Hide the buttons
     const botones = document.querySelectorAll('.Log-Btn1');
             botones.forEach(boton => boton.style.display = 'none');
 
-            // Mostrar los contenedores alternativos
+            // Show alternative containers
             const contenedorCuenta = document.querySelector('.Log-Btn2');
             contenedorCuenta.style.display = 'block';
   } else {
     const botones = document.querySelectorAll('.Log-Btn1');
             botones.forEach(boton => boton.style.display = 'block');
 
-            // Mostrar los contenedores alternativos
+            // Show alternative containers
             const contenedorCuenta = document.querySelector('.Log-Btn2');
             contenedorCuenta.style.display = 'none';
   }
 }
 
 function cambiarValorAlmacenamiento() {
-    // Recuperar el valor actual de la variable perfil
-    const perfilAlmacenado = localStorage.getItem('perfil');
+    // Get the valueo of the var perfil
+    const perfilAlmacenado = sessionStorage.getItem('perfil');
   
-    // Si el valor actual es "2" (botones ocultos), cambiarlo a otro valor (por ejemplo, "1")
+    // If actual values is "2"(Buttons hiden), if not chage value
     if (perfilAlmacenado === '2') {
-      localStorage.setItem('perfil', '1');
+      sessionStorage.setItem('perfil', '1');
     } else {
-      localStorage.setItem('perfil', '2');
+      sessionStorage.setItem('perfil', '2');
     }
-  
-    // Recargar la página para aplicar los cambios
-    location.reload();
-  }
-  function cambiarValorAlmacenamiento1() {
-    localStorage.setItem('perfil', 2);
     location.reload();
   }
 
-// Ejecutar la función al cargar la página
+// Execute funtion on page reload
 window.addEventListener('load', mostrarOcultarElementos);
 
 // Switches tabs every 5 seconds
