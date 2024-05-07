@@ -163,7 +163,7 @@ window.addEventListener('load', function () {
 const miBotonWhatsApp = document.getElementById('miBotonWhatsApp');
 
 miBotonWhatsApp.addEventListener('click', function() {
-    const numeroWhatsApp = "+573014958721";
+    const numeroWhatsApp = "+573054020427";
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}`;
     window.open(urlWhatsApp, '_blank');
 });
