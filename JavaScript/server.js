@@ -13,11 +13,27 @@ const config = {
   server: 'localhost',
   database: 'ECommerce_ENU_V1',
   options: {
-    trustServerCertificate: true 
+    trustServerCertificate: true // Opción para confiar en el certificado autofirmado (si es necesario)
   }
 };
 
+// HEAD
+
+// Configurar CORS
+app.use(cors({
+  // Permitir todos los orígenes
+  origin: '*',
+  // Permitir los métodos de solicitud que deseas permitir
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  // Permitir los encabezados personalizados que deseas permitir
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// Middleware para analizar los datos del formulario
+
 // Middleware to analyze form data
+// 65789231e62d47d5aea9f161c73fd5d1fee32314
+
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -93,10 +109,16 @@ app.post('/usuario', async (req, res) => {
     */
 
     if (passwordMatch) {
+
+      // If the passwords match, reply with a message indicating that the user was found.
+      res.send("User found");
+
+
       // If the passwords match, reply with a message indicating that the user was found.
       //res.redirect('http://127.0.0.1:5500/HTML/Index.html?Profile=2');
-      localStorage.setItem('profile', 2);
+      sessionStorage.setItem('profile', 2);
       res.redirect('http://127.0.0.1:5500/HTML/Index.html');
+
     } else {
       // If the passwords do not match, reply with a message indicating that the password is incorrect.
       res.status(401).send('Incorrect password');
@@ -196,7 +218,7 @@ app.post('/receive-data', (req, res) => {
     res.status(400).json({ error: 'Datos incorrectos o faltantes' });
   }
 });
-// Start server
+
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
 });
