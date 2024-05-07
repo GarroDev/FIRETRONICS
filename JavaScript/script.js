@@ -1,9 +1,8 @@
-// Function to show/hide elements
 function mostrarOcultarElementos() {
-  const profileAlmacenado = localStorage.getItem('profile');
+  const profileAlmacenado = sessionStorage.getItem('profile');
 
-  if (profileAlmacenado === '2') {
-    // Hide buttons
+  if (perfilAlmacenado === '2') {
+    // Hide the buttons
     const botones = document.querySelectorAll('.Log-Btn1');
             botones.forEach(boton => boton.style.display = 'none');
 
@@ -21,14 +20,14 @@ function mostrarOcultarElementos() {
 }
 
 function cambiarValorAlmacenamiento() {
-    // Retrieve the current value of the profile variable
-    const profileAlmacenado = localStorage.getItem('profile');
+    // Get the valueo of the var perfil
+    const perfilAlmacenado = sessionStorage.getItem('profile');
   
-    // If the current value is "2" (hidden buttons), change it to another value (e.g. "1").
-    if (profileAlmacenado === '2') {
-      localStorage.setItem('profile', '1');
+    // If actual values is "2"(Buttons hiden), if not chage value
+    if (perfilAlmacenado === '2') {
+      sessionStorage.setItem('profile', '1');
     } else {
-      localStorage.setItem('profile', '2');
+      sessionStorage.setItem('profile', '2');
     }
   
     // Reload the page to apply the changes
@@ -39,7 +38,7 @@ function cambiarValorAlmacenamiento() {
     location.reload();
   }
 
-// Ejecutar la función al cargar la página
+// Execute funtion on page reload
 window.addEventListener('load', mostrarOcultarElementos);
 
 // Switches tabs every 5 seconds
