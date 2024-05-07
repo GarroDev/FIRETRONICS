@@ -1,7 +1,7 @@
 function mostrarOcultarElementos() {
-  const perfilAlmacenado = sessionStorage.getItem('perfil');
+  const profileAlmacenado = sessionStorage.getItem('profile');
 
-  if (perfilAlmacenado === '2') {
+  if (profileAlmacenado === '2') {
     // Hide the buttons
     const botones = document.querySelectorAll('.Log-Btn1');
             botones.forEach(boton => boton.style.display = 'none');
@@ -20,14 +20,14 @@ function mostrarOcultarElementos() {
 }
 
 function cambiarValorAlmacenamiento() {
-    // Get the valueo of the var perfil
-    const perfilAlmacenado = sessionStorage.getItem('perfil');
+    // Get the valueo of the var profile
+    const profileAlmacenado = sessionStorage.getItem('profile');
   
     // If actual values is "2"(Buttons hiden), if not chage value
-    if (perfilAlmacenado === '2') {
-      sessionStorage.setItem('perfil', '1');
+    if (profileAlmacenado === '2') {
+      sessionStorage.setItem('profile', '1');
     } else {
-      sessionStorage.setItem('perfil', '2');
+      sessionStorage.setItem('profile', '2');
     }
     location.reload();
   }
@@ -171,14 +171,14 @@ function getParameterByName(name) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-// Obtener el valor del parámetro 'Perfil' de la URL
-var Perfil = getParameterByName('Perfil');
+// Obtener el valor del parámetro 'Profile' de la URL
+var Profile = getParameterByName('Profile');
 
-// Verificar si Perfil es igual a 1
-if (Perfil === '2') {
-    // Realizar acciones si Perfil es igual a 1
-    //alert('El valor de Perfil es: ' + Perfil);
+// Verificar si Profile es igual a 1
+if (Profile === '2') {
+    // Realizar acciones si Profile es igual a 1
+    //alert('El valor de Profile es: ' + Profile);
     // Puedes realizar más acciones aquí según sea necesario
 } else {
-    // alert('El valor de Perfil es: sin datos');
+    // alert('El valor de Profile es: sin datos');
 }
