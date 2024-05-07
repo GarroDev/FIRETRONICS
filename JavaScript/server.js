@@ -94,8 +94,6 @@ app.post('/usuario', async (req, res) => {
 
 
     //--------------------------------------------------------------------------------------------------------------------------------------
-
-
     /*
         if (passwordMatch) {
           Profile = 1;
@@ -106,7 +104,6 @@ app.post('/usuario', async (req, res) => {
           res.status(401).send('Incorrect password');
         }  
     */
-
     if (passwordMatch) {
       sessionStorage.setItem('profile', 2);
       // If the passwords match, reply with a message indicating that the user was found.
@@ -116,8 +113,6 @@ app.post('/usuario', async (req, res) => {
       // If the passwords match, reply with a message indicating that the user was found.
       //res.redirect('http://127.0.0.1:5500/HTML/Index.html?Profile=2');
       
-      
-
     } else {
       // If the passwords do not match, reply with a message indicating that the password is incorrect.
       res.status(401).send('Incorrect password');
