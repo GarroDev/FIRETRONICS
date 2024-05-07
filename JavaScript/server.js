@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Route handler/registration
-app.post('/registro', async (req, res) => {
+/* app.post('/registro', async (req, res) => {
   try {
     // Extract data from the form
     const { name, email, password } = req.body;
@@ -51,6 +51,38 @@ app.post('/registro', async (req, res) => {
     res.status(500).send('Internal server error');
   }
 });
+*/
+
+app.post('/registro', async (req, res) => {
+  try {
+    // Extract data from the form
+    const { name, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    console.log(req.body);
+    // Establish a connection to the database
+    await sql.connect(config);
+
+    // Define SQL query to insert user data
+    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
+    console.log(query)
+    // Execute SQL query
+    await sql.query(query, {
+      name,
+      email,
+      hashedPassword
+    });
+
+    // Close database connection
+    await sql.close();
+    // Respond with a success message
+    res.send('<script>alert("¡Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+  } catch (error) {
+    // Handling errors
+    console.error('Error insterting values:', error.message);
+    res.status(500).send('Internal server error');
+  }
+});
+
 
 
 
