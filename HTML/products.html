@@ -228,7 +228,7 @@ button.textContent = 'View Product'; // Puedes personalizar el texto del botón 
 button.addEventListener('click', () => {
     // Redirigir a una nueva página y pasar los datos del producto seleccionado
     
-    window.location.href = `detalle_producto.html?id=${product.ID_Product}&product=${product.IMG}&productName=${encodeURIComponent(product.Name)}&productPrice=${product.Price}&productStock=${product.Stock}`;
+    window.location.href = `detail.html?id=${product.ID_Product}&product=${product.IMG}&productName=${encodeURIComponent(product.Name)}&productPrice=${product.Price}&productStock=${product.Stock}`;
 });
 cardBody.appendChild(button);
 
