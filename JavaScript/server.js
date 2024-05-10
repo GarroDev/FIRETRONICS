@@ -13,7 +13,7 @@ const config = {
   server: 'localhost',
   database: 'ECommerce_ENU_V1',
   options: {
-    trustServerCertificate: true // Opción para confiar en el certificado autofirmado (si es necesario)
+    trustServerCertificate: true 
   }
 };
 
@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Route handler/registration
-app.post('/registro', async (req, res) => {
+/* app.post('/registro', async (req, res) => {
   try {
     // Extract data from the form
     const { name, email, password } = req.body;
@@ -46,6 +46,7 @@ app.post('/registro', async (req, res) => {
     console.log(req.body);
     // Establish a connection to the database
     await sql.connect(config);
+
     // Define SQL query to insert user data
     const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
     console.log(query)
@@ -66,6 +67,38 @@ app.post('/registro', async (req, res) => {
     res.status(500).send('Internal server error');
   }
 });
+*/
+
+app.post('/registro', async (req, res) => {
+  try {
+    // Extract data from the form
+    const { name, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    console.log(req.body);
+    // Establish a connection to the database
+    await sql.connect(config);
+
+    // Define SQL query to insert user data
+    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
+    console.log(query)
+    // Execute SQL query
+    await sql.query(query, {
+      name,
+      email,
+      hashedPassword
+    });
+
+    // Close database connection
+    await sql.close();
+    // Respond with a success message
+    res.send('<script>alert("¡Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+  } catch (error) {
+    // Handling errors
+    console.error('Error insterting values:', error.message);
+    res.status(500).send('Internal server error');
+  }
+});
+
 
 
 
@@ -112,7 +145,9 @@ app.post('/usuario', async (req, res) => {
 
       // If the passwords match, reply with a message indicating that the user was found.
       //res.redirect('http://127.0.0.1:5500/HTML/Index.html?Profile=2');
-      
+      sessionStorage.setItem('profile', 2);
+      res.redirect('http://127.0.0.1:5500/HTML/Index.html');
+
     } else {
       // If the passwords do not match, reply with a message indicating that the password is incorrect.
       res.status(401).send('Incorrect password');
@@ -211,10 +246,10 @@ app.post('/getitems', async (req, res) => {
 });
 
 app.post('/receive-data', (req, res) => {
-  // Recibir datos JSON del cuerpo de la solicitud
+  // Receive JSON data from the request body
   const data = req.body;
 
-  // Guardar los IDs recibidos en la variable local
+  // Save the received IDs in the local variable
   if (data && data.productIds) {
     ids = data.productIds;
     console.log('IDs guardados en la variable local:', ids);

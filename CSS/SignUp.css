@@ -89,8 +89,8 @@ header {
     letter-spacing: 0px;
     font-weight: bold;}
 
-/*---Botones----*/
-.botones {
+/*---buttons----*/
+.buttons {
     flex: 1;
     background-color: #222831;
     width: 10px;
@@ -191,7 +191,8 @@ ol {
     width: 900px;
     height: 400px;
     /*column-count: 3; /* Agregado: dividir en 3 columnas */
-    /*column-gap: 20px; /* Agregado: espacio entre columnas */
+    /*column-gap: 20px; /* Agregado: spaces
+ entre columnas */
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     /* Agregado: velocidad de transición */
     z-index: 1;
@@ -237,14 +238,14 @@ ol {
     color: #969696;
 }
 
-#Titulo1SubMenu {
+#Title1SubMenu {
     font-size: 28px;
 }
 
 
-/* ::::SEPARADOR:::: */
+/* ::::SEPARATOR:::: */
 
-#Separador {
+#Separator {
     display: flex;
     background-color: #32E0C4;
     width: 100%;
