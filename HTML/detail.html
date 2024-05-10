@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Welcome to FireTronics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="../CSS/Style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ::::ENCABEZADO:::: del sitio web y menu de opciones  -->
+
+    <header>
+        <div class="Esplogo">
+            <a href="Index.html"><img src="../imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo"></a>
+        </div>
+
+        <div class="Contenedor-mitades">
+
+            <div class="Login">
+
+                <div class="buscador">
+                    <!-- <textarea id="barrabusqueda" name="miTexto" rows="4" cols="50">                            
+                        </textarea> -->
+                    <input type="text" id="barrabusqueda" name="miTexto" value="search products">
+                </div>
+
+                <div class="botones">
+
+                    <a href="../HTML/SignIn.html">
+                        <button class="custom-btn btn-1">Sign In</button>
+                    </a>
+
+
+                    <a href="../HTML/SignUp.html">
+                        <button class="custom-btn btn-1">Sign Up</button>
+                    </a>
+
+                    <a href="../HTML/ShoppingCart.html">
+                        <button id="carritoBtn" class="custom-btn btn-2">
+                            <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
+                            <span id="cartItemCount"></span>
+                        </button>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="Menu"></div>
+
+                <ul class="nav">
+                    <li><a href="../HTML/Index.html">Home</a></li>
+                    <li><a href="../HTML/WhoWeAre.html">Who We Are</a></li>
+                    <li><a href="">Products</a>
+                        <ul>
+                            <br>
+                            <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
+                            <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a></li>
+                            <li><a href="">Protection</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">SmartWash</a></li> 
+                            <li><a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">Wireless headphones</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=Tablets#SectionDestino">Tablets</a></li>
+                            <li><a href="">Recomended</a></li>
+                            <!-- Siguiente columna -->
+                            <br>
+                            <li id="Titulo1SubMenu"><b>Computing</b></li><br>
+                            <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
+                                    computer</a></li>
+                            <li><a
+                                    href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Accessories</a>
+                            </li>
+                            <li><a href="">protection</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">Laptop</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">Printers</a></li>
+                            <li><a href="http://localhost/Products/?opcion_submenu=Network#SectionDestino">network elements</a></li>
+                            <li><a href="">repowering</a></li>
+                            <!-- Siguiente columna -->
+                            <br>
+                            <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
+                            <li><a href="">Smart TV</a></li>
+                            <li><a href="">Sound equipment</a></li>
+                            <li><a href="">Projectors</a></li>
+                            <li><a href="">Microphones</a></li>
+                            <li><a href="">Cabling</a></li>
+                            <li><a href="">Converters</a></li>
+                            <li><a href="">Consoles</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Agreements</a></li>
+                    <li><a href="">Offers</a></li>
+                    <li><a href="">Trackings</a></li>
+                    <li><a href="">Orders</a></li>
+                    <li><a href="">Help</a></li>
+                </ul>
+            </div>
+
+
+    </header>
+
+    <div id="Separador"></div>
+
+
+    <!-- Cuerpo del sitio web -->
+    <main>
+        <br>
+
+        <h1>Product Details</h1>
+        <div id="productDetails"></div>
+
+        <br>
+        <div class="container-fluid">
+            <!-- Botón de ayuda -->
+            <button id="helpButton" class="circular-button btn btn-primary">?</button>
+
+            <!-- Popup de ayuda -->
+            <div id="helpPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close">×</span>
+                    <div class="chat">
+                        <div id="chatArea" class="chat-area">
+                            <p class="Sys">How can I help?<br></p>
+                        </div>
+                        <div id="helpList" class="list-group"><br>
+                            <button class="help-button list-group-item list-group-item-action chatsub"
+                                value="Problema">I have an issue</button>
+                            <button class="help-button list-group-item list-group-item-action chatsub"
+                                value="Consulta">I have a question</button>
+                            <button class="help-button list-group-item list-group-item-action chatsub"
+                                value="Sugerencia">I wanna do a sugestion</button>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+
+    <!-- Pie de pagina del sitio web -->
+    <footer>
+        <p id="titleFooter1">FireTronics</p>
+        <p id="titleFooter2">All Rights Reserved</p>
+        <p id="titleFooter3">Politécnico Colombiano Jaime Isaza Cadavid</p>
+        <p id="titleFooter4">2024</p>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+
+    <script src="../JavaScript/script.js"></script>
+    <script>
+        // Función para obtener parámetros de la URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Obtener parámetros de la URL
+        const id = getUrlParameter('id');
+        const productIMG = getUrlParameter('product');
+        const productName = getUrlParameter('productName');
+        const productPrice = getUrlParameter('productPrice');
+        const productStock = getUrlParameter('productStock');
+
+        // Mostrar detalles del producto en la página
+        const productDetailsDiv = document.getElementById('productDetails');
+        productDetailsDiv.innerHTML = `
+            <p><strong>ID:</strong> ${id}</p>
+            <img src="${productIMG}" alt="${productName}">
+            <p><strong>Name:</strong> ${productName}</p>
+            <p><strong>Price:</strong> ${productPrice}</p>
+            <p><strong>Stock:</strong> ${productStock}</p>
+        `;
+        const addToCartButton = document.createElement('button');
+addToCartButton.textContent = 'Add to Cart';
+addToCartButton.classList.add('btn', 'btn-primary');
+
+// Agregar un evento de clic al botón
+addToCartButton.addEventListener('click', () => {
+    // Obtener el carrito actual del localStorage o inicializar un array vacío si no existe
+    const cart = JSON.parse(localStorage.getItem('ids')) || [];
+
+    // Agregar el ID del producto al carrito
+    cart.push(parseInt(id));
+
+    // Guardar el carrito actualizado en el localStorage
+    localStorage.setItem('ids', JSON.stringify(cart));
+
+    // Alerta o mensaje indicando que el producto se agregó al carrito (puedes personalizar esto)
+    alert('Product added to cart!');
+});
+
+// Agregar el botón "Agregar al carrito" al contenedor de detalles del producto
+productDetailsDiv.appendChild(addToCartButton);
+    </script>
+</body>
+
+</html>

@@ -20,15 +20,21 @@ function mostrarOcultarElementos() {
 }
 
 function cambiarValorAlmacenamiento() {
-    // Get the valueo of the var profile
-    const profileAlmacenado = sessionStorage.getItem('profile');
+    // Get the valueo of the var perfil
+    const perfilAlmacenado = sessionStorage.getItem('profile');
   
     // If actual values is "2"(Buttons hiden), if not chage value
-    if (profileAlmacenado === '2') {
+    if (perfilAlmacenado === '2') {
       sessionStorage.setItem('profile', '1');
     } else {
       sessionStorage.setItem('profile', '2');
     }
+  
+    // Reload the page to apply the changes
+    location.reload();
+  }
+  function cambiarValorAlmacenamiento1() {
+    localStorage.setItem('profile', 2);
     location.reload();
   }
 
@@ -163,12 +169,12 @@ window.addEventListener('load', function () {
 const miBotonWhatsApp = document.getElementById('miBotonWhatsApp');
 
 miBotonWhatsApp.addEventListener('click', function() {
-    const numeroWhatsApp = "+573014958721";
+    const numeroWhatsApp = "+573054020427";
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}`;
     window.open(urlWhatsApp, '_blank');
 });
 
-// Función para obtener los parámetros de la URL
+// Function to obtain URL parameters
 function getParameterByName(name) {
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -178,14 +184,14 @@ function getParameterByName(name) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-// Obtener el valor del parámetro 'Profile' de la URL
+// Get the value of the 'Profile' parameter from the URL
 var Profile = getParameterByName('Profile');
 
 // Verificar si Profile es igual a 1
 if (Profile === '2') {
-    // Realizar acciones si Profile es igual a 1
-    //alert('El valor de Profile es: ' + Profile);
-    // Puedes realizar más acciones aquí según sea necesario
+    // Perform actions if Profile is equal to 1
+    //alert('Profile value is: ' + Profile);
+    // You can perform more actions here as needed
 } else {
-    // alert('El valor de Profile es: sin datos');
+    // alert('Profile value is: no data');
 }
