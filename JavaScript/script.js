@@ -1,48 +1,38 @@
 function mostrarOcultarElementos() {
-    const profileAlmacenado = sessionStorage.getItem('profile');
+  const profileAlmacenado = sessionStorage.getItem('profile');
 
-    if (profileAlmacenado === '2') {
-        // Hide the buttons
-        const botones = document.querySelectorAll('.Log-Btn1');
-        botones.forEach(boton => boton.style.display = 'none');
+  if (profileAlmacenado === '2') {
+    // Hide the buttons
+    const botones = document.querySelectorAll('.Log-Btn1');
+            botones.forEach(boton => boton.style.display = 'none');
 
-        // Show alternative containers
-        const contenedorCuenta = document.querySelector('.Log-Btn2');
-        contenedorCuenta.style.display = 'block';
-    } else {
-        const botones = document.querySelectorAll('.Log-Btn1');
-        botones.forEach(boton => boton.style.display = 'block');
+            // Show alternative containers
+            const contenedorCuenta = document.querySelector('.Log-Btn2');
+            contenedorCuenta.style.display = 'block';
+  } else {
+    const botones = document.querySelectorAll('.Log-Btn1');
+            botones.forEach(boton => boton.style.display = 'block');
 
-        // Show alternative containers
-        const contenedorCuenta = document.querySelector('.Log-Btn2');
-        contenedorCuenta.style.display = 'none';
-    }
-}
-
-function getParametroURL(nombre) {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    return urlParams.get(nombre);
+            // Show alternative containers
+            const contenedorCuenta = document.querySelector('.Log-Btn2');
+            contenedorCuenta.style.display = 'none';
+  }
 }
 
 function cambiarValorAlmacenamiento() {
-    if (sessionStorage.getItem('login') === 'true') {
-        return; 
-    }
-    // Get the parameter value 'Profile' from URL
-    const profile = getParametroURL('Profile');
-
-    if (profile === '2') {
-        sessionStorage.setItem('profile', '1');
+    // Get the valueo of the var perfil
+    const perfilAlmacenado = sessionStorage.getItem('profile');
+  
+    // If actual values is "2"(Buttons hiden), if not chage value
+    if (perfilAlmacenado === '2') {
+      sessionStorage.setItem('profile', '1');
     } else {
-        sessionStorage.setItem('profile', '2');
+      sessionStorage.setItem('profile', '2');
     }
-    // Making the function only one time
-    sessionStorage.setItem('login', 'true');
+  
+    // Reload the page to apply the changes
     location.reload();
-}
-window.onload = cambiarValorAlmacenamiento;
-
+  }
 // Execute funtion on page reload
 window.addEventListener('load', mostrarOcultarElementos);
 
@@ -169,11 +159,11 @@ window.addEventListener('load', function () {
     } else {
         console.error('Invalid or empty IDs list in localStorage');
     }
-});
+});  
 
 const miBotonWhatsApp = document.getElementById('miBotonWhatsApp');
 
-miBotonWhatsApp.addEventListener('click', function () {
+miBotonWhatsApp.addEventListener('click', function() {
     const numeroWhatsApp = "+573054020427";
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}`;
     window.open(urlWhatsApp, '_blank');
