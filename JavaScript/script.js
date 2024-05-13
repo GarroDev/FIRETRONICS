@@ -26,27 +26,20 @@ function getParametroURL(nombre) {
 }
 
 function cambiarValorAlmacenamiento() {
-    const ejecutadoAntes = localStorage.getItem('cambioRealizado');
-    if (ejecutadoAntes) {
-        return; // Si ya se ha ejecutado, salir de la función
-    }
 
     const profile = getParametroURL('Profile');
 
-    if (profile === '2') {
+    if (profile === null || sessionStorage.getItem('loggedIn') === true) {
+        return;
+    } else if (profile === '2') {
         sessionStorage.setItem('profile', '2');
     } else {
         sessionStorage.setItem('profile', '1');
     }
 
-
-    if (sessionStorage.getItem('loggedIn')) {
-        localStorage.setItem('cambioRealizado', 'true');
-    }
-
-    
+    sessionStorage.setItem('loggedIn', 'true');
 }
-
+window.onload = cambiarValorAlmacenamiento;
 // Execute funtion on page reload
 window.addEventListener('load', mostrarOcultarElementos);
 

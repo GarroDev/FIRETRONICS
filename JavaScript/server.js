@@ -138,7 +138,6 @@ app.post('/usuario', async (req, res) => {
         }  
     */
     if (passwordMatch) {
-      req.session.isLoggedIn = true;
       // If the passwords match, reply with a message indicating that the user was found.
       //res.send("User found");
       //res.redirect('http://127.0.0.1:5500/HTML/Index.html');
