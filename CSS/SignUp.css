@@ -61,16 +61,6 @@ header {
     /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
-.searchengine {
-    flex: 2;
-    height: 85px;
-    display: flex;
-    flex-direction: row;
-    /* Coloca los elementos en una columna */
-    justify-content: center;
-    /* Alinea los elementos al final del contenedor*/
-    align-items: center;
-}
 
 /*---Contenido----*/
 
@@ -318,6 +308,7 @@ footer {
     /* Para asegurar que la imagen no sobresalga del contenedor */
     text-align: center;
     /* Centra el texto horizontalmente */
+    margin-top: 100px;
 }
 
 #titleFooter1 {
