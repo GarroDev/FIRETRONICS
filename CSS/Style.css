@@ -2,22 +2,17 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    /* Hace que el contenido ocupe al menos el 100% de la altura de la ventana */
     display: flex;
     flex-direction: column;
     background-color: #EEEEEE;
 }
 
-/* ::::HEADER:::: */
 
 header {
     display: flex;
     width: 100%;
     height: 140px;
-    /* Ajusta la altura según tus necesidades */
-
     overflow: hidden;
-    /* Para asegurar que la imagen no sobresalga del contenedor */
 }
 
 /*---LOGO----*/
@@ -25,30 +20,25 @@ header {
 .Esplogo {
     flex: 0 0 auto;
     background-color: #EEEEEE;
-    /* Color de fondo (puedes cambiarlo) */
-
     height: auto;
     overflow: hidden;
-    /* Para asegurar que la imagen no sobresalga del contenedor */
 }
 
 .Esplogo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ajusta la imagen para cubrir completamente el contenedor */
     max-width: 100%;
     max-height: 100%;
 }
 
 /*---Search and menu----*/
 
-/*---estructure----*/
+/*---structure----*/
 .Container-halves {
     display: flex;
     flex: 1;
     flex-direction: column;
-    /* Coloca las mitades en una columna */
 }
 
 .Login {
@@ -56,53 +46,31 @@ header {
     background-color: #222831;
     height: 90%;
     display: flex;
-    /* Agregado: establece el contenedor "Login" como un contenedor flex */
     flex-direction: row;
-    /* Coloca los elementos en una columna */
     align-items: center;
-    /* Alinea los elementos al final del contenedor (a la derecha) */
 }
 
-/*
-.searchengine {
-    flex: 2;
-    height: 85px;
-    display: flex;  
-    flex-direction: row;   
-    justify-content: center;  
-    align-items: center;   
-}*/
 
 .searchengine {
-    /* Estilos para el contenedor */
     display: flex;
-    /* Utiliza flexbox para controlar el diseño */
     flex-direction: column;
-    /* Coloca los elementos en una columna */
     padding-left: 35%;
     justify-content: center;
-    /* Alinea los elementos en el centro horizontalmente */
     align-items: center;
-    /* Alinea los elementos en el centro verticalmente */
 }
 
-.searchengine .encabezado-principal {
+.searchengine .principal-header {
     font-family: 'Roboto Slab', serif;
     font-style: italic;
     font-size: 40px;
-    /* Cambia el tamaño según lo desees */
     color: #eee;
-    /* Color que prefieras */
-    /* Otros estilos que desees agregar */
 }
 
-.searchengine .encabezado-principal1 {
+.searchengine .principal-header1 {
     font-family: 'Roboto Slab', serif;
     font-style: italic;
     font-size: 20px;
     color: #eee;
-    /* Color que prefieras */
-    /* Otros estilos que desees agregar */
 }
 
 /*---Content----*/
@@ -115,9 +83,7 @@ header {
     font-family: 'Lato', sans-serif;
     color: #9fa1a3;
     text-align: left;
-    /* Alinea el texto a la izquierda */
     vertical-align: middle;
-    /* Centra verticalmente el contenido */
     font-size: 17px;
     letter-spacing: 0px;
     font-weight: bold;
@@ -130,9 +96,7 @@ header {
     width: 10px;
     height: 70%;
     display: flex;
-    /* Agregado: establece el contenedor "Login" como un contenedor flex */
     flex-direction: row;
-    /* Coloca los elementos en una columna */
     justify-content: flex-end;
     align-items: center;
 }
@@ -188,7 +152,7 @@ button {
 }
 
 
-/*---CAMBIO DESPUES DEL INICIO DE SESIÓN----*/
+/*---Change after sign in----*/
 
 #login-header {
     text-align: center;
@@ -198,29 +162,24 @@ button {
 
 #login-header img {
     width: 100px;
-    /* Tamaño de la imagen */
     height: auto;
     margin-right: 10px;
 }
 
 
-/*---CAMBIO DESPUES DEL INICIO DE SESIÓN----*/
+/*---Change after sign in----*/
 
 
 
 
-/*---Menú----*/
+/*---Menu----*/
 .Menu {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Cambiado a 'center' para centrar verticalmente */
     align-items: center;
-    /* Añadido para centrar horizontalmente */
     margin-top: -10px;
-    /* text-align: center; */
-    /* No es necesario cuando se utiliza flexbox */
 
 
 }
@@ -232,8 +191,6 @@ ol {
 
 .nav {
     display: flex;
-    /* justify-content: center;
-  align-items: center;*/
     margin-left: 400px;
 }
 
@@ -270,13 +227,9 @@ ol {
     visibility: hidden;
     position: fixed;
     width: auto;
-    /* Cambiado: ancho automático para adaptarse al contenido */
     height: 220px;
-    /* Cambiado: altura automática para adaptarse al contenido */
     column-count: 3;
-    /* Agregado: dividir en 3 columnas */
     column-gap: 40px;
-    /* Agregado: espacio entre columnas */
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     z-index: 1;
     top: 130px;
@@ -286,7 +239,6 @@ ol {
 
 .nav li ul li {
     border-right: 1px solid #CCCCCC;
-    /* Añade una línea vertical a la derecha de cada elemento del submenú */
     position: relative;
 }
 
@@ -307,9 +259,7 @@ ol {
     right: -140px;
     top: 0px;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    /* Agregado: velocidad de transición */
     z-index: 2;
-    /* Agregado: establece una posición superior para que el menú aparezca sobre otros elementos */
 }
 
 .nav li ul:hover>li ul {
@@ -338,24 +288,21 @@ ol {
     background-color: #32E0C4;
     width: 100%;
     height: 30px;
-    /* Ajusta la altura según tus necesidades */
     overflow: hidden;
-    /* Para asegurar que la imagen no sobresalga del contenedor */
+
 }
 
 /* ::::BODY MAIN:::: */
 
 .Promossize {
-    /* Adjustable size (original based on Marvel)(delete () if this is changed) */
     width: 1169px;
     height: 322px;
 }
 
 
 .categories {
-    /* Categories Buttons */
+
     justify-content: space-around;
-    /* This make them responsive */
     padding: 10px;
     background-color: #ffffff;
     width: 95%;
@@ -424,7 +371,7 @@ ol {
     height: 438px;
 }
 
-/* ::::BOTON DE AYUDA:::: */
+/* ::::Help button:::: */
 .popup {
     display: none;
     position: fixed;
@@ -520,7 +467,6 @@ position: fixed;
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
-    /* Para incluir el padding en el ancho total */
     transition: border-color 0.3s ease-in-out;
 }
 
@@ -534,57 +480,44 @@ position: fixed;
 }
 
 
-/* ::::PIE DE PAGINA FOOTER:::: */
+/* ::::FOOTER:::: */
 
 footer {
 
     background-color: #222831;
     color: #EEE;
     padding: 20px;
-    /*position: fixed;  Fija el footer en la parte inferior de la ventana */
     width: 100%;
-    /* Ocupa el 100% del ancho de la ventana */
     bottom: 0;
-    /* Coloca el footer en la parte inferior */
     overflow: hidden;
-    /* Para asegurar que la imagen no sobresalga del contenedor */
     text-align: center;
-    /* Centra el texto horizontalmente */
 }
 
 #titleFooter1 {
     font-size: 30px;
     position: relative;
-    /* Permite ajustar la posición relativa al contenedor */
     top: -25px;
-    /* Ajusta la posición verticalmente según tus necesidades */
     left: -25px;
 }
 
 #titleFooter2 {
     font-size: 20px;
     position: relative;
-    /* Permite ajustar la posición relativa al contenedor */
     top: -25px;
-    /* Ajusta la posición verticalmente según tus necesidades */
     left: -25px;
 }
 
 #titleFooter3 {
     font-size: 20px;
     position: relative;
-    /* Permite ajustar la posición relativa al contenedor */
     top: -35px;
-    /* Ajusta la posición verticalmente según tus necesidades */
     left: -25px;
 }
 
 #titleFooter4 {
     font-size: 20px;
     position: relative;
-    /* Permite ajustar la posición relativa al contenedor */
     top: -40px;
-    /* Ajusta la posición verticalmente según tus necesidades */
     left: -25px;
 }
 
@@ -594,7 +527,6 @@ footer {
 
 .contenedor-izquierdo {
     flex: 1;
-    /* La columna izquierda ocupa el 60% del espacio */
     background-color: rgb(70, 221, 201);
     max-height: 1000px;
     padding-bottom: 20px;
@@ -602,7 +534,6 @@ footer {
 
 .contenedor-derecho {
     flex: 0.5;
-    /* La columna derecha ocupa el 40% del espacio */
     background-color: rgb(70, 221, 201);
     margin-left: 20px;
     max-height: 200px;

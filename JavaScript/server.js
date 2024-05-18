@@ -178,9 +178,9 @@ app.post('/cartitems', async (req, res) => {
     const query = `SELECT ID_Product, Name, Price, Stock, Description, IMG FROM PRODUCTS WHERE ID_Product = '${id}'`;
     const result = await sql.query(query);
     const Name = result.recordset[0];
-    // Verificar si se encontraron resultados
+
     if (result.recordset.length === 0) {
-      // Si no se encontraron resultados, responder con un mensaje indicando que el usuario no existe
+
       res.status(404).send('product no found');
       return;
     } else {
@@ -198,45 +198,45 @@ app.post('/cartitems', async (req, res) => {
 
 app.post('/getitems', async (req, res) => {
   try {
-      // Establecer una conexión con la base de datos
+
       await sql.connect(config);
 
       let query;
 
-      // Verificar si se proporcionó un parámetro de categoría en la solicitud
+
       if (req.body.category) {
-          // Si se proporcionó un parámetro de categoría, usarlo para filtrar los productos
+
           query = `SELECT * FROM PRODUCTS WHERE Categoria = @category`;
       } else {
-          // Si no se proporcionó un parámetro de categoría, usar un SELECT * general
+
           query = `SELECT * FROM PRODUCTS`;
       }
 
-      // Crear un objeto de solicitud SQL
+
       const request = new sql.Request();
       
-      // Asignar el valor de la categoría si se proporcionó
+
       if (req.body.category) {
           request.input('category', req.body.category);
       }
 
-      // Ejecutar la consulta SQL
+
       const result = await request.query(query);
 
-      // Verificar si se encontraron resultados
+
       if (result.recordset.length === 0) {
-          // Si no se encontraron resultados, responder con un mensaje indicando que no se encontraron productos
+
           res.status(404).send('No products found');
           return;
       } else {
-          // Enviar los resultados como respuesta
+
           res.send(result.recordset);
       }
 
-      // Cerrar la conexión con la base de datos
+
       await sql.close();
   } catch (error) {
-      // Manejar errores
+
       console.error('Error getting product information:', error.message);
       res.status(500).send('Internal server error');
   }
