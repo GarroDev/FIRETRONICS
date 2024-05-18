@@ -34,7 +34,7 @@ header {
 
 /*---Search and menu----*/
 
-/*---estructure----*/
+/*---structure----*/
 .Container-halves {
     display: flex;
     flex: 1;
@@ -50,15 +50,6 @@ header {
     align-items: center;
 }
 
-/*
-.searchengine {
-    flex: 2;
-    height: 85px;
-    display: flex;  
-    flex-direction: row;   
-    justify-content: center;  
-    align-items: center;   
-}*/
 
 .searchengine {
     display: flex;

@@ -37,7 +37,7 @@ header {
 
 /*---Search and menu----*/
 
-/*---estructura----*/
+
 .Container-halves {
     display: flex;
     flex: 1;
@@ -229,50 +229,6 @@ ol {
     overflow: hidden;
 }
 
-/* ::::CUERPO MAIN:::: */
-
-
-/* Estilo utilizado para el main antes de usar bootstrap.SignUp{
-
-    padding-top: 180px;
-    text-align: center;
-    padding-bottom: 250px;
-    border: 40px rgb(255, 255, 255) solid;
-    padding-left: 100px;
-    padding-right: 100px;
-    border-left-width: 150px;
-    border-right-width: 150px;
-    border-top: 0px;
-    border-bottom: 0px;
-
-}
-
-#Info{
-    margin-top: 20px;
-    border-radius: 10px;
-    height: 50px;
-    width: 225px;
-}
-
-
-#Inputs{
-    margin-top: 20px;
-    border-radius: 10px;
-    background-color: rgb(113, 113, 113);
-    height: 50px;
-    width: 225px;
-    
-}
-
-.SignUpDiv{
-    background-color: rgb(255, 255, 255);
-    margin-left: 550px;
-    margin-right: 550px;
-    margin-top: 0px;
-    margin-bottom: 100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 
 
 
