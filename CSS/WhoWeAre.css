@@ -47,15 +47,10 @@ main {
 .img {
     border-radius: 100%;
     max-width: 100%;
-    /* Ajusta el tamaño máximo de la imagen */
     max-height: 100%;
-    /* Ajusta la altura máxima de la imagen */
     display: block;
-    /* Elimina el espacio adicional debajo de la imagen */
     margin: auto;
-    /* Centra la imagen horizontalmente */
     height: 50%;
     margin-bottom: 25px;
-    /* Margen inferior entre la imagen y el texto */
     margin-top: 25px;
 }

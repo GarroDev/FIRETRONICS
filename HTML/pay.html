@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <title>Pay</title>
@@ -28,11 +28,6 @@
         <div class="Container-halves">
 
             <div class="Login">
-
-                    <div class="searchengine">
-
-                        <input type="text" id="barrabusqueda" name="miTexto" value="Buscar de Productos">
-                    </div>
 
                 <div class="buttons">
 
@@ -107,7 +102,7 @@
         <h2 class="mt-4 mb-4 text-center">Shipping Information</h2>
         <form id="bill" style="max-width: 700px; margin: auto;">
     
-            <!-- Campo "Name" -->
+            <!-- Field "Name" -->
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" maxlength="40">
@@ -115,7 +110,7 @@
                 <small class="form-text text-muted">Only letters allowed, maximum 40 characters.</small>
             </div>
     
-            <!-- Campo "Address" -->
+            <!-- Field "Address" -->
             <div class="form-group">
                 <label for="address">Address:</label>
                 <textarea class="form-control" id="address" name="address" rows="4" maxlength="100"></textarea>
@@ -123,7 +118,7 @@
                 <small class="form-text text-muted">Maximum 100 characters.</small>
             </div>
     
-            <!-- Campo "City" -->
+            <!-- Field "City" -->
             <div class="form-group">
                 <label for="city">City:</label>
                 <input type="text" class="form-control" id="city" name="city">
@@ -131,7 +126,7 @@
                 <small class="form-text text-muted">Only letters allowed.</small>
             </div>
     
-                    <!-- Campo "Card Number" -->
+                    <!-- Field "Card Number" -->
             <div class="form-group">
                 <label for="zip">Card Number:</label>
                 <input type="text" class="form-control" id="zip" name="zip">
@@ -140,7 +135,7 @@
             </div>
     
             
-            <!-- Campo "Country" -->
+            <!-- Field "Country" -->
             <div class="form-group">
                 <label for="country">Country:</label>
                 <input type="text" class="form-control" id="country" name="country">
@@ -149,7 +144,7 @@
             </div>
 
 
-            <!-- Campo "Total" -->
+            <!-- Field "Total" -->
             <div class="form-group">
                 <label for="total">Total:</label>
                 <input type="text" class="form-control" id="total" name="total" value="100.00" disabled>
@@ -157,7 +152,7 @@
                 <small class="form-text text-muted">Only numbers allowed. Use dot (.) to separate thousands.</small>
             </div>
 
-            <!-- Campo "Payment Method" -->
+            <!-- Field "Payment Method" -->
             <div class="form-group">
                 <label for="payment">Payment Method:</label>
                 <select class="form-control" id="payment" name="payment">
@@ -170,7 +165,7 @@
                 <small class="form-text text-muted">This field is required.</small>
             </div>
 
-            <!-- Campo "Installments" 
+            <!-- Field "Installments" 
             <div class="form-group">
                 <label for="installments">Installments:</label>
                 <select class="form-control" id="installments" name="installments">
@@ -199,7 +194,7 @@
             var nameError = document.getElementById("name-error");
             nameError.textContent = "";
     
-            // Validación del nombre
+
             if (!nameRegex.test(nameValue)) {
                 nameError.textContent = "Please enter only letters.";
                 nameInput.focus();
@@ -213,8 +208,7 @@
                 event.preventDefault();
                 return false;
             }
-    
-            // Validación del campo "City"
+
             var cityInput = document.getElementById("city");
             var cityValue = cityInput.value.trim();
             var cityRegex = /^[A-Za-z\s]+$/;
@@ -228,7 +222,7 @@
                 return false;
             }
 
-                 // Validación del número de tarjeta (solo números)
+
                 var zipInput = document.getElementById("zip");
                 var zipValue = zipInput.value.trim();
                 var zipError = document.getElementById("zip-error");
@@ -241,7 +235,7 @@
                     return false;
                 }
 
-                // Validación del campo "Country"
+
                 var countryInput = document.getElementById("country");
                 var countryValue = countryInput.value.trim();
                 var countryRegex = /^[A-Za-z\s]+$/;
@@ -256,7 +250,6 @@
                 }
 
                 
-                // Validación del campo "Total"
                 var totalInput = document.getElementById("total");
                 var totalValue = totalInput.value.trim();
                 var totalError = document.getElementById("total-error");
@@ -269,7 +262,6 @@
                     return false;
                 }
 
-                // Validación del campo "Payment Method"
                 var paymentInput = document.getElementById("payment");
                 var paymentValue = paymentInput.value.trim();
                 var paymentError = document.getElementById("payment-error");
@@ -282,22 +274,6 @@
                     return false;
                 }
 
-
-                /* Validación del campo "Installments"
-                var installmentsInput = document.getElementById("installments");
-                var installmentsValue = installmentsInput.value.trim();
-                var installmentsError = document.getElementById("installments-error");
-                installmentsError.textContent = "";
-
-                if (installmentsValue === "") {
-                    installmentsError.textContent = "Please select number of installments.";
-                    installmentsInput.focus();
-                    event.preventDefault();
-                    return false;
-                }*/
-
-    
-            // Si todas las validaciones pasan, permitimos que el formulario se envíe
             window.location.href = "http://localhost:5500/HTML/Index.html";
             return true;
         });
