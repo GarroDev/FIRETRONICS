@@ -19,55 +19,20 @@ const config = {
 
 // HEAD
 
-// Configurar CORS
 app.use(cors({
-  // Permitir todos los orígenes
+
   origin: '*',
-  // Permitir los métodos de solicitud que deseas permitir
+
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  // Permitir los encabezados personalizados que deseas permitir
+
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// Middleware para analizar los datos del formulario
 
-// Middleware to analyze form data
-// 65789231e62d47d5aea9f161c73fd5d1fee32314
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Route handler/registration
-/* app.post('/registro', async (req, res) => {
-  try {
-    // Extract data from the form
-    const { name, email, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    console.log(req.body);
-    // Establish a connection to the database
-    await sql.connect(config);
-
-    // Define SQL query to insert user data
-    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
-    console.log(query)
-    // Execute SQL query
-    await sql.query(query, {
-      name,
-      email,
-      hashedPassword
-    });
-
-    // Close database connection
-    await sql.close();
-    // Respond with a success message
-    res.send('¡Successful registration!');
-  } catch (error) {
-    // Handling errors
-    console.error('Error insterting values:', error.message);
-    res.status(500).send('Internal server error');
-  }
-});
-*/
 
 app.post('/registro', async (req, res) => {
   try {
