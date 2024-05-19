@@ -103,6 +103,19 @@
         <br>
 
         <div class="container">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <label for="categoryFilter" class="form-label">Filter by Category:</label>
+                    <select id="categoryFilter" class="form-select">
+                        <option value="">All</option>
+                        <option value="laptop">Laptops</option>
+                        <option value="smartphone">Smartphones</option>
+                        <!-- Add more categories as needed -->
+                    </select>
+                </div>
+            </div>
+
+        <div class="container">
             <div id="products"class="row row-cols-6">
                 <div class="col"></div>
                 <div class="col"></div>
@@ -158,14 +171,14 @@
     <script src="../JavaScript/script.js"></script>
 
     <script>
-    async function fetchProductDetails() {
+    async function fetchProductDetails(category = null) {
     try {
         const response = await fetch('http://localhost:3002/getitems', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({})
+            body: JSON.stringify({category: category})
         });
 
         if (!response.ok) {
@@ -175,6 +188,7 @@
         const productDetails = await response.json();
         
         const tableContainer = document.querySelector('#products');
+        tableContainer.innerHTML = '';
 
         productDetails.forEach(product => {
             console.log(product)
@@ -194,6 +208,10 @@
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body');
 
+    const cat = document.createElement('p');
+    cat.classList.add('card-cat');
+    cat.textContent = product.Categoria; 
+    cardBody.appendChild(cat);
 
     const title = document.createElement('h5');
     title.classList.add('card-title');
@@ -227,6 +245,9 @@ cardBody.appendChild(button);
         console.error('Error fetching product details:', error.message);
     }
 }
+
+
+
 async function fetchProductsByCategory(category) {
     try {
         const response = await fetch('http://localhost:3002/getitems', {
@@ -251,6 +272,18 @@ async function fetchProductsByCategory(category) {
 
 window.addEventListener('load', function() {
     fetchProductDetails();
+
+    const categoryFilter = document.getElementById('categoryFilter');
+            categoryFilter.addEventListener('change', function() {
+                const selectedCategory = categoryFilter.value;
+                if(selectedCategory==""){
+                    fetchProductDetails();
+                }
+                else{
+                    fetchProductDetails(selectedCategory);
+                }
+                
+            });
 });
     </script>
 </body>
