@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-app.post('/registro', async (req, res) => {
+/*app.post('/register', async (req, res) => {
   try {
     // Extract data from the form
     const { name, email, password } = req.body;
@@ -63,6 +63,70 @@ app.post('/registro', async (req, res) => {
     res.status(500).send('Internal server error');
   }
 });
+*/
+app.post('/register', async (req, res) => {
+  try {
+    // Extract data from the form
+    const { name, email, password } = req.body;
+
+    // Name validation (only letters)
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!nameRegex.test(name)) {
+      return res.send('<script>alert("Name must contain only letters!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+    }
+
+    // Password strength validation
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      return res.send('<script>alert("Password must be at least 8 characters long, including at least one uppercase letter, one lowercase letter, one number, and one special character."); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    console.log(req.body);
+
+    // Allowed email domains
+    const allowedDomains = ['gmail.com', 'hotmail.com', 'outlook.com', 'elpoli.edu.co', 'yahoo.com'];
+
+    // Extract the domain from the email
+    const emailDomain = email.split('@')[1];
+
+    // Check if the email domain is allowed
+    if (!allowedDomains.includes(emailDomain)) {
+      return res.send('<script>alert("Email domain is not allowed!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+    }
+
+    // Establish a connection to the database
+    await sql.connect(config);
+
+    // Check if the email is already registered
+    const emailCheckQuery = `SELECT COUNT(*) as count FROM CUSTOMERS WHERE Email = '${email}'`;
+    const result = await sql.query(emailCheckQuery);
+    const emailCount = result.recordset[0].count;
+
+    if (emailCount > 0) {
+      // Close the database connection
+      await sql.close();
+      // Respond with an alert that the email is already in use
+      return res.send('<script>alert("Email is already in use!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+    }
+
+    // Define the SQL query to insert user data
+    const insertQuery = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
+    console.log(insertQuery);
+    // Execute the SQL query
+    await sql.query(insertQuery);
+
+    // Close the database connection
+    await sql.close();
+    // Respond with a success message
+    res.send('<script>alert("Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+  } catch (error) {
+    // Handle errors
+    console.error('Error inserting values:', error.message);
+    res.status(500).send('Internal server error');
+  }
+});
+
 
 
 
