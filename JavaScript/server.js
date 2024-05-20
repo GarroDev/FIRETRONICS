@@ -262,11 +262,11 @@ app.post('/payInfo', async (req, res) => {
     // Extract data from the form
     const { name, address, city, zip, country, total, payment } = req.body;
 
-    
+    const hashedZip = await bcrypt.hash(zip, 10);
     await sql.connect(config);
 
     // Define the SQL query to insert user data
-    const insertQuery = `INSERT INTO PAYSINFO (Name, Address, City, Zip, Country, Total, Payment) VALUES ('${name}', '${address}', '${city}', '${zip}', '${country}', '${total}', '${payment}')`;
+    const insertQuery = `INSERT INTO PAYSINFO (Name, Address, City, Zip, Country, Total, Payment) VALUES ('${name}', '${address}', '${city}', '${hashedZip}', '${country}', '${total}', '${payment}')`;
     console.log(insertQuery);
     // Execute the SQL query
     await sql.query(insertQuery);
