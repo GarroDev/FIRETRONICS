@@ -34,36 +34,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-/*app.post('/register', async (req, res) => {
-  try {
-    // Extract data from the form
-    const { name, email, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    console.log(req.body);
-    // Establish a connection to the database
-    await sql.connect(config);
 
-    // Define SQL query to insert user data
-    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
-    console.log(query)
-    // Execute SQL query
-    await sql.query(query, {
-      name,
-      email,
-      hashedPassword
-    });
-
-    // Close database connection
-    await sql.close();
-    // Respond with a success message
-    res.send('<script>alert("¡Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
-  } catch (error) {
-    // Handling errors
-    console.error('Error insterting values:', error.message);
-    res.status(500).send('Internal server error');
-  }
-});
-*/
 app.post('/register', async (req, res) => {
   try {
     // Extract data from the form
@@ -232,7 +203,7 @@ app.post('/getitems', async (req, res) => {
     let query = 'SELECT * FROM PRODUCTS WHERE 1=1';
 
     if (req.body.category) {
-      query += ' AND Categoria = @category';
+      query += ' AND category = @category';
     }
     if (req.body.stock) {
       if (req.body.stock === 'inStock') {
@@ -285,3 +256,28 @@ app.listen(port, () => {
 });
 
 
+
+app.post('/payInfo', async (req, res) => {
+  try {
+    // Extract data from the form
+    const { name, address, city, zip, country, total, payment } = req.body;
+
+    
+    await sql.connect(config);
+
+    // Define the SQL query to insert user data
+    const insertQuery = `INSERT INTO PAYSINFO (Name, Address, City, Zip, Country, Total, Payment) VALUES ('${name}', '${address}', '${city}', '${zip}', '${country}', '${total}', '${payment}')`;
+    console.log(insertQuery);
+    // Execute the SQL query
+    await sql.query(insertQuery);
+
+    // Close the database connection
+    await sql.close();
+    // Respond with a success message
+    res.send('<script>alert("Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/Index.html";</script>');
+  } catch (error) {
+    // Handle errors
+    console.error('Error inserting values:', error.message);
+    res.status(500).send('Internal server error xdxdxdxxd');
+  }
+});
