@@ -227,49 +227,43 @@ app.post('/cartitems', async (req, res) => {
 
 app.post('/getitems', async (req, res) => {
   try {
+    await sql.connect(config);
 
-      await sql.connect(config);
+    let query = 'SELECT * FROM PRODUCTS WHERE 1=1';
 
-      let query;
-
-
-      if (req.body.category) {
-
-          query = `SELECT * FROM PRODUCTS WHERE Categoria = @category`;
-      } else {
-
-          query = `SELECT * FROM PRODUCTS`;
+    if (req.body.category) {
+      query += ' AND Categoria = @category';
+    }
+    if (req.body.stock) {
+      if (req.body.stock === 'inStock') {
+        query += ' AND Stock > 0';
+      } else if (req.body.stock === 'outOfStock') {
+        query += ' AND Stock = 0';
       }
+    }
 
+    const request = new sql.Request();
 
-      const request = new sql.Request();
-      
+    if (req.body.category) {
+      request.input('category', sql.VarChar, req.body.category);
+    }
 
-      if (req.body.category) {
-          request.input('category', req.body.category);
-      }
+    const result = await request.query(query);
 
+    if (result.recordset.length === 0) {
+      res.status(404).send('No products found');
+      return;
+    } else {
+      res.send(result.recordset);
+    }
 
-      const result = await request.query(query);
-
-
-      if (result.recordset.length === 0) {
-
-          res.status(404).send('No products found');
-          return;
-      } else {
-
-          res.send(result.recordset);
-      }
-
-
-      await sql.close();
+    await sql.close();
   } catch (error) {
-
-      console.error('Error getting product information:', error.message);
-      res.status(500).send('Internal server error');
+    console.error('Error getting product information:', error.message);
+    res.status(500).send('Internal server error');
   }
 });
+
 
 app.post('/receive-data', (req, res) => {
   // Receive JSON data from the request body
