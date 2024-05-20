@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link href="../CSS/Style.css" rel="stylesheet">
+    <link href="../CSS/Details.css" rel="stylesheet">
+    
 
 </head>
 
 <body>
-
+    
     <header>
         <div class="Esplogo">
             <a href="Index.html"><img src="../imagenes/Logo.png" id="Logo" alt="FireTronics Logo"></a>
@@ -31,7 +32,7 @@
 
                 <div class="buttons">
 
-                    <a href="../HTML/SignIn.html">
+                    <a href="http://localhost:5500/HTML/SingIn/src/SignIn.html">
                         <button class="custom-btn btn-1 Log-Btn1">Sign In</button>
                     </a>
 
@@ -95,21 +96,46 @@
 
     </header>
 
-    <div id="Separador"></div>
+    <div id="Separator"></div>
 
 
     <!-- web body -->
     <main>
         <br>
 
-        <h1>Product Details</h1>
-        <div id="productDetails"></div>
+       <!-- <div id="ContDetalles">
+            <div id="productDetails"></div> 
+            <div id="setnameElement"></div>
+            <div id="setIMGElement"></div>
+            <div id="setPriceElement"></div>
+            <div id="setIDElement"></div>
+            <div id="setStockElement"></div>
+            <div id="setDescriptionElement"></div>
+        </div>-->
+
+        <div class="container">
+            <div class="item">
+              <div id="setIMGElement"></div>
+              <div class="text-container">
+                <div id="setnameElement"></div>
+                <div id="setDescriptionElement"></div>
+                <div id="setPriceElement"></div>
+                <div id="setIDElement"></div>
+                <div id="setStockElement"></div>
+                <div id="productDetails"></div>
+              </div>
+            </div>
+            <!-- Repite los items según sea necesario -->
+          </div>
+          
 
         <br>
-        <div class="container-fluid">
 
+        <div class="container-fluid">
+            <!-- Help button -->
             <button id="helpButton" class="circular-button btn btn-primary">?</button>
 
+            <!-- Help popup -->
             <div id="helpPopup" class="popup">
                 <div class="popup-content">
                     <span class="close">×</span>
@@ -121,7 +147,7 @@
                             <button class="help-button list-group-item list-group-item-action chatsub"
                                 value="Problem">I have an issue</button>
                             <button class="help-button list-group-item list-group-item-action chatsub"
-                                value="Consulta">I have a question</button>
+                                value="Consult">I have a question</button>
                             <button class="help-button list-group-item list-group-item-action chatsub"
                                 value="Suggestion">I wanna do a sugestion</button>
                             <br>
@@ -129,6 +155,7 @@
                     </div>
                 </div>
             </div>
+            <button id="myWhatsAppButton" class="circular-button2 btn btn-primary"><i class="bi bi-whatsapp"></i></button>
         </div>
         
     </main>
@@ -150,49 +177,9 @@
 
 
     <script src="../JavaScript/script.js"></script>
-    <script>
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
 
-        const id = getUrlParameter('id');
-        const productIMG = getUrlParameter('product');
-        const productName = getUrlParameter('productName');
-        const productPrice = getUrlParameter('productPrice');
-        const productStock = getUrlParameter('productStock');
+    <script src="../JavaScript/details.js"></script>
 
-        const productDetailsDiv = document.getElementById('productDetails');
-        productDetailsDiv.innerHTML = `
-            <p><strong>ID:</strong> ${id}</p>
-            <img src="${productIMG}" alt="${productName}">
-            <p><strong>Name:</strong> ${productName}</p>
-            <p><strong>Price:</strong> ${productPrice}</p>
-            <p><strong>Stock:</strong> ${productStock}</p>
-        `;
-        const addToCartButton = document.createElement('button');
-addToCartButton.textContent = 'Add to Cart';
-addToCartButton.classList.add('btn', 'btn-primary');
-
-
-addToCartButton.addEventListener('click', () => {
-    const cart = JSON.parse(localStorage.getItem('ids')) || [];
-
-
-    cart.push(parseInt(id));
-
-
-    localStorage.setItem('ids', JSON.stringify(cart));
-
-
-    alert('Product added to cart!');
-});
-
-
-productDetailsDiv.appendChild(addToCartButton);
-    </script>
 </body>
 
 </html>

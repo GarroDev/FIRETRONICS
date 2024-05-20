@@ -215,7 +215,7 @@ button.textContent = 'View Product';
 button.addEventListener('click', () => {
 
     
-    window.location.href = `detail.html?id=${product.ID_Product}&product=${product.IMG}&productName=${encodeURIComponent(product.Name)}&productPrice=${product.Price}&productStock=${product.Stock}`;
+    window.location.href = `detail.html?id=${product.ID_Product}&product=${product.IMG}&productName=${encodeURIComponent(product.Name)}&productPrice=${product.Price}&productStock=${product.Stock}&productD=${product.Description}`;
 });
 cardBody.appendChild(button);
 
