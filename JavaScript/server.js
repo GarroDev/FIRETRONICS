@@ -241,6 +241,21 @@ app.post('/getitems', async (req, res) => {
         query += ' AND Stock = 0';
       }
     }
+    if (req.body.priceRange) {
+      if (req.body.priceRange === '0-50') {
+        query += ' AND Price BETWEEN 0 AND 50';
+      } else if (req.body.priceRange === '51-100') {
+        query += ' AND Price BETWEEN 51 AND 100';
+      } else if (req.body.priceRange === '101-200') {
+        query += ' AND Price BETWEEN 101 AND 200';
+      } else if (req.body.priceRange === '201-500') {
+        query += ' AND Price BETWEEN 201 AND 500';
+      } else if (req.body.priceRange === '501-1000') {
+        query += ' AND Price BETWEEN 501 AND 1000';
+      } else if (req.body.priceRange === '1000+') {
+        query += ' AND Price > 1000';
+      }
+    }
 
     const request = new sql.Request();
 

@@ -104,7 +104,7 @@
 
         <div class="container">
             <div class="row mb-3">
-                <div class="col-6">
+                <div class="col-4">
                     <label for="categoryFilter" class="form-label">Filter by Category:</label>
                     <select id="categoryFilter" class="form-select">
                         <option value="">All</option>
@@ -113,12 +113,24 @@
                         <!-- Add more categories as needed -->
                     </select>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <label for="stockFilter" class="form-label">Filter by Stock:</label>
                     <select id="stockFilter" class="form-select">
                         <option value="">All</option>
                         <option value="inStock">In Stock</option>
                         <option value="outOfStock">Out of Stock</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="priceFilter" class="form-label">Filter by Price:</label>
+                    <select id="priceFilter" class="form-select">
+                        <option value="">All</option>
+                        <option value="0-50">$0 - $50</option>
+                        <option value="51-100">$51 - $100</option>
+                        <option value="101-200">$101 - $200</option>
+                        <option value="201-500">$201 - $500</option>
+                        <option value="501-1000">$501 - $1000</option>
+                        <option value="1000+">Above $1000</option>
                     </select>
                 </div>
             </div>
@@ -180,14 +192,14 @@
     <script src="../JavaScript/script.js"></script>
 
     <script>
-    async function fetchProductDetails(category = null, stock = null) {
+    async function fetchProductDetails(category = null, stock = null, priceRange = null) {
     try {
         const response = await fetch('http://localhost:3002/getitems', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ category: category, stock: stock })
+            body: JSON.stringify({ category: category, stock: stock, priceRange: priceRange })
         });
 
         if (!response.ok) {
@@ -251,17 +263,18 @@ window.addEventListener('load', function() {
 
     const categoryFilter = document.getElementById('categoryFilter');
     const stockFilter = document.getElementById('stockFilter');
-    console.log(categoryFilter,stockFilter)
+    const priceFilter = document.getElementById('priceFilter');
 
     function applyFilters() {
         const selectedCategory = categoryFilter.value;
         const selectedStock = stockFilter.value;
-        console.log(categoryFilter.value,stockFilter.value)
-        fetchProductDetails(selectedCategory, selectedStock);
+        const selectedPrice = priceFilter.value;
+        fetchProductDetails(selectedCategory, selectedStock, selectedPrice);
     }
 
     categoryFilter.addEventListener('change', applyFilters);
     stockFilter.addEventListener('change', applyFilters);
+    priceFilter.addEventListener('change', applyFilters);
 });
     </script>
 </body>
