@@ -197,3 +197,27 @@ if (Profile === '2') {
 } else {
     // alert('Profile value is: no data');
 }
+
+document.getElementById('bill').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const to = 'mateolondoeche@gmail.com'
+    const subject = 'Order sent'
+    const text = 'Your order was sent properly'
+
+    fetch('http://localhost:3003/send-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ to, subject, text })
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert('Mail sent: ' + data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Something went wrong.');
+    });
+});

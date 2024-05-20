@@ -1,10 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const sql = require('mssql');
 const app = express();
 const bcrypt = require('bcrypt');
 const port = 3002;
+const PORT = process.env.PORT || 3003;
 const cors = require('cors');
+const nodemailer = require('nodemailer');
 
 //Database connection configuration
 const config = {
@@ -267,7 +270,7 @@ app.post('/receive-data', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+  console.log(`Server listening to http://localhost:${port}`);
 });
 
 
@@ -296,3 +299,44 @@ app.post('/payInfo', async (req, res) => {
     res.status(500).send('Internal server error');
   }
 });
+
+
+// -------------------------------------------------
+// mail section
+
+
+app.post('/send-email', (req, res) => {
+  console.log('Solicitud POST recibida:', req.body);
+    const { to, subject, text } = req.body;
+
+    let transporter = nodemailer.createTransport({
+      host: 'smtp.office365.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      }
+  });
+
+    let mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: to,
+        subject: subject,
+        text: text
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return res.status(500).send(error.toString());
+        }
+        res.status(200).send('Mail sent: ' + info.response);
+    });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server listening to http://localhost:${PORT}`);
+});
+
+
+// -------------------------------------------------
