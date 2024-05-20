@@ -278,6 +278,6 @@ app.post('/payInfo', async (req, res) => {
   } catch (error) {
     // Handle errors
     console.error('Error inserting values:', error.message);
-    res.status(500).send('Internal server error xdxdxdxxd');
+    res.status(500).send('Internal server error');
   }
 });
