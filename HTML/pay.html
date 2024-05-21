@@ -279,26 +279,27 @@
                 return false;
             }
 
-            window.location.href = "http://127.0.0.1:5500/HTML/Index.html";
-            return true;
-        });
-
-        document.getElementById('mail').addEventListener('submit', function (event) {
-            event.preventDefault();
             fetch('http://localhost:3002/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ to, subject, text })
+                //body: JSON.stringify({})
             })
-                /*.then(response => response.text())
-                .then(data => {
-                    alert('Correo enviado: ' + data);
-                })
-                .catch(error => {
-                    alert('Algo salió mal.');
-                });*/
+            window.location.href = "http://127.0.0.1:5500/HTML/Index.html";
+            return true;
+        });
+
+        document.getElementById('bill').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            /*.then(response => response.text())
+            .then(data => {
+                alert('Correo enviado: ' + data);
+            })
+            .catch(error => {
+                alert('Algo salió mal.');
+            });*/
         });
     </script>
 
