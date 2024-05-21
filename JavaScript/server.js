@@ -1,11 +1,9 @@
-require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const sql = require('mssql');
 const app = express();
 const bcrypt = require('bcrypt');
 const port = 3002;
-const PORT = process.env.PORT || 3003;
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 
@@ -269,10 +267,6 @@ app.post('/receive-data', (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server listening to http://localhost:${port}`);
-});
-
 
 
 app.post('/payInfo', async (req, res) => {
@@ -314,13 +308,13 @@ app.post('/send-email', (req, res) => {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+        user: 'firetronicstech@outlook.com',
+        pass: 'zxcasdqwe1234'
       }
   });
 
     let mailOptions = {
-        from: process.env.EMAIL_USER,
+        from: 'firetronicstech@outlook.com',
         to: to,
         subject: subject,
         text: text
@@ -334,8 +328,9 @@ app.post('/send-email', (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening to http://localhost:${PORT}`);
+
+app.listen(port, () => {
+  console.log(`Server listening to http://localhost:${port}`);
 });
 
 

@@ -198,14 +198,16 @@ if (Profile === '2') {
     // alert('Profile value is: no data');
 }
 
-document.getElementById('bill').addEventListener('submit', function(event) {
+document.getElementById('mail').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const to = 'mateolondoeche@gmail.com'
-    const subject = 'Order sent'
-    const text = 'Your order was sent properly'
+    const to = 'mateolondoeche@gmail.com';
+    const subject = 'Order sent';
+    const text = 'Your order was sent properly';
 
-    fetch('http://localhost:3003/send-email', {
+    console.log('Formulario enviado'); // Verificar que se captura el evento
+
+    fetch('http://localhost:3002/send-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -214,10 +216,11 @@ document.getElementById('bill').addEventListener('submit', function(event) {
     })
     .then(response => response.text())
     .then(data => {
-        alert('Mail sent: ' + data);
+        console.log('Respuesta del servidor:', data); // Verificar la respuesta
+        alert('Correo enviado: ' + data);
     })
     .catch(error => {
-        console.error('Error:', error);
-        alert('Something went wrong.');
+        console.error('Error en la solicitud fetch:', error); // Verificar errores en fetch
+        alert('Algo salió mal.');
     });
 });
