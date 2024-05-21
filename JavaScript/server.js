@@ -5,6 +5,7 @@ const app = express();
 const bcrypt = require('bcrypt');
 const port = 3002;
 const cors = require('cors');
+const nodemailer = require('nodemailer');
 
 //Database connection configuration
 const config = {
@@ -368,6 +369,30 @@ app.post('/payInfo', async (req, res) => {
     // Close the database connection
     await sql.close();
     // Respond with a success message
+    let transporter = nodemailer.createTransport({
+      host: 'smtp.office365.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: 'firetronicstech@outlook.com',
+        pass: 'zxcasdqwe1234'
+      }
+  });
+
+    let mailOptions = {
+        from: 'firetronicstech@outlook.com',
+        to: 'mateo_londono99201@elpoli.edu.co',
+        subject: 'Order sent',
+        text: 'Your order was sent properly'
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return res.status(500).send(error.toString());
+        }
+        //res.redirect('http://127.0.0.1:5500/HTML/Index.html');
+    });
+
     res.send('<script>alert("Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/Index.html";</script>');
   } catch (error) {
     // Handle errors
@@ -375,3 +400,44 @@ app.post('/payInfo', async (req, res) => {
     res.status(500).send('Internal server error');
   }
 });
+
+
+// -------------------------------------------------
+// mail section
+
+
+app.post('/send-email', (req, res) => {
+    const { to, subject, text } = req.body;
+
+    let transporter = nodemailer.createTransport({
+      host: 'smtp.office365.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: 'firetronicstech@outlook.com',
+        pass: 'zxcasdqwe1234'
+      }
+  });
+
+    let mailOptions = {
+        from: 'firetronicstech@outlook.com',
+        to: 'mateo_londono99201@elpoli.edu.co',
+        subject: 'Order sent',
+        text: 'Your order was sent properly'
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return res.status(500).send(error.toString());
+        }
+        res.redirect('http://127.0.0.1:5500/HTML/Index.html');
+    });
+});
+
+
+app.listen(port, () => {
+  console.log(`Server listening to http://localhost:${port}`);
+});
+
+
+// -------------------------------------------------
