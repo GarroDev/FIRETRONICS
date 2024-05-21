@@ -70,7 +70,7 @@
                         <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart
                                 Wash</a></li>
 
-                            <!-- Next column -->
+                        <!-- Next column -->
 
                         <br>
                         <li id="Title1SubMenu"><b>Computing</b></li><br>
@@ -79,7 +79,7 @@
                         <li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Laptops</a>
                         </li>
 
-                            <!-- Next column -->
+                        <!-- Next column -->
 
                         <br>
                         <li id="Title1SubMenu"><b>TV, Audio/Video</b></li><br>
@@ -101,7 +101,7 @@
     <main style="text-align: center; padding: 20px;">
         <h2 class="mt-4 mb-4 text-center">Shipping Information</h2>
         <form id="bill" style="max-width: 700px; margin: auto;">
-    
+
             <!-- Field "Name" -->
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -109,7 +109,7 @@
                 <span id="name-error" class="error-message" style="color: red;"></span>
                 <small class="form-text text-muted">Only letters allowed, maximum 40 characters.</small>
             </div>
-    
+
             <!-- Field "Address" -->
             <div class="form-group">
                 <label for="address">Address:</label>
@@ -117,7 +117,7 @@
                 <span id="address-error" class="error-message" style="color: red;"></span>
                 <small class="form-text text-muted">Maximum 100 characters.</small>
             </div>
-    
+
             <!-- Field "City" -->
             <div class="form-group">
                 <label for="city">City:</label>
@@ -125,16 +125,16 @@
                 <span id="city-error" class="error-message" style="color: red;"></span>
                 <small class="form-text text-muted">Only letters allowed.</small>
             </div>
-    
-                    <!-- Field "Card Number" -->
+
+            <!-- Field "Card Number" -->
             <div class="form-group">
                 <label for="zip">Card Number:</label>
                 <input type="text" class="form-control" id="zip" name="zip">
                 <span id="zip-error" class="error-message" style="color: red;"></span>
                 <small class="form-text text-muted">Enter a valid card number (only numbers).</small>
             </div>
-    
-            
+
+
             <!-- Field "Country" -->
             <div class="form-group">
                 <label for="country">Country:</label>
@@ -181,24 +181,27 @@
 
 
 
-    
+
             <button type="submit" class="btn btn-primary" id="mail">Submit</button>
         </form>
+        <form id="mail" action="http://localhost:3002/send-email" method="post">
+            <button type="submit">Enviar Correo</button>
+        </form>
     </main>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="../JavaScript/script.js"></script>
     <script src="../JavaScript/pay.js"></script>
     <script>
-        document.getElementById("bill").addEventListener("submit", function(event) {
+        document.getElementById("bill").addEventListener("submit", function (event) {
             var nameInput = document.getElementById("name");
             var nameValue = nameInput.value.trim();
             var nameRegex = /^[A-Za-z\s]+$/;
             var nameError = document.getElementById("name-error");
             nameError.textContent = "";
-    
+
 
             if (!nameRegex.test(nameValue)) {
                 nameError.textContent = "Please enter only letters.";
@@ -206,7 +209,7 @@
                 event.preventDefault();
                 return false;
             }
-    
+
             if (nameValue.length > 40) {
                 nameError.textContent = "Name should be maximum 40 characters long.";
                 nameInput.focus();
@@ -219,7 +222,7 @@
             var cityRegex = /^[A-Za-z\s]+$/;
             var cityError = document.getElementById("city-error");
             cityError.textContent = "";
-    
+
             if (!cityRegex.test(cityValue)) {
                 cityError.textContent = "Please enter only letters.";
                 cityInput.focus();
@@ -228,59 +231,82 @@
             }
 
 
-                var zipInput = document.getElementById("zip");
-                var zipValue = zipInput.value.trim();
-                var zipError = document.getElementById("zip-error");
-                zipError.textContent = "";
+            var zipInput = document.getElementById("zip");
+            var zipValue = zipInput.value.trim();
+            var zipError = document.getElementById("zip-error");
+            zipError.textContent = "";
 
-                if (!/^\d+$/.test(zipValue)) {
-                    zipError.textContent = "Please enter only numbers.";
-                    zipInput.focus();
-                    event.preventDefault();
-                    return false;
-                }
+            if (!/^\d+$/.test(zipValue)) {
+                zipError.textContent = "Please enter only numbers.";
+                zipInput.focus();
+                event.preventDefault();
+                return false;
+            }
 
 
-                var countryInput = document.getElementById("country");
-                var countryValue = countryInput.value.trim();
-                var countryRegex = /^[A-Za-z\s]+$/;
-                var countryError = document.getElementById("country-error");
-                countryError.textContent = "";
+            var countryInput = document.getElementById("country");
+            var countryValue = countryInput.value.trim();
+            var countryRegex = /^[A-Za-z\s]+$/;
+            var countryError = document.getElementById("country-error");
+            countryError.textContent = "";
 
-                if (!countryRegex.test(countryValue)) {
-                    countryError.textContent = "Please enter only letters.";
-                    countryInput.focus();
-                    event.preventDefault();
-                    return false;
-                }
+            if (!countryRegex.test(countryValue)) {
+                countryError.textContent = "Please enter only letters.";
+                countryInput.focus();
+                event.preventDefault();
+                return false;
+            }
 
-                
-                var totalInput = document.getElementById("total");
-                var totalValue = totalInput.value.trim();
-                var totalError = document.getElementById("total-error");
-                totalError.textContent = "";
 
-                if (!/^\d+(\.\d+)?$/.test(totalValue)) {
-                    totalError.textContent = "Please enter a valid number.";
-                    totalInput.focus();
-                    event.preventDefault();
-                    return false;
-                }
+            var totalInput = document.getElementById("total");
+            var totalValue = totalInput.value.trim();
+            var totalError = document.getElementById("total-error");
+            totalError.textContent = "";
 
-                var paymentInput = document.getElementById("payment");
-                var paymentValue = paymentInput.value.trim();
-                var paymentError = document.getElementById("payment-error");
-                paymentError.textContent = "";
+            if (!/^\d+(\.\d+)?$/.test(totalValue)) {
+                totalError.textContent = "Please enter a valid number.";
+                totalInput.focus();
+                event.preventDefault();
+                return false;
+            }
 
-                if (paymentValue === "") {
-                    paymentError.textContent = "Please select a payment method.";
-                    paymentInput.focus();
-                    event.preventDefault();
-                    return false;
-                }
+            var paymentInput = document.getElementById("payment");
+            var paymentValue = paymentInput.value.trim();
+            var paymentError = document.getElementById("payment-error");
+            paymentError.textContent = "";
+
+            if (paymentValue === "") {
+                paymentError.textContent = "Please select a payment method.";
+                paymentInput.focus();
+                event.preventDefault();
+                return false;
+            }
 
             window.location.href = "http://127.0.0.1:5500/HTML/Index.html";
             return true;
+        });
+
+        document.getElementById('mail').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const to = 'mateo_londono99201@elpoli.edu.co';
+            const subject = 'Order sent';
+            const text = 'Your order was sent properly';
+
+
+            fetch('http://localhost:3002/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ to, subject, text })
+            })
+                /*.then(response => response.text())
+                .then(data => {
+                    alert('Correo enviado: ' + data);
+                })
+                .catch(error => {
+                    alert('Algo salió mal.');
+                });*/
         });
     </script>
 

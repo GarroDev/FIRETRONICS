@@ -197,30 +197,3 @@ if (Profile === '2') {
 } else {
     // alert('Profile value is: no data');
 }
-
-document.getElementById('mail').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const to = 'mateolondoeche@gmail.com';
-    const subject = 'Order sent';
-    const text = 'Your order was sent properly';
-
-    console.log('Formulario enviado'); // Verificar que se captura el evento
-
-    fetch('http://localhost:3002/send-email', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ to, subject, text })
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log('Respuesta del servidor:', data); // Verificar la respuesta
-        alert('Correo enviado: ' + data);
-    })
-    .catch(error => {
-        console.error('Error en la solicitud fetch:', error); // Verificar errores en fetch
-        alert('Algo salió mal.');
-    });
-});
