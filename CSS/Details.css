@@ -1,0 +1,594 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #EEEEEE;
+}
+
+
+header {
+    display: flex;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+}
+
+/*---LOGO----*/
+
+.Esplogo {
+    flex: 0 0 auto;
+    background-color: #EEEEEE;
+    height: auto;
+    overflow: hidden;
+}
+
+.Esplogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*---Search and menu----*/
+
+/*---structure----*/
+.Container-halves {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.Login {
+    flex: 1;
+    background-color: #222831;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.searchengine {
+    display: flex;
+    flex-direction: column;
+    padding-left: 35%;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchengine .principal-header {
+    font-family: 'Roboto Slab', serif;
+    font-style: italic;
+    font-size: 40px;
+    color: #eee;
+}
+
+.searchengine .principal-header1 {
+    font-family: 'Roboto Slab', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #eee;
+}
+
+/*---Content----*/
+
+/*search bar*/
+#barrabusqueda {
+    width: 70%;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    color: #9fa1a3;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 17px;
+    letter-spacing: 0px;
+    font-weight: bold;
+}
+
+/*---Buttons----*/
+.buttons {
+    flex: 1;
+    background-color: #222831;
+    width: 10px;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+button {
+    margin: 10px;
+}
+
+.Log-Btn1{
+    display: block;
+}
+
+.Log-Btn2{
+    display: none;
+}
+  
+.custom-btn {
+    color: #222831;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0px;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    box-sizing: border-box;
+    padding: 10px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+}
+
+.btn-1 {
+    background-color: #32E0C4;
+    border: none;
+    width: 140px;
+    height: 40px;
+}
+
+.btn-2 {
+    background-color: #6cd5c4;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
+
+.btn-1:hover {
+    background-color: #EEEEEE;
+}
+
+
+/*---Change after sign in----*/
+
+#login-header {
+    text-align: center;
+    font-size: 30px;
+    color: #EEE;
+}
+
+#login-header img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+/*---Change after sign in----*/
+
+
+
+
+/*---Menu----*/
+.Menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+
+
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.nav {
+    display: flex;
+    margin-left: 400px;
+}
+
+.Spaces {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.nav>li {
+    float: left;
+    position: relative;
+}
+
+.nav li a {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0px;
+    color: #222831;
+    text-decoration: none;
+    padding: 10px 12px;
+    display: block;
+}
+
+.nav li a:hover {
+    color: #EEEEEE;
+    background-color: #434343;
+}
+
+.nav li ul {
+    opacity: 0;
+    color: #EEEEEE;
+    background-color: #434343;
+    font-family: 'Lato', sans-serif;
+    visibility: hidden;
+    position: fixed;
+    width: auto;
+    height: 220px;
+    column-count: 3;
+    column-gap: 40px;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1;
+    top: 130px;
+    left: 240px;
+
+}
+
+.nav li ul li {
+    border-right: 1px solid #CCCCCC;
+    position: relative;
+}
+
+
+.nav li:hover>ul {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav li ul li {
+
+    position: relative;
+}
+
+.nav li ul li ul {
+
+    right: -140px;
+    top: 0px;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.nav li ul:hover>li ul {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav li:hover>ul li a {
+    color: #EEEEEE;
+}
+
+.nav li:hover>ul li:hover>a {
+    color: #969696;
+}
+
+#Title1SubMenu {
+    font-size: 28px;
+}
+
+
+/* ::::SEPARATOR:::: */
+
+#Separator {
+    display: flex;
+    background-color: #32E0C4;
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+
+}
+
+/* ::::BODY MAIN:::: */
+
+/*#ContDetalles {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+}
+
+#setnameElement {
+    position: absolute;
+    right: 130px; 
+    width: 600px;
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+
+#setIMGElement {
+    
+    position: absolute;
+    left: 100px; 
+    width: 500px;
+    
+}
+
+#setPriceElement {
+    
+    right: 200px;
+    width: 500px;
+    
+}
+
+#setIDElement {
+    position: absolute;
+    right: 200px; 
+    width: 500px;
+    
+}
+
+#setStockElement {
+    position: absolute;
+    right: 200px; 
+    width: 500px;
+    
+}*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .item {
+    display: flex;
+    align-items: flex-start; /* Alinea los elementos al principio del eje transversal */
+    margin-bottom: 20px; /* Espacio entre cada item */
+  }
+  
+  #setIMGElement {
+    width: 500px; /* Ajusta el tamaño según sea necesario */
+    height: 600px; /* Ajusta el tamaño según sea necesario */
+    margin-right: 20px;
+    overflow: hidden; /* Asegura que el contenido adicional se oculte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .setIMGElement {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: 100px; /* Ajusta el tamaño según sea necesario */
+    background-color: lightgray; /* Para visualizar el área de la imagen */
+  }
+  
+  #setnameElement {
+    right: 130px; 
+    width: 600px;
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+  
+  .setDescriptionElement {
+    margin-top: 5px; /* Espacio entre nombre y descripción */
+    
+  }
+  
+  #setPriceElement {
+    margin-top: 5px; /* Espacio entre descripción y precio */
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  #setIDElement {
+    margin-top: 5px;
+    right: 200px; 
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+#setStockElement {
+    margin-top: 5px;
+    right: 200px; 
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+#setDescriptionElement {
+    margin-top: 5px;
+    right: 200px; 
+    width: 600px;
+    font-size: 16px;
+    
+}
+
+
+  
+/* ::::Help button:::: */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 325px;
+    max-width: 50%;
+    border-radius: 10px;
+}
+
+.popup-content {
+    margin-bottom: 20px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.circular-button {
+    position: fixed;
+    bottom: 20px;
+    right: 80px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+.circular-button:hover {
+    background-color: #45a049;
+}
+
+.circular-button2 {
+position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    background-color: #45a049;
+}
+.chat {
+    margin: 5px;
+
+}
+
+.chatsub {
+    background-color: #32E0C4;
+    margin: 5px;
+    border-radius: 40px;
+}
+
+.Usr {
+    padding: 5px;
+    text-align: right;
+    background-color: #32E0C4;
+    border-radius: 40px;
+}
+
+.Sys {
+    color: #333;
+    background-color: #f7f7f7;
+    border-left: 3px solid #2196F3;
+    padding: 4px;
+    margin: 10px 0;
+
+}
+
+.HelpMesage {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.HelpMesage:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.HelpButton {
+    text-align: center;
+}
+
+
+/* ::::FOOTER:::: */
+
+footer {
+  
+    background-color: #222831;
+    color: #EEE;
+    padding: 20px;
+    width: 100%;
+    bottom: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+#titleFooter1 {
+    font-size: 30px;
+    position: relative;
+    top: -25px;
+    left: -25px;
+}
+
+#titleFooter2 {
+    font-size: 20px;
+    position: relative;
+    top: -25px;
+    left: -25px;
+}
+
+#titleFooter3 {
+    font-size: 20px;
+    position: relative;
+    top: -35px;
+    left: -25px;
+}
+
+#titleFooter4 {
+    font-size: 20px;
+    position: relative;
+    top: -40px;
+    left: -25px;
+}
+
+.contenedor-padre {
+    display: flex;
+}
+
+.contenedor-izquierdo {
+    flex: 1;
+    background-color: rgb(70, 221, 201);
+    max-height: 1000px;
+    padding-bottom: 20px;
+}
+
+.contenedor-derecho {
+    flex: 0.5;
+    background-color: rgb(70, 221, 201);
+    margin-left: 20px;
+    max-height: 200px;
+}
+
+.containerProd {
+    background-color: rgb(255, 255, 255);
+
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

@@ -31,8 +31,9 @@
 
                 <div class="buttons">
 
-                    <a href="../HTML/SignIn.html">
-                        <button class="custom-btn btn-1 Log-Btn1">Sign In</button>
+                    <a href="http://localhost:5500/HTML/SingIn/src/SignIn.html">
+                        <button class="custom-btn btn-1">Sign In</button>
+
                     </a>
 
 
@@ -249,8 +250,28 @@
             });
             cardBody.appendChild(button);
 
-            card.appendChild(cardBody);
-            tableContainer.appendChild(card);
+
+    const text = document.createElement('p');
+    text.classList.add('card-text');
+    text.textContent = `Price: ${product.Price}, Stock: ${product.Stock}`; 
+    cardBody.appendChild(text);
+
+
+    const button = document.createElement('button');
+button.classList.add('btn', 'btn-primary');
+button.textContent = 'View Product'; 
+
+button.addEventListener('click', () => {
+
+    
+    window.location.href = `detail.html?id=${product.ID_Product}&product=${product.IMG}&productName=${encodeURIComponent(product.Name)}&productPrice=${product.Price}&productStock=${product.Stock}&productD=${product.Description}`;
+});
+cardBody.appendChild(button);
+
+    card.appendChild(cardBody);
+
+    tableContainer.appendChild(card);
+
         });
 
     } catch (error) {

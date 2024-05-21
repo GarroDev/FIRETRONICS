@@ -243,6 +243,9 @@ footer {
     bottom: 0;
     overflow: hidden;
     text-align: center;
+    /* Centra el texto horizontalmente */
+    margin-top: 100px;
+
 }
 
 #titleFooter1 {

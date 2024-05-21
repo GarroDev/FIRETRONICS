@@ -267,6 +267,89 @@ app.post('/receive-data', (req, res) => {
   }
 });
 
+app.listen(port, () => {
+  console.log(`Servidor escuchando en http://localhost:${port}`);
+});
+
+/*
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+*/
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  var id_token = googleUser.getAuthResponse().id_token;
+
+  // Extraer información del perfil del usuario de Google
+  var email = profile.getEmail();
+  var name = profile.getName();
+  var imageUrl = profile.getImageUrl();
+
+
+
+  // Enviar la información al servidor para autenticación y almacenamiento
+  // Enviar la información del usuario al servidor
+fetch('/google-login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    id_token: id_token,
+    email: email,
+    name: name,
+    imageUrl: imageUrl
+  })
+})
+.then(response => response.json())
+.then(data => {
+  // Manejar la respuesta del servidor
+  console.log(data);
+  // Redirigir al usuario a la página deseada
+  window.location.href = '/next-page';
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
+
+  // Aquí enviarás esta información al servidor utilizando una solicitud POST
+  // Ruta para manejar la solicitud de inicio de sesión con Google
+app.post('/google-login', async (req, res) => {
+  try {
+    const { id_token, email, name, imageUrl } = req.body;
+
+    // Verificar la identidad del usuario con el token de Google
+    const ticket = await client.verifyIdToken({
+      idToken: id_token,
+      audience: CLIENT_ID
+    });
+    const payload = ticket.getPayload();
+    const userid = payload['sub'];
+
+    // Verificar si el usuario ya existe en la base de datos
+    // Si existe, establecer la sesión del usuario
+    // Si no existe, crear un nuevo usuario en la base de datos y establecer la sesión
+
+    // Redirigir o responder con algún mensaje de éxito
+    res.json({ message: 'Usuario autenticado con éxito.' });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Error interno del servidor.' });
+  }
+});
+
+
+
+}
+
+
+
 
 
 app.post('/payInfo', async (req, res) => {
