@@ -100,7 +100,7 @@
 
     <main style="text-align: center; padding: 20px;">
         <h2 class="mt-4 mb-4 text-center">Shipping Information</h2>
-        <form id="bill" style="max-width: 700px; margin: auto;">
+        <form id="bill" style="max-width: 700px; margin: auto;" action="http://localhost:3002/send-email" method="post">
 
             <!-- Field "Name" -->
             <div class="form-group">
@@ -183,9 +183,6 @@
 
 
             <button type="submit" class="btn btn-primary" id="mail">Submit</button>
-        </form>
-        <form id="mail" action="http://localhost:3002/send-email" method="post">
-            <button type="submit">Enviar Correo</button>
         </form>
     </main>
 
@@ -288,11 +285,6 @@
 
         document.getElementById('mail').addEventListener('submit', function (event) {
             event.preventDefault();
-            const to = 'mateo_londono99201@elpoli.edu.co';
-            const subject = 'Order sent';
-            const text = 'Your order was sent properly';
-
-
             fetch('http://localhost:3002/send-email', {
                 method: 'POST',
                 headers: {

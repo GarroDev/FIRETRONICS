@@ -324,7 +324,6 @@ app.post('/payInfo', async (req, res) => {
 
 
 app.post('/send-email', (req, res) => {
-  console.log('Solicitud POST recibida:', req.body);
     const { to, subject, text } = req.body;
 
     let transporter = nodemailer.createTransport({
