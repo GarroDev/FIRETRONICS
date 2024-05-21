@@ -104,6 +104,40 @@
         <br>
 
         <div class="container">
+            <div class="row mb-3">
+                <div class="col-4">
+                    <label for="categoryFilter" class="form-label">Filter by Category:</label>
+                    <select id="categoryFilter" class="form-select">
+                        <option value="">All</option>
+                        <option value="laptop">Laptops</option>
+                        <option value="smartphone">Smartphones</option>
+                        <!-- Add more categories as needed -->
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="stockFilter" class="form-label">Filter by Stock:</label>
+                    <select id="stockFilter" class="form-select">
+                        <option value="">All</option>
+                        <option value="inStock">In Stock</option>
+                        <option value="outOfStock">Out of Stock</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="priceFilter" class="form-label">Filter by Price:</label>
+                    <select id="priceFilter" class="form-select">
+                        <option value="">All</option>
+                        <option value="0-50">$0 - $50</option>
+                        <option value="51-100">$51 - $100</option>
+                        <option value="101-200">$101 - $200</option>
+                        <option value="201-500">$201 - $500</option>
+                        <option value="501-1000">$501 - $1000</option>
+                        <option value="1000+">Above $1000</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
             <div id="products"class="row row-cols-6">
                 <div class="col"></div>
                 <div class="col"></div>
@@ -159,47 +193,62 @@
     <script src="../JavaScript/script.js"></script>
 
     <script>
-    async function fetchProductDetails() {
+    async function fetchProductDetails(category = null, stock = null, priceRange = null) {
     try {
         const response = await fetch('http://localhost:3002/getitems', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({})
+            body: JSON.stringify({ category: category, stock: stock, priceRange: priceRange })
         });
 
         if (!response.ok) {
             throw new Error('Failed to fetch product details');
         }
-        
+
         const productDetails = await response.json();
-        
+
         const tableContainer = document.querySelector('#products');
+        tableContainer.innerHTML = '';
 
         productDetails.forEach(product => {
-            console.log(product)
+            const card = document.createElement('div');
+            card.classList.add('card', 'col', 'mb-3');
+            card.style.width = '18rem';
 
-    const card = document.createElement('div');
-    card.classList.add('card');
-    card.style.width = '18rem';
+            const img = document.createElement('img');
+            img.classList.add('card-img-top');
+            img.src = product.IMG;
+            img.alt = 'Product Image';
+            card.appendChild(img);
 
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
 
-    const img = document.createElement('img');
-    img.classList.add('card-img-top');
-    img.src = product.IMG; 
-    img.alt = 'Product Image'; 
-    card.appendChild(img);
+            const cat = document.createElement('p');
+            cat.classList.add('card-cat');
+            cat.textContent = product.Categoria;
+            cardBody.appendChild(cat);
 
+            const title = document.createElement('h5');
+            title.classList.add('card-title');
+            title.textContent = product.Name;
+            cardBody.appendChild(title);
 
-    const cardBody = document.createElement('div');
-    cardBody.classList.add('card-body');
+            const text = document.createElement('p');
+            text.classList.add('card-text');
+            text.textContent = `Price: ${product.Price}, Stock: ${product.Stock}`;
+            cardBody.appendChild(text);
 
+            const button = document.createElement('button');
+            button.classList.add('btn', 'btn-primary');
+            button.textContent = 'View Product';
 
-    const title = document.createElement('h5');
-    title.classList.add('card-title');
-    title.textContent = product.Name; 
-    cardBody.appendChild(title);
+            button.addEventListener('click', () => {
+                window.location.href = `detail.html?id=${product.ID_Product}&product=${product.IMG}&productName=${encodeURIComponent(product.Name)}&productPrice=${product.Price}&productStock=${product.Stock}`;
+            });
+            cardBody.appendChild(button);
 
 
     const text = document.createElement('p');
@@ -222,36 +271,31 @@ cardBody.appendChild(button);
     card.appendChild(cardBody);
 
     tableContainer.appendChild(card);
+
         });
 
     } catch (error) {
         console.error('Error fetching product details:', error.message);
     }
 }
-async function fetchProductsByCategory(category) {
-    try {
-        const response = await fetch('http://localhost:3002/getitems', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ category: category })
-        });
-
-        
-        if (!response.ok) {
-            throw new Error('Failed to fetch product details');
-        }
-        
-
-    } catch (error) {
-        console.error('Error fetching product details:', error.message);
-    }
-}
-
 
 window.addEventListener('load', function() {
     fetchProductDetails();
+
+    const categoryFilter = document.getElementById('categoryFilter');
+    const stockFilter = document.getElementById('stockFilter');
+    const priceFilter = document.getElementById('priceFilter');
+
+    function applyFilters() {
+        const selectedCategory = categoryFilter.value;
+        const selectedStock = stockFilter.value;
+        const selectedPrice = priceFilter.value;
+        fetchProductDetails(selectedCategory, selectedStock, selectedPrice);
+    }
+
+    categoryFilter.addEventListener('change', applyFilters);
+    stockFilter.addEventListener('change', applyFilters);
+    priceFilter.addEventListener('change', applyFilters);
 });
     </script>
 </body>

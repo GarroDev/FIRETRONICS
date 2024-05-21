@@ -372,102 +372,109 @@
     }
 
     function buttons(productId, n) {
-        // Obtener el contenedor del producto
-        const parsedProductId = parseInt(productId);
-        const productContainer = document.getElementById('product_' + parsedProductId);
-        
-        // Obtener la etiqueta de cantidad
-        const quantitySpan = productContainer.querySelector('.unidad');
-        const price=productContainer.querySelector('.price');
+    // Obtener el contenedor del producto
+    const parsedProductId = parseInt(productId);
+    const productContainer = document.getElementById('product_' + parsedProductId);
 
-        // Obtener la lista actual de IDs de productos del carrito desde el almacenamiento local
-        let productIds = JSON.parse(localStorage.getItem('ids')) || [];
+    // Obtener la etiqueta de cantidad
+    const quantitySpan = productContainer.querySelector('.unidad');
+    const price = productContainer.querySelector('.price');
 
-        // Encontrar el índice del producto en la lista de IDs
-        const index = productIds.indexOf(parsedProductId);
-        
-        if (index !== -1) {
-            // Obtener la cantidad actual del producto
-            let quantity = parseInt(quantitySpan.textContent);
-            let pricep = price.textContent;
-            pricep=parseInt(pricep.replace('$', ''));
-            console.log(pricep);
-            // Incrementar o disminuir la cantidad según el valor de n
-            quantity += n;
-            
-            if (quantity === 0 && n === -1) {
-                // Si la cantidad es 0 y n es -1, eliminar el contenedor del producto del HTML
-                productContainer.remove();
+    // Obtener la lista actual de IDs de productos del carrito desde el almacenamiento local
+    let productIds = JSON.parse(localStorage.getItem('ids')) || [];
 
-                // Eliminar el ID del producto del array productIds
-                productIds.splice(index, 1);
+    // Encontrar el índice del producto en la lista de IDs
+    const productIndex = productIds.findIndex(productInfo => productInfo[0] === parsedProductId);
 
-                // Actualizar el local storage con la lista de IDs actualizada
-                localStorage.setItem('ids', JSON.stringify(productIds));
+    if (productIndex !== -1) {
+        // Obtener la cantidad actual del producto
+        let quantity = parseInt(quantitySpan.textContent);
+        let pricep = price.textContent;
+        pricep = parseFloat(pricep.replace('$', ''))/2;
 
-                //disminuir el valor total restando el precio del producto
-                total = localStorage.getItem("total")
-                total -= parseFloat(pricep)/2;
+        // Obtener el stock máximo del producto
+        const maxStock = productIds[productIndex][1];
+
+        // Incrementar o disminuir la cantidad según el valor de n
+        quantity += n;
+
+        if (quantity === 0 && n === -1) {
+            // Si la cantidad es 0 y n es -1, eliminar el contenedor del producto del HTML
+            productContainer.remove();
+
+            // Eliminar el ID del producto del array productIds
+            productIds.splice(productIndex, 1);
+
+            // Actualizar el local storage con la lista de IDs actualizada
+            localStorage.setItem('ids', JSON.stringify(productIds));
+
+            // Disminuir el valor total restando el precio del producto
+            let total = parseFloat(localStorage.getItem("total"));
+            total -= pricep;
+            localStorage.setItem('total', JSON.stringify(total));
+
+            const priceElement = document.getElementById('Price');
+            priceElement.textContent = total.toFixed(2);
+            const priceT = document.getElementById('PriceT');
+            priceT.textContent = (total + 10).toFixed(2);
+        } else if (quantity > 0 && quantity <= maxStock) {
+            // Actualizar la cantidad en la etiqueta quantitySpan
+            quantitySpan.textContent = quantity;
+
+            // Actualizar la cantidad en el local storage (opcional)
+            // Esto es opcional si deseas mantener la cantidad actualizada en el almacenamiento local
+            // Puedes omitir esta parte si la cantidad en el almacenamiento local no es necesaria
+
+            if (n === -1) {
+                let total = parseFloat(localStorage.getItem("total"));
+                total -= pricep;
                 localStorage.setItem('total', JSON.stringify(total));
-
-                const priceElement = document.getElementById('Price');
-                priceElement.textContent = parseFloat(localStorage.getItem("total"));
-                const priceT = document.getElementById('PriceT');
-                priceT.textContent = parseFloat(localStorage.getItem("total"))+10
             } else {
-                // Actualizar la cantidad en la etiqueta quantitySpan
-                quantitySpan.textContent = quantity;
-
-                // Actualizar la cantidad en el local storage
-                // Esto es opcional si deseas mantener la cantidad actualizada en el almacenamiento local
-                // Puedes omitir esta parte si la cantidad en el almacenamiento local no es necesaria
-                productIds[index] = parsedProductId;
-                localStorage.setItem('ids', JSON.stringify(productIds));
-                if (n==-1){
-                    total = parseFloat(localStorage.getItem("total"));
-                    total -= parseFloat(pricep)/2;
-                    localStorage.setItem('total', JSON.stringify(total));
-                }else{
-                    total = parseFloat(localStorage.getItem("total"));
-                    total += parseFloat(pricep)/2;
-                    localStorage.setItem('total', JSON.stringify(total));
-                }
-
-                const priceElement = document.getElementById('Price');
-                priceElement.textContent = parseFloat(localStorage.getItem("total"));
-                const priceT = document.getElementById('PriceT');
-                priceT.textContent = parseFloat(localStorage.getItem("total"))+10
+                let total = parseFloat(localStorage.getItem("total"));
+                total += pricep;
+                localStorage.setItem('total', JSON.stringify(total));
             }
+
+            const priceElement = document.getElementById('Price');
+            priceElement.textContent = parseFloat(localStorage.getItem("total")).toFixed(2);
+            const priceT = document.getElementById('PriceT');
+            priceT.textContent = (parseFloat(localStorage.getItem("total")) + 10).toFixed(2);
+        } else {
+            console.warn('Exceeds available stock');
         }
     }
+}
+
 
 
 
     // Llamar a la función para obtener los detalles del producto cuando se cargue la página
     window.addEventListener('load', function() {
-    // Obtener la lista de IDs de productos desde el localStorage
+    // Obtener la lista de listas de IDs de productos desde el localStorage
     const productIds = JSON.parse(localStorage.getItem('ids'));
+    
 
-    // Verificar si hay IDs de productos almacenados
+    // Verificar si hay listas de IDs de productos almacenadas
     if (productIds && productIds.length > 0) {
-        // Recorrer la lista de IDs de productos
-        productIds.forEach(productId => {
+        // Recorrer la lista de listas de IDs de productos
+        productIds.forEach(productInfo => {
+            // Obtener el primer elemento de cada sublista, que es el productId
+            const productId = productInfo[0];
             // Obtener los detalles del producto del servidor y almacenarlos en localStorage
             fetchProductDetails(productId);
-            
         });
+
         const priceElement = document.getElementById('Price');
         priceElement.textContent = parseFloat(localStorage.getItem("total"));
+
         const priceT = document.getElementById('PriceT');
-        priceT.textContent = parseFloat(localStorage.getItem("total"))+10
+        priceT.textContent = parseFloat(localStorage.getItem("total")) + 10;
     } else {
         console.error('No product IDs found in localStorage');
         const productDetailsContainer = document.getElementById('productDetailsContainer');
         // Crear un elemento de título
-        // Crear un elemento de título
         const titleElement = document.createElement('h1');
         titleElement.innerHTML = "&nbsp;&nbsp;&nbsp;¡You haven't added products to your cart yet!";
-        
         // Agregar el título al contenedor de detalles del producto
         productDetailsContainer.appendChild(titleElement);
     }

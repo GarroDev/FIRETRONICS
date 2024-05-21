@@ -19,85 +19,85 @@ const config = {
 
 // HEAD
 
-// Configurar CORS
 app.use(cors({
-  // Permitir todos los orígenes
+
   origin: '*',
-  // Permitir los métodos de solicitud que deseas permitir
+
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  // Permitir los encabezados personalizados que deseas permitir
+
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// Middleware para analizar los datos del formulario
 
-// Middleware to analyze form data
-// 65789231e62d47d5aea9f161c73fd5d1fee32314
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Route handler/registration
-/* app.post('/registro', async (req, res) => {
+
+
+app.post('/register', async (req, res) => {
   try {
     // Extract data from the form
     const { name, email, password } = req.body;
+
+    // Name validation (only letters)
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!nameRegex.test(name)) {
+      return res.send('<script>alert("Name must contain only letters!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+    }
+
+    // Password strength validation
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      return res.send('<script>alert("Password must be at least 8 characters long, including at least one uppercase letter, one lowercase letter, one number, and one special character."); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log(req.body);
+
+    // Allowed email domains
+    const allowedDomains = ['gmail.com', 'hotmail.com', 'outlook.com', 'elpoli.edu.co', 'yahoo.com'];
+
+    // Extract the domain from the email
+    const emailDomain = email.split('@')[1];
+
+    // Check if the email domain is allowed
+    if (!allowedDomains.includes(emailDomain)) {
+      return res.send('<script>alert("Email domain is not allowed!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+    }
+
     // Establish a connection to the database
     await sql.connect(config);
 
-    // Define SQL query to insert user data
-    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
-    console.log(query)
-    // Execute SQL query
-    await sql.query(query, {
-      name,
-      email,
-      hashedPassword
-    });
+    // Check if the email is already registered
+    const emailCheckQuery = `SELECT COUNT(*) as count FROM CUSTOMERS WHERE Email = '${email}'`;
+    const result = await sql.query(emailCheckQuery);
+    const emailCount = result.recordset[0].count;
 
-    // Close database connection
+    if (emailCount > 0) {
+      // Close the database connection
+      await sql.close();
+      // Respond with an alert that the email is already in use
+      return res.send('<script>alert("Email is already in use!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+    }
+
+    // Define the SQL query to insert user data
+    const insertQuery = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
+    console.log(insertQuery);
+    // Execute the SQL query
+    await sql.query(insertQuery);
+
+    // Close the database connection
     await sql.close();
     // Respond with a success message
-    res.send('¡Successful registration!');
+    res.send('<script>alert("Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
   } catch (error) {
-    // Handling errors
-    console.error('Error insterting values:', error.message);
+    // Handle errors
+    console.error('Error inserting values:', error.message);
     res.status(500).send('Internal server error');
   }
 });
-*/
 
-app.post('/registro', async (req, res) => {
-  try {
-    // Extract data from the form
-    const { name, email, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    console.log(req.body);
-    // Establish a connection to the database
-    await sql.connect(config);
-
-    // Define SQL query to insert user data
-    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES ('${name}', '${email}', '${hashedPassword}')`;
-    console.log(query)
-    // Execute SQL query
-    await sql.query(query, {
-      name,
-      email,
-      hashedPassword
-    });
-
-    // Close database connection
-    await sql.close();
-    // Respond with a success message
-    res.send('<script>alert("¡Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
-  } catch (error) {
-    // Handling errors
-    console.error('Error insterting values:', error.message);
-    res.status(500).send('Internal server error');
-  }
-});
 
 
 
@@ -198,49 +198,58 @@ app.post('/cartitems', async (req, res) => {
 
 app.post('/getitems', async (req, res) => {
   try {
+    await sql.connect(config);
 
-      await sql.connect(config);
+    let query = 'SELECT * FROM PRODUCTS WHERE 1=1';
 
-      let query;
-
-
-      if (req.body.category) {
-
-          query = `SELECT * FROM PRODUCTS WHERE Categoria = @category`;
-      } else {
-
-          query = `SELECT * FROM PRODUCTS`;
+    if (req.body.category) {
+      query += ' AND category = @category';
+    }
+    if (req.body.stock) {
+      if (req.body.stock === 'inStock') {
+        query += ' AND Stock > 0';
+      } else if (req.body.stock === 'outOfStock') {
+        query += ' AND Stock = 0';
       }
-
-
-      const request = new sql.Request();
-      
-
-      if (req.body.category) {
-          request.input('category', req.body.category);
+    }
+    if (req.body.priceRange) {
+      if (req.body.priceRange === '0-50') {
+        query += ' AND Price BETWEEN 0 AND 50';
+      } else if (req.body.priceRange === '51-100') {
+        query += ' AND Price BETWEEN 51 AND 100';
+      } else if (req.body.priceRange === '101-200') {
+        query += ' AND Price BETWEEN 101 AND 200';
+      } else if (req.body.priceRange === '201-500') {
+        query += ' AND Price BETWEEN 201 AND 500';
+      } else if (req.body.priceRange === '501-1000') {
+        query += ' AND Price BETWEEN 501 AND 1000';
+      } else if (req.body.priceRange === '1000+') {
+        query += ' AND Price > 1000';
       }
+    }
 
+    const request = new sql.Request();
 
-      const result = await request.query(query);
+    if (req.body.category) {
+      request.input('category', sql.VarChar, req.body.category);
+    }
 
+    const result = await request.query(query);
 
-      if (result.recordset.length === 0) {
+    if (result.recordset.length === 0) {
+      res.status(404).send('No products found');
+      return;
+    } else {
+      res.send(result.recordset);
+    }
 
-          res.status(404).send('No products found');
-          return;
-      } else {
-
-          res.send(result.recordset);
-      }
-
-
-      await sql.close();
+    await sql.close();
   } catch (error) {
-
-      console.error('Error getting product information:', error.message);
-      res.status(500).send('Internal server error');
+    console.error('Error getting product information:', error.message);
+    res.status(500).send('Internal server error');
   }
 });
+
 
 app.post('/receive-data', (req, res) => {
   // Receive JSON data from the request body
@@ -341,3 +350,28 @@ app.post('/google-login', async (req, res) => {
 
 
 
+
+app.post('/payInfo', async (req, res) => {
+  try {
+    // Extract data from the form
+    const { name, address, city, zip, country, total, payment } = req.body;
+
+    const hashedZip = await bcrypt.hash(zip, 10);
+    await sql.connect(config);
+
+    // Define the SQL query to insert user data
+    const insertQuery = `INSERT INTO PAYSINFO (Name, Address, City, Zip, Country, Total, Payment) VALUES ('${name}', '${address}', '${city}', '${hashedZip}', '${country}', '${total}', '${payment}')`;
+    console.log(insertQuery);
+    // Execute the SQL query
+    await sql.query(insertQuery);
+
+    // Close the database connection
+    await sql.close();
+    // Respond with a success message
+    res.send('<script>alert("Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/Index.html";</script>');
+  } catch (error) {
+    // Handle errors
+    console.error('Error inserting values:', error.message);
+    res.status(500).send('Internal server error');
+  }
+});

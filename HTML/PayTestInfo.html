@@ -31,7 +31,7 @@
 
                 <div class="buttons">
 
-                    <a href="http://localhost:5500/HTML/SingIn/src/SignIn.html">
+                    <a href="../HTML/SignIn.html">
                         <button class="custom-btn btn-1 Log-Btn1">Sign In</button>
                     </a>
 
@@ -100,7 +100,7 @@
 
     <main style="text-align: center; padding: 20px;">
         <h2 class="mt-4 mb-4 text-center">Shipping Information</h2>
-        <form id="bill" style="max-width: 700px; margin: auto;">
+        <form action="http://localhost:3002/payInfo" method="POST">
     
             <!-- Field "Name" -->
             <div class="form-group">
@@ -165,28 +165,11 @@
                 <small class="form-text text-muted">This field is required.</small>
             </div>
 
-            <!-- Field "Installments" 
-            <div class="form-group">
-                <label for="installments">Installments:</label>
-                <select class="form-control" id="installments" name="installments">
-                    <option value="">Select number of installments</option>
-                    <option value="1">1 installment</option>
-                    <option value="2">2 installments</option>
-                    <option value="3">18 installments</option>
-                    <option value="4">36 installments</option>
-                </select>
-                <span id="installments-error" class="error-message" style="color: red;"></span>
-                <small class="form-text text-muted">This field is required.</small>
-            </div>-->
-
-
-
-    
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </main>
     
-    <script>
+ <!--   <script>
         document.getElementById("bill").addEventListener("submit", function(event) {
             var nameInput = document.getElementById("name");
             var nameValue = nameInput.value.trim();
@@ -274,10 +257,10 @@
                     return false;
                 }
 
-            window.location.href = "http://localhost:3002/HTML/Index.html";
+            window.location.href = "http://localhost:5500/HTML/Index.html";
             return true;
         });
-    </script>
+    </script>-->
     
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
