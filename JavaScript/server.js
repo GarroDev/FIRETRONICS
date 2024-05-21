@@ -267,9 +267,6 @@ app.post('/receive-data', (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
-});
 
 /*
 function onSignIn(googleUser) {
