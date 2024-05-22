@@ -443,7 +443,7 @@ app.post('/send-email', (req, res) => {
 
     let mailOptions = {
         from: 'firetronicstech@outlook.com',
-        to: 'mateo_londono99201@elpoli.edu.co',
+        to: 'juan_jimenez82202@elpoli.edu.co',
         subject: 'Order sent',
         text: 'Your order was sent properly'
     };
