@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Define new options based on the selection
             var newOptions = [];
             var newOptions2 = [];
-            if (target.value === 'Problema') {
+            if (target.value === 'Problem') {
                 newOptions = [
                     { text: "I have an issue with an order", value: "Subopcion1" },
                     { text: "I have an issue with a payment", value: "Subopcion2" }
@@ -101,12 +101,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "I did a payment but I havent got a confirmation", value: "Subopcion" },
                     { text: "I want to cancel a payment", value: "Subopcion" }
                 ];
-            } else if (target.value === 'Consulta') {
+            } else if (target.value === 'Consult') {
                 newOptions = [
                     { text: "I want to search a product I am not able to find ", value: "Subopcion" },
                     { text: "I am seraching for this x project", value: "Subopcion" }
                 ];
-            } else if (target.value === 'Sugerencia') {
+            } else if (target.value === 'Suggestion') {
                 newOptions = [
                     { text: "I want to do a sugestion for the payments", value: "Subopcion3" },
                     { text: "I want to file a complaint with someone", value: "Subopcion" }
@@ -168,7 +168,7 @@ window.addEventListener('load', function () {
     }
 });
 
-const miBotonWhatsApp = document.getElementById('miBotonWhatsApp');
+const miBotonWhatsApp = document.getElementById('myWhatsAppButton');
 
 miBotonWhatsApp.addEventListener('click', function () {
     const numeroWhatsApp = "+573054020427";
