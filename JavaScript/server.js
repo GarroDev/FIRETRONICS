@@ -204,7 +204,7 @@ app.post('/getitems', async (req, res) => {
     let query = 'SELECT * FROM PRODUCTS WHERE 1=1';
 
     if (req.body.category) {
-      query += ' AND categoria = @category';
+      query += ' AND Category = @category';
     }
     if (req.body.stock) {
       if (req.body.stock === 'inStock') {
