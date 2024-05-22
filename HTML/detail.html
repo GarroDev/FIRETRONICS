@@ -179,42 +179,7 @@
     <script src="../JavaScript/script.js"></script>
 
     <script src="../JavaScript/details.js"></script>
-    <script>
-        // Assuming 'id', 'productIMG', 'productName', 'productPrice', 'productStock' are defined
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get('id');
-        const productIMG = urlParams.get('product');
-        const productName = urlParams.get('productName');
-        const productPrice = urlParams.get('productPrice');
-        const productStock = urlParams.get('productStock');
-
-        const productDetailsDiv = document.getElementById('productDetails');
-        productDetailsDiv.innerHTML = `
-            <div class="card">
-                <div class="card-body">
-                    <p><strong>ID:</strong> ${id}</p>
-                    <img src="${productIMG}" alt="${productName}" class="img-fluid">
-                    <p><strong>Name:</strong> ${productName}</p>
-                    <p><strong>Price:</strong> ${productPrice}</p>
-                    <p><strong>Stock:</strong> ${productStock}</p>
-                </div>
-            </div>
-        `;
-
-        const addToCartButton = document.createElement('button');
-        addToCartButton.textContent = 'Add to Cart';
-        addToCartButton.classList.add('btn', 'btn-primary', 'mt-3');
-
-        addToCartButton.addEventListener('click', () => {
-            const cart = JSON.parse(localStorage.getItem('ids')) || [];
-            cart.push([parseInt(id), parseInt(productStock)]);
-            localStorage.setItem('ids', JSON.stringify(cart));
-            alert('Product added to cart!');
-        });
-
-        productDetailsDiv.appendChild(addToCartButton);
-    </script>
-
+    
 </body>
 
 </html>

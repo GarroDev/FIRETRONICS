@@ -178,7 +178,7 @@ app.post('/cartitems', async (req, res) => {
 
     const query = `SELECT ID_Product, Name, Price, Stock, Description, IMG FROM PRODUCTS WHERE ID_Product = '${id}'`;
     const result = await sql.query(query);
-    //const Name = result.recordset[0];
+    const Name = result.recordset[0];
 
     if (result.recordset.length === 0) {
 
