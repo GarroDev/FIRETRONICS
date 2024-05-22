@@ -251,16 +251,6 @@
             cardBody.appendChild(button);
 
 
-    const text = document.createElement('p');
-    text.classList.add('card-text');
-    text.textContent = `Price: ${product.Price}, Stock: ${product.Stock}`; 
-    cardBody.appendChild(text);
-
-
-    const button = document.createElement('button');
-button.classList.add('btn', 'btn-primary');
-button.textContent = 'View Product'; 
-
 button.addEventListener('click', () => {
 
     
