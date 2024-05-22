@@ -251,6 +251,31 @@ app.post('/getitems', async (req, res) => {
   }
 });
 
+app.post('/updateStock', async (req, res) => {
+  try {
+      await sql.connect(config);
+
+      const { products } = req.body; // products es un array de objetos { id: number, quantity: number }
+
+      const request = new sql.Request();
+
+      for (const product of products) {
+          const { id, quantity } = product;
+          console.log(id)
+          const updateQuery = 'UPDATE PRODUCTS SET Stock = Stock - @quantity WHERE ID_Product = @id';
+          await request.input('id', sql.Int, id)
+                       .input('quantity', sql.Int, quantity)
+                       .query(updateQuery);
+      }
+
+      await sql.close();
+      res.status(200).send('Stock updated successfully');
+  } catch (error) {
+      console.error('Error updating stock:', error.message);
+      res.status(500).send('Internal server error');
+  }
+});
+
 
 app.post('/receive-data', (req, res) => {
   // Receive JSON data from the request body

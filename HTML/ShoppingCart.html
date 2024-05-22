@@ -390,7 +390,7 @@
         // Obtener la cantidad actual del producto
         let quantity = parseInt(quantitySpan.textContent);
         let pricep = price.textContent;
-        pricep = parseFloat(pricep.replace('$', ''))/2;
+        pricep = parseFloat(pricep.replace('$', ''));
 
         // Obtener el stock máximo del producto
         const maxStock = productIds[productIndex][1];
@@ -411,7 +411,7 @@
             // Disminuir el valor total restando el precio del producto
             let total = parseFloat(localStorage.getItem("total"));
             total -= pricep;
-            localStorage.setItem('total', JSON.stringify(total));
+            localStorage.setItem('total', total.toFixed(2));
 
             const priceElement = document.getElementById('Price');
             priceElement.textContent = total.toFixed(2);
@@ -421,29 +421,26 @@
             // Actualizar la cantidad en la etiqueta quantitySpan
             quantitySpan.textContent = quantity;
 
-            // Actualizar la cantidad en el local storage (opcional)
-            // Esto es opcional si deseas mantener la cantidad actualizada en el almacenamiento local
-            // Puedes omitir esta parte si la cantidad en el almacenamiento local no es necesaria
+            // Actualizar la cantidad en el local storage
+            productIds[productIndex][2] = quantity;
 
-            if (n === -1) {
-                let total = parseFloat(localStorage.getItem("total"));
-                total -= pricep;
-                localStorage.setItem('total', JSON.stringify(total));
-            } else {
-                let total = parseFloat(localStorage.getItem("total"));
-                total += pricep;
-                localStorage.setItem('total', JSON.stringify(total));
-            }
+            localStorage.setItem('ids', JSON.stringify(productIds));
+
+            // Actualizar el total en el local storage y el DOM
+            let total = parseFloat(localStorage.getItem("total"));
+            total += n * (pricep / productIds[productIndex][2]);
+            localStorage.setItem('total', total.toFixed(2));
 
             const priceElement = document.getElementById('Price');
-            priceElement.textContent = parseFloat(localStorage.getItem("total")).toFixed(2);
+            priceElement.textContent = total.toFixed(2);
             const priceT = document.getElementById('PriceT');
-            priceT.textContent = (parseFloat(localStorage.getItem("total")) + 10).toFixed(2);
+            priceT.textContent = (total + 10).toFixed(2);
         } else {
             console.warn('Exceeds available stock');
         }
     }
 }
+
 
 
 

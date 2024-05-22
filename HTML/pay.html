@@ -186,31 +186,55 @@
         </form>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="../JavaScript/script.js"></script>
     <script src="../JavaScript/pay.js"></script>
     <script>
-        document.getElementById("bill").addEventListener("submit", function (event) {
+        async function updateStock() {
+            const cart = JSON.parse(localStorage.getItem('ids')) || [];
+            const productsToUpdate = cart.map(product => ({
+                id: product[0],
+                quantity: product[2]
+            }));
+
+            try {
+                const response = await fetch('http://localhost:3002/updateStock', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ products: productsToUpdate })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to update stock');
+                }
+
+                const result = await response.json();
+                console.log(result);
+                alert('Stock updated successfully!');
+            } catch (error) {
+                console.error('Error updating stock:', error.message);
+            }
+        }
+
+        document.getElementById("bill").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
             var nameInput = document.getElementById("name");
             var nameValue = nameInput.value.trim();
             var nameRegex = /^[A-Za-z\s]+$/;
             var nameError = document.getElementById("name-error");
             nameError.textContent = "";
 
-
             if (!nameRegex.test(nameValue)) {
                 nameError.textContent = "Please enter only letters.";
                 nameInput.focus();
-                event.preventDefault();
                 return false;
             }
 
             if (nameValue.length > 40) {
                 nameError.textContent = "Name should be maximum 40 characters long.";
                 nameInput.focus();
-                event.preventDefault();
                 return false;
             }
 
@@ -223,10 +247,8 @@
             if (!cityRegex.test(cityValue)) {
                 cityError.textContent = "Please enter only letters.";
                 cityInput.focus();
-                event.preventDefault();
                 return false;
             }
-
 
             var zipInput = document.getElementById("zip");
             var zipValue = zipInput.value.trim();
@@ -236,10 +258,8 @@
             if (!/^\d+$/.test(zipValue)) {
                 zipError.textContent = "Please enter only numbers.";
                 zipInput.focus();
-                event.preventDefault();
                 return false;
             }
-
 
             var countryInput = document.getElementById("country");
             var countryValue = countryInput.value.trim();
@@ -250,10 +270,8 @@
             if (!countryRegex.test(countryValue)) {
                 countryError.textContent = "Please enter only letters.";
                 countryInput.focus();
-                event.preventDefault();
                 return false;
             }
-
 
             var totalInput = document.getElementById("total");
             var totalValue = totalInput.value.trim();
@@ -263,7 +281,6 @@
             if (!/^\d+(\.\d+)?$/.test(totalValue)) {
                 totalError.textContent = "Please enter a valid number.";
                 totalInput.focus();
-                event.preventDefault();
                 return false;
             }
 
@@ -275,34 +292,27 @@
             if (paymentValue === "") {
                 paymentError.textContent = "Please select a payment method.";
                 paymentInput.focus();
-                event.preventDefault();
                 return false;
             }
 
-            fetch('http://localhost:3002/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                //body: JSON.stringify({})
-            })
-            window.location.href = "http://127.0.0.1:5500/HTML/Index.html";
+            try {
+                await fetch('http://localhost:3002/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    // body: JSON.stringify({})
+                });
+
+                await updateStock();
+                alert('Tu pedido va en camino!')
+                window.location.href = "http://127.0.0.1:5500/HTML/Index.html";
+            } catch (error) {
+                console.error('Error submitting form:', error.message);
+            }
+
             return true;
         });
-
-        document.getElementById('bill').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            /*.then(response => response.text())
-            .then(data => {
-                alert('Correo enviado: ' + data);
-            })
-            .catch(error => {
-                alert('Algo salió mal.');
-            });*/
-        });
     </script>
-
 </body>
-
 </html>
