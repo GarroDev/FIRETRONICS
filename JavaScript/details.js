@@ -64,7 +64,7 @@ addToCartButton.classList.add('btn', 'btn-primary');
 
 addToCartButton.addEventListener('click', () => {
     const cart = JSON.parse(localStorage.getItem('ids')) || [];
-    cart.push(parseInt(id));
+    cart.push([parseInt(id), parseInt(productStock)]);
     localStorage.setItem('ids', JSON.stringify(cart));
     alert('Product added to cart!');
 });
