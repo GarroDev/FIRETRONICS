@@ -1,49 +1,10 @@
-:root {
-    --background-color: #EEEEEE;
-    --text-color: #000000;
-    --header-background-color: #EEEEEE;
-    --login-background-color: #222831;
-    --search-header-color: #eee;
-    --button-background-color: #32E0C4;
-    --menu-background-color: #434343;
-    --menu-hover-color: #EEEEEE;
-    --popup-background-color: #fefefe;
-    --popup-border-color: #888;
-    --sys-background-color: #f7f7f7;
-    --sys-border-color: #2196F3;
-    --footer-background-color: #222831;
-    --footer-text-color: #EEE;
-    --promos-background-color: rgb(70, 221, 201);
-    --container-prod-background-color: #FFFFFF;
-}
-
-.dark-theme {
-    --background-color: #1c1c1c;
-    --text-color: #ffffff;
-    --header-background-color: #1c1c1c;
-    --login-background-color: #333333;
-    --search-header-color: #ccc;
-    --button-background-color: #555555;
-    --menu-background-color: #2c2c2c;
-    --menu-hover-color: #555555;
-    --popup-background-color: #333333;
-    --popup-border-color: #555555;
-    --sys-background-color: #444444;
-    --sys-border-color: #555555;
-    --footer-background-color: #1c1c1c;
-    --footer-text-color: #ccc;
-    --promos-background-color: #333333;
-    --container-prod-background-color: #333333;
-}
-
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: #EEEEEE;
 }
 
 header {
@@ -51,12 +12,13 @@ header {
     width: 100%;
     height: 140px;
     overflow: hidden;
-    background-color: var(--header-background-color);
 }
+
+/*---LOGO----*/
 
 .Esplogo {
     flex: 0 0 auto;
-    background-color: var(--header-background-color);
+    background-color: #EEEEEE;
     height: auto;
     overflow: hidden;
 }
@@ -69,6 +31,9 @@ header {
     max-height: 100%;
 }
 
+/*---Search and menu----*/
+
+/*---structure----*/
 .Container-halves {
     display: flex;
     flex: 1;
@@ -77,7 +42,7 @@ header {
 
 .Login {
     flex: 1;
-    background-color: var(--login-background-color);
+    background-color: #222831;
     height: 90%;
     display: flex;
     flex-direction: row;
@@ -96,16 +61,19 @@ header {
     font-family: 'Roboto Slab', serif;
     font-style: italic;
     font-size: 40px;
-    color: var(--search-header-color);
+    color: #eee;
 }
 
 .searchengine .principal-header1 {
     font-family: 'Roboto Slab', serif;
     font-style: italic;
     font-size: 20px;
-    color: var(--search-header-color);
+    color: #eee;
 }
 
+/*---Content----*/
+
+/*search bar*/
 #barrabusqueda {
     width: 70%;
     height: 40px;
@@ -119,9 +87,10 @@ header {
     font-weight: bold;
 }
 
+/*---Buttons----*/
 .buttons {
     flex: 1;
-    background-color: var(--login-background-color);
+    background-color: #222831;
     width: 10px;
     height: 70%;
     display: flex;
@@ -143,7 +112,7 @@ button {
 }
 
 .custom-btn {
-    color: var(--login-background-color);
+    color: #222831;
     border-radius: 5px;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
@@ -163,27 +132,29 @@ button {
 }
 
 .btn-1 {
-    background-color: var(--button-background-color);
+    background-color: #32E0C4;
     border: none;
     width: 140px;
     height: 40px;
 }
 
 .btn-2 {
-    background-color: var(--button-background-color);
+    background-color: #6cd5c4;
     border: none;
     width: 50px;
     height: 50px;
 }
 
 .btn-1:hover {
-    background-color: var(--menu-hover-color);
+    background-color: #EEEEEE;
 }
+
+/*---Change after sign in----*/
 
 #login-header {
     text-align: center;
     font-size: 30px;
-    color: var(--search-header-color);
+    color: #EEE;
 }
 
 #login-header img {
@@ -192,6 +163,7 @@ button {
     margin-right: 10px;
 }
 
+/*---Menu----*/
 .Menu {
     flex: 1;
     display: flex;
@@ -225,32 +197,32 @@ ol {
     font-family: 'Lato', sans-serif;
     font-size: 20px;
     letter-spacing: 0px;
-    color: var(--login-background-color);
+    color: #222831;
     text-decoration: none;
     padding: 10px 12px;
     display: block;
 }
 
 .nav li a:hover {
-    color: var(--menu-hover-color);
-    background-color: var(--menu-background-color);
+    color: #EEEEEE;
+    background-color: #434343;
 }
 
 .nav li ul {
     opacity: 0;
-    color: var(--menu-hover-color);
-    background-color: var(--menu-background-color);
+    color: #EEEEEE;
+    background-color: #434343;
     font-family: 'Lato', sans-serif;
     visibility: hidden;
-    position: fixed;
+    position: absolute;
     width: auto;
     height: 220px;
     column-count: 3;
     column-gap: 40px;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     z-index: 1;
-    top: 130px;
-    left: 240px;
+    top: 50px;
+    left: 0;
 }
 
 .nav li ul li {
@@ -280,7 +252,7 @@ ol {
 }
 
 .nav li:hover>ul li a {
-    color: var(--menu-hover-color);
+    color: #EEEEEE;
 }
 
 .nav li:hover>ul li:hover>a {
@@ -291,13 +263,17 @@ ol {
     font-size: 28px;
 }
 
+/* ::::SEPARATOR:::: */
+
 #Separator {
     display: flex;
-    background-color: var(--button-background-color);
+    background-color: #32E0C4;
     width: 100%;
     height: 30px;
     overflow: hidden;
 }
+
+/* ::::BODY MAIN:::: */
 
 .container {
     display: flex;
@@ -332,7 +308,7 @@ ol {
 }
 
 #setnameElement {
-    right: 130px; 
+    right: 130px;
     width: 600px;
     font-size: 25px;
     font-weight: bold;
@@ -350,7 +326,7 @@ ol {
 
 #setIDElement {
     margin-top: 5px;
-    right: 200px; 
+    right: 200px;
     width: 200px;
     font-size: 20px;
     font-weight: bold;
@@ -358,7 +334,7 @@ ol {
 
 #setStockElement {
     margin-top: 5px;
-    right: 200px; 
+    right: 200px;
     width: 200px;
     font-size: 20px;
     font-weight: bold;
@@ -366,20 +342,21 @@ ol {
 
 #setDescriptionElement {
     margin-top: 5px;
-    right: 200px; 
+    right: 200px;
     width: 600px;
     font-size: 16px;
 }
 
+/* ::::Help button:::: */
 .popup {
     display: none;
     position: fixed;
     z-index: 1;
     bottom: 20px;
     right: 20px;
-    background-color: var(--popup-background-color);
+    background-color: #fefefe;
     padding: 20px;
-    border: 1px solid var(--popup-border-color);
+    border: 1px solid #888;
     width: 325px;
     max-width: 50%;
     border-radius: 10px;
@@ -437,7 +414,7 @@ ol {
 }
 
 .chatsub {
-    background-color: var(--button-background-color);
+    background-color: #32E0C4;
     margin: 5px;
     border-radius: 40px;
 }
@@ -445,14 +422,14 @@ ol {
 .Usr {
     padding: 5px;
     text-align: right;
-    background-color: var(--button-background-color);
+    background-color: #32E0C4;
     border-radius: 40px;
 }
 
 .Sys {
     color: #333;
-    background-color: var(--sys-background-color);
-    border-left: 3px solid var(--sys-border-color);
+    background-color: #f7f7f7;
+    border-left: 3px solid #2196F3;
     padding: 4px;
     margin: 10px 0;
 }
@@ -477,9 +454,11 @@ ol {
     text-align: center;
 }
 
+/* ::::FOOTER:::: */
+
 footer {
-    background-color: var(--footer-background-color);
-    color: var(--footer-text-color);
+    background-color: #222831;
+    color: #EEE;
     padding: 20px;
     width: 100%;
     bottom: 0;
@@ -521,20 +500,20 @@ footer {
 
 .contenedor-izquierdo {
     flex: 1;
-    background-color: var(--promos-background-color);
+    background-color: rgb(70, 221, 201);
     max-height: 1000px;
     padding-bottom: 20px;
 }
 
 .contenedor-derecho {
     flex: 0.5;
-    background-color: var(--promos-background-color);
+    background-color: rgb(70, 221, 201);
     margin-left: 20px;
     max-height: 200px;
 }
 
 .containerProd {
-    background-color: var(--container-prod-background-color);
+    background-color: rgb(255, 255, 255);
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;

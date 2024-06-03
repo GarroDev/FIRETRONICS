@@ -1,17 +1,22 @@
+/* Default Light Theme */
 :root {
     --background-color: #ffffff;
     --text-color: #000000;
-    --info-background-color: #e0e0e0;
-    --box-background-color: #ffffff;
+    --container-background-color: #ffffff;
+    --info-section-background-color: #e0e0e0;
+    --about-us-box-background-color: #ffffff;
 }
 
+/* Dark Theme */
 .dark-theme {
     --background-color: #1c1c1c;
     --text-color: #ffffff;
-    --info-background-color: #333333;
-    --box-background-color: #2c2c2c;
+    --container-background-color: #333333;
+    --info-section-background-color: #444444;
+    --about-us-box-background-color: #555555;
 }
 
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -28,10 +33,11 @@ main {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--container-background-color);
 }
 
 .info-section {
-    background-color: var(--info-background-color);
+    background-color: var(--info-section-background-color);
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -54,7 +60,7 @@ main {
 }
 
 .about-us-box {
-    background-color: var(--box-background-color);
+    background-color: var(--about-us-box-background-color);
     padding: 20px;
     border-radius: 5px;
 }
