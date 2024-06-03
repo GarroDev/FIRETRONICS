@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Welcome to FireTronics</title>
     <meta charset="UTF-8">
@@ -9,9 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link href="../CSS/Style.css" rel="stylesheet">
-
 </head>
-
 <body>
 
     <header>
@@ -20,87 +17,58 @@
         </div>
 
         <div class="Container-halves">
-
             <div class="Login">
-
                 <div class="searchengine">
-
                     <h1 class="principal-header">FIRETRONICS</h1>
                     <h6 class="principal-header1">your best ally in technology</h6>
                 </div>
-
                 <div class="buttons">
-
                     <a href="http://localhost:5500/HTML/SingIn/src/SignIn.html">
                         <button class="custom-btn btn-1 Log-Btn1">Sign In</button>
                     </a>
-
-
                     <a href="../HTML/SignUp.html">
                         <button class="custom-btn btn-1 Log-Btn1">Sign Up</button>
                     </a>
-
                     <div id="login-header" class="Log-Btn2">
                         <img src="../imagenes/avatar.png" alt="SignIn">
-                        <span>Welcome!</span>
+                        <button class="custom-btn btn-1" onclick="LogOutF()">Log Out</button>
                     </div>
-
                     <a href="../HTML/ShoppingCart.html">
                         <button id="cartBtn" class="custom-btn btn-2">
                             <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
                             <span id="cartItemCount"></span>
                         </button>
                     </a>
-
                 </div>
-
             </div>
-
             <div class="Menu"></div>
-
             <ul class="nav">
                 <li><a href="../HTML/Index.html" class="Spaces">Home</a></li>
-
                 <li><a href="../HTML/products.html" class="Spaces">Products</a>
                     <ul>
                         <br>
                         <li id="Title1SubMenu"><b>Phone & Smart Wash</b></li><br>
-                        <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a>
-                        </li>
-                        <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart
-                                Wash</a></li>
-
-                        <!-- Next column -->
-
+                        <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart Wash</a></li>
                         <br>
                         <li id="Title1SubMenu"><b>Computing</b></li><br>
-                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
-                                computer</a></li>
-                        <li><a href="../HTML/laptops.html">Laptops</a>
-                        </li>
-
-                        <!-- Next column -->
-
+                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a></li>
+                        <li><a href="../HTML/laptops.html">Laptops</a></li>
                         <br>
                         <li id="Title1SubMenu"><b>TV, Audio/Video</b></li><br>
                         <li><a href="">Smart TV</a></li>
                         <li><a href="">Sound equipment</a></li>
-
                     </ul>
                 </li>
                 <li><a href="../HTML/WhoWeAre.html" class="Spaces">Who Are We</a></li>
             </ul>
         </div>
-
-
     </header>
 
     <div id="Separator"></div>
 
-
     <!-- Web site body -->
     <main>
-
         <div class="container-fluid mt-5 Promos">
             <ul class="nav nav-tabs visually-hidden" id="myTabs">
                 <li class="nav-item">
@@ -115,16 +83,13 @@
                 <li class="nav-item">
                     <a class="nav-link" id="tab4" data-toggle="tab" href="#content4">Con4</a>
                 </li>
-                <!-- Add more tabs here -->
             </ul>
-
             <div class="tab-content mt-3 col d-flex justify-content-center align-items-center ">
                 <div class="tab-pane fade show active Promos" id="content1">
                     <img src="../imagenes/Promos/Black-Friday-phone-deals-2023-recap.jpg" alt="" class="Promossize">
                 </div>
                 <div class="tab-pane fade" id="content2">
-                    <img src="../imagenes/Promos/Best-Samsung-Galaxy-Z-Fold-3-Prime-Day-deals.jpg" alt=""
-                        class="Promossize">
+                    <img src="../imagenes/Promos/Best-Samsung-Galaxy-Z-Fold-3-Prime-Day-deals.jpg" alt="" class="Promossize">
                 </div>
                 <div class="tab-pane fade" id="content3">
                     <img src="../imagenes/Promos/Phone_Daddy_14.webp" alt="" class="Promossize">
@@ -132,8 +97,6 @@
                 <div class="tab-pane fade" id="content4">
                     <img src="../imagenes/Promos/Promo1.jpg" alt="" class="Promossize">
                 </div>
-
-                <!-- Add more panels here -->
             </div>
         </div>
         <br><br>
@@ -145,28 +108,24 @@
                 </a>
                 <b>Cellphones</b>
             </button>
-
             <button class="category-button">
                 <a href="http://localhost/Products/?opcion_submenu=Laptops#SectionDestino">
                     <img src="../imagenes/Categories/Lap.png" alt="Laptop">
                 </a>
                 <b>Laptop</b>
             </button>
-
             <button class="category-button">
                 <a href="http://localhost/Products/?opcion_submenu=SmartWash#SectionDestino">
                     <img src="../imagenes/Categories/Smar.png" alt="SmartWatch">
                 </a>
                 <b>SmartWatch</b>
             </button>
-
             <button class="category-button">
                 <a href="http://localhost/Products/?opcion_submenu=Printers#SectionDestino">
                     <img src="../imagenes/Categories/Prin.png" alt="Printers">
                 </a>
                 <b>Printers</b>
             </button>
-        
             <button class="category-button">
                 <a href="http://localhost/Products/?opcion_submenu=WirelessHeadphones#SectionDestino">
                     <img src="../imagenes/Categories/Ear.png" alt="Earbuds">
@@ -174,7 +133,6 @@
                 <b>Earbuds</b>
             </button>
         </div>
-
 
         <div class="container-fluid mt-5 Info1 ">
             <div class="Div1Info1">
@@ -185,7 +143,6 @@
                 <p><br>Discover the technological revolution with Apple's <br>
                     unparalleled innovation! Immerse yourself in a world of limitless <br>
                     possibilities with our cutting-edge devices: Mac, iPad, and iPhone</p>
-
             </div>
         </div>
 
@@ -195,21 +152,17 @@
                 <p><br>Discover the technological revolution with Apple's <br>
                     unparalleled innovation! Immerse yourself in a world of limitless <br>
                     possibilities with our cutting-edge devices: Mac, iPad, and iPhone</p>
-
             </div>
             <div class="Div1Info2">
                 <img src="../imagenes/Index3.png" alt="" class="ImgInfo2">
             </div>
         </div>
-
-        <br>
-        <br>
+        <br><br>
         </div>
 
         <div class="container-fluid">
             <!-- Help button -->
             <button id="helpButton" class="circular-button btn btn-primary">?</button>
-
             <!-- Help popup -->
             <div id="helpPopup" class="popup">
                 <div class="popup-content">
@@ -219,22 +172,18 @@
                             <p class="Sys">How can I help?<br></p>
                         </div>
                         <div id="helpList" class="list-group"><br>
-                            <button class="help-button list-group-item list-group-item-action chatsub"
-                                value="Problem">I have an issue</button>
-                            <button class="help-button list-group-item list-group-item-action chatsub"
-                                value="Consult">I have a question</button>
-                            <button class="help-button list-group-item list-group-item-action chatsub"
-                                value="Suggestion">I wanna do a sugestion</button>
+                            <button class="help-button list-group-item list-group-item-action chatsub" value="Problem">I have an issue</button>
+                            <button class="help-button list-group-item list-group-item-action chatsub" value="Consult">I have a question</button>
+                            <button class="help-button list-group-item list-group-item-action chatsub" value="Suggestion">I wanna do a sugestion</button>
                             <br>
                         </div>
                     </div>
                 </div>
             </div>
             <button id="myWhatsAppButton" class="circular-button2 btn btn-primary"><i class="bi bi-whatsapp"></i></button>
+            <button id="theme-toggle" class="circular-button3 btn btn-primary">Toggle Theme</button>
         </div>
-
     </main>
-
 
     <!-- Web site footer -->
     <footer>
@@ -248,7 +197,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="../JavaScript/script.js"></script>
-
 </body>
-
 </html>
