@@ -25,7 +25,7 @@
     --header-background-color: #1c1c1c;
     --login-background-color: #333333;
     --search-header-color: #ccc;
-    --button-background-color: #555555;
+    --button-background-color: #32E0C4;
     --menu-background-color: #2c2c2c;
     --menu-hover-color: #555555;
     --popup-background-color: #333333;
@@ -408,6 +408,94 @@ ul, ol {
 .help-button:hover {
     background-color: var(--menu-hover-color);
 }
+
+.circular-button {
+    position: fixed;
+    bottom: 20px;
+    right: 80px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+.circular-button:hover {
+    background-color: #45a049;
+}
+
+.circular-button2 {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    background-color: #45a049;
+}
+
+.circular-button3 {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    background-color: #000000;
+}
+
+.chat {
+    margin: 5px;
+}
+
+.chatsub {
+    background-color: var(--button-background-color);
+    margin: 5px;
+    border-radius: 40px;
+}
+
+.Usr {
+    padding: 5px;
+    text-align: right;
+    background-color: var(--button-background-color);
+    border-radius: 40px;
+}
+
+.Sys {
+    color: #333;
+    background-color: var(--sys-background-color);
+    border-left: 3px solid var(--sys-border-color);
+    padding: 4px;
+    margin: 10px 0;
+}
+
+.HelpMesage {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.HelpMesage:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.HelpButton {
+    text-align: center;
+}
+
 
 /* Product Container */
 .products-container {
