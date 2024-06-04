@@ -1,21 +1,43 @@
+/* Default Light Theme */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --container-background-color: #ffffff;
+    --info-section-background-color: #e0e0e0;
+    --about-us-box-background-color: #ffffff;
+}
+
+/* Dark Theme */
+.dark-theme {
+    --background-color: #1c1c1c;
+    --text-color: #ffffff;
+    --container-background-color: #333333;
+    --info-section-background-color: #444444;
+    --about-us-box-background-color: #555555;
+}
+
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 main {
-    background-color: #ffffff;
+    background-color: var(--background-color);
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--container-background-color);
 }
 
 .info-section {
-    background-color: #e0e0e0;
+    background-color: var(--info-section-background-color);
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -38,11 +60,10 @@ main {
 }
 
 .about-us-box {
-    background-color: #ffffff;
+    background-color: var(--about-us-box-background-color);
     padding: 20px;
     border-radius: 5px;
 }
-
 
 .img {
     border-radius: 100%;
