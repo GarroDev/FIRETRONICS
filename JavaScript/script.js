@@ -46,6 +46,7 @@ window.addEventListener('load', mostrarOcultarElementos);
 function LogOutF() {
     sessionStorage.setItem('loggedIn', 'false');
     sessionStorage.setItem('profile', '');
+    res.redirect('http://127.0.0.1:5500/HTML/Index.html');
 }
 
 
