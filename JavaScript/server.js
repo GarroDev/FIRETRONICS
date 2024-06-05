@@ -495,7 +495,7 @@ app.post('/getProductDetails', async (req, res) => {
 
 // Fetch comments
 
-// Ruta para obtener los comentarios
+// Get Comments
 app.post('/getComments', async (req, res) => {
   try {
     const { productId } = req.body;
@@ -513,7 +513,7 @@ app.post('/getComments', async (req, res) => {
   }
 });
 
-// Ruta para agregar un comentario
+// Add comments
 app.post('/addComment', async (req, res) => {
   try {
     const { productId, rating, text } = req.body;
@@ -527,6 +527,100 @@ app.post('/addComment', async (req, res) => {
     res.status(200).send('Comment added successfully');
   } catch (error) {
     console.error('Error adding comment:', error.message);
+    res.status(500).send('Internal server error');
+  } finally {
+    await sql.close();
+  }
+});
+
+
+
+// CRUD Operations
+// Create a new product
+// Rutas para la administración de productos
+app.post('/addProduct', async (req, res) => {
+  try {
+    const { ID_Product, name, price, stock, description, img, category } = req.body;
+    await sql.connect(config);
+    const insertQuery = `
+      INSERT INTO PRODUCTS (ID_Product, Name, Price, Stock, Description, IMG, Category)
+      VALUES (@ID_Product, @Name, @Price, @Stock, @Description, @IMG, @Category)
+    `;
+    const request = new sql.Request();
+    request.input('ID_Product', sql.Int, ID_Product);
+    request.input('Name', sql.NVarChar, name);
+    request.input('Price', sql.Numeric, price);
+    request.input('Stock', sql.Int, stock);
+    request.input('Description', sql.NVarChar, description);
+    request.input('IMG', sql.NVarChar, img);
+    request.input('Category', sql.NVarChar, category);
+    await request.query(insertQuery);
+    res.status(201).send('Product added successfully');
+  } catch (error) {
+    console.error('Error adding product:', error.message);
+    res.status(500).send('Internal server error');
+  } finally {
+    await sql.close();
+  }
+});
+
+app.delete('/deleteProduct', async (req, res) => {
+  try {
+    const { id } = req.body;
+    await sql.connect(config);
+    const deleteQuery = `DELETE FROM PRODUCTS WHERE ID_Product = @id`;
+    const request = new sql.Request();
+    request.input('id', sql.Int, id);
+    await request.query(deleteQuery);
+    res.status(200).send('Product deleted successfully');
+  } catch (error) {
+    console.error('Error deleting product:', error.message);
+    res.status(500).send('Internal server error');
+  } finally {
+    await sql.close();
+  }
+});
+
+app.get('/getAllProducts', async (req, res) => {
+  try {
+    await sql.connect(config);
+    const result = await new sql.Request().query('SELECT * FROM PRODUCTS');
+    res.status(200).send(result.recordset);
+  } catch (error) {
+    console.error('Error getting products:', error.message);
+    res.status(500).send('Internal server error');
+  } finally {
+    await sql.close();
+  }
+});
+
+// Ruta para actualizar productos
+app.put('/updateProduct', async (req, res) => {
+  try {
+    const { id, name, category, price, stock, description, img } = req.body;
+    await sql.connect(config);
+    const updateQuery = `
+      UPDATE PRODUCTS
+      SET Name = @Name,
+          Category = @Category,
+          Price = @Price,
+          Stock = @Stock,
+          Description = @Description,
+          IMG = @IMG
+      WHERE ID_Product = @ID_Product
+    `;
+    const request = new sql.Request();
+    request.input('ID_Product', sql.Int, id);
+    request.input('Name', sql.NVarChar, name);
+    request.input('Category', sql.NVarChar, category);
+    request.input('Price', sql.Numeric, price);
+    request.input('Stock', sql.Int, stock);
+    request.input('Description', sql.NVarChar, description);
+    request.input('IMG', sql.NVarChar, img);
+    await request.query(updateQuery);
+    res.status(200).send('Product updated successfully');
+  } catch (error) {
+    console.error('Error updating product:', error.message);
     res.status(500).send('Internal server error');
   } finally {
     await sql.close();
