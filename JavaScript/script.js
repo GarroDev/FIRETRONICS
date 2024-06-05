@@ -43,6 +43,13 @@ window.onload = cambiarValorAlmacenamiento;
 // Execute funtion on page reload
 window.addEventListener('load', mostrarOcultarElementos);
 
+function LogOutF() {
+    sessionStorage.setItem('loggedIn', 'false');
+    sessionStorage.setItem('profile', '');
+    window.location.href = "http://127.0.0.1:5500/HTML/Index.html";
+}
+
+
 // Switches tabs every 5 seconds
 var tabs = ['tab1', 'tab2', 'tab3', 'tab4']; // Add more tab identifiers if needed
 var currentIndex = 0;
@@ -197,3 +204,21 @@ if (Profile === '2') {
 } else {
     // alert('Profile value is: no data');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Recuperar el tema guardado en sessionStorage
+    const currentTheme = sessionStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-theme');
+    }
+
+    // Añadir el evento de clic al botón
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        const newTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+        sessionStorage.setItem('theme', newTheme);
+    });
+});

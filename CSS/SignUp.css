@@ -1,30 +1,61 @@
+/* Default Light Theme */
+:root {
+    --background-color: #EEEEEE;
+    --text-color: #222831;
+    --header-background-color: #EEEEEE;
+    --login-background-color: #222831;
+    --searchengine-background-color: #FFFFFF;
+    --button-background-color: #32E0C4;
+    --button-hover-background-color: #EEEEEE;
+    --menu-background-color: #434343;
+    --menu-hover-color: #969696;
+    --separator-background-color: #32E0C4;
+    --footer-background-color: #222831;
+    --footer-text-color: #EEE;
+}
+
+/* Dark Theme */
+.dark-theme {
+    --background-color: #1c1c1c;
+    --text-color: #ffffff;
+    --header-background-color: #333333;
+    --login-background-color: #444444;
+    --searchengine-background-color: #555555;
+    --button-background-color: #32E0C4;
+    --button-hover-background-color: #555555;
+    --menu-background-color: #666666;
+    --menu-hover-color: #AAAAAA;
+    --separator-background-color: #32E0C4;
+    --footer-background-color: #444444;
+    --footer-text-color: #EEE;
+}
+
+/* General Styles */
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #EEEEEE;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 /* ::::header:::: */
-
 header {
     display: flex;
     width: 100%;
     height: 140px;
     overflow: hidden;
-
+    background-color: var(--header-background-color);
 }
 
 /*---LOGO----*/
-
 .Esplogo {
     flex: 0 0 auto;
-    background-color: #EEEEEE;
+    background-color: var(--header-background-color);
     height: auto;
     overflow: hidden;
-
 }
 
 .Esplogo img {
@@ -36,8 +67,6 @@ header {
 }
 
 /*---Search and menu----*/
-
-
 .Container-halves {
     display: flex;
     flex: 1;
@@ -46,7 +75,7 @@ header {
 
 .Login {
     flex: 1;
-    background-color: #222831;
+    background-color: var(--login-background-color);
     height: 90%;
     display: flex;
     flex-direction: row;
@@ -60,10 +89,10 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: var(--searchengine-background-color);
 }
 
 /*---Content----*/
-
 /* Search bar */
 #barrabusqueda {
     width: 70%;
@@ -75,12 +104,13 @@ header {
     vertical-align: middle;
     font-size: 17px;
     letter-spacing: 0px;
-    font-weight: bold;}
+    font-weight: bold;
+}
 
 /*---buttons----*/
 .buttons {
     flex: 1;
-    background-color: #222831;
+    background-color: var(--login-background-color);
     width: 10px;
     height: 70%;
     display: flex;
@@ -94,8 +124,7 @@ button {
 }
 
 .custom-btn {
-
-    color: #222831;
+    color: var(--text-color);
     border-radius: 5px;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
@@ -115,21 +144,21 @@ button {
 }
 
 .btn-1 {
-    background-color: #32E0C4;
+    background-color: var(--button-background-color);
     border: none;
     width: 140px;
     height: 40px;
 }
 
 .btn-2 {
-    background-color: #6cd5c4;
+    background-color: var(--button-background-color);
     border: none;
     width: 50px;
     height: 50px;
 }
 
 .btn-1:hover {
-    background-color: #EEEEEE;
+    background-color: var(--button-hover-background-color);
 }
 
 /*---Menu----*/
@@ -155,21 +184,21 @@ ol {
     font-family: 'Lato', sans-serif;
     font-size: 20px;
     letter-spacing: 0px;
-    color: #222831;
+    color: var(--text-color);
     text-decoration: none;
     padding: 10px 12px;
     display: block;
 }
 
 .nav li a:hover {
-    color: #EEEEEE;
-    background-color: #434343;
+    color: var(--footer-text-color);
+    background-color: var(--menu-background-color);
 }
 
 .nav li ul {
     opacity: 0;
-    color: #EEEEEE;
-    background-color: #434343;
+    color: var(--footer-text-color);
+    background-color: var(--menu-background-color);
     visibility: hidden;
     position: fixed;
     width: 900px;
@@ -178,22 +207,18 @@ ol {
     z-index: 1;
     top: 130px;
     left: 409px;
-
 }
 
 .nav li:hover>ul {
-
     opacity: 1;
     visibility: visible;
 }
 
 .nav li ul li {
-
     position: relative;
 }
 
 .nav li ul li ul {
-
     right: -140px;
     top: 0px;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -201,51 +226,41 @@ ol {
 }
 
 .nav li ul:hover>li ul {
-
     opacity: 1;
     visibility: visible;
 }
 
 .nav li:hover>ul li a {
-    color: #EEEEEE;
+    color: var(--footer-text-color);
 }
 
 .nav li:hover>ul li:hover>a {
-    color: #969696;
+    color: var(--menu-hover-color);
 }
 
 #Title1SubMenu {
     font-size: 28px;
 }
 
-
 /* ::::SEPARATOR:::: */
-
 #Separator {
     display: flex;
-    background-color: #32E0C4;
+    background-color: var(--separator-background-color);
     width: 100%;
     height: 30px;
     overflow: hidden;
 }
 
-
-
-
 /* ::::FOOTER:::: */
-
 footer {
-
-    background-color: #222831;
-    color: #EEE;
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
     padding: 20px;
     width: 100%;
     bottom: 0;
     overflow: hidden;
     text-align: center;
-    /* Centra el texto horizontalmente */
     margin-top: 100px;
-
 }
 
 #titleFooter1 {
@@ -277,11 +292,23 @@ footer {
 }
 
 .Promos {
-    background-color: #222831;
-
+    background-color: var(--footer-background-color);
 }
 
 .Promossize {
     width: 1500px;
     height: 400px;
+}
+/* ::::THEME BUTTON:::: */
+.circular-button3 {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    background-color: #000000;
 }

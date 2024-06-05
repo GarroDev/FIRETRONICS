@@ -79,3 +79,23 @@ form.addEventListener('submit', function(event) {
   facturaWindow.document.body.innerHTML = facturaHTML;
 });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Recuperar el tema guardado en sessionStorage
+  const currentTheme = sessionStorage.getItem('theme') || 'light';
+  if (currentTheme === 'dark') {
+      body.classList.add('dark-theme');
+  }
+
+  // Añadir el evento de clic al botón
+  toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+      const newTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+      sessionStorage.setItem('theme', newTheme);
+  });
+});
