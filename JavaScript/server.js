@@ -403,7 +403,7 @@ app.post('/payInfo', async (req, res) => {
 
     let mailOptions = {
         from: 'firetronicstech@outlook.com',
-        to: 'mateo_londono99201@elpoli.edu.co',
+        to: 'cristian_garro23191@elpoli.edu.co',
         subject: 'Order sent',
         text: 'Your order was sent properly'
     };
@@ -463,3 +463,72 @@ app.listen(port, () => {
 
 
 // -------------------------------------------------
+
+app.post('/getProductDetails', async (req, res) => {
+  try {
+      const { id } = req.body;
+
+      if (isNaN(id)) {
+          res.status(400).send('Invalid product ID');
+          return;
+      }
+
+      await sql.connect(config);
+
+      const query = `SELECT * FROM PRODUCTS WHERE ID_Product = @id`;
+      const request = new sql.Request();
+      request.input('id', sql.Int, id);
+      const result = await request.query(query);
+
+      if (result.recordset.length === 0) {
+          res.status(404).send('Product not found');
+          return;
+      }
+
+      res.send(result.recordset[0]);
+      await sql.close();
+  } catch (error) {
+      console.error('Error fetching product details:', error.message);
+      res.status(500).send('Internal server error');
+  }
+});
+
+// Fetch comments
+
+// Ruta para obtener los comentarios
+app.post('/getComments', async (req, res) => {
+  try {
+    const { productId } = req.body;
+    await sql.connect(config);
+    const query = `SELECT rating, text FROM Comments WHERE productId = @productId`;
+    const request = new sql.Request();
+    request.input('productId', sql.Int, productId);
+    const result = await request.query(query);
+    res.send(result.recordset);
+  } catch (error) {
+    console.error('Error fetching comments:', error.message);
+    res.status(500).send('Internal server error');
+  } finally {
+    await sql.close();
+  }
+});
+
+// Ruta para agregar un comentario
+app.post('/addComment', async (req, res) => {
+  try {
+    const { productId, rating, text } = req.body;
+    await sql.connect(config);
+    const query = `INSERT INTO Comments (productId, rating, text) VALUES (@productId, @rating, @text)`;
+    const request = new sql.Request();
+    request.input('productId', sql.Int, productId);
+    request.input('rating', sql.Int, rating);
+    request.input('text', sql.NVarChar, text);
+    await request.query(query);
+    res.status(200).send('Comment added successfully');
+  } catch (error) {
+    console.error('Error adding comment:', error.message);
+    res.status(500).send('Internal server error');
+  } finally {
+    await sql.close();
+  }
+});
