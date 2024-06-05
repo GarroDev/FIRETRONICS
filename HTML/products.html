@@ -30,29 +30,25 @@
                 </div>
 
                 <div class="buttons">
-
                     <a href="http://localhost:5500/HTML/SingIn/src/SignIn.html">
-                        <button class="custom-btn btn-1">Sign In</button>
-
+                        <button class="custom-btn btn-1 Log-Btn1">Sign In</button>
                     </a>
-
-
                     <a href="../HTML/SignUp.html">
                         <button class="custom-btn btn-1 Log-Btn1">Sign Up</button>
                     </a>
-
                     <div id="login-header" class="Log-Btn2">
                         <img src="../imagenes/avatar.png" alt="SignIn">
-                        <span>Welcome!</span>
+                        <button class="custom-btn btn-1" onclick="LogOutF()">Log Out</button>
+                        <a href="../HTML/Admin.html">
+                            <button class="custom-btn btn-1 ">Admin</button>
+                            </a>
                     </div>
-
                     <a href="../HTML/ShoppingCart.html">
                         <button id="cartBtn" class="custom-btn btn-2">
                             <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
                             <span id="cartItemCount"></span>
                         </button>
                     </a>
-
                 </div>
 
             </div>
@@ -173,6 +169,8 @@
                     </div>
                 </div>
             </div>
+            <button id="myWhatsAppButton" class="circular-button2 btn btn-primary"><i class="bi bi-whatsapp"></i></button>
+            <button id="theme-toggle" class="circular-button3 btn btn-primary"><i class="bi bi-lightbulb"></i></button>
         </div>
         
     </main>
