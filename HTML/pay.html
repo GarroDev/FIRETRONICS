@@ -39,6 +39,9 @@
                     <div id="login-header" class="Log-Btn2">
                         <img src="../imagenes/avatar.png" alt="SignIn">
                         <button class="custom-btn btn-1" onclick="LogOutF()">Log Out</button>
+                        <a href="../HTML/Admin.html">
+                            <button class="custom-btn btn-1 ">Admin</button>
+                            </a>
                     </div>
                     <a href="../HTML/ShoppingCart.html">
                         <button id="cartBtn" class="custom-btn btn-2">
@@ -94,7 +97,7 @@
 
     <main style="text-align: center; padding: 20px;">
         <h2 class="mt-4 mb-4 text-center">Shipping Information</h2>
-        <form id="bill" style="max-width: 700px; margin: auto;" action="http://localhost:3002/send-email" method="post">
+        <form action="http://localhost:3002/payInfo" method="post">
 
             <!-- Field "Name" -->
             <div class="form-group">
