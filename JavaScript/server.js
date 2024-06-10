@@ -143,8 +143,12 @@ app.post('/usuario', async (req, res) => {
       //res.send("User found");
       //res.redirect('http://127.0.0.1:5500/HTML/Index.html');
 
+      const getUserQuery = `SELECT Name FROM CUSTOMERS WHERE Email = '${email}'`;
+      const userResult = await sql.query(getUserQuery);
+      const userName = userResult.recordset[0].Name;
+
       // If the passwords match, reply with a message indicating that the user was found.
-      res.redirect('http://127.0.0.1:5500/HTML/Index.html?Profile=2');
+      res.redirect(`http://127.0.0.1:5500/HTML/Index.html?Profile=2&location=2&username=${userName}`);
 
     } else {
       // If the passwords do not match, reply with a message indicating that the password is incorrect.

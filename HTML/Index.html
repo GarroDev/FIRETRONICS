@@ -35,7 +35,11 @@
                         <a href="../HTML/Admin.html">
                             <button class="custom-btn btn-1 ">Admin</button>
                             </a>
+
                             <h1 id="user-name"></h1>
+                            <h1 id="username"> </h1>
+                            
+                            
                     </div>
                     <a href="../HTML/ShoppingCart.html">
                         <button id="cartBtn" class="custom-btn btn-2">
@@ -73,7 +77,7 @@
 
     <!-- Web site body -->
 
-
+    
     <main>
         
         <h1 id="user-name"></h1>
@@ -204,6 +208,15 @@
         <p id="titleFooter3">Politécnico Colombiano Jaime Isaza Cadavid</p>
         <p id="titleFooter4">2024</p>
     </footer>
+
+    <script>
+        // Extraer el nombre de usuario de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+    
+        // Mostrar el nombre de usuario en un elemento HTML
+        document.getElementById('username').textContent = username;
+      </script>
 
     <script src="../JavaScript/logout.js"></script>
     <script src="../JavaScript/displayUserName.js"></script>
