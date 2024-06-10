@@ -176,9 +176,12 @@ button {
 
 /* Login Header */
 #login-header {
+    height: 150px;
     text-align: center;
     font-size: 30px;
     color: var(--search-header-color);
+    
+
     
 }
 
@@ -186,19 +189,25 @@ button {
     width: 100px;
     height: auto;
     margin-right: 10px;
+    
+}
+
+#username {
+    margin-top: -10px;    
+    font-size: 20px;
+    text-align: left;
+  
+    position: relative; /* Asegúrate de tener una posición definida para poder usar z-index */
+    z-index: 9999; /* Este valor puede variar según tus necesidades */
 }
 
 #user-name{
     font-size: 20px;
     
     text-align: left;
+   
 }
 
-#username{
-    font-size: 20px;
-    
-    text-align: left;
-}
 
 
 /* Menu */
