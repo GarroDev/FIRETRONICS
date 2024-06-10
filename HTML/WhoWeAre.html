@@ -20,9 +20,11 @@
         </div>
 
         <div class="Container-halves">
-
             <div class="Login">
-
+                <div class="searchengine">
+                    <h1 class="principal-header">FIRETRONICS</h1>
+                    <h6 class="principal-header1">your best ally in technology</h6>
+                </div>
                 <div class="buttons">
                     <a href="http://localhost:5500/HTML/SingIn/src/SignIn.html">
                         <button class="custom-btn btn-1 Log-Btn1">Sign In</button>
@@ -31,11 +33,12 @@
                         <button class="custom-btn btn-1 Log-Btn1">Sign Up</button>
                     </a>
                     <div id="login-header" class="Log-Btn2">
-                        <img src="../imagenes/avatar.png" alt="SignIn">
+                        <img src="../imagenes/avatar.webp" alt="SignIn">                        
                         <button class="custom-btn btn-1" onclick="LogOutF()">Log Out</button>
                         <a href="../HTML/Admin.html">
                             <button class="custom-btn btn-1 ">Admin</button>
                             </a>
+                            <h1 id="user-name"></h1>
                     </div>
                     <a href="../HTML/ShoppingCart.html">
                         <button id="cartBtn" class="custom-btn btn-2">
@@ -44,47 +47,29 @@
                         </button>
                     </a>
                 </div>
-
             </div>
-
             <div class="Menu"></div>
-
             <ul class="nav">
                 <li><a href="../HTML/Index.html" class="Spaces">Home</a></li>
-
                 <li><a href="../HTML/products.html" class="Spaces">Products</a>
-                    <ul>
+                <!-- <ul>
                         <br>
                         <li id="Title1SubMenu"><b>Phone & Smart Wash</b></li><br>
-                        <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a>
-                        </li>
-                        <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart
-                                Wash</a></li>
-
-                        <!-- Next column -->
-
+                        <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart Wash</a></li>
                         <br>
                         <li id="Title1SubMenu"><b>Computing</b></li><br>
-                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
-                                computer</a></li>
-                        <li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Laptops</a>
-                        </li>
-
-                        <!-- Next column -->
-
+                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a></li>
+                        <li><a href="../HTML/laptops.html">Laptops</a></li>
                         <br>
                         <li id="Title1SubMenu"><b>TV, Audio/Video</b></li><br>
                         <li><a href="">Smart TV</a></li>
                         <li><a href="">Sound equipment</a></li>
-
-                    </ul>
+                    </ul> -->
                 </li>
-                <li><a href="../HTML/WhoWeAre.html" class="Spaces">Who are we</a></li>
-                           
+                <li><a href="../HTML/WhoWeAre.html" class="Spaces">Who Are We</a></li>
             </ul>
         </div>
-
-
     </header>
 
     <div id="Separator"></div>
@@ -214,13 +199,15 @@
 
     </footer>
 
+    
+    <script src="../JavaScript/VisualUserNameOut.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-
-
     <script src="../JavaScript/script.js"></script>
+    <script src="../JavaScript/displayUserName.js"></script>
+    
 </body>
 
 </html>
