@@ -626,3 +626,56 @@ app.put('/updateProduct', async (req, res) => {
     await sql.close();
   }
 });
+
+
+// Get users
+app.get('/getAllUsers', async (req, res) => {
+  try {
+    await sql.connect(config);
+    const result = await new sql.Request().query('SELECT ID_Customer, Name, Email FROM CUSTOMERS');
+    res.status(200).send(result.recordset);
+  } catch (error) {
+    console.error('Error getting users:', error.message);
+    res.status(500).send('Internal server error');
+  } finally {
+    await sql.close();
+  }
+});
+
+app.delete('/deleteUser', async (req, res) => {
+  try {
+    const { id } = req.body;
+    await sql.connect(config);
+    const deleteQuery = `DELETE FROM CUSTOMERS WHERE ID_Customer = @id`;
+    const request = new sql.Request();
+    request.input('id', sql.Int, id);
+    await request.query(deleteQuery);
+    res.status(200).send('Customer deleted successfully');
+  } catch (error) {
+    console.error('Error deleting customer:', error.message);
+    res.status(500).send('Internal server error');
+  } finally {
+    await sql.close();
+  }
+});
+
+
+// Add users
+app.post('/addUsers', async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+    await sql.connect(config);
+    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES (@name, @email, @password)`;
+    const request = new sql.Request();
+    request.input('name', sql.NVarChar, name);
+    request.input('email', sql.NVarChar, email);
+    request.input('password', sql.NVarChar, password);
+    await request.query(query);
+    res.status(200).send('Comment added successfully');
+  } catch (error) {
+    console.error('Error adding comment:', error.message);
+    res.status(500).send('Internal server error');
+  } finally {
+    await sql.close();
+  }
+});
