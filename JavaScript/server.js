@@ -632,7 +632,7 @@ app.put('/updateProduct', async (req, res) => {
 app.get('/getAllUsers', async (req, res) => {
   try {
     await sql.connect(config);
-    const result = await new sql.Request().query('SELECT Name, Email FROM CUSTOMERS');
+    const result = await new sql.Request().query('SELECT ID_Customer, Name, Email FROM CUSTOMERS');
     res.status(200).send(result.recordset);
   } catch (error) {
     console.error('Error getting users:', error.message);
@@ -641,6 +641,24 @@ app.get('/getAllUsers', async (req, res) => {
     await sql.close();
   }
 });
+
+app.delete('/deleteUser', async (req, res) => {
+  try {
+    const { id } = req.body;
+    await sql.connect(config);
+    const deleteQuery = `DELETE FROM CUSTOMERS WHERE ID_Customer = @id`;
+    const request = new sql.Request();
+    request.input('id', sql.Int, id);
+    await request.query(deleteQuery);
+    res.status(200).send('Customer deleted successfully');
+  } catch (error) {
+    console.error('Error deleting customer:', error.message);
+    res.status(500).send('Internal server error');
+  } finally {
+    await sql.close();
+  }
+});
+
 
 // Add users
 app.post('/addUsers', async (req, res) => {

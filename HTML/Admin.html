@@ -8,6 +8,9 @@
 </head>
 <body>
     <div class="container">
+        <a href="http://127.0.0.1:5500/HTML/Index.html">
+            <button class="custom-btn btn-1 Log-Btn1">Go Home</button>
+        </a>
         <h1>Product Administration</h1>
         <form id="addProductForm">
             <div class="mb-3">
@@ -73,8 +76,7 @@
                 if (!response.ok) {
                     throw new Error('Failed to add product');
                 }
-
-                alert('Product added successfully!');
+                alert("Product added successfully"); window.location.href = "http://127.0.0.1:5500/HTML/Admin.html";
                 fetchProducts();
             } catch (error) {
                 alert('Error adding product: ' + error.message);
@@ -154,29 +156,74 @@
         async function fetchUsers() {
             try {
                 const response = await fetch('http://localhost:3002/getAllUsers');
-                const products = await response.json();
-                const UserList = document.getElementById('UserList');
-                UserList.innerHTML = '';
-                products.forEach(product => {
-                    const productDiv = document.createElement('div');
-                    productDiv.classList.add('card', 'mb-3');
-                    productDiv.style.width = '18rem';
-                    productDiv.innerHTML = `
+                const customers = await response.json();
+                const userList = document.getElementById('UserList');
+                userList.innerHTML = '';
+                customers.forEach(customer => {
+                    const customerDiv = document.createElement('div');
+                    customerDiv.classList.add('card', 'mb-3');
+                    customerDiv.style.width = '18rem';
+                    customerDiv.innerHTML = `
                         <div class="card-body">
-                            <h5 class="card-title">${name}</h5>
-                            <p class="card-text">Email: $${product.email}</p>
-                            <button class="btn btn-danger" onclick="deleteProduct(${product.ID_Product})">Delete</button>
-                            <button class="btn btn-primary" onclick="editProduct(${product.ID_Product})">Edit</button>
+                            <h5 class="card-title">ID: ${customer.ID_Customer}</h5>
+                            <p class="card-text">Name: ${customer.Name}</p>
+                            <p class="card-text">Email: ${customer.Email}</p>
+                            <button class="btn btn-danger" onclick="deleteUser(${customer.ID_Customer})">Delete</button>
+                            <button class="btn btn-primary" onclick="editCustomer(${customer.ID_Customer})">Edit</button>
                         </div>
                     `;
-                    UserList.appendChild(productDiv);
+                    userList.appendChild(customerDiv);
                 });
             } catch (error) {
-                alert('Error fetching products: ' + error.message);
+                alert('Error fetching users: ' + error.message);
             }
         }
 
-        window.onload = fetchProducts;
+        async function deleteUser(id) {
+            try {
+                const response = await fetch('http://localhost:3002/deleteUser', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to delete customer');
+                }
+
+                alert('Customer deleted successfully!');
+                fetchUsers();
+            } catch (error) {
+                alert('Error deleting customer: ' + error.message);
+            }
+        }
+
+        async function updateCustomer(customer) {
+            try {
+                const response = await fetch('http://localhost:3002/updateCustomer', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(customer)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to update customer');
+                }
+
+                alert('Customer updated successfully!');
+            } catch (error) {
+                alert('Error updating customer: ' + error.message);
+            }
+        }
+
+        window.onload = () => {
+            fetchProducts();
+            fetchUsers();
+        };
     </script>
 </body>
 </html>
