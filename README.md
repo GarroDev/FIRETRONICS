@@ -24,8 +24,8 @@ New ways to create projects, and use different softwares to achieve a great goal
 |3|[Download SQL Server (We recommend SQL Server developer edition.)](https://go.microsoft.com/fwlink/p/?linkid=2215158&clcid=0x240a&culture=es-co&country=co).|
 |4|Dowload GitHub FIRETRONICS FILES!|
 |5|Use FIRETRONICS.sql from "Database" file to create the SQL Server database :feelsgood:|
-|6|Installation, configuration and deployment of XAMPP applications.|
-|7|Installation, configuration and deployment of MySQL database engine|
+<!--- |6|Installation, configuration and deployment of XAMPP applications.|
+|7|Installation, configuration and deployment of MySQL database engine|-->
 
 > [!WARNING]
 > ¡BE CAREFUL! Developer edition it's only for DEV, QA, STG enviorments, no PRD.
@@ -85,7 +85,13 @@ Like this:
 - npm install mssql
 - npm install bcrypt
 
-## Configurations for the correct functioning of the products section
+**9. Extract SignIn.**
+
+Like this:
+
+![image](https://github.com/GarroDev/FIRETRONICS/assets/160985704/f7e8ef73-8633-499d-b661-627ced13ca1b)
+
+<!-- ## Configurations for the correct functioning of the products section
 
 
 ### 1. Configure Xampp
@@ -156,7 +162,7 @@ Servidor: localhost
 Basededatos: carritodb  
 
 ![image](https://github.com/GarroDev/FIRETRONICS/assets/163207670/94e583bc-9b84-4a9f-a30f-fea22309fcef)
-
+-->
 ## Useful resoruces
 
 - [Bootstrap](https://getbootstrap.com/).
