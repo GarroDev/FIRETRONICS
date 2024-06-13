@@ -663,13 +663,13 @@ app.delete('/deleteUser', async (req, res) => {
 // Add users
 app.post('/addUsers', async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { Name, Email, Password} = req.body;
     await sql.connect(config);
-    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES (@name, @email, @password)`;
+    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES (@Name, @Email, @Password)`;
     const request = new sql.Request();
-    request.input('name', sql.NVarChar, name);
-    request.input('email', sql.NVarChar, email);
-    request.input('password', sql.NVarChar, password);
+    request.input('Name', sql.NVarChar, Name);
+    request.input('Email', sql.NVarChar, Email);
+    request.input('Password', sql.NVarChar, Password);
     await request.query(query);
     res.status(200).send('Comment added successfully');
   } catch (error) {
