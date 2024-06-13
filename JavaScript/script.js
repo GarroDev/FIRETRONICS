@@ -46,7 +46,7 @@ window.addEventListener('load', mostrarOcultarElementos);
 function LogOutF() {
     sessionStorage.setItem('loggedIn', 'false');
     sessionStorage.setItem('profile', '');
-    window.location.href = "http://127.0.0.1:5500/HTML/Index.html";
+    window.location.href = "http://127.0.0.1:5501/HTML/Index.html";
 }
 
 

@@ -44,13 +44,13 @@ app.post('/register', async (req, res) => {
     // Name validation (only letters)
     const nameRegex = /^[A-Za-z\s]+$/;
     if (!nameRegex.test(name)) {
-      return res.send('<script>alert("Name must contain only letters!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+      return res.send('<script>alert("Name must contain only letters!"); window.location.href = "http://127.0.0.1:5501/HTML/SignUp.html";</script>');
     }
 
     // Password strength validation
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (!passwordRegex.test(password)) {
-      return res.send('<script>alert("Password must be at least 8 characters long, including at least one uppercase letter, one lowercase letter, one number, and one special character."); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+      return res.send('<script>alert("Password must be at least 8 characters long, including at least one uppercase letter, one lowercase letter, one number, and one special character."); window.location.href = "http://127.0.0.1:5501/HTML/SignUp.html";</script>');
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -64,7 +64,7 @@ app.post('/register', async (req, res) => {
 
     // Check if the email domain is allowed
     if (!allowedDomains.includes(emailDomain)) {
-      return res.send('<script>alert("Email domain is not allowed!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+      return res.send('<script>alert("Email domain is not allowed!"); window.location.href = "http://127.0.0.1:5501/HTML/SignUp.html";</script>');
     }
 
     // Establish a connection to the database
@@ -79,7 +79,7 @@ app.post('/register', async (req, res) => {
       // Close the database connection
       await sql.close();
       // Respond with an alert that the email is already in use
-      return res.send('<script>alert("Email is already in use!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+      return res.send('<script>alert("Email is already in use!"); window.location.href = "http://127.0.0.1:5501/HTML/SignUp.html";</script>');
     }
 
     // Define the SQL query to insert user data
@@ -91,7 +91,7 @@ app.post('/register', async (req, res) => {
     // Close the database connection
     await sql.close();
     // Respond with a success message
-    res.send('<script>alert("Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/SignUp.html";</script>');
+    res.send('<script>alert("Successful registration!"); window.location.href = "http://127.0.0.1:5501/HTML/SignUp.html";</script>');
   } catch (error) {
     // Handle errors
     console.error('Error inserting values:', error.message);
@@ -148,7 +148,7 @@ app.post('/usuario', async (req, res) => {
       const userName = userResult.recordset[0].Name;
 
       // If the passwords match, reply with a message indicating that the user was found.
-      res.redirect(`http://127.0.0.1:5500/HTML/Index.html?Profile=2&location=2&username=${userName}`);
+      res.redirect(`http://127.0.0.1:5501/HTML/Index.html?Profile=2&location=2&username=${userName}`);
 
     } else {
       // If the passwords do not match, reply with a message indicating that the password is incorrect.
@@ -419,7 +419,7 @@ app.post('/payInfo', async (req, res) => {
         //res.redirect('http://127.0.0.1:5500/HTML/Index.html');
     });
 
-    res.send('<script>alert("Successful registration!"); window.location.href = "http://127.0.0.1:5500/HTML/Index.html";</script>');
+    res.send('<script>alert("Successful registration!"); window.location.href = "http://127.0.0.1:5501/HTML/Index.html";</script>');
   } catch (error) {
     // Handle errors
     console.error('Error inserting values:', error.message);
@@ -456,7 +456,7 @@ app.post('/send-email', (req, res) => {
         if (error) {
             return res.status(500).send(error.toString());
         }
-        res.redirect('http://127.0.0.1:5500/HTML/Index.html');
+        res.redirect('http://127.0.0.1:5501/HTML/Index.html');
     });
 });
 

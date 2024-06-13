@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <a href="http://127.0.0.1:5500/HTML/Index.html">
+        <a href="http://127.0.0.1:5501/HTML/Index.html">
             <button class="custom-btn btn-1 Log-Btn1">Go Home</button>
         </a>
         <h1>Product Administration</h1>
@@ -93,7 +93,7 @@
                 if (!response.ok) {
                     throw new Error('Failed to add product');
                 }
-                alert("Product added successfully"); window.location.href = "http://127.0.0.1:5500/HTML/Admin.html";
+                alert("Product added successfully"); window.location.href = "http://127.0.0.1:5501/HTML/Admin.html";
                 fetchProducts();
             } catch (error) {
                 alert('Error adding product: ' + error.message);
@@ -263,7 +263,7 @@
                     throw new Error('Failed to register user');
                 }
                 alert("User registered successfully");
-                window.location.href = "http://127.0.0.1:5500/HTML/Admin.html";
+                window.location.href = "http://127.0.0.1:5501/HTML/Admin.html";
             } catch (error) {
                 alert('Error registering user: ' + error.message);
             }
