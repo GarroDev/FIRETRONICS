@@ -667,17 +667,22 @@ app.delete('/deleteUser', async (req, res) => {
 // Add users
 app.post('/addUsers', async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { Name, Email, Password } = req.body;
+
+    // Encriptar la contraseña
+    const hashedPassword = await bcrypt.hash(Password, 10);
+
     await sql.connect(config);
-    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES (@name, @email, @password)`;
+    const query = `INSERT INTO CUSTOMERS (Name, Email, Password) VALUES (@Name, @Email, @Password)`;
     const request = new sql.Request();
-    request.input('name', sql.NVarChar, name);
-    request.input('email', sql.NVarChar, email);
-    request.input('password', sql.NVarChar, password);
+    request.input('Name', sql.NVarChar, Name);
+    request.input('Email', sql.NVarChar, Email);
+    request.input('Password', sql.NVarChar, hashedPassword);  // Usar la contraseña encriptada
     await request.query(query);
-    res.status(200).send('Comment added successfully');
+
+    res.status(200).send('User added successfully');
   } catch (error) {
-    console.error('Error adding comment:', error.message);
+    console.error('Error adding user:', error.message);
     res.status(500).send('Internal server error');
   } finally {
     await sql.close();

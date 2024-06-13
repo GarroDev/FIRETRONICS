@@ -47,6 +47,23 @@
         <h2 class="mt-5">Products List</h2>
         <div id="productList" class="mt-3"></div>
 
+        <h1>User Administration</h1>
+        <form id="addUserForm">
+            <div class="mb-3">
+                <label for="userName" class="form-label">UserName</label>
+                <input type="text" class="form-control" id="userName" required>
+            </div>
+            <div class="mb-3">
+                <label for="userEmail" class="form-label">User Email</label>
+                <input type="email" class="form-control" id="userEmail" required>
+            </div>
+            <div class="mb-3">
+                <label for="userPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="userPassword" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add User</button>
+        </form>
+
         <h2 class="mt-5">Users List</h2>
         <div id="UserList" class="mt-3"></div>
     </div>
@@ -224,6 +241,33 @@
             fetchProducts();
             fetchUsers();
         };
+
+        document.getElementById('addUserForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const user = {
+                Name: document.getElementById('userName').value,
+                Email: document.getElementById('userEmail').value,
+                Password: document.getElementById('userPassword').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3002/addUsers', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to register user');
+                }
+                alert("User registered successfully");
+                window.location.href = "http://127.0.0.1:5500/HTML/Admin.html";
+            } catch (error) {
+                alert('Error registering user: ' + error.message);
+            }
+        });
     </script>
 </body>
 </html>
