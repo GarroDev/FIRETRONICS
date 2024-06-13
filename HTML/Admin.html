@@ -269,5 +269,88 @@
             }
         });
     </script>
+
+
+<script>
+    async function editProduct(id) {
+    try {
+        const response = await fetch(`http://localhost:3002/getProduct/${id}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch product details for editing');
+        }
+        const product = await response.json();
+        showEditForm(product);
+    } catch (error) {
+        alert('Error editing product: ' + error.message);
+    }
+}
+
+function showEditForm(product) {
+    const editFormContainer = document.createElement('div');
+    editFormContainer.innerHTML = `
+        <h2>Edit Product</h2>
+        <form id="editProductForm">
+            <div class="mb-3">
+                <label for="edit_ID_Product" class="form-label">ID Product</label>
+                <input type="text" class="form-control" id="edit_ID_Product" value="${product.ID_Product}" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="edit_productName" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="edit_productName" value="${product.name}" required>
+            </div>
+            <div class="mb-3">
+                <label for="edit_productPrice" class="form-label">Price</label>
+                <input type="number" class="form-control" id="edit_productPrice" value="${product.price}" required>
+            </div>
+            <div class="mb-3">
+                <label for="edit_productStock" class="form-label">Stock</label>
+                <input type="number" class="form-control" id="edit_productStock" value="${product.stock}" required>
+            </div>
+            <div class="mb-3">
+                <label for="edit_productDescription" class="form-label">Description</label>
+                <textarea class="form-control" id="edit_productDescription" rows="3" required>${product.description}</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="edit_productImg" class="form-label">Image URL</label>
+                <input type="url" class="form-control" id="edit_productImg" value="${product.img}" required>
+            </div>
+            <div class="mb-3">
+                <label for="edit_productCategory" class="form-label">Category</label>
+                <input type="text" class="form-control" id="edit_productCategory" value="${product.category}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="button" class="btn btn-secondary" onclick="cancelEdit()">Cancel</button>
+        </form>
+    `;
+    document.getElementById('productList').appendChild(editFormContainer);
+
+
+
+    document.getElementById('editProductForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const product = {
+        ID_Product: document.getElementById('edit_ID_Product').value,
+        name: document.getElementById('edit_productName').value,
+        price: document.getElementById('edit_productPrice').value,
+        stock: document.getElementById('edit_productStock').value,
+        description: document.getElementById('edit_productDescription').value,
+        img: document.getElementById('edit_productImg').value,
+        category: document.getElementById('edit_productCategory').value
+    };
+
+    try {
+        await updateProduct(product);
+        alert('Product updated successfully');
+        // Aquí deberías ocultar el formulario de edición y actualizar la lista de productos
+        fetchProducts();
+    } catch (error) {
+        alert('Error updating product: ' + error.message);
+    }
+});
+}
+
+</script>
+
+
 </body>
 </html>
