@@ -1,85 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+    <head>
+        <title>Welcome to FireTronics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+        <link href="../CSS/Style.css" rel="stylesheet">
+    </head>
 
-<head>
-    <title>Welcome to FireTronics</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link href="../CSS/Style.css" rel="stylesheet">
+    <body>
 
-</head>
+    <!-- ::::ENCABEZADO:::: del sitio web y menu de opciones  -->
 
-<body>
-
-    <header>
-        <div class="Esplogo">
-            <a href="Index.html"><img src="../imagenes/Logo.png" id="Logo" alt="FireTronics Logo"></a>
-        </div>
-
-        <div class="Container-halves">
-            <div class="Login">
-                <div class="searchengine">
-                    <h1 class="principal-header">FIRETRONICS</h1>
-                    <h6 class="principal-header1">your best ally in technology</h6>
-                </div>
-                <div class="buttons">
-                    <a href="http://localhost:5501/HTML/SingIn/src/SignIn.html">
-                        <button class="custom-btn btn-1 Log-Btn1">Sign In</button>
-                    </a>
-                    <a href="../HTML/SignUp.html">
-                        <button class="custom-btn btn-1 Log-Btn1">Sign Up</button>
-                    </a>
-                    <div id="login-header" class="Log-Btn2">
-                        <img src="../imagenes/avatar.webp" alt="SignIn">                        
-                        <button class="custom-btn btn-1" onclick="LogOutF()">Log Out</button>
-                        <a href="../HTML/Admin.html">
-                            <button class="custom-btn btn-1 ">Admin</button>
-                            </a>
-
-                            <h1 id="user-name"></h1>
-                            <h1 id="username"> </h1>
-                            
-                            
-                    </div>
-                    <a href="../HTML/ShoppingCart.html">
-                        <button id="cartBtn" class="custom-btn btn-2">
-                            <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
-                            <span id="cartItemCount"></span>
-                        </button>
-                    </a>
-                </div>
+        <header>
+            <div class="Esplogo">
+                <a href="Index.html">
+                    <img src="../imagenes/Logo.png" id="Logo" alt="Logo Principal corporativo" >
+                </a>
+                
             </div>
-            <div class="Menu"></div>
+
+            <div class="Contenedor-mitades">
+
+                <div class="Login">
+
+                    <div class="buscador">
+                       <!-- <textarea id="barrabusqueda" name="miTexto" rows="4" cols="50">                            
+                        </textarea> --> 
+                        <input type="text" id="barrabusqueda" name="miTexto" value="Buscar de Productos">
+                    </div>
+
+                    <div class="buttons"> 
+                       
+                        <a href="http://localhost:5500/HTML/SingIn/src/SignIn.html">
+                            <button class="custom-btn btn-1">Sign In</button>
+                        </a>
+                        
+                        
+                        <a href="../HTML/SignUp.html">
+                            <button class="custom-btn btn-1">Sign Up</button> 
+                        </a>
+                        
+                        <a href="../HTML/ShoppingCart.html">
+                            <button id="cartBtn" class="custom-btn btn-2">
+                                <i class="bi bi-cart4" style="height: 20px; width: 20px;"></i>
+                                <span id="cartItemCount"></span>
+                            </button>
+                        </a>
+                        
+                    </div> 
+
+                </div>  
+                
+                <div class="Menu"></div>
+
             <ul class="nav">
-                <li><a href="../HTML/Index.html" class="Spaces">Home</a></li>
-                <li><a href="../HTML/products.html" class="Spaces">Products</a>
-                <!-- <ul>
+                <li><a href="../HTML/Index.html" class="Espacios">Home</a></li>
+
+                <li><a href="" class="Espacios">Products</a>
+                    <ul>
                         <br>
-                        <li id="Title1SubMenu"><b>Phone & Smart Wash</b></li><br>
-                        <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a></li>
-                        <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart Wash</a></li>
+                        <li id="Titulo1SubMenu"><b>Phone & Smart Wash</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=cellPhone#SectionDestino">Cell Phone</a>
+                        </li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=AccesoriesPhone#SectionDestino">Smart
+                                Wash</a></li>
+
+                        <!-- Next column -->
+
                         <br>
-                        <li id="Title1SubMenu"><b>Computing</b></li><br>
-                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop computer</a></li>
-                        <li><a href="../HTML/laptops.html">Laptops</a></li>
+                        <li id="Titulo1SubMenu"><b>Computing</b></li><br>
+                        <li><a href="http://localhost/Products/?opcion_submenu=DesktopComputer#SectionDestino">desktop
+                                computer</a></li>
+                        <li><a href="http://localhost/Products/?opcion_submenu=Accessories#SectionDestino">Laptops</a>
+                        </li>
+
+                        <!-- Next column -->
+
                         <br>
-                        <li id="Title1SubMenu"><b>TV, Audio/Video</b></li><br>
+                        <li id="Titulo1SubMenu"><b>TV, Audio/Video</b></li><br>
                         <li><a href="">Smart TV</a></li>
                         <li><a href="">Sound equipment</a></li>
-                    </ul> -->
+
+                    </ul>
                 </li>
-                <li><a href="../HTML/WhoWeAre.html" class="Spaces">Who Are We</a></li>
+                <li><a href="../HTML/WhoWeAre.html" class="Espacios">Who Are We </a></li>
+                           
             </ul>
         </div>
+
+
     </header>
 
-    <div id="Separator"></div>
+    <div id="Separador"></div>
 
 
-    <!-- web body -->
+    <!-- Cuerpo del sitio web -->
         <main>
             <div class="contenedor-padre">
                 <div class="contenedor-izquierdo"id="productDetailsContainer">
@@ -115,7 +133,7 @@
             </div>
 
             <div class="container-fluid">
-                <!-- Help buttons -->
+                <!-- Botón de ayuda -->
                 <button id="helpButton" class="circular-button btn btn-primary">?</button>
     
                 <!-- Popup de ayuda -->
@@ -128,18 +146,16 @@
                             </div>
                             <div id="helpList" class="list-group"><br>
                                 <button class="help-button list-group-item list-group-item-action chatsub"
-                                    value="Problem">I have an issue</button>
+                                    value="Problema">I have an issue</button>
                                 <button class="help-button list-group-item list-group-item-action chatsub"
-                                    value="Consult">I have a question</button>
+                                    value="Consulta">I have a question</button>
                                 <button class="help-button list-group-item list-group-item-action chatsub"
-                                    value="Suggestion">I wanna do a sugestion</button>
+                                    value="Sugerencia">I wanna do a sugestion</button>
                                 <br>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button id="myWhatsAppButton" class="circular-button2 btn btn-primary"><i class="bi bi-whatsapp"></i></button>
-                <button id="theme-toggle" class="circular-button3 btn btn-primary"><i class="bi bi-lightbulb"></i></button>
             </div>
         </main>
 
@@ -161,90 +177,112 @@
 
 <script src="../JavaScript/script.js"></script>
 <script>
-    let total = 0;
-
+    let total=0;
     async function fetchProductDetails(id) {
-        try {
-            const response = await fetch('http://localhost:3002/cartitems', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ id })
-            });
+      try {
+        const response = await fetch('http://localhost:3002/cartitems', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ id })
+        });
 
-            if (!response.ok) {
-                throw new Error('Failed to fetch product details');
-            }
-
-            const productDetails = await response.json();
-            total += parseFloat(productDetails.Price) / 2;
-            localStorage.setItem('total', JSON.stringify(total));
-            displayProductDetails(productDetails);
-        } catch (error) {
-            console.error('Error fetching product details:', error.message);
+        // Verificar si la solicitud fue exitosa
+        if (!response.ok) {
+          throw new Error('Failed to fetch product details');
         }
+        
+        // Extraer los detalles del producto del cuerpo de la respuesta
+        const productDetails = await response.json();
+
+        // Almacenar los detalles del producto en el localStorage
+        //localStorage.setItem('productDetails', JSON.stringify(productDetails));
+        total += parseFloat(productDetails.Price)/2;
+        localStorage.setItem('total', JSON.stringify(total))
+        // Mostrar los detalles del producto en la página
+        //localStorage.setItem('ids', 2)
+        displayProductDetails(productDetails);
+      } catch (error) {
+        console.error('Error fetching product details:', error.message);
+      }
     }
 
+    // Función para mostrar los detalles del producto en la página
     function displayProductDetails(productDetails) {
+        // Obtener el contenedor de los detalles del producto
         const productDetailsContainer = document.getElementById('productDetailsContainer');
+
+        // Crear el contenedor principal
         const containerProd = document.createElement('div');
         containerProd.className = 'containerProd';
         containerProd.style.display = 'flex';
         containerProd.id = 'product_' + productDetails.ID_Product;
 
+        // Crear el contenedor de la imagen
         const imgContainer = document.createElement('div');
         imgContainer.style.flex = '0.2';
         imgContainer.style.marginLeft = '20px';
 
+        // Crear la imagen
         const img = document.createElement('img');
         img.src = productDetails.IMG;
         img.style.maxWidth = '170px';
         img.style.maxHeight = '170px';
         imgContainer.appendChild(img);
 
+        // Crear el contenedor de los detalles del producto
         const detailsContainer = document.createElement('div');
         detailsContainer.style.flex = '1';
         detailsContainer.style.marginLeft = '20px';
 
+        // Crear el título del producto
         const nameElement = document.createElement('h5');
         nameElement.textContent = productDetails.Name;
         nameElement.style.textAlign = 'left';
         nameElement.style.marginTop = '10px';
         detailsContainer.appendChild(nameElement);
 
+        // Crear el contenedor del precio y la descripción
         const priceDescriptionContainer = document.createElement('div');
         priceDescriptionContainer.style.display = 'flex';
 
+        // Crear el contenedor del precio
         const priceContainer = document.createElement('div');
         priceContainer.style.flex = '0.5';
 
+        // Crear el precio original tachado
         const originalPrice = document.createElement('s');
         originalPrice.textContent = '$ ' + productDetails.Price;
         originalPrice.style.textAlign = 'left';
-        originalPrice.className = 'price';
+        originalPrice.className='price';
         priceContainer.appendChild(originalPrice);
 
+        // Crear el precio actual
         const currentPrice = document.createElement('h3');
-        currentPrice.textContent = '$ ' + (productDetails.Price * 0.5).toFixed(2);
+        currentPrice.textContent = '$ ' + (productDetails.Price * 0.5).toFixed(2); // Aplicar descuento o cambio de precio aquí
         priceContainer.appendChild(currentPrice);
 
+        // Crear la información de pago
         const paymentInfo = document.createElement('p');
-        paymentInfo.textContent = ' en 36x ' + (productDetails.Price / 36).toFixed(2);
+        paymentInfo.textContent = ' en 36x '+(productDetails.Price/36).toFixed(2); // Puedes obtener esta información del servidor o calcularla
         paymentInfo.style.textAlign = 'left';
         priceContainer.appendChild(paymentInfo);
 
         priceDescriptionContainer.appendChild(priceContainer);
 
+        // Crear el contenedor del botón y la puntuación
         const buttonRatingContainer = document.createElement('div');
         buttonRatingContainer.style.flex = '0.5';
         buttonRatingContainer.style.display = 'flex';
         buttonRatingContainer.style.justifyContent = 'space-between';
 
+        // Crear el contenedor de los botones de cantidad
         const quantityButtonContainer = document.createElement('div');
         quantityButtonContainer.className = 'container';
         quantityButtonContainer.style.display = 'flex';
 
+        // Crear los botones de cantidad
         const decreaseButton = document.createElement('button');
         decreaseButton.className = 'btn btn-secondary';
         decreaseButton.textContent = '-';
@@ -258,23 +296,50 @@
         const productId = productDetails.ID_Product;
         decreaseButton.setAttribute('data-product-id', productId);
         increaseButton.setAttribute('data-product-id', productId);
-
-        decreaseButton.addEventListener('click', function () {
-            const productId = this.getAttribute('data-product-id');
-            buttons(productId, -1);
+        
+        decreaseButton.addEventListener('click', function() {
+        const productId = this.getAttribute('data-product-id');
+        // Aquí puedes llamar a la función para agregar el ID del producto al carrito
+        buttons(productId,-1);
         });
 
-        increaseButton.addEventListener('click', function () {
-            const productId = this.getAttribute('data-product-id');
-            buttons(productId, 1);
+        increaseButton.addEventListener('click', function() {
+        const productId = this.getAttribute('data-product-id');
+        // Aquí puedes llamar a la función para agregar el ID del producto al carrito
+        buttons(productId,1);
         });
 
+        // Agregar los botones de cantidad al contenedor
         quantityButtonContainer.appendChild(decreaseButton);
         quantityButtonContainer.appendChild(quantitySpan);
         quantityButtonContainer.appendChild(increaseButton);
 
+        // Crear el contenedor de la puntuación
         const ratingContainer = document.createElement('div');
         ratingContainer.className = 'puntuacion';
+
+        // Crear el span para la puntuación actual
+        const currentRatingSpan = document.createElement('span');
+        currentRatingSpan.className = 'puntuacion-actual';
+        currentRatingSpan.textContent = '4'; // Puedes obtener esta información del servidor
+        ratingContainer.appendChild(currentRatingSpan);
+
+        // Crear el span para la puntuación máxima
+        const maxRatingSpan = document.createElement('span');
+        maxRatingSpan.className = 'puntuacion-maxima';
+        maxRatingSpan.textContent = '5'; // Puedes obtener esta información del servidor
+        ratingContainer.appendChild(maxRatingSpan);
+
+        // Crear el span para las estrellas
+        const starsSpan = document.createElement('span');
+        starsSpan.className = 'estrellas';
+        starsSpan.innerHTML = '&#9733;&#9733;&#9733;&#9733;&#9734;'; // Puedes obtener esta información del servidor
+        ratingContainer.appendChild(starsSpan);
+
+        // Crear el span para el número de calificaciones
+        const ratingCountSpan = document.createElement('span');
+        ratingCountSpan.textContent = '(203)'; // Puedes obtener esta información del servidor
+        ratingContainer.appendChild(ratingCountSpan);
 
         buttonRatingContainer.appendChild(quantityButtonContainer);
         buttonRatingContainer.appendChild(ratingContainer);
@@ -286,82 +351,113 @@
         containerProd.appendChild(imgContainer);
         containerProd.appendChild(detailsContainer);
 
+        // Agregar el contenedor principal al contenedor de detalles del producto
         productDetailsContainer.appendChild(containerProd);
     }
 
     function buttons(productId, n) {
+        // Obtener el contenedor del producto
         const parsedProductId = parseInt(productId);
         const productContainer = document.getElementById('product_' + parsedProductId);
+        
+        // Obtener la etiqueta de cantidad
         const quantitySpan = productContainer.querySelector('.unidad');
-        const price = productContainer.querySelector('.price');
+        const price=productContainer.querySelector('.price');
 
+        // Obtener la lista actual de IDs de productos del carrito desde el almacenamiento local
         let productIds = JSON.parse(localStorage.getItem('ids')) || [];
-        const productIndex = productIds.findIndex(productInfo => productInfo[0] === parsedProductId);
 
-        if (productIndex !== -1) {
+        // Encontrar el índice del producto en la lista de IDs
+        const index = productIds.indexOf(parsedProductId);
+        
+        if (index !== -1) {
+            // Obtener la cantidad actual del producto
             let quantity = parseInt(quantitySpan.textContent);
-            let pricep = parseFloat(price.textContent.replace('$', ''));
-
-            const maxStock = productIds[productIndex][1];
-
+            let pricep = price.textContent;
+            pricep=parseInt(pricep.replace('$', ''));
+            console.log(pricep);
+            // Incrementar o disminuir la cantidad según el valor de n
             quantity += n;
-
+            
             if (quantity === 0 && n === -1) {
+                // Si la cantidad es 0 y n es -1, eliminar el contenedor del producto del HTML
                 productContainer.remove();
-                productIds.splice(productIndex, 1);
+
+                // Eliminar el ID del producto del array productIds
+                productIds.splice(index, 1);
+
+                // Actualizar el local storage con la lista de IDs actualizada
                 localStorage.setItem('ids', JSON.stringify(productIds));
 
-                let total = parseFloat(localStorage.getItem("total"));
-                total -= pricep;
-                localStorage.setItem('total', total.toFixed(2));
+                //disminuir el valor total restando el precio del producto
+                total = localStorage.getItem("total")
+                total -= parseFloat(pricep)/2;
+                localStorage.setItem('total', JSON.stringify(total));
 
-                updatePriceElements(total);
-            } else if (quantity > 0 && quantity <= maxStock) {
-                quantitySpan.textContent = quantity;
-                productIds[productIndex][2] = quantity;
-                localStorage.setItem('ids', JSON.stringify(productIds));
-
-                let total = parseFloat(localStorage.getItem("total"));
-                total += n * (pricep / productIds[productIndex][2]);
-                localStorage.setItem('total', total.toFixed(2));
-
-                updatePriceElements(total);
+                const priceElement = document.getElementById('Price');
+                priceElement.textContent = parseFloat(localStorage.getItem("total"));
+                const priceT = document.getElementById('PriceT');
+                priceT.textContent = parseFloat(localStorage.getItem("total"))+10
             } else {
-                console.warn('Exceeds available stock');
+                // Actualizar la cantidad en la etiqueta quantitySpan
+                quantitySpan.textContent = quantity;
+
+                // Actualizar la cantidad en el local storage
+                // Esto es opcional si deseas mantener la cantidad actualizada en el almacenamiento local
+                // Puedes omitir esta parte si la cantidad en el almacenamiento local no es necesaria
+                productIds[index] = parsedProductId;
+                localStorage.setItem('ids', JSON.stringify(productIds));
+                if (n==-1){
+                    total = parseFloat(localStorage.getItem("total"));
+                    total -= parseFloat(pricep)/2;
+                    localStorage.setItem('total', JSON.stringify(total));
+                }else{
+                    total = parseFloat(localStorage.getItem("total"));
+                    total += parseFloat(pricep)/2;
+                    localStorage.setItem('total', JSON.stringify(total));
+                }
+
+                const priceElement = document.getElementById('Price');
+                priceElement.textContent = parseFloat(localStorage.getItem("total"));
+                const priceT = document.getElementById('PriceT');
+                priceT.textContent = parseFloat(localStorage.getItem("total"))+10
             }
         }
     }
 
-    function updatePriceElements(total) {
+
+
+    // Llamar a la función para obtener los detalles del producto cuando se cargue la página
+    window.addEventListener('load', function() {
+    // Obtener la lista de IDs de productos desde el localStorage
+    const productIds = JSON.parse(localStorage.getItem('ids'));
+
+    // Verificar si hay IDs de productos almacenados
+    if (productIds && productIds.length > 0) {
+        // Recorrer la lista de IDs de productos
+        productIds.forEach(productId => {
+            // Obtener los detalles del producto del servidor y almacenarlos en localStorage
+            fetchProductDetails(productId);
+            
+        });
         const priceElement = document.getElementById('Price');
-        priceElement.textContent = total.toFixed(2);
+        priceElement.textContent = parseFloat(localStorage.getItem("total"));
         const priceT = document.getElementById('PriceT');
-        priceT.textContent = (total + 10).toFixed(2);
+        priceT.textContent = parseFloat(localStorage.getItem("total"))+10
+    } else {
+        console.error('No product IDs found in localStorage');
+        const productDetailsContainer = document.getElementById('productDetailsContainer');
+        // Crear un elemento de título
+        // Crear un elemento de título
+        const titleElement = document.createElement('h1');
+        titleElement.innerHTML = "&nbsp;&nbsp;&nbsp;¡You haven't added products to your cart yet!";
+        
+        // Agregar el título al contenedor de detalles del producto
+        productDetailsContainer.appendChild(titleElement);
     }
+});
 
-    window.addEventListener('load', async function () {
-        const productIds = JSON.parse(localStorage.getItem('ids'));
-
-        if (productIds && productIds.length > 0) {
-            const promises = productIds.map(productInfo => {
-                const productId = productInfo[0];
-                return fetchProductDetails(productId);
-            });
-
-            await Promise.all(promises);
-
-            let total = parseFloat(localStorage.getItem("total")) || 0;
-            updatePriceElements(total);
-        } else {
-            console.error('No product IDs found in localStorage');
-            const productDetailsContainer = document.getElementById('productDetailsContainer');
-            const titleElement = document.createElement('h1');
-            titleElement.innerHTML = "&nbsp;&nbsp;&nbsp;¡You haven't added products to your cart yet!";
-            productDetailsContainer.appendChild(titleElement);
-        }
-    });
 </script>
-
 
     </body>
 </html>
