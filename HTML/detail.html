@@ -157,7 +157,7 @@
     <script src="../JavaScript/details.js"></script>
 
     <script>
-       document.addEventListener('DOMContentLoaded', async () => {
+   document.addEventListener('DOMContentLoaded', async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get('id');
 
@@ -180,7 +180,16 @@
       throw new Error('Failed to fetch product details');
     }
 
-    const product = await response.json();
+    const responseText = await response.text();
+    let product;
+
+    try {
+      product = JSON.parse(responseText);
+    } catch (error) {
+      console.error('Error parsing JSON:', responseText);
+      throw error;
+    }
+
     document.getElementById('setIMGElement').innerHTML = `<img src="${product.IMG}" alt="${product.Name}" class="img-fluid">`;
     document.getElementById('setnameElement').textContent = product.Name;
     document.getElementById('setPriceElement').textContent = `Price: ${product.Price}`;
@@ -204,7 +213,16 @@
       throw new Error('Failed to fetch comments');
     }
 
-    const comments = await response.json();
+    const responseText = await response.text();
+    let comments;
+
+    try {
+      comments = JSON.parse(responseText);
+    } catch (error) {
+      console.error('Error parsing JSON:', responseText);
+      throw error;
+    }
+
     const commentsSection = document.getElementById('commentsSection');
     commentsSection.innerHTML = '';
     comments.forEach(comment => {
@@ -250,6 +268,7 @@
     }
   });
 });
+
     </script>
 </body>
 
